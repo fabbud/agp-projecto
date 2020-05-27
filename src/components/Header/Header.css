@@ -1,0 +1,66 @@
+.navbar {
+  background: linear-gradient(120deg, #154a7f, #00A6DE);
+  display: flex;
+  width: 100%;
+}
+
+.header-logo {
+  width: 400px;
+  margin-right: 0px;
+  margin-left: -10px;
+  background-image: url(../../assets/logo/logo_NEG_RGB.png);
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 130px;
+}
+
+.header-toggler {
+  margin-right: 10px;
+}
+
+.nav-item {
+  padding-right: 1em !important;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 600;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+
+.dropdown-item {
+  color: #004982;
+  font-weight: 500;
+  font-size: .9em !important;
+  letter-spacing: 0.1em;
+}
+
+.dropdown-item:hover {
+  color: #004982;
+}
+
+.search-icon {
+  margin-right: 10px;
+  color:#154a7f;
+}
+
+.search-control {
+  font-weight: 500;
+  font-size: 0.9rem;
+  height: 30px;
+  border-radius: 30px;
+  opacity: 35;
+  margin-right: 0px !important;
+  color:#495057;
+  margin-bottom: 20px; 
+}
+
+@media(max-width: 1091px) {
+  .header-logo {
+    width: 340px;
+  }
+}
