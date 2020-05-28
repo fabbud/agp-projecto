@@ -1,16 +1,17 @@
 import React from 'react';
-import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap';
+import {
+  Navbar, Nav, NavDropdown, Form, FormControl,
+} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Header.css';
 
 const Header = () => {
-  return ( 
+  return (
     <div>
       <Navbar fixed="top" expand="lg" className="navbar">
-        <Navbar.Brand href="" className="header-logo">
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="header-toggler"/>
+        <Navbar.Brand href="" className="header-logo" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="header-toggler" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <NavDropdown title="Sobre" id="basic-nav-dropdown" class="nav-item">
@@ -44,13 +45,13 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Form inline className="search-fields">
-            <FontAwesomeIcon icon={faSearch} className="search-icon"/>
+            <FontAwesomeIcon icon={faSearch} className="search-icon" />
             <FormControl type="text" placeholder="Pesquisa..." className="mr-sm-2 search-input" />
           </Form>
         </Navbar.Collapse>
       </Navbar>
     </div>
   );
-}
- 
+};
+
 export default Header;
