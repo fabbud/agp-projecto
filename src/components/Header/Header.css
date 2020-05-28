@@ -51,7 +51,8 @@
 }
 
 .search-fields {
-  margin-bottom: 20px; 
+  /* margin-bottom: 20px;  */
+  margin-bottom: 10px; 
 }
 
 .search-input {
@@ -62,6 +63,13 @@
   opacity: 35;
   margin-right: 0px !important;
   color:#495057;
+}
+
+.search-languages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
 }
 
 @media(max-width: 1091px) {
@@ -78,5 +86,10 @@
   }
   .search-input {
     width: 200px;
+  }
+  .search-languages {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
   }
 }
