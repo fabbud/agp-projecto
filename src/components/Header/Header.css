@@ -7,12 +7,13 @@
 .header-logo {
   width: 400px;
   margin-right: 0px;
-  margin-left: -10px;
+  margin-left: -20px;
   background-image: url(../../assets/logo/logo_NEG_RGB.png);
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 130px;
+  height: 120px;
+  padding: 0px;
 }
 
 .header-toggler {
@@ -46,9 +47,14 @@
 .search-icon {
   margin-right: 10px;
   color:#154a7f;
+  width: 20px;
 }
 
-.search-control {
+.search-fields {
+  margin-bottom: 20px; 
+}
+
+.search-input {
   font-weight: 500;
   font-size: 0.9rem;
   height: 30px;
@@ -56,11 +62,21 @@
   opacity: 35;
   margin-right: 0px !important;
   color:#495057;
-  margin-bottom: 20px; 
 }
 
 @media(max-width: 1091px) {
   .header-logo {
     width: 340px;
+  }
+  .nav-link {
+    margin-bottom: 0px;
+    margin-left: 20px;
+  }
+  .search-fields {
+    margin-top:10px;
+    margin-left: 20px;
+  }
+  .search-input {
+    width: 200px;
   }
 }
