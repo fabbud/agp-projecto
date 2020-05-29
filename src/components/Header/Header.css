@@ -44,6 +44,25 @@
   color: #004982;
 }
 
+.nav-subitem {
+  color: #004982 !important;
+  font-weight: 500 !important;
+  font-size: .9em !important;
+  letter-spacing: 0.1em !important;
+}
+
+.dropdown-subitem {
+  color: #004982;
+  font-weight: 500;
+  font-size: .9em !important;
+  letter-spacing: 0.1em;
+}
+
+.dropdown-subitem:hover {
+  color: #004982;
+}
+
+
 .search-icon {
   margin-right: 10px;
   color:#154a7f;
@@ -51,7 +70,6 @@
 }
 
 .search-fields {
-  /* margin-bottom: 20px;  */
   margin-bottom: 10px; 
 }
 
