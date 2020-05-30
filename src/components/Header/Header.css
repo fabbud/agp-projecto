@@ -20,7 +20,7 @@
   margin-right: 10px;
 }
 
-.nav-item {
+.nav-header {
   padding-right: 1em !important;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .dropdown-item {
-  color: #004982;
+  color: #004982 !important;
   font-weight: 500;
   font-size: .9em !important;
   letter-spacing: 0.1em;
@@ -44,24 +44,9 @@
   color: #004982;
 }
 
-.nav-subitem {
-  color: #004982 !important;
-  font-weight: 500 !important;
-  font-size: .9em !important;
-  letter-spacing: 0.1em !important;
-}
-
-.dropdown-subitem {
-  color: #004982;
-  font-weight: 500;
-  font-size: .9em !important;
-  letter-spacing: 0.1em;
-}
-
-.dropdown-subitem:hover {
-  color: #004982;
-}
-
+/* .dropdown-menu {
+  margin-left: 10px !important;
+} */
 
 .search-icon {
   margin-right: 10px;
