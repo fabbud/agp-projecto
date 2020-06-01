@@ -78,12 +78,114 @@
 .objectives-title {
   color: #1AA3DB;
   font-size: 25px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .objectives-text li {
-  font-size: 14px;
+  font-size: 16px;
   margin: 18px;
+}
+.centers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.centers-side {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.centers-left {
+  padding: 30px 65px;
+  width: 600px;
+}
+
+.centers-title {
+  color: #1AA3DB !important;
+  font-size: 25px;
+  height: 25px;
+  margin: 20px 0px 20px 0px;
+}
+
+.centers-text {
+  font-size: 16px;
+}
+
+.centers-side ul {
+  padding-left: 5px;
+}
+
+.centers-side li {
+  margin: 18px;
+  height: 13px;
+  font-size: 16px;
+}
+
+.world-centers {
+  width: 100%;
+  height: auto;
+}
+
+.thought-section {
+  padding: 50px 0px;
+  background-color:#1AA3DB;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.right-section, .left-section {
+  width: 37%;
+  margin: 0px 50px;
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+}
+
+.clover, .piggy {
+  height: 40px;
+  width: 40px;
+  margin-right: 20px;
+}
+
+.penny-title {
+  font-size: 25px;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.penny-text {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+}
+
+.button-section {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+}
+
+.guia-button {
+  border-style: none;
+  background-color: #154A7F;
+  color: white;
+  border-radius: 50px;
+  font-size: 20px;
+  padding: 6px 12px;
+  outline: none !important;
+}
+
+.guia-button:hover {
+  font-weight: 700;
 }
 
 @media(max-width: 768px) {
@@ -95,7 +197,28 @@
     font-size: 16px;
   }
   .world-objectives {
+    background-color: #f6f6f6;
+    padding: 50px 50px;
     flex-direction: column;
     align-items: center;
+  }
+  .objectives-side {
+    width: 350px;
+    margin: 0 auto;
+  }
+  .centers {
+    flex-direction: column;
+  }
+  .centers-side {
+    width: 100%;
+  }
+  .centers-left {
+    width: 450px;
+  }
+  .right-section, .left-section {
+    width: 70%;
+  }
+  .left-section {
+    margin-bottom: 30px;
   }
 }
