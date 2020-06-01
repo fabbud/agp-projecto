@@ -1,0 +1,101 @@
+.AssociacaoMundial {
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.world-girls-banner {
+  margin-top: 50px;
+  background-image: url('../../assets/images/AssociacaoMundial/Associação_Mundial.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  width: 100%;
+}
+
+.world-association {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px;
+}
+
+.world-logo {
+  width: 35%;
+  height: auto;
+}
+
+.world-text {
+  text-align: center;
+  max-width: 650px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #004982;
+  font-size: 16px;
+  margin: 0px 55px;
+}
+
+.voice-sentence {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 70px 0px;
+  background-color: #1AA3DB;
+  color: white;
+  font-size: 25px;
+  line-height: 1.5;
+}
+
+.world-objectives {
+  background-color: #f6f6f6;
+  padding: 50px 100px 50px 100px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.objectives-side {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px;
+}
+
+.objectives-side ul {
+  padding: 0px !important;
+}
+
+.objectives-title {
+  color: #1AA3DB;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.objectives-text li {
+  font-size: 14px;
+  margin: 18px;
+}
+
+@media(max-width: 768px) {
+  .world-logo {
+    width: 50%;
+    height: auto;
+  }
+  .world-text {
+    font-size: 16px;
+  }
+  .world-objectives {
+    flex-direction: column;
+    align-items: center;
+  }
+}
