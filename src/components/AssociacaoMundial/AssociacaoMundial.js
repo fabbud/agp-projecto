@@ -153,7 +153,7 @@ const AssociacaoMundial = () => {
         </div>
       </div>
       <div className="button-section">
-        <button type="submit" className="guia-button">Queres ser Guia ?</button>
+        <button type="submit" className="guia-button associacao-button">Queres ser Guia ?</button>
       </div>
     </div>
   );

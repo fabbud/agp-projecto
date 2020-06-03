@@ -9,13 +9,14 @@ i18n
     lng: 'pt',
     backend: {
       /* translation file path */
-      loadPath: '/assets/i18n/{{ns}}/{{lng}}.json'
+      loadPath: '/assets/i18n/{{ns}}/{{lng}}.json',
     },
-    fallbackLng: 'en',
+    fallbackLng: 'pt',
     debug: true,
     /* can have multiple namespace, in case you want to divide a huge translation into smaller pieces and load them on demand */
     ns: ['translations'],
     defaultNS: 'translations',
+    returnObjects: true,
     keySeparator: false,
     interpolation: {
       escapeValue: false,

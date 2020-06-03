@@ -176,8 +176,6 @@
 
 .guia-button {
   border-style: none;
-  background-color: #154A7F;
-  color: white;
   border-radius: 50px;
   font-size: 20px;
   padding: 6px 12px;
@@ -187,6 +185,12 @@
 .guia-button:hover {
   font-weight: 700;
 }
+
+.associacao-button {
+  background-color: #154A7F;
+  color: white
+}
+
 
 @media(max-width: 768px) {
   .world-logo {
