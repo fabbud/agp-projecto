@@ -16,8 +16,7 @@ i18n
     /* can have multiple namespace, in case you want to divide a huge translation into smaller pieces and load them on demand */
     ns: ['translations'],
     defaultNS: 'translations',
-    returnObjects: true,
-    keySeparator: false,
+    // keySeparator: false,
     interpolation: {
       escapeValue: false,
       formatSeparator: ',',

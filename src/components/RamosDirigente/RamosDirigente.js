@@ -1,42 +1,44 @@
 import React from 'react';
+import ReactHtmlParser from 'react-html-parser';
+import { useTranslation } from 'react-i18next';
 import './RamosDirigente.css';
 import avezinhaBanner from '../../assets/images/RamosDirigente/Banner_RamoAvezinha.png';
 import aventuraBanner from '../../assets/images/RamosDirigente/Banner_RamoAventura.png';
-// import moinhoBanner from '../../assets/images/RamosDirigente/Banner_RamoMoinho.png';
 import caravelaBanner from '../../assets/images/RamosDirigente/Banner_RamoCaravela.png';
 import dirigenteBanner from '../../assets/images/RamosDirigente/Banner_Dirigente.png';
+// import moinhoBanner from '../../assets/images/RamosDirigente/Banner_RamoMoinho.png'; - FALTA !!
 
-const RamosDirigente = () => {
+const RamosDirigente = (props) => {
+
+  const { t } = useTranslation();
+
+  const branchName = 'avezinha';
+  let buttonBorder = 'blue-border';
+
+  if (branchName !== 'avezinha') {
+    buttonBorder = 'white-border';
+  }
+
+  // console.log(branchBanner);
+
   return (
     <div className="RamosDirigente">
       <div className="ramos-banner">
-        <div className="ramos-photo-1" />
-        <div className="ramos-photo-2" />
-        <div className="ramos-photo-3" />
+        <div className={`ramos-photo ${branchName}-photo-1`} />
+        <div className={`ramos-photo ${branchName}-photo-2`} />
+        <div className={`ramos-photo ${branchName}-photo-3`} />
       </div>
       <div className="ramos-sentence">
-        <img src={avezinhaBanner} className="banner-sentence" alt="Frase do Ramo" />
+        <img src={`${branchName}Banner`} className="banner-sentence" alt="Frase do Ramo" />
       </div>
-
-      {/* AVEZINHA  */}
-
-      <div className="ramos-section avezinha">
-        <div className="ramos-text">
-            <p><strong>Cor: AMARELO</strong>, cor do sol.</p>
-            <p><strong>Simbologia: AVEZINHA</strong>, pequeno pássaro que comandado pelo <strong>SONHO</strong> ganha asas e aprende a voar.</p>
-            <p><strong>Estrutura:</strong> 4 a 6 Avezinhas formam um <strong>NINHO</strong> que reunidas com os restantes Ninhos constituem o <strong>BANDO</strong>.</p>
-            <p>É num mundo de sonho que cada criança será convidada a <strong>TORNAR-SE AVEZINHA</strong>, ganhar asas e aprender a voar. Considerando o imaginário deste Ramo, as Dirigentes são designadas por Águias e Corujas.</p>
-            <p>Sair do ovo e aprender a relacionar-se com o seu Ninho, sempre com o apoio da Águia e das Corujas, permitirá que cada Avezinha ganhe as competências e a autonomia necessárias ao seu Primeiro Voo, fazer a sua PROMESSA DE AVEZINHA. Alegre e curiosa, com vontade de crescer forte e saudável, com gosto pela natureza e sempre disposta a ajudar.</p>
-            <p>Capaz de pequenos voos a Avezinha ganha <strong>ASAS</strong> e explora os <strong>VERDES</strong> do bosque, conhece vários animais e é com eles que aprende novos saberes, que aprende a conhecer as árvores e as plantas, as praias e os rios… Descobre os seus gostos, supera alguns receios e desenvolve os seus dons através da realização de <strong>ESPECIALIDADES</strong>, até estar pronta para voar mais alto.</p>
-            <p>Já mais autónoma, mais capaz de tomar conta de si própria e de trabalhar com os outros, está na altura da Avezinha deixar as suas <strong>ASAS</strong> cruzarem os <strong>AZUIS</strong> do céu. Para tal terá de olhar em redor de forma atenta (no Ninho, no Bando, na Companhia, em casa, na turma, na escola, na comunidade), definir um destino (escolher onde pode proporcionar uma mudança positiva) e aperfeiçoar as técnicas de voo para sincronizar o bater das asas com o bater do coração, chegada a hora de partilhar, agir, por um mundo melhor.</p>
-            <p>Até ao Grande Voo que a conduzirá à sua Primeira Aventura.</p>
-        </div>
+      <div className={`ramos-section ${branchName}`}>
+        <div className="ramos-text">{ReactHtmlParser(t(`pedagogia.${branchName}Ramo.text`))}</div>
         <div className="ramos-buttons-section">
           <div>
-            <button type="submit" className="ramos-button avezinha blue-border">Palavra aos Pais</button>
+            <button type="submit" className={`ramos-button ${branchName} ${buttonBorder}`}>Palavra aos Pais</button>
           </div>
           <div>
-            <button type="submit" className="ramos-button avezinha blue-border">Queres ser Guia ?</button>
+            <button type="submit" className={`ramos-button ${branchName} ${buttonBorder}`}>Queres ser Guia ?</button>
           </div>
         </div>
       </div>

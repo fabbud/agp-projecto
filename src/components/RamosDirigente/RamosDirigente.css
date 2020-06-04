@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   width: 100%;
 }
+
 .ramos-banner {
   margin-top: 50px;
   margin-bottom: 20px;
@@ -13,7 +14,7 @@
   display: inline-flex;
 }
 
-.ramos-photo-1, .ramos-photo-2, .ramos-photo-3 {
+.ramos-photo {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -93,7 +94,7 @@
 }
 
 .ramos-section {
-  padding: 70px 50px;
+  padding: 70px 50px 50px 50px;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -154,7 +155,7 @@
   font-size: 20px;
   padding: 6px 12px;
   outline: none !important;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .blue-border {
