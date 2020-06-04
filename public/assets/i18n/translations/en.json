@@ -1,4 +1,5 @@
 {
+  "header": {
   "sobre.label": "About",
   "pedagogia.label": "Pedagogy",
   "publicacoes.label": "Publications",
@@ -28,4 +29,9 @@
   "diversos.label": "Others",
   "queresSerGuia.label": "Queres ser Guia ?",
   "sedeNacional.label": "Sede Nacional"
+},
+  
+  "footer": {
+  "sedeNacional":"National Headquarters"
 }
+} 

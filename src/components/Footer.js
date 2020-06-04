@@ -1,23 +1,26 @@
 import React from 'react';
 import './Footer.css';
+import { useTranslation } from 'react-i18next';
 
-const Footer = () => (
-  <footer className="footer-wrapper">
-    <div className="footer-container">
-      <div className="col-sm-3">
-        <h5>Sede Nacional</h5>
-        <ul>
-          <li>
-            <a href="https://goo.gl/maps/TGZTgHYotNwLF6wr7" target="_blank" rel="noopener noreferrer">
-              Av. Miguel Bombarda
-              <br />
-              <span className="footerMorada">
-                Nº 128, R/C Esq.
-              </span>
-              <br />
-              <span className="footerMorada">
-                1050-167 Lisboa.
-              </span>
+const Footer = () => {
+  const { t } = useTranslation();
+  return (
+    <footer className="footer-wrapper">
+      <div className="footer-container">
+        <div className="col-sm-3">
+          <h5>{t('footer.sedeNacional')}</h5>
+          <ul>
+            <li>
+              <a href="https://goo.gl/maps/TGZTgHYotNwLF6wr7" target="_blank" rel="noopener noreferrer">
+                Av. Miguel Bombarda
+                <br />
+                <span className="footerMorada">
+                  Nº 128, R/C Esq.
+                </span>
+                <br />
+                <span className="footerMorada">
+                  1050-167 Lisboa.
+                </span>
             </a>
           </li>
         </ul>
@@ -55,5 +58,6 @@ const Footer = () => (
       <p>© 2020 Copyright Associação Guias de Portugal</p>
     </div>
   </footer>
-);
+)
+};
 export default Footer;
