@@ -32,6 +32,14 @@
 },
   
   "footer": {
-  "sedeNacional":"National Headquarters"
+  "sedeNacional":"National Headquarters",
+  "contactos":"Contacts",
+  "associaçãoMundial":"World Association",
+  "WAGGGS": "WAGGGS",
+  "legal":"Legal",
+  "legal1":"Terms of Service",
+  "legal2":"Terms of Use",
+  "legal3":"Privacy Policy",
+  "dados":"Personal Data Policy"
 }
-} 
+}
