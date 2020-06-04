@@ -31,8 +31,15 @@
   "sedeNacional": "Sede Nacional"
 },
 
-"footer": {
-  "sedeNacional":"Sede Nacional"
-  
+  "footer": {
+  "sedeNacional":"Sede Nacional",
+  "contactos":"Contactos",
+  "associaçãoMundial":"Associação Mundial",
+  "WAGGGS": "WAGGGS",
+  "legal":"Legal",
+  "legal1":"Termos de Serviço",
+  "legal2":"Termos de Uso",
+  "legal3":"Política de Privacidade",
+  "dados": "Política de Dados Pessoais"
 }
 }
