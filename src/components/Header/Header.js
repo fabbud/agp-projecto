@@ -5,9 +5,8 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
-
-import './Header.css';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import './Header.css';
 
 const Header = () => {
   const { t } = useTranslation();
@@ -19,45 +18,45 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="header-toggler" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <NavDropdown title={t('header.sobre')} id="basic-nav-dropdown" className="nav-header">
-              <NavDropdown.Item className="dropdown-item" href="">{t('associacao')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('historiaGuidismo')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('estatutos')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('associacaoMundial')}</NavDropdown.Item>
+            <NavDropdown title={(t('header.sobre'))} id="basic-nav-dropdown" className="nav-header">
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.associacao')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.historiaGuidismo')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.estatutos')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.associacaoMundial')}</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title={t('pedagogia')} id="basic-nav-dropdown" className="nav-header">
-              <NavDropdown.Item className="dropdown-item" href="">{t('metodoGuidista')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('ramoAvezinha')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('ramoAventura')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('ramoCaravela')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('ramoMoinho')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('dirigente')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('palavrasPais')}</NavDropdown.Item>
+            <NavDropdown title={t('header.pedagogia')} id="basic-nav-dropdown" className="nav-header">
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.metodoGuidista')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.ramoAvezinha')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.ramoAventura')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.ramoCaravela')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.ramoMoinho')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.dirigente')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.palavrasPais')}</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title={t('publicacoes')} id="basic-nav-dropdown" className="nav-header">
-              <NavDropdown.Item className="dropdown-item" href="">{t('noticias')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('jornal')}</NavDropdown.Item>
-              <NavDropdown bsPrefix="dropdown-item" title={t('recursos')} className="dropright">
-                <NavDropdown.Item className="dropdown-item" href="">{t('livroEspecialidades')}</NavDropdown.Item>
-                <NavDropdown.Item className="dropdown-item" href="">{t('regulamentos')}</NavDropdown.Item>
-                <NavDropdown.Item className="dropdown-item" href="">{t('cartaoAssociada')}</NavDropdown.Item>
-                <NavDropdown.Item className="dropdown-item" href="">{t('ligacoesUteis')}</NavDropdown.Item>
+            <NavDropdown title={t('header.publicacoes')} id="basic-nav-dropdown" className="nav-header">
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.noticias')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.jornal')}</NavDropdown.Item>
+              <NavDropdown bsPrefix="dropdown-item" title={t('header.recursos')} className="dropright">
+                <NavDropdown.Item className="dropdown-item" href="">{t('header.livroEspecialidades')}</NavDropdown.Item>
+                <NavDropdown.Item className="dropdown-item" href="">{t('header.regulamentos')}</NavDropdown.Item>
+                <NavDropdown.Item className="dropdown-item" href="">{t('header.cartaoAssociada')}</NavDropdown.Item>
+                <NavDropdown.Item className="dropdown-item" href="">{t('header.ligacoesUteis')}</NavDropdown.Item>
               </NavDropdown>
             </NavDropdown>
-            <NavDropdown title={t('loja')} id="basic-nav-dropdown" className="nav-header">
-              <NavDropdown.Item className="dropdown-item" href="">{t('fardas')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('livros')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('diversos')}</NavDropdown.Item>
+            <NavDropdown title={t('header.loja')} id="basic-nav-dropdown" className="nav-header">
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.fardas')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.livros')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.diversos')}</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title={t('contactos')} id="basic-nav-dropdown" className="nav-header">
-              <NavDropdown.Item className="dropdown-item" href="">{t('queresSerGuia')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item" href="">{t('sedeNacional')}</NavDropdown.Item>
+            <NavDropdown title={t('header.contactos')} id="basic-nav-dropdown" className="nav-header">
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.queresSerGuia')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item" href="">{t('header.sedeNacional')}</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <div className="search-languages">
             <Form inline className="search-fields">
               <FontAwesomeIcon icon={faSearch} className="search-icon" />
-              <FormControl type="text" placeholder={t('pesquisa')} className="mr-sm-2 search-input" />
+              <FormControl type="text" placeholder={t('header.pesquisa')} className="mr-sm-2 search-input" />
             </Form>
             <LanguageSelector />
           </div>
