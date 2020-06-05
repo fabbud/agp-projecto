@@ -85,7 +85,7 @@
 .ramos-sentence {
   height: auto;
   width: 90%;
-  margin: 0px 50px;
+  margin: -10px 50px 20px 20px;
 }
 
 .banner-sentence {
@@ -100,9 +100,6 @@
   width: 100%;
 }
 
-.ramos-text {
-  margin: 0px 30px;
-}
 .avezinha {
   background-color: #FCE614;
   color: #154A7F;
@@ -128,6 +125,7 @@
   width: 100%;
   opacity: 0.8;
   column-count: 2;
+  margin: 0px 30px;
 }
 
 .ramos-text p {
@@ -169,13 +167,95 @@
   font-weight: 600;
 }
 
+/*  SENTENCE BANNER  */
+
+.sentence-banner {
+  display: flex;
+  justify-content: center;
+  margin: 0px 30px;
+  background-image: url('../../assets/images/RamosDirigente/Asset 6@300x.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 90%;
+}
+
+.branch-banner-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 370px;
+}
+
+.branch-phrase {
+  margin: 0px 10px;
+  font-size: 34px;
+  font-weight: 700;
+  color: #154A7F;
+}
+
+.branch-blockquote {
+  color: #FCE614;
+  font-size: 90px;
+  position: relative;
+}
+
+.branch-blockquote:before {
+  position: absolute;
+  top: -25px;
+  left: -40px;
+  content: open-quote;
+}
+
+.branch-blockquote:after {
+  position: absolute;
+  bottom: -80px;
+  right: 20px;
+  content: close-quote;
+}
+
+
+.branch-info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  position: relative;
+}
+
+.branch-logo {
+  width: 60%;
+  position: absolute;
+}
+
+.branch-name, .branch-age {
+  color: #154A7F;
+  text-transform: uppercase;
+  text-align: end;
+  left: 30px;
+  width: 200px;
+  position: absolute;
+}
+
+.branch-name {
+  font-weight: 700;
+  font-size: 22px;
+  bottom: 30px;
+}
+
+.branch-age {
+  font-weight: 600;
+  font-size: 18px;
+  bottom: 10px;
+}
 
 @media(max-width: 768px) {
   .ramos-text {
     column-count: 1;
+    margin: 0px 10px;
+    font-size: 14px;
   }
   .ramos-text p {
-    margin: 0px 40px 16px 40px;
+    margin: 0px 30px 16px 30px;
   }
   .ramos-side {
     width: 85%;
