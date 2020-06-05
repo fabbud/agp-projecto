@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import AssociacaoFront from './components/AssociacaoFront';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello Develop</h1>
+      <AssociacaoFront />
     </div>
   );
 }
