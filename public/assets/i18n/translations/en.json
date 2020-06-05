@@ -1,0 +1,45 @@
+{
+  "header": {
+  "sobre.label": "About",
+  "pedagogia.label": "Pedagogy",
+  "publicacoes.label": "Publications",
+  "loja.label": "Store",
+  "contactos.label": "Contacts",
+  "associacao.label": "Association",
+  "historiaGuidismo.label": "History of Guidism",
+  "estatutos.label": "Statutes",
+  "associacaoMundial.label": "World Association",
+  "metodoGuidista.label": "Método Guidista",
+  "ramoAvezinha.label": "Ramo Avezinha",
+  "ramoAventura.label": "Ramo Aventura",
+  "ramoCaravela.label": "Ramo Caravela",
+  "ramoMoinho.label": "Ramo Moinho",
+  "dirigente.label": "Dirigente",
+  "palavrasPais.label": "Palavra aos Pais",
+  "pesquisa.label": "Search...",
+  "noticias.label": "News",
+  "jornal.label": "Journal O Trevo",
+  "recursos.label": "Resources",
+  "livroEspecialidades.label": "Speciality Book",
+  "regulamentos.label": "Regulations",
+  "cartaoAssociada.label": "Associate Card",
+  "ligacoesUteis.label": "Useful Links",
+  "fardas.label": "Fardas",
+  "livros.label": "Books",
+  "diversos.label": "Others",
+  "queresSerGuia.label": "Queres ser Guia ?",
+  "sedeNacional.label": "Sede Nacional"
+},
+  
+  "footer": {
+  "sedeNacional":"National Headquarters",
+  "contactos":"Contacts",
+  "associaçãoMundial":"World Association",
+  "WAGGGS": "WAGGGS",
+  "legal":"Legal",
+  "legal1":"Terms of Service",
+  "legal2":"Terms of Use",
+  "legal3":"Privacy Policy",
+  "dados":"Personal Data Policy"
+}
+}

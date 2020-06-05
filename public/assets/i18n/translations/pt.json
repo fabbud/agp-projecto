@@ -1,0 +1,45 @@
+{
+  "header": {
+  "sobre": "Sobre",
+  "pedagogia": "Pedagogia",
+  "publicacoes": "Publicações",
+  "loja": "Loja",
+  "contactos": "Contactos",
+  "associacao": "Associação",
+  "historiaGuidismo": "História do Guidismo",
+  "estatutos": "Estatutos",
+  "associacaoMundial": "Associação Mundial",
+  "metodoGuidista": "Método Guidista",
+  "ramoAvezinha": "Ramo Avezinha",
+  "ramoAventura": "Ramo Aventura",
+  "ramoCaravela": "Ramo Caravela",
+  "ramoMoinho": "Ramo Moinho",
+  "dirigente": "Dirigente",
+  "palavrasPais": "Palavra aos Pais",
+  "pesquisa": "Pesquisa...",
+  "noticias": "Notícias",
+  "jornal": "Jornal O Trevo",
+  "recursos": "Recursos",
+  "livroEspecialidades": "Livro de Especialidades",
+  "regulamentos": "Regulamentos",
+  "cartaoAssociada": "Cartão de Associada",
+  "ligacoesUteis": "Ligações Úteis",
+  "fardas": "Fardas",
+  "livros": "Livros",
+  "diversos": "Diversos",
+  "queresSerGuia": "Queres ser Guia ?",
+  "sedeNacional": "Sede Nacional"
+},
+
+  "footer": {
+  "sedeNacional":"Sede Nacional",
+  "contactos":"Contactos",
+  "associaçãoMundial":"Associação Mundial",
+  "WAGGGS": "WAGGGS",
+  "legal":"Legal",
+  "legal1":"Termos de Serviço",
+  "legal2":"Termos de Uso",
+  "legal3":"Política de Privacidade",
+  "dados": "Política de Dados Pessoais"
+}
+}
