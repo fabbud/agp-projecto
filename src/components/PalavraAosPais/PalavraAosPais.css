@@ -1,0 +1,29 @@
+.PalavraAosPais {
+    background-color: transparent;
+    margin-top: 50px;
+    padding-bottom: 0;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.missaoBanner {
+    width: 100%;
+    margin-top: 50px;
+    display: inline-flex;
+    height: 400px;
+}
+
+.FilhaGuia {
+    color: #1AA3DB;
+    font-size: 25px;
+    margin-top: 70px;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+}
+
+.FilhaGuiatext {
+    color: #004982;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+}
