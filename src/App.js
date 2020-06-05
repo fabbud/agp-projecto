@@ -12,7 +12,6 @@ function App() {
     <div className="App">
       <Suspense fallback={null}>
         <Header />
-        <RamosDirigente />
       </Suspense>
     </div>
   );
