@@ -6,7 +6,7 @@ import QueresSerGuia from './QueresSerGuia';
 const Contactos = () => {
   return (
     <div className="Contactos">
-      <SedeNacional />
+      {/* <SedeNacional /> */}
       <QueresSerGuia />
     </div>
   );
