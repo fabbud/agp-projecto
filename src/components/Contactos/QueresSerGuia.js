@@ -16,12 +16,12 @@ const QueresSerGuia = () => {
     <div className="QueresSerGuia">
       <div className="guia-text-section">
         {/* <div><img src="" alt="" /></div> */}
-        <div className="guia-title">Queres ser Guia?</div>
-        <div className="guia-text">Para mais informações, entre em contacto connosco.</div>
+        <div className="guia-title">{t('contactosForm.queresSerGuiaTexto')}</div>
+        <div className="guia-text">{t('contactosForm.maisInformacoesTexto')}</div>
       </div>
       <div className="guia-form-section">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="guia-label">Nome</div>
+          <div className="guia-label">{t('contactosForm.nome')}</div>
           <input
             type="text"
             name="nome"
@@ -29,7 +29,7 @@ const QueresSerGuia = () => {
             ref={register({ required: `*${t('contactosForm.campoObrigatorio')}`, minLeght: 2 })}
           />
           {errors.nome && <div className="form-error">{errors.nome.message}</div>}
-          <div className="guia-label">Assunto</div>
+          <div className="guia-label">{t('contactosForm.assunto')}</div>
           <input
             type="text"
             name="assunto"
@@ -37,7 +37,7 @@ const QueresSerGuia = () => {
             ref={register({ required: `*${t('contactosForm.campoObrigatorio')}`, minLeght: 2 })}
           />
           {errors.assunto && <div className="form-error">{errors.assunto.message}</div>}
-          <div className="guia-label">Email</div>
+          <div className="guia-label">{t('contactosForm.email')}</div>
           <input
             type="email"
             name="email"
@@ -45,7 +45,7 @@ const QueresSerGuia = () => {
             ref={register({ required: `*${t('contactosForm.campoObrigatorio')}`, minLeght: 2 })}
           />
           {errors.email && <div className="form-error">{errors.email.message}</div>}
-          <div className="guia-label">Mensagem</div>
+          <div className="guia-label">{t('contactosForm.mensagem')}</div>
           <textarea
             type="textarea"
             name="mensagem"
@@ -56,7 +56,7 @@ const QueresSerGuia = () => {
           {errors.mensagem && <div className="message-error">{errors.mensagem.message}</div>}
           <div className="recolha-dados-text">{ReactHtmlParser(t('contactosForm.recolhaDadosTexto'))}</div>
           <div className="guia-button-section">
-            <button className="guia-form-button" type="submit">Enviar</button>
+            <button className="guia-form-button" type="submit">{t('contactosForm.botaoEnviar')}</button>
           </div>
         </form>
       </div>

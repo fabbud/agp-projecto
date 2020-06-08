@@ -68,9 +68,16 @@
     "publicacoesEmail": "agp.publicacoes@gmail.com"
   },
   "contactosForm": {
+    "queresSerGuiaTexto": "Queres ser Guia ?",
+    "maisInformacoesTexto": "Para mais informações, entre em contacto connosco.",
+    "nome": "Nome",
+    "assunto": "Assunto",
+    "email": "Email",
+    "mensagem": "Mensagem",
     "recolhaDadosTexto": "A recolha destes dados pessoais tem apenas como finalidade o pedido de contacto por parte da Associação Guias de Portugal. Caso não autorize a recolha dos dados pessoais, poderá contactar-nos através de meios alternativos, nomeadamente utilizando o endereço de email a.g.p@netcabo.pt . Para mais informações, consulte a nossa Política de Dados Pessoais.",
     "campoObrigatorio": "Campo obrigatório",
-    "erroEmail": "Email inválido"
+    "erroEmail": "Email inválido",
+    "botaoEnviar": "Enviar"
   },
   "footer": {
     "sedeNacional": "Sede Nacional",
