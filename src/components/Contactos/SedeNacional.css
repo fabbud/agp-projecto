@@ -1,5 +1,4 @@
 .SedeNacional {
-  /* margin-top: 10px; */
   background-color: #1AA3DB;
   display: flex;
   flex-direction: row;
@@ -54,5 +53,9 @@
   .SedeNacional {
     flex-direction: column;
     align-items: center;
+  }
+  .contactos-icon {
+    width: 35px;
+    height: 35px;
   }
 }

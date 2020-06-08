@@ -42,8 +42,7 @@ const QueresSerGuia = () => {
             type="email"
             name="email"
             className="form-control"
-            ref={register({
-              required: `*${t('contactosForm.campoObrigatorio')}`, minLeght: 2 })}
+            ref={register({ required: `*${t('contactosForm.campoObrigatorio')}`, minLeght: 2 })}
           />
           {errors.email && <div className="form-error">{errors.email.message}</div>}
           <div className="guia-label">Mensagem</div>
