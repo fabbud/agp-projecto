@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <Suspense fallback={null}>
         <Header />
-        <Contactos />
+        <RamosDirigente />
         <Footer />
       </Suspense>
     </div>

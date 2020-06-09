@@ -10,7 +10,7 @@ import dirigenteBanner from '../../assets/images/RamosDirigente/Banner_Dirigente
 
 function RamosDirigente() {
   const { t } = useTranslation();
-  const [branchName, setBranchName] = useState('avezinha');
+  const [branchName, setBranchName] = useState('aventura');
   const [branchBanner, setBranchBanner] = useState(avezinhaBanner);
   const [buttonBorder, setButtonBorder] = useState('blue-border');
 
