@@ -3,18 +3,21 @@ import './QueresSerGuia.css';
 import { useTranslation } from 'react-i18next';
 import ReactHtmlParser from 'react-html-parser';
 import { useForm } from 'react-hook-form';
+import dadosPessoaisPDF from '../../assets/pdfs/Política_de_Dados_Pessoais.pdf';
 
 const QueresSerGuia = () => {
   const { t } = useTranslation();
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (data) => {
+    // Send data to email a.g.p@netcabo.pt
     console.log(data);
   };
 
   return (
     <div className="QueresSerGuia">
       <div className="guia-text-section">
+        {/* Image missing, ask AGP */}
         {/* <div><img src="" alt="" /></div> */}
         <div className="guia-title">{t('contactosForm.queresSerGuiaTexto')}</div>
         <div className="guia-text">{t('contactosForm.maisInformacoesTexto')}</div>
@@ -55,6 +58,8 @@ const QueresSerGuia = () => {
           />
           {errors.mensagem && <div className="message-error">{errors.mensagem.message}</div>}
           <div className="recolha-dados-text">{ReactHtmlParser(t('contactosForm.recolhaDadosTexto'))}</div>
+          {/* If  we put the <a href> inside the translator it doesnt work */}
+          <a href={dadosPessoaisPDF} target="_blank" rel="noopener noreferrer">Política de Dados Pessoais</a>
           <div className="guia-button-section">
             <button className="guia-form-button" type="submit">{t('contactosForm.botaoEnviar')}</button>
           </div>
