@@ -9,7 +9,7 @@ const Contactos = () => {
   useEffect(() => {
     // Get click value from the url and showSedeNaciona
     const urlClick = 'sede';
-    if (urlClick !== 'sede') {
+    if (urlClick !== 'guia') {
       setShowSedeNacional(true);
     } else {
       setShowSedeNacional(false);
