@@ -1,5 +1,5 @@
 .AssociacaoMundial {
-  margin-top: 110px;
+  margin-top: 160px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -7,7 +7,6 @@
 }
 
 .world-girls-banner {
-  margin-top: 50px;
   background-image: url('../../assets/images/AssociacaoMundial/Associação_Mundial.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -176,8 +175,6 @@
 
 .guia-button {
   border-style: none;
-  background-color: #154A7F;
-  color: white;
   border-radius: 50px;
   font-size: 20px;
   padding: 6px 12px;
@@ -187,6 +184,12 @@
 .guia-button:hover {
   font-weight: 700;
 }
+
+.associacao-button {
+  background-color: #154A7F;
+  color: white
+}
+
 
 @media(max-width: 768px) {
   .world-logo {
