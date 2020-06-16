@@ -1,17 +1,19 @@
 import React from 'react';
 import './QueresSerGuia.css';
+import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import ReactHtmlParser from 'react-html-parser';
-import { useForm } from 'react-hook-form';
+import axios from 'axios';
 import dadosPessoaisPDF from '../../assets/pdfs/Política_de_Dados_Pessoais.pdf';
 
 const QueresSerGuia = () => {
   const { t } = useTranslation();
   const { register, handleSubmit, errors } = useForm();
 
+  // Form fields to be sent to AGPemail: a.g.p@netcabo.pt
   const onSubmit = (data) => {
-    // Send data to email a.g.p@netcabo.pt
-    console.log(data);
+    axios.post('/email', data)
+      .then((response) => console.log(response.data));
   };
 
   return (
