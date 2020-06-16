@@ -20,7 +20,7 @@ import VCV from '../assets/Guias_Portugal_Vozes_Contra_Violência.jpg'
 function AssociacaoFront() {
     return (
         <div className="Body">
-            <div className="fotoAssociacao">jj</div>
+            <div className="fotoAssociacao"></div>
             <div className="associacao">
                 <h1>A ASSOCIAÇÃO</h1>
                 <p>A Associação Guias de Portugal <strong>(AGP)</strong> é uma associação de utilidade pública,  assente no voluntariado e que promove o Guidismo – movimento de educação não formal, baseado no <strong>método</strong> criado por Robert Baden-Powell.</p>
@@ -162,7 +162,9 @@ function AssociacaoFront() {
                 </div>
                 <img src={VCV} alt="Guias de Portugal Vozes Contra a Violência" />
             </span>
-            <button>Queres ser Guia?</button>
+            <div classname="button-section">
+            <button type="submit" className="guia-button associacao-button">Queres ser Guia ?</button>
+            </div>
         </div >
     )
 

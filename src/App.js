@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import './App.css';
-
 import AssociacaoFront from './components/AssociacaoFront';
 
 import './i18n';
@@ -13,7 +12,7 @@ import Footer from './components/Footer/Footer';
 function App() {
   return (
     <div className="App">
-
+      <AssociacaoFront />
       <Suspense fallback={null}>
         <Header />
         {/* <PalavraAosPais /> */}
