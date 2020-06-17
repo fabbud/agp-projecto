@@ -12,7 +12,7 @@ import './Header.css';
 const Header = () => {
   const { t } = useTranslation();
 
-
+  return (
     <div>
       <Navbar fixed="top" expand="lg" className="navbar">
         <Link to="/"><Navbar.Brand className="header-logo" /></Link>
