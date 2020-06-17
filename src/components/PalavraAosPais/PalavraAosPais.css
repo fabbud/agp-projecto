@@ -26,4 +26,114 @@
     font-size: 20px;
     display: block;
     text-align: center;
+    margin-bottom: 40px;
 }
+.TextH2 {
+    color: #1AA3DB !important;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.Ajudamos{
+    display:flex;
+    flex-direction: row-reverse;
+    min-height: 400px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.AjudamosImg{
+    background-position: 50% 20%;
+    width: 642px;
+    height: 496px;
+}
+
+.Ritmo{
+    display:flex;
+    flex-direction: row;
+    min-height: 400px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.RitmoImg{
+    background-position: 50% 20%;
+    width: 642px;
+    height: 496px;
+}
+
+.Potencial{
+    display:flex;
+    flex-direction: row-reverse;
+    min-height: 400px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.PotencialImg{
+    background-position: 50% 20%;
+    width: 642px;
+    height: 496px;
+}
+
+.Cidada{
+    display:flex;
+    flex-direction: row;
+    min-height: 400px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.CidadaImg{
+    background-position: 50% 20%;
+    width: 642px;
+    height: 496px;
+}
+
+.Responsaveis{
+    display:flex;
+    flex-direction: row-reverse;
+    min-height: 400px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ResponsaveisImg{
+    background-position: 50% 20%;
+    width: 642px;
+    height: 496px;
+}
+
+.Acampamento{
+    display:flex;
+    flex-direction: row;
+    min-height: 400px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.AcampamentoImg{
+    background-position: 50% 20%;
+    width: 642px;
+    height: 998px;
+}
+.button-section {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+}
+.guia-button {
+    border-style: none;
+    border-radius: 50px;
+    font-size: 20px;
+    padding: 6px 12px;
+    outline: none !important;
+    background-color: #154A7F;
+    color: white
+}
+  
+.guia-button:hover {
+    font-weight: 700;
+}
+  
