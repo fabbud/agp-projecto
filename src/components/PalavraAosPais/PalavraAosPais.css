@@ -1,13 +1,11 @@
 .PalavraAosPais {
     background-color: transparent;
-    margin-top: 50px;
     padding-bottom: 0;
     font-family: 'Poppins', sans-serif !important;
 }
 
 .missaoBanner {
     width: 100%;
-    margin-top: 50px;
     display: inline-flex;
     height: 400px;
 }
@@ -15,13 +13,13 @@
 .FilhaGuia {
     color: #1AA3DB;
     font-size: 25px;
-    margin-top: 70px;
+    padding-top: 70px;
     font-weight: 500;
     display: block;
     text-align: center;
 }
 
-.FilhaGuiatext {
+.FilhaGuiaText {
     color: #004982;
     font-size: 20px;
     display: block;
@@ -49,6 +47,12 @@
     height: 496px;
 }
 
+.TextPalavraAosPais{
+    padding: 30px;
+    padding-left: 80px;
+    padding-right: 60px;
+}
+
 .Ritmo{
     display:flex;
     flex-direction: row;
@@ -62,6 +66,7 @@
     width: 642px;
     height: 496px;
 }
+
 
 .Potencial{
     display:flex;
@@ -121,7 +126,8 @@
 .button-section {
     display: flex;
     justify-content: center;
-    margin: 50px auto;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 .guia-button {
     border-style: none;
@@ -135,5 +141,66 @@
   
 .guia-button:hover {
     font-weight: 700;
+}
+
+.TenhoFilhaGUia{
+    background-color: #f6f6f6;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.FilhaGuia2 {
+    color: #1AA3DB;
+    font-size: 30px;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.FilhaGuiaText2 {
+    color: #004982;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.FilhaGuiaCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.CardFilhaGuia{
+    border: transparent !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,.075);
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-bottom: 30px;
+    height: 400px;
+}
+
+.TextFilhaGuiaTestimony{
+    font-family: 'Poppins';
+    font-style: italic;
+    font-size: 15px;
+    margin-bottom: 15px;
+
+}
+
+.TextFilhaGuiaNameParents{
+    font-family: 'Poppins';
+    font-weight: bolder;
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.TextCardFilhaGuiaRelatives{
+    font-family: 'Poppins';
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #3b99e0;;
 }
   
