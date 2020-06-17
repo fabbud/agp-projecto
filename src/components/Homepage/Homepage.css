@@ -1,0 +1,9 @@
+.Homepage {
+  margin-top: 160px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
