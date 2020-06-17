@@ -7,7 +7,8 @@ const Contactos = () => {
   const [showSedeNacional, setShowSedeNacional] = useState(false);
 
   useEffect(() => {
-    // Get click value from the url and showSedeNaciona
+    window.scrollTo(0, 0);
+    // Get click value from the url and showSedeNacional on/off
     const urlClick = 'sede';
     if (urlClick !== 'guia') {
       setShowSedeNacional(true);

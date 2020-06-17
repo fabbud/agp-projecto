@@ -1,5 +1,6 @@
 import React from 'react';
 import './AssociacaoMundial.css';
+import { Link } from 'react-router-dom';
 import worldGuidesLogo from '../../assets/images/AssociacaoMundial/WAGGGS_official_logo_BLUE_ENG.jpg';
 import worldMap from '../../assets/images/AssociacaoMundial/mapawagggs.png';
 import worldPenny from '../../assets/images/AssociacaoMundial/tostao_mundial2.png';
@@ -65,11 +66,11 @@ const AssociacaoMundial = () => {
               embarcando numa jornada de descoberta pessoal através da dimensão internacional.
             </div>
             <ul>
-              <li><a href="https://www.wagggs.org/en/our-world/world-centres/sangam/">Sangam, Índia</a></li>
-              <li><a href="https://www.wagggs.org/en/our-world/world-centres/our-chalet">Notre Chalet, Suíça</a></li>
-              <li><a href="https://www.wagggs.org/en/our-world/world-centres/pax-lodge/">Pax Lodge, Reino Unido</a></li>
-              <li><a href="https://www.wagggs.org/en/our-world/world-centres/our-cabana/">Nuestra Cabaña, México</a></li>
-              <li><a href="https://www.wagggs.org/en/our-world/world-centres/kusafiri/">Kusafiri, em África</a></li>
+              <li><a href="https://www.wagggs.org/en/our-world/world-centres/sangam/" target="_blank" rel="noopener noreferrer">Sangam, Índia</a></li>
+              <li><a href="https://www.wagggs.org/en/our-world/world-centres/our-chalet" target="_blank" rel="noopener noreferrer">Notre Chalet, Suíça</a></li>
+              <li><a href="https://www.wagggs.org/en/our-world/world-centres/pax-lodge/" target="_blank" rel="noopener noreferrer">Pax Lodge, Reino Unido</a></li>
+              <li><a href="https://www.wagggs.org/en/our-world/world-centres/our-cabana/" target="_blank" rel="noopener noreferrer">Nuestra Cabaña, México</a></li>
+              <li><a href="https://www.wagggs.org/en/our-world/world-centres/kusafiri/" target="_blank" rel="noopener noreferrer">Kusafiri, em África</a></li>
             </ul>
           </div>
         </div>
@@ -116,7 +117,7 @@ const AssociacaoMundial = () => {
               </p>
               <p>
                 Mais informações sobre o Dia Mundial do Pensamento&nbsp;
-                <a href="www.worldthinkingday.org ">aqui</a>
+                <a href="https://www.worldthinkingday.org" target="_blank" rel="noopener noreferrer">aqui</a>
                 &nbsp;.
               </p>
             </div>
@@ -136,7 +137,7 @@ const AssociacaoMundial = () => {
                 Com o mote &quot;A penny for your thoughts&quot; (Um tostão pelos teus
                 pensamentos) foi assim criado o Fundo do Dia do Pensamento,
                 também designado por&nbsp;
-                <a href="https://www.wagggs.org/en/what-we-do/world-thinking-day/world-thinking-day-fund/">Tostão Mundial</a>
+                <a href="https://www.wagggs.org/en/what-we-do/world-thinking-day/world-thinking-day-fund/" target="_blank" rel="noopener noreferrer">Tostão Mundial</a>
                 , com o objetivo de apoiar a promoção do Guidismo no mundo.
               </p>
               <p>
@@ -153,7 +154,7 @@ const AssociacaoMundial = () => {
         </div>
       </div>
       <div className="button-section">
-        <button type="submit" className="guia-button associacao-button">Queres ser Guia ?</button>
+        <Link to="/contactos"><button type="submit" className="ser-guia-button associacao-button">Queres ser Guia ?</button></Link>
       </div>
     </div>
   );

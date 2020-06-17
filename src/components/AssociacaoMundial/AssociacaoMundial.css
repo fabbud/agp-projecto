@@ -173,7 +173,7 @@
   margin: 50px auto;
 }
 
-.guia-button {
+.ser-guia-button {
   border-style: none;
   border-radius: 50px;
   font-size: 20px;
@@ -181,7 +181,7 @@
   outline: none !important;
 }
 
-.guia-button:hover {
+.ser-guia-button:hover {
   font-weight: 700;
 }
 
