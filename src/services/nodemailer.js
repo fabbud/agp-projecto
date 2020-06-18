@@ -1,31 +1,31 @@
 const nodemailer = require('nodemailer');
 
-// Create the email transport method
+// Create the email transport method with default values
 const smtpTransporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'Gmail',
   auth: {
-    user: 'wildcodesousa@gmail.com',
-    pass: 'WildTrabalho1',
+    user: 'agp.formulario.contacto@gmail.com',
+    pass: 'Projecto03Contactos',
   },
 });
 
 const sendNodemailer = (data) => {
-  console.log('data nodemailder', data);
-
+  // Change 'TO' to AGPemail: a.g.p@netcabo.pt
+  // Confirm body and subject texts
   const mailOptions = {
-    from: `${data.nome} <${data.email}>`,
-    to: 'wildcodesousa@gmail.com',
-    subject: `${data.assunto}`,
+    from: `${data.nome} <agp.formulario.contacto@gmail.com>`,
+    to: 'isadorahaas@gmail.com',
+    replyTo: `${data.email}`,
+    subject: `Contactos Site - ${data.assunto}`,
     text: `${data.mensagem}`,
-    html: '<b>Hello world ✔</b>',
+    html: `<p><b>Mensagem recebida através do formulário do site da AGP, informações abaixo.</b></p><div>Enviado por: ${data.nome}</div><div>Assunto: ${data.assunto}</div><div>Email: ${data.email}</div><div>Mensagem: ${data.mensagem}</div>`,
   };
 
   smtpTransporter.sendMail(mailOptions, (error, response) => {
-    console.log("erroooos");
     if (error) {
       console.log(error);
     } else {
-      console.log(`Message sent: ${response.message}`);
+      console.log(`Message sent!`);
     }
     smtpTransporter.close();
   });

@@ -24,7 +24,7 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <NavDropdown title={(t('header.sobre'))} id="basic-nav-dropdown" className="nav-header">
-              <NavDropdown.Item className="dropdown-item"><Link to="/sobre/associacao">{t('header.associacao')}</Link></NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item"><Link to="/associacao">{t('header.associacao')}</Link></NavDropdown.Item>
               <NavDropdown.Item className="dropdown-item">{t('header.historiaGuidismo')}</NavDropdown.Item>
               <NavDropdown.Item className="dropdown-item" href={EstatutosPDF} target="_blank">{t('header.estatutos')}</NavDropdown.Item>
               <NavDropdown.Item className="dropdown-item"><Link to="/sobre/associacao-mundial">{t('header.associacaoMundial')}</Link></NavDropdown.Item>
@@ -54,8 +54,8 @@ const Header = () => {
               <NavDropdown.Item className="dropdown-item">{t('header.diversos')}</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title={t('header.contactos')} id="basic-nav-dropdown" className="nav-header">
-              <NavDropdown.Item className="dropdown-item"><Link to="/contactos">{t('header.queresSerGuia')}</Link></NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item"><Link to="/contactos">{t('header.sedeNacional')}</Link></NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item"><Link to="/contactos/formulário">{t('header.queresSerGuia')}</Link></NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item"><Link to="/contactos/sede">{t('header.sedeNacional')}</Link></NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <div className="search-languages">

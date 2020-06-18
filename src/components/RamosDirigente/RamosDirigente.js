@@ -22,7 +22,7 @@ function RamosDirigente(props) {
     getBranch = 'dirigente';
   }
 
-  // Define component to show
+  // Define page to show
   const defineRamo = () => {
     if (getBranch !== branchName) {
       window.scrollTo(0, 0);
@@ -45,12 +45,6 @@ function RamosDirigente(props) {
     }
   };
 
-  // ComponentDidMount
-  useEffect(() => {
-    defineRamo();
-  }, []);
-
-  // Render
   useEffect(() => {
     defineRamo();
   });
@@ -66,7 +60,10 @@ function RamosDirigente(props) {
         <img src={branchBanner} className="banner-sentence" alt="Frase do Ramo" />
       </div>
       <div className={`ramos-section ${branchName}`}>
-        <div className="ramos-text">{ReactHtmlParser(t(`pedagogia.${branchName}.text`))}</div>
+        <div className="ramos-text">
+          {ReactHtmlParser(t(`pedagogia.${branchName}.text`))}
+          {/* <Link to="/pedagogia/ramos/aventura">{t(`pedagogia.${branchName}.nextPage`)}</Link> */}
+        </div>
         <div className="ramos-buttons-section">
           { branchName !== 'dirigente'
             ? (
@@ -76,7 +73,7 @@ function RamosDirigente(props) {
             )
             : ''}
           <div>
-            <Link to="/contactos"><button type="submit" className={`ramos-button ${branchName} ${buttonBorder}`}>{t('buttons.queresSerGuia')}</button></Link>
+            <Link to="/contactos/formulário"><button type="submit" className={`ramos-button ${branchName} ${buttonBorder}`}>{t('buttons.queresSerGuia')}</button></Link>
           </div>
         </div>
       </div>

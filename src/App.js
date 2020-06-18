@@ -22,18 +22,18 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route exact path="/sobre/associacao" component={AssociacaoFront} />
-          <Route exact path="/sobre/associacao-mundial" component={AssociacaoMundial} />
-          <Route exact path="/pedagogia/ramos/:tipo" component={RamosDirigente} />
-          <Route exact path="/pedagogia/dirigente" component={RamosDirigente} />
-          <Route exact path="/pedagogia/palavra-pais" component={PalavraAosPais} />
-          <Route exact path="/publicações/recursos/ligações-úteis" component={LigacoesUteis} />
-          <Route exact path="/contactos" component={Contactos} />
-          <Route exact path="/publicações/noticias" component={Noticias} />
-        </Switch>
         <Suspense fallback={null}>
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route exact path="/associacao" component={AssociacaoFront} />
+            <Route exact path="/sobre/associacao-mundial" component={AssociacaoMundial} />
+            <Route exact path="/pedagogia/ramos/:tipo" component={RamosDirigente} />
+            <Route exact path="/pedagogia/dirigente" component={RamosDirigente} />
+            <Route exact path="/pedagogia/palavra-pais" component={PalavraAosPais} />
+            <Route exact path="/publicações/recursos/ligações-úteis" component={LigacoesUteis} />
+            <Route exact path="/contactos/:modo" component={Contactos} />
+            <Route exact path="/publicações/noticias" component={Noticias} />
+          </Switch>
           <Header />
           <Footer />
         </Suspense>
