@@ -8,30 +8,24 @@
     color: #1AA3DB;
     font-size: 32px;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     font-weight: 500;
     display: block;
     text-align: center;
 }
 
-.CardsNoticiasFirstLine {
+.MapNoticias {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 70px;
 }
 
-.CardsNoticiasSecondLine {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
 
 .CardNoticias{
     border: transparent !important;
     margin-bottom: 70px;
+    margin: 40px;
 }
 
 .TitleCardNoticias{
