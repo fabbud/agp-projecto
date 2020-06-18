@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import './App.css';
 
-import AssociacaoFront from './components/AssociacaoFront';
+import AssociacaoFront from './components/Associação/AssociacaoFront';
 
 
 import './i18n';
@@ -14,6 +14,8 @@ import PalavraAosPais from './components/PalavraAosPais/PalavraAosPais';
 //import LigacoesUteis from './components/LigacoesUteis/LigacoesUteis';
 import Footer from './components/Footer/Footer';
 //import Contactos from './components/Contactos/Contactos';
+import LojaMaster from './components/Loja/LojaMaster'
+
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <Suspense fallback={null}>
         <Header />
         <PalavraAosPais />
+        <AssociacaoFront />
+        <LojaMaster />
         <Footer />
       </Suspense>
     </div>

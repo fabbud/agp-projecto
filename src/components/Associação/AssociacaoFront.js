@@ -1,19 +1,21 @@
 import React from 'react';
 import './AssociacaoFront.css'
-import Associacao from '../assets/Guias_Portugal_Associacao.jpg'
-import Anos20 from '../assets/Guias_Portugal_Anos_20.jpg'
-import Anos30 from '../assets/Guias_Portugal_Anos_30.jpg'
-import VisitaBPOlaveMadeira from '../assets/Guias_Portugal_Visita_BP_Olave_Madeira.jpg'
-import VisitaOlave from '../assets/Guias_Portugal_vista_Olave_Portugal.jpg'
-import Anos60 from '../assets/Guias_Portugal_Anos_60.jpg'
-import Anos70 from '../assets/Guias_Portugal_Anos_70.jpg'
-import Anos80 from '../assets/Guias_Portugal_Anos_80.jpg'
-import Anos90 from '../assets/Guias_Portugal_Anos_90.jpg'
-import Anos90_V2 from '../assets/Guias_Portugal_Anos_90_V2.jpg'
-import Anos2000 from '../assets/Guias_Portugal_Anos_2000.jpg'
-import Anos2010 from '../assets/Guias_Portugal_Anos_2010.jpg'
-import Actualidade from '../assets/Guias_Portugal_Atualidade.jpg'
-import VCV from '../assets/Guias_Portugal_Vozes_Contra_Violência.jpg'
+//import Associacao from '../../assets/images/Associação/Guias_Portugal_Associacao.jpg'
+import Anos20 from '../../assets/images/Associação/Guias_Portugal_Anos_20.jpg'
+import Anos30 from '../../assets/images/Associação/Guias_Portugal_Anos_30.jpg'
+import VisitaBPOlaveMadeira from '../../assets/images/Associação/Guias_Portugal_Visita_BP_Olave_Madeira.jpg'
+import VisitaOlave from '../../assets/images/Associação/Guias_Portugal_vista_Olave_Portugal.jpg'
+import Anos60 from '../../assets/images/Associação/Guias_Portugal_Anos_60.jpg'
+import Anos70 from '../../assets/images/Associação/Guias_Portugal_Anos_70.jpg'
+import Anos80 from '../../assets/images/Associação/Guias_Portugal_Anos_80.jpg'
+import Anos90 from '../../assets/images/Associação/Guias_Portugal_Anos_90.jpg'
+import Anos90_V2 from '../../assets/images/Associação/Guias_Portugal_Anos_90_V2.jpg'
+import Anos2000 from '../../assets/images/Associação/Guias_Portugal_Anos_2000.jpg'
+import Anos2010 from '../../assets/images/Associação/Guias_Portugal_Anos_2010.jpg'
+import Actualidade from '../../assets/images/Associação/Guias_Portugal_Atualidade.jpg'
+import VCV from '../../assets/images/Associação/Guias_Portugal_Vozes_Contra_Violência.jpg'
+
+
 
 
 
@@ -163,7 +165,7 @@ function AssociacaoFront() {
                 <img src={VCV} alt="Guias de Portugal Vozes Contra a Violência" />
             </span>
             <div classname="button-section">
-            <button type="submit" className="guia-button associacao-button">Queres ser Guia ?</button>
+                <button type="submit" className="guia-button associacao-button">Queres ser Guia ?</button>
             </div>
         </div >
     )

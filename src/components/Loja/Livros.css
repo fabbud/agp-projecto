@@ -1,0 +1,13 @@
+.loja{
+    display: flex;
+    flex-direction: row;
+    display: flex;
+}
+
+.artigosLoja{
+    width:20%;
+}
+
+.descriçãoArtigos{
+    font-family: Montserrat,sans-serif;
+}
