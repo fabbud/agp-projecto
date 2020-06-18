@@ -5,11 +5,11 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+
 import './i18n';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
 import Homepage from './components/Homepage/Homepage';
-import AssociacaoFront from './components/AssociacaoFront';
 import RamosDirigente from './components/RamosDirigente/RamosDirigente';
 import AssociacaoMundial from './components/AssociacaoMundial/AssociacaoMundial';
 import PalavraAosPais from './components/PalavraAosPais/PalavraAosPais';
@@ -18,6 +18,7 @@ import LigacoesUteis from './components/LigacoesUteis/LigacoesUteis';
 import Contactos from './components/Contactos/Contactos';
 import Footer from './components/Footer/Footer';
 
+
 function App() {
   return (
     <Router>
@@ -25,7 +26,6 @@ function App() {
         <Suspense fallback={null}>
           <Switch>
             <Route exact path="/" component={Homepage} />
-            <Route exact path="/associacao" component={AssociacaoFront} />
             <Route exact path="/sobre/associacao-mundial" component={AssociacaoMundial} />
             <Route exact path="/pedagogia/ramos/:tipo" component={RamosDirigente} />
             <Route exact path="/pedagogia/dirigente" component={RamosDirigente} />
@@ -39,6 +39,7 @@ function App() {
         </Suspense>
       </div>
     </Router>
+
   );
 }
 

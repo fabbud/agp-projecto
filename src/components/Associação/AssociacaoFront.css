@@ -8,7 +8,7 @@
 width: 100%;
 height:300px;
 background-size: cover;
-background-image: url('../assets/Guias_Portugal_Associacao.jpg'); 
+background-image: url('../../assets/images/Associação/Guias_Portugal_Associacao.jpg'); 
 background-repeat: no-repeat;
 background-position: center;
 }   
