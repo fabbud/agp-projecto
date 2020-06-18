@@ -5,6 +5,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+
 import './i18n';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
@@ -17,6 +18,7 @@ import Noticias from './components/Noticias/Noticias';
 import LigacoesUteis from './components/LigacoesUteis/LigacoesUteis';
 import Contactos from './components/Contactos/Contactos';
 import Footer from './components/Footer/Footer';
+
 
 function App() {
   return (
@@ -38,6 +40,7 @@ function App() {
         </Suspense>
       </div>
     </Router>
+
   );
 }
 
