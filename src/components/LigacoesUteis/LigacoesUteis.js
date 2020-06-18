@@ -1,6 +1,6 @@
-import React from 'react';
-import './LigacoesUteis.css';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import './LigacoesUteis.css';
 
 const LigacoesUteis = () => {
   const { t } = useTranslation();
@@ -70,6 +70,10 @@ const LigacoesUteis = () => {
       website: 'https://www.dgs.pt/',
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="LigacoesUteis">
