@@ -110,5 +110,9 @@
     "legal2": "Termos de Uso",
     "legal3": "Política de Privacidade",
     "dados": "Política de Dados Pessoais"
+  },
+  "buttons": {
+    "queresSerGuia": "Queres ser Guia ?",
+    "palavraAosPais": "Palavra aos Pais"
   }
 }

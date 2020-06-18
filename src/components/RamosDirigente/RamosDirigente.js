@@ -8,46 +8,52 @@ import avezinhaBanner from '../../assets/images/RamosDirigente/Banner_RamoAvezin
 import aventuraBanner from '../../assets/images/RamosDirigente/Banner_RamoAventura.png';
 import caravelaBanner from '../../assets/images/RamosDirigente/Banner_RamoCaravela.png';
 import dirigenteBanner from '../../assets/images/RamosDirigente/Banner_Dirigente.png';
-import moinhoBanner from '../../assets/images/RamosDirigente/Banner_Dirigente.png';
-
-const banner = require('../../assets/images/RamosDirigente/Banner_RamoAvezinha.png');
+// import moinhoBanner from '../../assets/images/RamosDirigente/Banner_Dirigente.png';
 
 function RamosDirigente(props) {
   const { t } = useTranslation();
-  const [branchName, setBranchName] = useState('avezinha');
-  const [branchBanner, setBranchBanner] = useState(avezinhaBanner);
-  const [buttonBorder, setButtonBorder] = useState('blue-border');
+  const [branchName, setBranchName] = useState('');
+  const [buttonBorder, setButtonBorder] = useState('');
+  const [branchBanner, setBranchBanner] = useState('');
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    const { match } = props;
-    const getBranch = match.params.tipo;
-    console.log("update", getBranch);
+  const { match, location } = props;
+  let getBranch = match.params.tipo;
+  if (location.pathname.includes('dirigente')) {
+    getBranch = 'dirigente';
+  }
 
-    if (getBranch !== 'avezinha') {
+  // Define component to show
+  const defineRamo = () => {
+    if (getBranch !== branchName) {
+      window.scrollTo(0, 0);
+    }
+    setBranchName(getBranch);
+    if (getBranch === 'avezinha') {
+      setButtonBorder('blue-border');
+      setBranchBanner(`${avezinhaBanner}`);
+    } else {
       setButtonBorder('white-border');
-      setBranchName(getBranch);
+      if (getBranch === 'aventura') {
+        setBranchBanner(`${aventuraBanner}`);
+      } else if (getBranch === 'caravela') {
+        setBranchBanner(`${caravelaBanner}`);
+      } else if (getBranch === 'moinho') {
+        setBranchBanner(`${avezinhaBanner}`);
+      } else if (getBranch === 'dirigente') {
+        setBranchBanner(`${dirigenteBanner}`);
+      }
     }
+  };
 
-    if (getBranch === 'aventura') {
-      setBranchBanner(aventuraBanner);
-    } else if (getBranch === 'moinho') {
-      setBranchBanner(moinhoBanner);
-    } else if (getBranch === 'caravela') {
-      setBranchBanner(caravelaBanner);
-    }
-
-    console.log(branchName);
-    console.log(branchBanner);
-  }, [branchName, buttonBorder, branchBanner]);
-
+  // ComponentDidMount
   useEffect(() => {
-    console.log("render", branchName);
-  });
-
-  useEffect(() => {
-    console.log("mount", branchName);
+    defineRamo();
   }, []);
+
+  // Render
+  useEffect(() => {
+    defineRamo();
+  });
 
   return (
     <div className="RamosDirigente">
@@ -62,11 +68,15 @@ function RamosDirigente(props) {
       <div className={`ramos-section ${branchName}`}>
         <div className="ramos-text">{ReactHtmlParser(t(`pedagogia.${branchName}.text`))}</div>
         <div className="ramos-buttons-section">
+          { branchName !== 'dirigente'
+            ? (
+              <div>
+                <Link to="/pedagogia/palavra-pais"><button type="submit" className={`ramos-button ${branchName} ${buttonBorder}`}>{t('buttons.palavraAosPais')}</button></Link>
+              </div>
+            )
+            : ''}
           <div>
-            <Link to="/palavra-pais"><button type="submit" className={`ramos-button ${branchName} ${buttonBorder}`}>Palavra aos Pais</button></Link>
-          </div>
-          <div>
-            <Link to="/contactos"><button type="submit" className={`ramos-button ${branchName} ${buttonBorder}`}>Queres ser Guia ?</button></Link>
+            <Link to="/contactos"><button type="submit" className={`ramos-button ${branchName} ${buttonBorder}`}>{t('buttons.queresSerGuia')}</button></Link>
           </div>
         </div>
       </div>
@@ -76,6 +86,7 @@ function RamosDirigente(props) {
 
 RamosDirigente.propTypes = {
   match: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
 };
 
 export default RamosDirigente;

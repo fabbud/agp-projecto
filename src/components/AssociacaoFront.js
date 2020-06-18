@@ -162,7 +162,7 @@ function AssociacaoFront() {
                 </div>
                 <img src={VCV} alt="Guias de Portugal Vozes Contra a Violência" />
             </span>
-            <div classname="button-section">
+            <div classame="button-section">
             <button type="submit" className="guia-button associacao-button">Queres ser Guia ?</button>
             </div>
         </div >

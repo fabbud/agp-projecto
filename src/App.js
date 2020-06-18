@@ -30,7 +30,7 @@ function App() {
           <Route exact path="/pedagogia/dirigente" component={RamosDirigente} />
           <Route exact path="/pedagogia/palavra-pais" component={PalavraAosPais} />
           <Route exact path="/publicações/recursos/ligações-úteis" component={LigacoesUteis} />
-          <Route exact path="/contactos/:modo" component={Contactos} />
+          <Route exact path="/contactos" component={Contactos} />
           <Route exact path="/publicações/noticias" component={Noticias} />
         </Switch>
         <Suspense fallback={null}>
