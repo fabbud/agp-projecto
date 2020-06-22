@@ -57,16 +57,29 @@
 }
 
 .home-ramos-card-info:hover {
-  background-color: #FCE614;
-  opacity: 0.5;
+  color: #154A7F;
+  font-weight: 500;
+  display: flex;
+  /* background-color: rgb(252, 230, 20, 0.5) !important; */
 }
 
-.home-ramos-card-text {
-  color: #07416A;
-  text-align: center;
-  line-height: 1.5;
-  font-size: 1rem;
-  font-weight: 400;
+.home-ramos-card-info .home-ramos-card-logo,
+.home-ramos-card-info .home-ramos-card-title,
+.home-ramos-card-info .home-ramos-card-text {
+  display: none;
+}
+
+.home-ramos-card-info:hover .home-ramos-card-logo,
+.home-ramos-card-info:hover .home-ramos-card-title,
+.home-ramos-card-info:hover .home-ramos-card-text {
+  display: flex;
+  line-height: 1.5;  
+  font-size: 18px;
+}
+
+.home-ramos-card-info:hover .home-ramos-card-title {
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .home-ramos-card-logo {
@@ -74,19 +87,22 @@
   height: 50%;
 }
 
-
-/* .aventura {
-  background-color: #277A4A;
+.avezinha-card:hover {
+  background-color: rgba(252, 230, 20, 0.3); 
+  color: #154A7F;
+}
+.aventura-card:hover {
+  background-color: rgba(39, 122, 74, 0.4);
   color: white;
 }
-.caravela {
-  background-color: #D27123;
+.caravela-card:hover {
+  background-color: rgba(210, 113, 35, 0.4);
   color: white;
 }
-.moinho {
-  background-color: #3C3F85;
+.moinho-card:hover {
+  background-color: rgba(60, 63, 133, 0.4);
   color: white;
-} */
+}
 
 .home-ramos-img {
   width: 430px;

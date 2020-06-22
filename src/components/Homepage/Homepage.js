@@ -22,27 +22,41 @@ const Homepage = () => {
             <Link to="/pedagogia/ramos/avezinha">
               <div className="home-ramos-card">
                 <img src={avezinhaFoto} className="home-ramos-img" alt="Ramo Avezinha" />
-                <div className="home-ramos-card-info home-ramos-card-back" />
-                <div className="home-ramos-card-info home-ramos-card-text">
-                  <img src={avezinhaLogo} className="home-ramos-card-logo" alt="Ramo Avezinha Simbolo" />
-                  <div>Ramo Avezinha</div>
-                  <div>6 aos 10 anos</div>
+                <div className="home-ramos-card-info avezinha-card">
+                  <img src={avezinhaLogo} className="home-ramos-card-logo" alt="Ramo Avezinha Símbolo" />
+                  <div className="home-ramos-card-title">Ramo Avezinha</div>
+                  <div className="home-ramos-card-text">6 aos 10 anos</div>
                 </div>
               </div>
             </Link>
-            <Link to="/pedagogia/ramos/avezinha">
+            <Link to="/pedagogia/ramos/aventura">
               <div className="home-ramos-card">
                 <img src={aventuraFoto} className="home-ramos-img" alt="Ramo Aventura" />
+                <div className="home-ramos-card-info aventura-card">
+                  <img src={aventuraLogo} className="home-ramos-card-logo" alt="Ramo Aventura Símbolo" />
+                  <div className="home-ramos-card-title">Ramo Aventura</div>
+                  <div className="home-ramos-card-text">10 aos 14 anos</div>
+                </div>
               </div>
             </Link>
-            <Link to="/pedagogia/ramos/avezinha">
+            <Link to="/pedagogia/ramos/caravela">
               <div className="home-ramos-card">
                 <img src={caravelaFoto} className="home-ramos-img" alt="Ramo Caravela" />
+                <div className="home-ramos-card-info caravela-card">
+                  <img src={caravelaLogo} className="home-ramos-card-logo" alt="Ramo Caravela Símbolo" />
+                  <div className="home-ramos-card-title">Ramo Caravela</div>
+                  <div className="home-ramos-card-text">14 aos 17 anos</div>
+                </div>
               </div>
             </Link>
-            <Link to="/pedagogia/ramos/avezinha">
+            <Link to="/pedagogia/ramos/moinho">
               <div className="home-ramos-card">
                 <img src={moinhoFoto} className="home-ramos-img" alt="Ramo Moinho" />
+                <div className="home-ramos-card-info moinho-card">
+                  <img src={caravelaLogo} className="home-ramos-card-logo" alt="Ramo Moinho Símbolo" />
+                  <div className="home-ramos-card-title">Ramo Moinho</div>
+                  <div className="home-ramos-card-text">17 aos 21 anos</div>
+                </div>
               </div>
             </Link>
           </div>
