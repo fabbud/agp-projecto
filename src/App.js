@@ -17,6 +17,7 @@ import Noticias from './components/Noticias/Noticias';
 import LigacoesUteis from './components/LigacoesUteis/LigacoesUteis';
 import Contactos from './components/Contactos/Contactos';
 import Footer from './components/Footer/Footer';
+import ConteudoNoticia from './components/ConteudoNoticia/ConteudoNotica';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/publicações/recursos/ligações-úteis" component={LigacoesUteis} />
             <Route exact path="/contactos/:modo" component={Contactos} />
             <Route exact path="/publicações/noticias" component={Noticias} />
+            <Route exact path="/publicações/noticias/:id" component={ConteudoNoticia} />
           </Switch>
           <Header />
           <Footer />
