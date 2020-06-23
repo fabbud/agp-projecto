@@ -11,7 +11,7 @@ import './Header.css';
 import EstatutosPDF from '../../assets/pdfs/Estatutos.pdf';
 import RegulamentosPDF from '../../assets/pdfs/Regulamentos_AGP_Março_2020.pdf';
 import LivroEspecialidadesPDF from '../../assets/pdfs/Livro_de_Especialidades.pdf';
-import CartãoAssociadaPDF from '../../assets/pdfs/Cartão_Associada_Protocolos_AGP.pdf';
+import CartãoAssociadaPDF from '../../assets/pdfs/Cartão_de_Associada_Protocolos_AGP.pdf';
 
 const Header = () => {
   const { t } = useTranslation();
@@ -24,7 +24,7 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <NavDropdown title={(t('header.sobre'))} id="basic-nav-dropdown" className="nav-header">
-              <NavDropdown.Item className="dropdown-item"><Link to="/associacao">{t('header.associacao')}</Link></NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item"><Link to="/sobre/associacao">{t('header.associacao')}</Link></NavDropdown.Item>
               <NavDropdown.Item className="dropdown-item">{t('header.historiaGuidismo')}</NavDropdown.Item>
               <NavDropdown.Item className="dropdown-item" href={EstatutosPDF} target="_blank">{t('header.estatutos')}</NavDropdown.Item>
               <NavDropdown.Item className="dropdown-item"><Link to="/sobre/associacao-mundial">{t('header.associacaoMundial')}</Link></NavDropdown.Item>

@@ -8,8 +8,14 @@
   padding-bottom: 100px;
 }
 
+.guia-megafone {
+  width: 60%;
+  height: 60%;
+}
+
 .guia-text-section {
   width: 250px;
+  text-align: center;
 }
 
 .guia-title {
@@ -94,5 +100,9 @@
   }
   .guia-form-section input {
     width: 320px;
+  }
+  .guia-megafone {
+    width: 40%;
+    height: 40%;
   }
 }

@@ -17,6 +17,7 @@ import Noticias from './components/Noticias/Noticias';
 import LigacoesUteis from './components/LigacoesUteis/LigacoesUteis';
 import Contactos from './components/Contactos/Contactos';
 import Footer from './components/Footer/Footer';
+import AssociacaoFront from './components/Associacao/AssociacaoFront';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Suspense fallback={null}>
           <Switch>
             <Route exact path="/" component={Homepage} />
+            <Route exact path="/sobre/associacao" component={AssociacaoFront} />
             <Route exact path="/sobre/associacao-mundial" component={AssociacaoMundial} />
             <Route exact path="/pedagogia/ramos/:tipo" component={RamosDirigente} />
             <Route exact path="/pedagogia/dirigente" component={RamosDirigente} />

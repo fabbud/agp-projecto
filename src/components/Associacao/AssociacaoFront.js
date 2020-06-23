@@ -1,20 +1,19 @@
 import React from 'react';
 import './AssociacaoFront.css';
-// import Associacao from '../../assets/images/Associação/Guias_Portugal_Associacao.jpg'
-import Anos20 from '../../assets/images/Associação/Guias_Portugal_Anos_20.jpg';
-import Anos30 from '../../assets/images/Associação/Guias_Portugal_Anos_30.jpg';
-import VisitaBPOlaveMadeira from '../../assets/images/Associação/Guias_Portugal_Visita_BP_Olave_Madeira.jpg';
-import VisitaOlave from '../../assets/images/Associação/Guias_Portugal_vista_Olave_Portugal.jpg';
-import Anos60 from '../../assets/images/Associação/Guias_Portugal_Anos_60.jpg';
-import Anos70 from '../../assets/images/Associação/Guias_Portugal_Anos_70.jpg';
-import Anos80 from '../../assets/images/Associação/Guias_Portugal_Anos_80.jpg';
-import Anos90 from '../../assets/images/Associação/Guias_Portugal_Anos_90.jpg';
-import Anos90_V2 from '../../assets/images/Associação/Guias_Portugal_Anos_90_V2.jpg';
-import Anos2000 from '../../assets/images/Associação/Guias_Portugal_Anos_2000.jpg';
-import Anos2010 from '../../assets/images/Associação/Guias_Portugal_Anos_2010.jpg';
-import Actualidade from '../../assets/images/Associação/Guias_Portugal_Atualidade.jpg';
-import VCV from '../../assets/images/Associação/Guias_Portugal_Vozes_Contra_Violência.jpg';
-
+// import Associacao from '../../assets/images/Associacao/Guias_Portugal_Associacao.jpg'
+import Anos20 from '../../assets/images/Associacao/Guias_Portugal_Anos_20.jpg';
+import Anos30 from '../../assets/images/Associacao/Guias_Portugal_Anos_30.jpg';
+import VisitaBPOlaveMadeira from '../../assets/images/Associacao/Guias_Portugal_Visita_BP_Olave_Madeira.jpg';
+import VisitaOlave from '../../assets/images/Associacao/Guias_Portugal_vista_Olave_Portugal.jpg';
+import Anos60 from '../../assets/images/Associacao/Guias_Portugal_Anos_60.jpg';
+import Anos70 from '../../assets/images/Associacao/Guias_Portugal_Anos_70.jpg';
+import Anos80 from '../../assets/images/Associacao/Guias_Portugal_Anos_80.jpg';
+import Anos90 from '../../assets/images/Associacao/Guias_Portugal_Anos_90.jpg';
+import Anos90V2 from '../../assets/images/Associacao/Guias_Portugal_Anos_90_V2.jpg';
+import Anos2000 from '../../assets/images/Associacao/Guias_Portugal_Anos_2000.jpg';
+import Anos2010 from '../../assets/images/Associacao/Guias_Portugal_Anos_2010.jpg';
+import Actualidade from '../../assets/images/Associacao/Guias_Portugal_Atualidade.jpg';
+import VCV from '../../assets/images/Associacao/Guias_Portugal_Vozes_Contra_Violência.jpg';
 
 function AssociacaoFront() {
   return (
@@ -24,18 +23,17 @@ function AssociacaoFront() {
         <h1>A ASSOCIAÇÃO</h1>
         <p>
           A Associação Guias de Portugal
-          <strong>(AGP)</strong>
+          <strong> (AGP)</strong>
           {' '}
           é uma associação de utilidade pública,  assente no voluntariado e que promove o Guidismo – movimento de educação não formal, baseado no
-          <strong>método</strong>
+          <strong> método</strong>
           {' '}
           criado por Robert Baden-Powell.
         </p>
-
         <p>
           {' '}
           Tem como
-          <strong>missão</strong>
+          <strong> missão</strong>
           {' '}
           proporcionar às raparigas e jovens mulheres a oportunidade de desenvolverem plenamente o seu potencial como cidadãs universais responsáveis,  através de um
           <strong className="strong"> método </strong>
@@ -227,7 +225,7 @@ function AssociacaoFront() {
           </h3>
           <p>Realiza-se o I Acampamento Nacional de Chefes e Subchefes de Patrulha dos Ramos Aventura e Caravela, em Belmonte. Este acampamento contou também com a presença de Guias de Moçambique e de São Tomé e Príncipe.</p>
         </div>
-        <img src={Anos90_V2} alt="Guias de Portugal anos 90" />
+        <img src={Anos90V2} alt="Guias de Portugal anos 90" />
       </span>
       <span className="fotosHistoriaReverse">
         <div>
