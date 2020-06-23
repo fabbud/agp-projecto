@@ -74,7 +74,13 @@
     border-radius: 30px;
 }
 
+.ButtonCardNoticias a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .ButtonCardNoticias:hover {
     background-color: #154A7F;
-    opacity:0.7;
+    opacity:0.95;
+    font-weight: 700;
 }
