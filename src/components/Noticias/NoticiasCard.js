@@ -3,14 +3,13 @@ import { Card, Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "./Noticias.css";
 import { Link } from "react-router-dom";
-import ConteudoNoticia from "../ConteudoNoticia/ConteudoNotica";
 
 const NoticiasCard = (props) => {
   const { noticia } = props;
   const link = `/publicações/noticias/${noticia.id}`;
   return (
     <div className="CardsNoticias">
-      <Card className="CardNoticias" style={{ width: "300px" }}>
+      <Card className="CardNoticias" style={{ width: '325px' }}>
         <Card.Title className="TitleCardNoticias">{noticia.title}</Card.Title>
         <Card.Img
           className="ImgCardNoticias"
