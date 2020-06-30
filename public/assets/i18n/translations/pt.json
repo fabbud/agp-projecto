@@ -30,6 +30,25 @@
     "queresSerGuia": "Queres ser Guia ?",
     "sedeNacional": "Sede Nacional"
   },
+  "homepage": {
+    "tituloModeloPedagogico": "Modelo Pedagógico",
+    "tituloAvezinha": "Ramo Avezinha",
+    "idadesAvezinha": "6 aos 10 anos",
+    "tituloAventura": "Ramo Aventura",
+    "idadesAventura": "10 aos 14 anos",
+    "tituloCaravela": "Ramo Caravela",
+    "idadesCaravela": "14 aos 17 anos",
+    "tituloMoinho": "Ramo Moinho",
+    "idadesMoinho": "17 aos 21 anos",
+    "tituloPalavraPais": "Palavra Aos Pais",
+    "tituloOjornal": "Jornal &quot;O Trevo&quot;",
+    "tituloNoticia1": "O Trevo também fica em casa",
+    "textoNoticia1": "Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.",
+    "tituloNoticia2": "Dicas para te manteres ligada às tuas amigas guias",
+    "textoNoticia2": "Descobre algumas ideias para pores em prática com a tua Patrulha em... casa!",
+    "tituloNoticia3": "Pandemia por surto de Coronavírus",
+    "textoNoticia3": "Atividades Guidistas presenciais suspensas pela necessidade do isolamento social."
+  },
   "pedagogia": {
     "avezinha": {
       "text": "<p><b>Cor: AMARELO</b>, cor do sol.</p><p><b>Simbologia: AVEZINHA</b>, pequeno pássaro que comandado pelo <b>SONHO</b> ganha asas e aprende a voar.</p><p><b>Estrutura:</b> 4 a 6 Avezinhas formam um <b>NINHO</b> que reunidas com os restantes Ninhos constituem o <b>BANDO</b>.</p><p>É num mundo de sonho que cada criança será convidada a <b>TORNAR-SE AVEZINHA</b>, ganhar asas e aprender a voar. Considerando o imaginário deste Ramo, as Dirigentes são designadas por Águias e Corujas.</p><p>Sair do ovo e aprender a relacionar-se com o seu Ninho, sempre com o apoio da Águia e das Corujas, permitirá que cada Avezinha ganhe as competências e a autonomia necessárias ao seu Primeiro Voo, fazer a sua PROMESSA DE AVEZINHA. Alegre e curiosa, com vontade de crescer forte e saudável, com gosto pela natureza e sempre disposta a ajudar.</p><p>Capaz de pequenos voos a Avezinha ganha <b>ASAS</b> e explora os <b>VERDES</b> do bosque, conhece vários animais e é com eles que aprende novos saberes, que aprende a conhecer as árvores e as plantas, as praias e os rios… Descobre os seus gostos, supera alguns receios e desenvolve os seus dons através da realização de <b>ESPECIALIDADES</b>, até estar pronta para voar mais alto.</p><p>Já mais autónoma, mais capaz de tomar conta de si própria e de trabalhar com os outros, está na altura da Avezinha deixar as suas <b>ASAS</b> cruzarem os <b>AZUIS</b> do céu. Para tal terá de olhar em redor de forma atenta (no Ninho, no Bando, na Companhia, em casa, na turma, na escola, na comunidade), definir um destino (escolher onde pode proporcionar uma mudança positiva) e aperfeiçoar as técnicas de voo para sincronizar o bater das asas com o bater do coração, chegada a hora de partilhar, agir, por um mundo melhor.</p><p>Até ao Grande Voo que a conduzirá à sua <Link to=\"/ramos/aventura\">Primeira Aventura.</Link></p>",
@@ -118,6 +137,7 @@
   },
   "buttons": {
     "queresSerGuia": "Queres ser Guia ?",
-    "palavraAosPais": "Palavra aos Pais"
+    "palavraAosPais": "Palavra aos Pais",
+    "lerMais": "Ler mais"
   }
 }

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import dadosPessoaisPDF from '../../assets/pdfs/Política_de_Dados_Pessoais.pdf';
+import megafone from '../../assets/images/Contactos/megafone.png';
 
 const QueresSerGuia = () => {
   const { t } = useTranslation();
@@ -18,8 +19,7 @@ const QueresSerGuia = () => {
   return (
     <div className="QueresSerGuia">
       <div className="guia-text-section">
-        {/* Image missing, ask AGP */}
-        {/* <div><img src="" alt="" /></div> */}
+        <img src={megafone} className="guia-megafone" alt="Megafone" />
         <div className="guia-title">{t('contactosForm.queresSerGuiaTexto')}</div>
         <div className="guia-text">{t('contactosForm.maisInformacoesTexto')}</div>
       </div>

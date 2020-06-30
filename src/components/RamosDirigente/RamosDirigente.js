@@ -7,8 +7,8 @@ import './RamosDirigente.css';
 import avezinhaBanner from '../../assets/images/RamosDirigente/Banner_RamoAvezinha.png';
 import aventuraBanner from '../../assets/images/RamosDirigente/Banner_RamoAventura.png';
 import caravelaBanner from '../../assets/images/RamosDirigente/Banner_RamoCaravela.png';
+import moinhoBanner from '../../assets/images/RamosDirigente/Banner_RamoMoinho.png';
 import dirigenteBanner from '../../assets/images/RamosDirigente/Banner_Dirigente.png';
-// import moinhoBanner from '../../assets/images/RamosDirigente/Banner_Dirigente.png';
 
 function RamosDirigente(props) {
   const { t } = useTranslation();
@@ -38,7 +38,7 @@ function RamosDirigente(props) {
       } else if (getBranch === 'caravela') {
         setBranchBanner(`${caravelaBanner}`);
       } else if (getBranch === 'moinho') {
-        setBranchBanner(`${avezinhaBanner}`);
+        setBranchBanner(`${moinhoBanner}`);
       } else if (getBranch === 'dirigente') {
         setBranchBanner(`${dirigenteBanner}`);
       }
