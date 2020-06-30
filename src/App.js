@@ -17,13 +17,29 @@ import Noticias from './components/Noticias/Noticias';
 import LigacoesUteis from './components/LigacoesUteis/LigacoesUteis';
 import Contactos from './components/Contactos/Contactos';
 import Footer from './components/Footer/Footer';
+
+import LojaMaster from './components/Loja/LojaMaster'
 import ConteudoNoticia from './components/ConteudoNoticia/ConteudoNotica';
+
 
 
 function App() {
   return (
     <Router>
       <div className="App">
+
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          {/* <Route exact path="/associacao" component={AssociacaoFront} /> */}
+          <Route exact path="/ramos" component={RamosDirigente} />
+          <Route exact path="/associacao-mundial" component={AssociacaoMundial} />
+          <Route exact path="/palavra-pais" component={PalavraAosPais} />
+          <Route exact path="/ligações-úteis" component={LigacoesUteis} />
+          <Route exact path="/contactos" component={Contactos} />
+          <Route exact path="/noticias" component={Noticias} />
+          <Route exact path="/loja/:modo" component={LojaMaster} />
+        </Switch>
+
         <Suspense fallback={null}>
           <Switch>
             <Route exact path="/" component={Homepage} />

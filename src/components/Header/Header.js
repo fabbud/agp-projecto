@@ -49,9 +49,9 @@ const Header = () => {
               </NavDropdown>
             </NavDropdown>
             <NavDropdown title={t('header.loja')} id="basic-nav-dropdown" className="nav-header">
-              <NavDropdown.Item className="dropdown-item">{t('header.fardas')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item">{t('header.livros')}</NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item">{t('header.diversos')}</NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item"><Link to="/loja/fardas">{t('header.fardas')}</Link></NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item"><Link to="/loja/livros">{t('header.livros')}</Link></NavDropdown.Item>
+              <NavDropdown.Item className="dropdown-item"><Link to="/loja/diversos">{t('header.diversos')}</Link></NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title={t('header.contactos')} id="basic-nav-dropdown" className="nav-header">
               <NavDropdown.Item className="dropdown-item"><Link to="/contactos/formulário">{t('header.queresSerGuia')}</Link></NavDropdown.Item>

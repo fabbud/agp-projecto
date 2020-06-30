@@ -1,0 +1,37 @@
+.loja{
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+}
+
+.artigosLoja{
+    width:200px; 
+    position: relative;
+    display:flex;
+
+}
+
+/* .descricaoArtigos{
+    display:none;;
+} */
+
+.descricaoArtigos:hover{
+    font-family: 'Montserrat',sans-serif;
+    position: absolute;
+    width:100%;
+    height:100%;
+    opacity:90%;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    color:white;
+    align-items: center;
+    
+}
+
+.fotoArtigos{
+    width: 100%;
+    position: relative;
+}
+
+
