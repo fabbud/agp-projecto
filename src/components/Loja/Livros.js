@@ -1,20 +1,25 @@
-import React from 'react'
+import React from 'react';
+import './LojaMaster.css';
+
 
 function Livros(props) {
     return (
         <div className="loja">
-            <img className="fotoArtigos">
-                alt={props.alt}
-            src={props.src}
-            </img>
-            <div className="descriçãoArtigos">
-                {props.descrição}
-                {props.preço}
-                {props.id}
+            <div class="artigosLoja">
+                <img className="fotoArtigos"
+                    alt={props.alt}
+                    src={require(`../../assets/images/Loja/Livros/${props.src}`)}
+                />
+                
+                <div className="descricaoArtigos">
+                    {props.descrição}
+                    {props.preço}
+                    {props.id}
+                </div>
             </div>
         </div>
 
     )
 }
 
-export default Livros
+export default Livros;

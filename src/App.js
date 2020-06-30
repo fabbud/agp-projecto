@@ -18,6 +18,7 @@ import Noticias from './components/Noticias/Noticias';
 import LigacoesUteis from './components/LigacoesUteis/LigacoesUteis';
 import Contactos from './components/Contactos/Contactos';
 import Footer from './components/Footer/Footer';
+import LojaMaster from './components/Loja/LojaMaster'
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/ligações-úteis" component={LigacoesUteis} />
           <Route exact path="/contactos" component={Contactos} />
           <Route exact path="/noticias" component={Noticias} />
+          <Route exact path="/loja/:modo" component={LojaMaster} />
         </Switch>
         <Suspense fallback={null}>
           <Header />
