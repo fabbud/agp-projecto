@@ -48,11 +48,11 @@ const SedeNacional = () => {
         <div className="sede-text">
           <div className="contactos-title">{t('contactos.outrosContactosTitulo')}</div>
           <div className="contactos-text">
-            <div className="sede-title">{t('contactos.presidenteTitulo')}:</div>
+            <div className="sede-title">{t('contactos.presidenteTitulo')}</div>
             <div className="sede-margin">{t('contactos.presidenteEmail')}</div>
-            <div className="sede-title">{t('contactos.internationalTitulo')}:</div>
+            <div className="sede-title">{t('contactos.internationalTitulo')}</div>
             <div className="sede-margin">{t('contactos.internacionalEmail')}</div>
-            <div className="sede-title">{t('contactos.publicacoesTitulo')}:</div>
+            <div className="sede-title">{t('contactos.publicacoesTitulo')}</div>
             <div className="sede-margin">{t('contactos.publicacoesEmail')}</div>
           </div>
         </div>
