@@ -31,6 +31,7 @@
     "sedeNacional": "Sede Nacional"
   },
   "homepage": {
+    "tituloModeloPedagogico": "Modelo Pedagógico",
     "tituloAvezinha": "Ramo Avezinha",
     "idadesAvezinha": "6 aos 10 anos",
     "tituloAventura": "Ramo Aventura",
@@ -38,7 +39,9 @@
     "tituloCaravela": "Ramo Caravela",
     "idadesCaravela": "14 aos 17 anos",
     "tituloMoinho": "Ramo Moinho",
-    "idadesMoinho": "17 aos 21 anos"
+    "idadesMoinho": "17 aos 21 anos",
+    "tituloPalavraPais": "Palavra Aos Pais",
+    "tituloOjornal": "Jornal &quot;O Trevo&quot;"
   },
   "pedagogia": {
     "avezinha": {
