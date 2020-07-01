@@ -3,18 +3,19 @@ import './LojaMaster.css';
 
 
 function Livros(props) {
+
+
     return (
-        <div className="loja">
+        <div>
             <div class="artigosLoja">
                 <img className="fotoArtigos"
                     alt={props.alt}
-                    src={require(`../../assets/images/Loja/Livros/${props.src}`)}
+                    src={require(`../../assets/images/Loja/${props.categoria}/${props.src}`)}
                 />
-                
+
                 <div className="descricaoArtigos">
-                    {props.descrição}
-                    {props.preço}
-                    {props.id}
+                    <p>{props.descricao}<br />
+                    <b>{props.preço}</b></p>
                 </div>
             </div>
         </div>
