@@ -40,6 +40,11 @@ footer h5{
     color: #fff;
 }
 
+footer h5 a {
+    color: #fff;
+    margin-left: 0px;
+}
+
 .Dados{
     margin-top: 40px;
 }
