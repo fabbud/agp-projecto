@@ -124,7 +124,9 @@
     "politicaDadosPessoais": "Política de Dados Pessoais.",
     "campoObrigatorio": "Field required",
     "erroEmailInvalido": "Enter a valid e-mail address",
-    "botaoEnviar": "Send"
+    "botaoEnviar": "Send",
+    "envioSucesso": "Message sent!",
+    "envioErro": "Something went wrong, please try again."
   },
   "footer": {
     "sedeNacional": "National Headquarters",

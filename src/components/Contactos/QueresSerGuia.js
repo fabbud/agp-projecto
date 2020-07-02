@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './QueresSerGuia.css';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import ReactHtmlParser from 'react-html-parser';
+import Alert from 'react-bootstrap/Alert';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import dadosPessoaisPDF from '../../assets/pdfs/Política_de_Dados_Pessoais.pdf';
 import megafone from '../../assets/images/Contactos/megafone.png';
@@ -11,10 +14,20 @@ const QueresSerGuia = () => {
   const { t } = useTranslation();
   const { register, handleSubmit, errors } = useForm();
 
-  // Form fields sent by email
+  const [showEmailAlert, setShowEmailAlert] = useState(false);
+  const [emailTypeAlert, setEmailTypeAlert] = useState('success');
+  const [messageIcon, setMessageIcon] = useState(faCheck);
+
   const onSubmit = (data) => {
     axios.post('/email', data)
-      .then((response) => console.log(response.data));
+      .then((response) => {
+        if (response.data.code !== 200) {
+          setEmailTypeAlert('danger');
+          setMessageIcon(faTimes);
+        }
+        setShowEmailAlert(true);
+        window.setTimeout(() => setShowEmailAlert(false), 4000);
+      });
   };
 
   return (
@@ -70,8 +83,14 @@ const QueresSerGuia = () => {
             {ReactHtmlParser(t('contactosForm.recolhaDadosTexto'))}
             <a href={dadosPessoaisPDF} target="_blank" rel="noopener noreferrer">{t('contactosForm.politicaDadosPessoais')}</a>
           </div>
-          <div className="guia-button-section">
+          <div className="form-button-section">
             <button className="guia-form-button" type="submit">{t('contactosForm.botaoEnviar')}</button>
+          </div>
+          <div className="alert-section">
+            <Alert className="form-alert" show={showEmailAlert} variant={emailTypeAlert}>
+              <FontAwesomeIcon icon={messageIcon} className="message-icon" />
+              { emailTypeAlert === 'success' ? t('contactosForm.envioSucesso') : t('contactosForm.envioErro') }
+            </Alert>
           </div>
         </form>
       </div>
