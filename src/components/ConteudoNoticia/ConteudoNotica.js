@@ -60,7 +60,7 @@ const ConteudoNoticia = (props) => {
   const getNoticia = (id) => {
     // console.log(id);
     const noticiasConteudo = noticiasAgp.filter(
-      (element) => element.id === Number(id),
+      (element) => element.id === Number(id)
     );
     // console.log(noticiasConteudo);
     const noticiasConteudoMap = noticiasConteudo.map(
@@ -75,20 +75,23 @@ const ConteudoNoticia = (props) => {
   useEffect(() => {
     const { match } = props;
     const { id } = match.params;
+    window.scrollTo(0, 0);
     getNoticia(id);
   });
 
   return (
     <div className="ConteudoNoticia">
       <div className="CardConteudoNoticia">
-        <div className="ImgCardConteudoNoticia">
-          <img src={imageNoticia} alt="notícia" />
-        </div>
-        <div className="TitleCardConteudoNoticia">
-          <h3>{titleNoticia}</h3>
-        </div>
-        <div className="TextCardNoticias">
-          <p>{textNoticia}</p>
+        <div className="CardConteudoNoticia2">
+          <div className="ImgCardConteudoNoticia">
+            <img className="ImagemConteudo" src={imageNoticia} alt="notícia" />
+          </div>
+          <div className="TitleCardConteudoNoticia">
+            <h3>{titleNoticia}</h3>
+          </div>
+          <div className="TextCardNoticias">
+            <p>{textNoticia}</p>
+          </div>
         </div>
       </div>
     </div>
