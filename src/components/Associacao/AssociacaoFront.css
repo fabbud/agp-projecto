@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.Body {
+    font-family: 'Poppins' !important;
+    margin-top: 170px;
+}
+
+.fotoAssociacao{
+    width: 100%;
+    height:300px;
+    background-size: cover;
+    background-image: url('../../assets/images/Associacao/Guias_Portugal_Associacao.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center;
+}   
+
+strong{
+    line-height: 1.5;
+    font-size:16px;
+    color: #1AA3DB;
+    font-weight:400;
+}
+
+.associacao{
+    width:100%;
+    text-align: center;
+    padding-top: 0px;
+    background-color: transparent;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-bottom: 0;
+    display:block;
+}
+
+
+.associacao h1{
+    color: #1AA3DB;
+    font-size: 2 rem;
+    font-weight:500;
+    line-height:1.1;
+
+}
+
+.associacao p{
+    color: #004982; 
+    padding-right:160px;
+    padding-left:160px;
+    line-height: 1.5;
+    font-size:16px;
+    font-family:'Poppins';
+    }
+
+.guidismo{
+    background-color: #1AA3DB;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.guidismo p{
+    color: #fff;
+    line-height: 1.5;
+    font-size: 25px;
+    margin-left:280px;
+    margin-right:280px;
+    text-align:center;
+    font-weight:500;
+    font-family:'Poppins'
+}
+
+
+.historiaGuidismoH2{
+    text-align: center;
+    margin-bottom: 50px;
+    color: #1AA3DB;
+    margin-top: 100px;
+    font-family:'Poppins';
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.fotosHistoria {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    
+    
+}
+
+.fotosHistoriaReverse{
+    display:flex;
+    flex-direction: row-reverse;
+    flex-wrap:wrap;
+    
+    
+     
+}
+
+.fotosHistoria p, .fotosHistoriaReverse p{
+    font-size: 16px;
+    width: 80%;
+    font-weight: 400;
+    font-family: 'Poppins';
+    margin-left: 100px;
+}
+
+
+
+.fotosHistoriaReverse p{
+    margin-left: 50px;
+}
+
+.fotosHistoria h3, .fotosHistoriaReverse h3{
+    font-size: 20px;
+    color: #1AA3DB;
+     margin-top: 0;
+     font-weight:500;
+     margin-left: 100px;
+     line-height: 1.1;
+     margin-bottom: 0px;
+    }
+
+.fotosHistoriaReverse h3{
+    margin-left: 50px;
+}
+
+.fotosHistoria div, .fotosHistoriaReverse div{
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    margin-top:35px;
+    margin-bottom: 35px;
+
+}
+
+.fotosHistoria img, .fotosHistoriaReverse img{
+    width:50%;
+}
+
+.button-section {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    
+  }
+  .guia-button {
+    border-style: none;
+    border-radius: 50px;
+    font-size: 20px;
+    padding: 6px 12px;
+    outline: none !important;
+    align-items: center;
+    margin-left:42%;
+    margin-right:42%;
+    margin-top:50px;
+  }
+  .guia-button:hover {
+    font-weight: 700;
+  }
+  .associacao-button {
+    background-color: #154A7F;
+    color: white;
+    align-items: center;
+  }
+
+@media (max-width: 1024px) {
+
+    .associacao p{
+        margin-left:0px;
+        margin-right:0px;
+    }
+
+    .historiaGuidismoH2{
+        margin-top:15px;
+        margin-bottom:0px;
+    }
+
+    .fotosHistoria, .fotosHistoriaReverse {
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .fotosHistoria div, .fotosHistoriaReverse div{
+        width:90%;
+        margin-left: 5%;
+        margin-right:5%;
+    }
+
+    .fotosHistoria img, .fotosHistoriaReverse img{
+        width:80%;
+        margin-left: 10%;
+        margin-right:10%;
+    }
+    
+    .fotosHistoria p, .fotosHistoriaReverse p,
+    .fotosHistoria h3, .fotosHistoriaReverse h3{
+        width:100%;
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    .guia-button {
+        
+        margin-left:38%;
+        margin-right:30%;
+        font-size:16px;
+    }
+
+    .guidismo p {
+        margin-left:130px;
+        margin-right:130px;
+        padding-top:0px;
+        padding-bottom:0px;
+    }
+
+    .guidismo{
+        background-color: #1AA3DB;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
+    
+
+}
+
+@media (max-width: 500px) {
+
+    .fotosHistoria img, .fotosHistoriaReverse img{
+        width:90%;
+        margin-left: 5%;
+        margin-right:5%;
+    }
+    .guidismo p {
+        margin-left:25px;
+        margin-right:25px;
+        padding-top:0px;
+        padding-bottom:0px;
+    }
+
+    .associacao p{
+        padding-left:25px;
+        padding-right:25px;
+    }
+
+    .guia-button{
+        font-size: 13px;
+        margin-left:30%;
+        margin-right: 25%;
+    }
+
+}
+@media(max-width:375px){
+
+    .associacao h1{
+        font-size: 30px;
+    }
+    .associacao p{
+        font-size: 14px;
+    }
+
+    .guidinismo{
+        font-size:15px;
+    }
+
+    .historiaGuidismoH2{
+        font-size:25px;
+        margin-right: 25px;
+        margin-left:25px;
+    }
+
+}
