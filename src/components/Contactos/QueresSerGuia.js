@@ -2,6 +2,7 @@ import React from 'react';
 import './QueresSerGuia.css';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import ReactHtmlParser from 'react-html-parser';
 import axios from 'axios';
 import dadosPessoaisPDF from '../../assets/pdfs/Política_de_Dados_Pessoais.pdf';
 import megafone from '../../assets/images/Contactos/megafone.png';
@@ -38,7 +39,7 @@ const QueresSerGuia = () => {
             type="text"
             name="assunto"
             className="form-control"
-            ref={register({ required: `*${t('contactosForm.campoObrigatorio')}`, minLeght: 2 })}
+            ref={register({ required: `*${t('contactosForm.campoObrigatorio')}`, minLeght: 5 })}
           />
           {errors.assunto && <div className="form-error">{errors.assunto.message}</div>}
           <div className="guia-label">{t('contactosForm.email')}</div>
@@ -46,7 +47,14 @@ const QueresSerGuia = () => {
             type="email"
             name="email"
             className="form-control"
-            ref={register({ required: `*${t('contactosForm.campoObrigatorio')}`, minLeght: 2 })}
+            ref={register({
+              required: `*${t('contactosForm.campoObrigatorio')}`,
+              minLeght: 2,
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                message: t('contactosForm.erroEmailInvalido'),
+              },
+            })}
           />
           {errors.email && <div className="form-error">{errors.email.message}</div>}
           <div className="guia-label">{t('contactosForm.mensagem')}</div>
@@ -59,7 +67,7 @@ const QueresSerGuia = () => {
           />
           {errors.mensagem && <div className="message-error">{errors.mensagem.message}</div>}
           <div className="recolha-dados-text">
-            {t('contactosForm.recolhaDadosTexto')}
+            {ReactHtmlParser(t('contactosForm.recolhaDadosTexto'))}
             <a href={dadosPessoaisPDF} target="_blank" rel="noopener noreferrer">{t('contactosForm.politicaDadosPessoais')}</a>
           </div>
           <div className="guia-button-section">

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import { useTranslation } from 'react-i18next';
+import dadosPessoaisPDF from '../../assets/pdfs/Política_de_Dados_Pessoais.pdf';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -50,7 +51,9 @@ const Footer = () => {
             <li><a href="https://goo.gl/maps/TGZTgHYotNwLF6wr7">{t('footer.legal2')}</a></li>
             <li><a href="https://goo.gl/maps/TGZTgHYotNwLF6wr7">{t('footer.legal3')}</a></li>
           </ul>
-          <h5 className="Dados">{t('footer.dados')}</h5>
+          <h5 className="Dados">
+            <a href={dadosPessoaisPDF} target="_blank" rel="noopener noreferrer">{t('footer.dados')}</a>
+          </h5>
         </div>
       </div>
       <div className="footer-copyright">
