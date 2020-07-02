@@ -11,17 +11,17 @@ const noticiasAgp = [
   },
   {
     id: 2,
-    title: 'O Trevo também fica em casa',
+    title: 'Dicas para te manteres ligada às tuas amigas Guias',
     image: 'https://i.imgur.com/POH8clD.jpg',
-    data: 'JUN 2020',
-    text: 'Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.'
+    data: 'ABR 2020',
+    text: 'Descobre algumas ideias para pores em prática com a tua Patrulha em... casa!'
   },
   {
     id: 3,
-    title: 'O Trevo também fica em casa',
+    title: 'Pandemia por surto de Coronavírus',
     image: 'https://i.imgur.com/POH8clD.jpg',
-    data: 'JUN 2020',
-    text: 'Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.'
+    data: 'MAR 2020',
+    text: 'Atividades Guidistas presenciais suspensas pela necessidade do isolamento social.'
   },
   {
     id: 4,
@@ -32,17 +32,17 @@ const noticiasAgp = [
   },
   {
     id: 5,
-    title: 'O Trevo também fica em casa',
+    title: 'Dicas para te manteres ligada às tuas amigas Guias',
     image: 'https://i.imgur.com/POH8clD.jpg',
-    data: 'JUN 2020',
-    text: 'Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.'
+    data: 'ABR 2020',
+    text: 'Descobre algumas ideias para pores em prática com a tua Patrulha em... casa!'
   },
   {
     id: 6,
-    title: 'O Trevo também fica em casa',
+    title: 'Pandemia por surto de Coronavírus',
     image: 'https://i.imgur.com/POH8clD.jpg',
-    data: 'JUN 2020',
-    text: 'Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.'
+    data: 'MAR 2020',
+    text: 'Atividades Guidistas presenciais suspensas pela necessidade do isolamento social.'
   },
 ];
 
