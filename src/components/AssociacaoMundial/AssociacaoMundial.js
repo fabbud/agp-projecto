@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './AssociacaoMundial.css';
 import { Link } from 'react-router-dom';
 import worldGuidesLogo from '../../assets/images/AssociacaoMundial/WAGGGS_official_logo_BLUE_ENG.jpg';
@@ -7,6 +7,11 @@ import worldPenny from '../../assets/images/AssociacaoMundial/tostao_mundial2.pn
 import worldThought from '../../assets/images/AssociacaoMundial/Dia_mundial_pensaento2.png';
 
 const AssociacaoMundial = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <div className="AssociacaoMundial">
       <div className="world-girls-banner" />
