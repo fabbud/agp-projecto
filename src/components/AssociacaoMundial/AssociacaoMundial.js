@@ -99,7 +99,7 @@ const AssociacaoMundial = () => {
               <p>
                 O dia 22 de fevereiro é um dia muito especial para todas as Guias do mundo.
                 Intitulado
-                <strong>‘Dia Mundial do Pensamento’</strong>
+                <b>‘Dia Mundial do Pensamento’</b>
                 ,é o dia em que todas as Guias se unem em pensamento,
                 entre os 150 países onde está presente o Guidismo, para celebrar a amizade e os
                 ideais que caracterizam o Movimento, assim como para comemorar o aniversário
@@ -117,7 +117,7 @@ const AssociacaoMundial = () => {
                 ser inspirada pela história e o impacto do Guidismo, conectar-se com as Guias
                 pelo mundo, criar ações e despertar os outros para questões importantes e fazer
                 a diferença, angariando fundos para projetos através do
-                <strong>Tostão Mundial</strong>
+                <b>Tostão Mundial</b>
                 .
               </p>
               <p>

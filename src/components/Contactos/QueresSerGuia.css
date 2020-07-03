@@ -121,17 +121,43 @@
 }
 
 @media(max-width: 768px) {
+  .QueresSerGuia {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
   .guia-form-section {
-    width: 400px;
+    width: 340px;
   }
   .guia-form-section input {
-    width: 320px;
+    width: 280px;
+    font-size: 16px;
+  }
+  .guia-form-section form {
+    padding: 40px 30px 20px 30px;
+  }
+  .guia-label {
+    margin-bottom: 0px;
   }
   .guia-megafone {
-    width: 40%;
-    height: 40%;
+    width: 35%;
+    height: 35%;
+    margin-top: -10px;
   }
   .form-alert {
     font-size: 10px;
+  }
+  .recolha-dados-text {
+    margin-top: 15px;
+    line-height: 16px;
+  }
+}
+
+@media(max-width: 768px) {
+  .guia-form-section {
+    width: 300px;
+  }
+  .guia-form-section input {
+    width: 240px;
+    font-size: 16px;
   }
 }
