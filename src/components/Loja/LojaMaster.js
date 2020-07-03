@@ -28,23 +28,24 @@ let artigos = [
     { id: 22, categoria: 'diversos', descricao: 'Colete', alt: 'Guias de Portugal Colete', src: 'Colete.jpg', preço: '6,5€/7,5€' },
     { id: 23, categoria: 'diversos', descricao: 'Caneta', alt: 'Guias de Portugal Caneta', src: 'Caneta.jpg', preço: '0,50€' },
     { id: 24, categoria: 'diversos', descricao: 'Faca de Mato', alt: 'Guias de Portugal Faca de Mato', src: 'FacaMato.jpg', preço: '14,5€' }
-]
+];
 
 
 class LojaMaster extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { artigos: artigos, modo: '' }
+        this.state = { artigos: artigos, modo: '' };
 
     }
 
     componentDidMount = () => {
+        window.scrollTo(0, 0);
         // let url = ''
         // fetch(url).then((response) => response.json()).then((json) => this.setState({ artigos: json }));
         const { match } = this.props;
-        console.log(this.props)
+        console.log(this.props);
         let getModo = match.params.modo;
-        this.setState({ modo: getModo })
+        this.setState({ modo: getModo });
     }
 
     componentDidUpdate = () => {
@@ -53,7 +54,7 @@ class LojaMaster extends React.Component {
         const { match } = this.props;
         let newModo = match.params.modo;
         if (this.state.modo !== newModo) {
-            this.setState({ modo: newModo })
+            this.setState({ modo: newModo });
         }
     }
 
@@ -64,7 +65,7 @@ class LojaMaster extends React.Component {
             <div className="Body" >
                 <div>
                     <h2 class="tituloLoja">{this.state.modo}</h2>
-                    <p class="textoLoja">Catálogo dos produtos à venda <br />no Depósito de Material e Fardamento. <br />Consultar horários da Loja <a href="/contactos">aqui</a>.</p>
+                    <p class="textoLoja">Catálogo dos produtos à venda <br />no Depósito de Material e Fardamento. <br />Consultar horários da Loja <a href="/contactos/sede">aqui</a>.</p>
                     <div className="loja">
 
                         {
@@ -85,7 +86,7 @@ class LojaMaster extends React.Component {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 
