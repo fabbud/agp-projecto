@@ -298,7 +298,10 @@
   }
 }
 
-@media(max-width: 370px) {
+@media(max-width: 400px) {
+  .Homepage {
+    margin-top: 123px;
+  }
   .home-ramos-card, .home-ramos-card .home-ramos-img {
     width: 290px;
   }
