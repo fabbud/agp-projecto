@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Livros from './Livros';
 import './LojaMaster.css';
 
@@ -65,7 +66,9 @@ class LojaMaster extends React.Component {
             <div className="Body" >
                 <div>
                     <h2 class="tituloLoja">{this.state.modo}</h2>
-                    <p class="textoLoja">Catálogo dos produtos à venda <br />no Depósito de Material e Fardamento. <br />Consultar horários da Loja <a href="/contactos/sede">aqui</a>.</p>
+                    <p class="textoLoja">Catálogo dos produtos à venda <br />no Depósito de Material e Fardamento. <br />Consultar horários da Loja
+                    <Link to="/contactos/sede"> aqui</Link>
+                    .</p>
                     <div className="loja">
 
                         {
