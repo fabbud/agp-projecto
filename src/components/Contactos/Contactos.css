@@ -8,3 +8,8 @@
   background-color: #f6f6f6 !important;
 }
 
+@media(max-width: 370px) {
+  .Contactos {
+    margin-top: 123px;
+  }
+}

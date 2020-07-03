@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './AssociacaoFront.css';
 // import Associacao from '../../assets/images/Associacao/Guias_Portugal_Associacao.jpg'
 import Anos20 from '../../assets/images/Associacao/Guias_Portugal_Anos_20.jpg';
@@ -314,9 +315,13 @@ class AssociacaoFront extends React.Component {
           </div>
           <img src={VCV} alt="Guias de Portugal Vozes Contra a Violência" />
         </span>
-        <div className="button-section">
-          <button type="submit" className="guia-button associacao-button">Queres ser Guia ?</button>
+        <div className="button-section associa-link">
+          <Link to="/contactos/formulário">
+            <button type="submit" className="guia-button associacao-button">Queres ser Guia ?</button>
+          </Link>
         </div>
+
+
       </div>
     );
   }

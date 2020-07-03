@@ -88,3 +88,13 @@
     opacity:0.95;
     font-weight: 700;
 }
+
+@media(max-width:768px) {
+    .NoticiasTitle {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .CardNoticias {
+        width: 300px !important;
+    }
+}
