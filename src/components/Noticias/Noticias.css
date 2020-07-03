@@ -98,3 +98,9 @@
         width: 300px !important;
     }
 }
+
+@media(max-width: 400px) {
+    .Noticias {
+      margin-top: 123px;
+    }
+  }
