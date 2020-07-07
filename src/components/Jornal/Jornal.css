@@ -85,24 +85,34 @@
 .temas{
     margin-bottom: 5px;
 }
-/* 
+
 .capaDownload{
-    height:36%;
     display: flex;
     flex-direction: row;
-} */
+}
+
+.download{
+ 
+    width:30px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.downloadImage{
+ 
+    width:30px;
+    height: 30px;
+    
+}
 
 .capa{
     height:36%;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
 }
 
-.download{
-    background-image: url('../../assets/images/Outros/Untitled.jpg');
-    background-color: white;
-    height:30px;
-    width:30px;
-}
 
 @media(max-width:1725px){
 
