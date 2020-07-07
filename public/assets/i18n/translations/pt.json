@@ -139,6 +139,9 @@
     "legal3": "Política de Privacidade",
     "dados": "Política de Dados Pessoais"
   },
+  "search": {
+    "mainTitle": "Resultados para:"
+  },
   "buttons": {
     "queresSerGuia": "Queres ser Guia ?",
     "palavraAosPais": "Palavra aos Pais",
