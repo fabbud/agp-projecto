@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ReactHtmlParser from 'react-html-parser';
 import PropTypes from 'prop-types';
@@ -162,5 +162,4 @@ Homepage.propTypes = {
   history: PropTypes.string.isRequired,
 };
 
-
-export default Homepage;
+export default withRouter(Homepage);

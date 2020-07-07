@@ -19,6 +19,7 @@ import Footer from './components/Footer/Footer';
 import AssociacaoFront from './components/Associacao/AssociacaoFront';
 import LojaMaster from './components/Loja/LojaMaster';
 import ConteudoNoticia from './components/ConteudoNoticia/ConteudoNotica';
+import Search from './components/Search/Search';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <Route exact path="/publicações/recursos/ligações-úteis" component={LigacoesUteis} />
             <Route exact path="/contactos/:modo" component={Contactos} />
             <Route exact path="/loja/:modo" component={LojaMaster} />
+            <Route exact path="/search/:type" component={Search} />
           </Switch>
           <Header />
           <Footer />
