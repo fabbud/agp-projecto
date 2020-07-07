@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ReactHtmlParser from 'react-html-parser';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import './Homepage.css';
 import avezinhaFoto from '../../assets/images/Homepage/FotoAvezinha.jpg';
 import aventuraFoto from '../../assets/images/Homepage/FotoAventura.jpg';
@@ -12,37 +13,57 @@ import avezinhaLogo from '../../assets/images/Homepage/avezinha_white-8.png';
 import aventuraLogo from '../../assets/images/Homepage/aventura_white-8.png';
 import caravelaLogo from '../../assets/images/Homepage/caravela_white-8.png';
 import moinhoLogo from '../../assets/images/Homepage/moinho_white-8.png';
-import videoTeaser from '../../assets/videos/teaser_v_site.mp4';
+import homepageTeaser from '../../assets/videos/teaser_v_site.mp4';
 
 const Homepage = (props) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
   const [showNoticias, setShowNoticias] = useState(false);
+  const [jornalData, setJornalData] = useState([]);
+  const [articlesData, setArticlesData] = useState([]);
 
-  const noticiasSection = [
-    {
-      id: 1,
-      title: t('homepage.tituloNoticia1'),
-      text: t('homepage.textoNoticia1'),
-    },
-    {
-      id: 2,
-      title: t('homepage.tituloNoticia2'),
-      text: t('homepage.textoNoticia2'),
-    },
-    {
-      id: 3,
-      title: t('homepage.tituloNoticia3'),
-      text: t('homepage.textoNoticia3'),
-    },
-  ];
+  // const noticiasSection = [
+  //   {
+  //     id: 1,
+  //     title: 'O Trevo também fica em casa',
+  //     text: 'Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.',
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'Dicas para te manteres ligada às tuas amigas guias',
+  //     text: 'Descobre algumas ideias para pores em prática com a tua Patrulha em... casa!',
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'Pandemia por surto de Coronavírus',
+  //     text: 'Atividades Guidistas presenciais suspensas pela necessidade do isolamento social.',
+  //   },
+  // ];
+
+  useEffect(() => {
+    if (i18n.language !== selectedLanguage) {
+      setSelectedLanguage(i18n.language);
+    }
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const numberNews = noticiasSection.length;
-    if (numberNews !== 0) {
-      setShowNoticias(true);
-    }
+
+    axios.get('/homepage/journal')
+      .then((res) => {
+        setJornalData(res.data[0]);
+      });
+
+    axios.get('/homepage/news')
+      .then((res) => {
+        setArticlesData(res.data);
+        const newsLength = Object.keys(res.data).length;
+        if (newsLength !== 0) {
+          setShowNoticias(true);
+        }
+      });
   }, []);
+
 
   const openNoticia = (event) => {
     const newsId = event.target.id;
@@ -54,7 +75,7 @@ const Homepage = (props) => {
       {/* VIDEO */}
       <div className="home-video">
         <video controls controlsList="nodownload" autoPlay loop muted width="100%" height="100%">
-          <source src={videoTeaser} type="video/mp4" />
+          <source src={homepageTeaser} type="video/mp4" />
         </video>
       </div>
 
@@ -125,12 +146,16 @@ const Homepage = (props) => {
         <div className="home-section-side home-jornal-foto" />
         <div className="home-section-side">
           <div className="home-section-center">
-            <div className="home-section-title">{ReactHtmlParser(t('homepage.tituloOjornal'))}</div>
-            <div className="home-section-subtitle">&quot;Eu e o Outro: despertar para uma relação positiva&quot;</div>
+            <div className="home-section-title">{ReactHtmlParser(t('homepage.tituloJornal'))}</div>
+            <div className="home-section-subtitle">
+              &quot;
+              {jornalData[`${selectedLanguage}_title`]}
+              &quot;
+            </div>
             <div className="home-section-text">
-              Jornal Oficial da Associação
+              {t('homepage.infoJornal')}
               <br />
-              O Trevo - 2020 - 27ª Edição
+              O Trevo - {jornalData[`${selectedLanguage}_year_edition`]}
             </div>
             <div>
               <Link to="/">
@@ -141,15 +166,15 @@ const Homepage = (props) => {
         </div>
       </div>
 
-      {/* NOTICIAS */}
+      {/* NOTICIAS article.pt_intro_text */}
       { showNoticias
         ? (
           <div className="home-noticias">
-            {noticiasSection.map((noticia) => (
-              <div className="home-noticia-card">
-                <div className="home-noticia-title">{noticia.title}</div>
-                <div className="home-noticia-text">{noticia.text}</div>
-                <button type="submit" id={noticia.id} className="home-button" onClick={openNoticia}>{t('buttons.lerMais')}</button>
+            {articlesData.map((article) => (
+              <div key={article.id} className="home-noticia-card">
+                <div className="home-noticia-title">{article[`${selectedLanguage}_title`]}</div>
+                <div className="home-noticia-text">{article[`${selectedLanguage}_intro_text`]}</div>
+                <button type="submit" id={article.id} className="home-button" onClick={openNoticia}>{t('buttons.lerMais')}</button>
               </div>
             ))}
           </div>

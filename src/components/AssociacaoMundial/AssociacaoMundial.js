@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
-import './AssociacaoMundial.css';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import './AssociacaoMundial.css';
 import worldGuidesLogo from '../../assets/images/AssociacaoMundial/WAGGGS_official_logo_BLUE_ENG.jpg';
 import worldMap from '../../assets/images/AssociacaoMundial/mapawagggs.png';
 import worldPenny from '../../assets/images/AssociacaoMundial/tostao_mundial2.png';
 import worldThought from '../../assets/images/AssociacaoMundial/Dia_mundial_pensaento2.png';
 
 const AssociacaoMundial = () => {
+  const { t } = useTranslation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
 
   return (
     <div className="AssociacaoMundial">
@@ -35,11 +37,11 @@ const AssociacaoMundial = () => {
         </p>
       </div>
       <div className="voice-sentence">
-        10 milhões de raparigas, 1 voz.
+        {t('associacaoMundial.fraseVoz')}
       </div>
       <div className="world-objectives">
         <div className="objectives-side">
-          <div className="objectives-title">Objetivos da WAGGGS:</div>
+          <div className="objectives-title">{t('associacaoMundial.objetivosTitulo')}</div>
           <ul className="objectives-text">
             <li>
               Capacitar as raparigas e jovens mulheres para promover mudanças
@@ -50,7 +52,7 @@ const AssociacaoMundial = () => {
           </ul>
         </div>
         <div className="objectives-side">
-          <div className="objectives-title">Papel decisivo no desenvolvimento comunitário:</div>
+          <div className="objectives-title">{t('associacaoMundial.papelDecisivoTitulo')}</div>
           <ul className="objectives-text">
             <li>Participação nos programas promovidos pela ONU;</li>
             <li>Criação de projetos de educação</li>
@@ -63,19 +65,14 @@ const AssociacaoMundial = () => {
       <div className="centers">
         <div className="centers-side">
           <div className="centers-left">
-            <div className="centers-title">Centros Mundiais</div>
-            <div className="centers-text">
-              Os cinco Centros Mundiais da WAGGGS oferecem a oportunidade de uma aventura
-              internacional. Aqui, as Guias podem encontrar-se, experienciar um mundo de
-              possibilidades em atividades e conhecer outras Guias de outros países,
-              embarcando numa jornada de descoberta pessoal através da dimensão internacional.
-            </div>
+            <div className="centers-title">{t('associacaoMundial.centrosMundiaisTitulo')}</div>
+            <div className="centers-text">{t('associacaoMundial.centrosMundiaisTexto')}</div>
             <ul>
               <li><a href="https://www.wagggs.org/en/our-world/world-centres/sangam/" target="_blank" rel="noopener noreferrer">Sangam, Índia</a></li>
               <li><a href="https://www.wagggs.org/en/our-world/world-centres/our-chalet" target="_blank" rel="noopener noreferrer">Notre Chalet, Suíça</a></li>
               <li><a href="https://www.wagggs.org/en/our-world/world-centres/pax-lodge/" target="_blank" rel="noopener noreferrer">Pax Lodge, Reino Unido</a></li>
               <li><a href="https://www.wagggs.org/en/our-world/world-centres/our-cabana/" target="_blank" rel="noopener noreferrer">Nuestra Cabaña, México</a></li>
-              <li><a href="https://www.wagggs.org/en/our-world/world-centres/kusafiri/" target="_blank" rel="noopener noreferrer">Kusafiri, em África</a></li>
+              <li><a href="https://www.wagggs.org/en/our-world/world-centres/kusafiri/" target="_blank" rel="noopener noreferrer">Kusafiri, África</a></li>
             </ul>
           </div>
         </div>
@@ -89,7 +86,7 @@ const AssociacaoMundial = () => {
             <img className="clover" src={worldThought} alt="World Thought" />
           </div>
           <div>
-            <div className="penny-title">Dia Mundial do Pensamento</div>
+            <div className="penny-title">{t('associacaoMundial.diaPensamentoTitulo')}</div>
             <div className="penny-text">
               <p>
                 “O 22 de fevereiro é um dia de festa, em que fazemos em pensamento
@@ -133,7 +130,7 @@ const AssociacaoMundial = () => {
             <img className="piggy" src={worldPenny} alt="World Penny" />
           </div>
           <div>
-            <div className="penny-title">Tostão Mundial</div>
+            <div className="penny-title">{t('associacaoMundial.tostaoMundialTitulo')}</div>
             <div className="penny-text">
               <p>“O 22 de Fevereiro é um dia em que se dá e se partilha.” Baden-Powell</p>
               <p>
@@ -159,7 +156,7 @@ const AssociacaoMundial = () => {
         </div>
       </div>
       <div className="associacao-button-section">
-        <Link to="/contactos/formulário"><button type="submit" className="ser-guia-button associacao-button">Queres ser Guia ?</button></Link>
+        <Link to="/contactos/formulário"><button type="submit" className="ser-guia-button associacao-button">{t('buttons.queresSerGuia')}</button></Link>
       </div>
     </div>
   );

@@ -43,13 +43,17 @@
     "tituloPalavraPais": "Palavra Aos Pais",
     "subtituloPalavraPais": "Ter uma Filha nas Guias, porque sim?",
     "textoPalavraPais": "Nas Guias ajudamos as crianças e jovens a desenvolverem plenamente o seu potencialcomo cidadãs universais responsáveis...",
-    "tituloOjornal": "Jornal &quot;O Trevo&quot;",
-    "tituloNoticia1": "O Trevo também fica em casa",
-    "textoNoticia1": "Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.",
-    "tituloNoticia2": "Dicas para te manteres ligada às tuas amigas guias",
-    "textoNoticia2": "Descobre algumas ideias para pores em prática com a tua Patrulha em... casa!",
-    "tituloNoticia3": "Pandemia por surto de Coronavírus",
-    "textoNoticia3": "Atividades Guidistas presenciais suspensas pela necessidade do isolamento social."
+    "tituloJornal": "Jornal &quot;O Trevo&quot;",
+    "infoJornal": "Jornal Oficial da Associação"
+  },
+  "associacaoMundial": {
+    "fraseVoz": "10 milhões de raparigas, 1 voz.",
+    "objetivosTitulo": "Objetivos da WAGGGS",
+    "papelDecisivoTitulo": "Papel decisivo no desenvolvimento comunitário:",
+    "centrosMundiaisTitulo": "Centros Mundiais",
+    "centrosMundiaisTexto": "Os cinco Centros Mundiais da WAGGGS oferecem a oportunidade de uma aventura internacional. Aqui, as Guias podem encontrar-se, experienciar um mundo de possibilidades em atividades e conhecer outras Guias de outros países, embarcando numa jornada de descoberta pessoal através da dimensão internacional.",
+    "diaPensamenttoTitulo": "Dia Mundial do Pensamento",
+    "tostaoMundialTitulo": "Tostão Mundial"
   },
   "pedagogia": {
     "avezinha": {
