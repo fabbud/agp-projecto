@@ -46,7 +46,7 @@ const Header = () => {
             </NavDropdown>
             <NavDropdown title={t('header.publicacoes')} id="basic-nav-dropdown" className="nav-header">
               <NavDropdown.Item onClick={toggleNav} className="dropdown-item"><Link to="/publicações/noticias">{t('header.noticias')}</Link></NavDropdown.Item>
-              <NavDropdown.Item onClick={toggleNav} className="dropdown-item">{t('header.jornal')}</NavDropdown.Item>
+              <NavDropdown.Item onClick={toggleNav} className="dropdown-item"><Link to="/publicações/jornal-trevo">{t('header.jornal')}</Link></NavDropdown.Item>
               <NavDropdown bsPrefix="dropdown-item" title={t('header.recursos')} className="dropright">
                 <NavDropdown.Item onClick={toggleNav} className="dropdown-item" href={LivroEspecialidadesPDF} target="_blank">{t('header.livroEspecialidades')}</NavDropdown.Item>
                 <NavDropdown.Item onClick={toggleNav} className="dropdown-item" href={RegulamentosPDF} target="_blank">{t('header.regulamentos')}</NavDropdown.Item>

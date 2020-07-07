@@ -17,8 +17,9 @@ import LigacoesUteis from './components/LigacoesUteis/LigacoesUteis';
 import Contactos from './components/Contactos/Contactos';
 import Footer from './components/Footer/Footer';
 import AssociacaoFront from './components/Associacao/AssociacaoFront';
-import LojaMaster from './components/Loja/LojaMaster';
+import LojaMaster from './components/Loja/LojaMaster'
 import ConteudoNoticia from './components/ConteudoNoticia/ConteudoNotica';
+import Jornal from './components/Jornal/Jornal'
 
 
 function App() {
@@ -33,11 +34,13 @@ function App() {
             <Route exact path="/pedagogia/ramos/:tipo" component={RamosDirigente} />
             <Route exact path="/pedagogia/dirigente" component={RamosDirigente} />
             <Route exact path="/pedagogia/palavra-pais" component={PalavraAosPais} />
-            <Route exact path="/publicações/noticias" component={Noticias} />
-            <Route exact path="/publicações/noticias/:id" component={ConteudoNoticia} />
             <Route exact path="/publicações/recursos/ligações-úteis" component={LigacoesUteis} />
             <Route exact path="/contactos/:modo" component={Contactos} />
+            <Route exact path="/publicações/jornal-trevo" component={Jornal} />
+            <Route exact path="/publicações/noticias" component={Noticias} />
+            <Route exact path="/publicações/noticias/:id" component={ConteudoNoticia} />
             <Route exact path="/loja/:modo" component={LojaMaster} />
+
           </Switch>
           <Header />
           <Footer />
