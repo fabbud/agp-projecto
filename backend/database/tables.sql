@@ -1,6 +1,7 @@
 -- DROP TABLE IF EXISTS `homepage`;
 
-CREATE TABLE `homepage` (
+CREATE TABLE `homepage`
+(
   `jornal_id`	INT NOT NULL,
   `article_1_id`	INT NOT NULL,
   `article_2_id`	INT NOT NULL,
@@ -12,19 +13,29 @@ CREATE TABLE `homepage` (
 
 -- DROP TABLE IF EXISTS `news`;
 
-CREATE TABLE `news` (
+CREATE TABLE `news`
+(
   `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `pt_title` VARCHAR(60) NOT NULL,
-  `en_title` VARCHAR(60) NOT NULL,
-  `thumbnail` VARCHAR(100) NOT NULL,
-  `image` VARCHAR(100) NOT NULL,
-  `pt_intro_text` VARCHAR(100) NOT NULL,
-  `en_intro_text` VARCHAR(100) NOT NULL,
-  `pt_date` VARCHAR(8) NOT NULL,
-  `en_date` VARCHAR(8) NOT NULL,
+  `pt_title` VARCHAR
+(60) NOT NULL,
+  `en_title` VARCHAR
+(60) NOT NULL,
+  `thumbnail` VARCHAR
+(100) NOT NULL,
+  `image` VARCHAR
+(100) NOT NULL,
+  `pt_intro_text` VARCHAR
+(100) NOT NULL,
+  `en_intro_text` VARCHAR
+(100) NOT NULL,
+  `pt_date` VARCHAR
+(8) NOT NULL,
+  `en_date` VARCHAR
+(8) NOT NULL,
   `pt_content` LONGTEXT,
   `en_content` LONGTEXT,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY
+(`id`)
 );
 
 -- INSERT INTO `news` (pt_title, en_title, thumbnail, image, pt_intro_text, en_intro_text, pt_date, en_date, pt_content, en_content ) VALUES 
@@ -32,17 +43,27 @@ CREATE TABLE `news` (
 
 -- DROP TABLE IF EXISTS `journal`;
 
-CREATE TABLE `journal` (
-  `id`	INTEGER NOT NULL AUTO_INCREMENT,
-  `pt_title`	VARCHAR(60) NOT NULL,
-  `en_title`	VARCHAR(60) NOT NULL,
-  `thumbnail`	VARCHAR(100) NOT NULL,
-  `pdf_link`	VARCHAR(100) NOT NULL,
-  `pt_year_edition`	VARCHAR(20) NOT NULL,
-  `en_year_edition`	VARCHAR(20) NOT NULL,
-  `pt_intro_text`	VARCHAR(250) NOT NULL,
-  `en_intro_text`	VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `journal`
+(
+  `edition`	INTEGER NOT NULL AUTO_INCREMENT,
+  `pt_title`	VARCHAR
+(60) NOT NULL,
+  `en_title`	VARCHAR
+(60) NOT NULL,
+  `thumbnail`	VARCHAR
+(100) NOT NULL,
+  `pdf_link`	VARCHAR
+(100) NOT NULL,
+  `year`	VARCHAR
+(20) NOT NULL,
+  `pt_intro_text`	VARCHAR
+(250) NOT NULL,
+  `en_intro_text`	VARCHAR
+(250) NOT NULL,
+  `publish`	BOOL NOT NULL,
+
+  PRIMARY KEY
+(`edition`)
 );
 
 -- INSERT INTO `journal` (pt_title, en_title, thumbnail, pdf_link, pt_year_edition, en_year_edition, pt_intro_text, en_intro_text)

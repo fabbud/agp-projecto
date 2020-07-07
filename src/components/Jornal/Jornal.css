@@ -47,12 +47,13 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 600px;
+    height: 610px;
+    margin-top: 0;
 }
 
 .titulo {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
     height: 70px;
     cursor: pointer;
     font-family: 'poppins';
@@ -61,7 +62,6 @@
     font-weight: 500;
     text-align:center;
     }
-
 .anoEdicao{
         height:28px;
         font-size: 0.7em;
@@ -70,50 +70,42 @@
         text-align:center;
         vertical-align: bottom;
     }
-
-
-
 .temasBox{
-    height:240px;
+    height:250px;
     font-size: 0.8em;
     font-weight: 400;
     font-family: 'poppins';
     text-align: left;
     padding-right: 10%;
+    padding-top: 10%;
 }
-
 .temas{
     margin-bottom: 5px;
 }
-
 .capaDownload{
+    max-width:300 px;
     display: flex;
-    flex-direction: row;
 }
-
-.download{
- 
-    width:30px;
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-}
-
-.downloadImage{
- 
-    width:30px;
-    height: 30px;
-    
-}
-
 .capa{
-    height:36%;
+    /* height:36%; */
+    width:40%;
     cursor: pointer;
     display: flex;
     flex-direction: row;
+    margin-left: 30%;
 }
-
-
+.download{
+    width:15%;
+    /* height: 30px; */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content:center;
+}
+.downloadImage{
+    width:20px;
+    height: 20px
+}
 @media(max-width:1725px){
 
     .textoIntroducao{
@@ -164,7 +156,7 @@
 
 }
 
-@media(max-width:765px){
+@media(max-width:770px){
 
     .Jornal{
         margin-left: 20px;
@@ -172,8 +164,8 @@
     }
 
     .titulo {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .cardJornal{

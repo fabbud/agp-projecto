@@ -29,16 +29,14 @@ class Jornal extends React.Component {
         window.scrollTo(0, 0);
     }
 
-    download = () => {
-        console.log('download')
-    }
+
 
     render() {
         return (
             <div className="Jornal">
                 <h2 className="oTrevo">Jornal "O Trevo"</h2>
-                <p className="textoIntroducao">Publicação semestral da AGP que aborda temas da atualidade e divulga as atividades da associação </p>
-                <p className="textoIntroducao">Edições disponíveis para download. Edição mais recente à venda na Companhia mais próxima </p>
+                <p className="textoIntroducao">Publicação semestral da AGP que aborda temas da<br />atualidade e divulga as atividades da associação </p>
+                <p className="textoIntroducao">Edições disponíveis para download. Edição mais<br />recente à venda na Companhia mais próxima </p>
                 <div className="edicoesJornal">
                     {
                         this.state.edicoes.map((edicao) => (
@@ -51,7 +49,6 @@ class Jornal extends React.Component {
                                     alt={edicao.alt}
                                     pdf={edicao.pdf}
                                     temas={edicao.temas}
-                                    download={this.download}
                                 />
                             }</>
                         ))}

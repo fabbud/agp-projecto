@@ -21,7 +21,7 @@ function JornalCapa(props) {
                 />
                 <a className='download' href={`../../assets/pdfs/Jornal/${props.pdf}`} download>
                     <img className='downloadImage' alt={'download Jornal O Trevo Guias de Portugal'}
-                        src={require('../../assets/images/Outros/download.jpg')}
+                        src={require('../../assets/images/Outros/download.png')}
                     />
                 </a>
             </div>
