@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Livros from './Livros';
 import './LojaMaster.css';
 
 
 let artigos = [
-    { id: 1, categoria: 'Fardas', descricao: 'Camisola de lã', alt: 'Guias de Portugal Camisola de lã', src: 'CamisolaDeLa', preço: '23,5€' },
+    { id: 1, categoria: 'fardas', descricao: 'Camisola de lã', alt: 'Guias de Portugal Camisola de lã', src: 'CamisolaDeLa.jpg', preço: '23,5€' },
     { id: 2, categoria: 'livros', descricao: 'Tornar-se Avezinha', alt: 'Guias de Portugal Livro Tornar-se Avezinha', src: 'TornarSeAvezinha.jpg', preço: '2,5€' },
     { id: 3, categoria: 'livros', descricao: 'Asas Verdes', alt: 'Guias de Portugal Asas Verdes', src: 'AsasVerdes.jpg', preço: '2,5€' },
     { id: 4, categoria: 'livros', descricao: 'Asas Azuis', alt: 'Guias de Portugal Asas Azuis', src: 'AsasAzuis.jpg', preço: '1,5€' },
@@ -28,23 +29,26 @@ let artigos = [
     { id: 22, categoria: 'diversos', descricao: 'Colete', alt: 'Guias de Portugal Colete', src: 'Colete.jpg', preço: '6,5€/7,5€' },
     { id: 23, categoria: 'diversos', descricao: 'Caneta', alt: 'Guias de Portugal Caneta', src: 'Caneta.jpg', preço: '0,50€' },
     { id: 24, categoria: 'diversos', descricao: 'Faca de Mato', alt: 'Guias de Portugal Faca de Mato', src: 'FacaMato.jpg', preço: '14,5€' }
-]
+];
 
 
 class LojaMaster extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { artigos: artigos, modo: '' }
+        this.state = { artigos: artigos, modo: '' };
 
     }
 
     componentDidMount = () => {
+        window.scrollTo(0, 0);
         // let url = ''
         // fetch(url).then((response) => response.json()).then((json) => this.setState({ artigos: json }));
+
+        window.scrollTo(0, 0);
         const { match } = this.props;
-        console.log(this.props)
+        console.log(this.props);
         let getModo = match.params.modo;
-        this.setState({ modo: getModo })
+        this.setState({ modo: getModo });
     }
 
     componentDidUpdate = () => {
@@ -53,7 +57,7 @@ class LojaMaster extends React.Component {
         const { match } = this.props;
         let newModo = match.params.modo;
         if (this.state.modo !== newModo) {
-            this.setState({ modo: newModo })
+            this.setState({ modo: newModo });
         }
     }
 
@@ -64,7 +68,9 @@ class LojaMaster extends React.Component {
             <div className="Body" >
                 <div>
                     <h2 class="tituloLoja">{this.state.modo}</h2>
-                    <p class="textoLoja">Catálogo dos produtos à venda <br />no Depósito de Material e Fardamento. <br />Consultar horários da Loja <a href="/contactos">aqui</a>.</p>
+                    <p class="textoLoja">Catálogo dos produtos à venda <br />no Depósito de Material e Fardamento. <br />Consultar horários da Loja
+                    <Link to="/contactos/sede"> aqui</Link>
+                    .</p>
                     <div className="loja">
 
                         {
@@ -85,7 +91,7 @@ class LojaMaster extends React.Component {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 

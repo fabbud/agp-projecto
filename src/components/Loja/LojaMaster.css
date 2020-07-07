@@ -19,15 +19,14 @@
     flex-direction: row; 
     flex-wrap: wrap;
     align-items: center;
-    padding-left: 85px;
+    justify-content: center;
 }
 
 .artigosLoja{
     width:250px; 
     position: relative;
     display:flex;
-    
-
+    height: 200px;
 }
 
 .artigosLoja .descricaoArtigos{
@@ -60,7 +59,8 @@
 @media (max-width:1024px){
 
     .artigosLoja{
-        width:220px; 
+        width:220px;
+        height: 170px;
     }
 
 }
@@ -69,10 +69,15 @@
 
     .artigosLoja{
         width:200px; 
+        height: 150px;
     }
 
     .tituloLoja{
+        font-size: 28px;
         padding-top:30px;
+    }
+    .textoLoja {
+        margin-bottom: 50px;
     }
 
 }
@@ -81,6 +86,7 @@
 
     .artigosLoja{
         width:200px; 
+        height: 150px;
     }
 
     .tituloLoja{
@@ -96,22 +102,24 @@
 @media (max-width:400px){
 
     .artigosLoja{
-        width:180px; 
+        width:160px;
+        height: 110px; 
     }
 
     .tituloLoja{
         padding-top:30px;
     }
-.loja{
-    padding-left: 15px;
-}
+    .loja{
+        padding-left: 15px;
+    }
 }
 
 
 @media (max-width:350px){
 
     .artigosLoja{
-        width:160px; 
+        width:150px;
+        height: 100px; 
     }
 
     .tituloLoja{

@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ReactHtmlParser from 'react-html-parser';
+import PropTypes from 'prop-types';
 import './Homepage.css';
 import avezinhaFoto from '../../assets/images/Homepage/FotoAvezinha.jpg';
 import aventuraFoto from '../../assets/images/Homepage/FotoAventura.jpg';
@@ -13,20 +14,51 @@ import caravelaLogo from '../../assets/images/Homepage/caravela_white-8.png';
 import moinhoLogo from '../../assets/images/Homepage/moinho_white-8.png';
 import videoTeaser from '../../assets/videos/teaser_v_site.mp4';
 
-const Homepage = () => {
+const Homepage = (props) => {
   const { t } = useTranslation();
+  const [showNoticias, setShowNoticias] = useState(false);
+
+  const noticiasSection = [
+    {
+      id: 1,
+      title: t('homepage.tituloNoticia1'),
+      text: t('homepage.textoNoticia1'),
+    },
+    {
+      id: 2,
+      title: t('homepage.tituloNoticia2'),
+      text: t('homepage.textoNoticia2'),
+    },
+    {
+      id: 3,
+      title: t('homepage.tituloNoticia3'),
+      text: t('homepage.textoNoticia3'),
+    },
+  ];
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const numberNews = noticiasSection.length;
+    if (numberNews !== 0) {
+      setShowNoticias(true);
+    }
   }, []);
+
+  const openNoticia = (event) => {
+    const newsId = event.target.id;
+    props.history.push({ pathname: `/publicações/noticias/${newsId}` });
+  };
 
   return (
     <div className="Homepage">
+      {/* VIDEO */}
       <div className="home-video">
         <video controls controlsList="nodownload" autoPlay loop muted width="100%" height="100%">
           <source src={videoTeaser} type="video/mp4" />
         </video>
       </div>
+
+      {/* MODELO */}
       <div className="home-ramos">
         <div className="home-modelo-title">{t('homepage.tituloModeloPedagogico')}</div>
         <div className="home-ramos-section">
@@ -72,15 +104,14 @@ const Homepage = () => {
           </Link>
         </div>
       </div>
+
+      {/* SECÇÃO PAIS E JORNAL */}
       <div className="home-section-palavras">
         <div className="home-section-side">
           <div className="home-section-center">
             <div className="home-section-title">{t('homepage.tituloPalavraPais')}</div>
-            <div className="home-section-subtitle">Ter uma Filha nas Guias, porque sim?</div>
-            <div className="home-section-text">
-              Nas Guias ajudamos as crianças e jovens a desenvolverem plenamente o seu potencial
-              como cidadãs universais responsáveis...
-            </div>
+            <div className="home-section-subtitle">{t('homepage.subtituloPalavraPais')}</div>
+            <div className="home-section-text">{t('homepage.textoPalavraPais')}</div>
             <div>
               <Link to="/pedagogia/palavra-pais">
                 <button type="submit" className="home-button">{t('buttons.lerMais')}</button>
@@ -110,25 +141,26 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="home-noticias">
-        <div className="home-noticia-card">
-          <div className="home-noticia-title">{t('homepage.tituloNoticia1')}</div>
-          <div className="home-noticia-text">{t('homepage.textoNoticia1')}</div>
-          <button type="submit" className="home-button">{t('buttons.lerMais')}</button>
-        </div>
-        <div className="home-noticia-card">
-          <div className="home-noticia-title">{t('homepage.tituloNoticia2')}</div>
-          <div className="home-noticia-text">{t('homepage.textoNoticia2')}</div>
-          <button type="submit" className="home-button">{t('buttons.lerMais')}</button>
-        </div>
-        <div className="home-noticia-card">
-          <div className="home-noticia-title">{t('homepage.tituloNoticia3')}</div>
-          <div className="home-noticia-text">{t('homepage.textoNoticia3')}</div>
-          <button type="submit" className="home-button">{t('buttons.lerMais')}</button>
-        </div>
-      </div>
+      {/* NOTICIAS */}
+      { showNoticias
+        ? (
+          <div className="home-noticias">
+            {noticiasSection.map((noticia) => (
+              <div className="home-noticia-card">
+                <div className="home-noticia-title">{noticia.title}</div>
+                <div className="home-noticia-text">{noticia.text}</div>
+                <button type="submit" id={noticia.id} className="home-button" onClick={openNoticia}>{t('buttons.lerMais')}</button>
+              </div>
+            ))}
+          </div>
+        ) : ''}
     </div>
   );
 };
+
+Homepage.propTypes = {
+  history: PropTypes.string.isRequired,
+};
+
 
 export default Homepage;

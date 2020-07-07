@@ -138,13 +138,13 @@ strong{
     width:50%;
 }
 
-.button-section {
+.button-section a {
     display: flex;
     justify-content: center;
-    margin: 50px auto;
-    
-  }
-  .guia-button {
+    margin: 20px 0px 80px 0px;
+    /* margin: 50px auto; */
+}
+.guia-button {
     border-style: none;
     border-radius: 50px;
     font-size: 20px;
@@ -154,7 +154,7 @@ strong{
     margin-left:42%;
     margin-right:42%;
     margin-top:50px;
-  }
+}
   .guia-button:hover {
     font-weight: 700;
   }
@@ -163,6 +163,10 @@ strong{
     color: white;
     align-items: center;
   }
+
+.associa-link a {
+    text-decoration: none;
+}
 
 @media (max-width: 1024px) {
 
@@ -227,17 +231,28 @@ strong{
 }
 
 @media (max-width: 500px) {
-
+    .fotoAssociacao {
+        height: 180px;
+    }
+    .associacao h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
     .fotosHistoria img, .fotosHistoriaReverse img{
         width:90%;
         margin-left: 5%;
         margin-right:5%;
+    }
+    .historiaGuidismoH2{
+        font-size: 26px;
+        margin-top: 40px;
     }
     .guidismo p {
         margin-left:25px;
         margin-right:25px;
         padding-top:0px;
         padding-bottom:0px;
+        font-size: 20px;
     }
 
     .associacao p{
@@ -246,7 +261,7 @@ strong{
     }
 
     .guia-button{
-        font-size: 13px;
+        font-size: 18px;
         margin-left:30%;
         margin-right: 25%;
     }
@@ -255,7 +270,7 @@ strong{
 @media(max-width:375px){
 
     .associacao h1{
-        font-size: 30px;
+        font-size: 28px;
     }
     .associacao p{
         font-size: 14px;
@@ -266,7 +281,7 @@ strong{
     }
 
     .historiaGuidismoH2{
-        font-size:25px;
+        font-size:22px;
         margin-right: 25px;
         margin-left:25px;
     }
