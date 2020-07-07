@@ -41,6 +41,8 @@
     "tituloMoinho": "Ramo Moinho",
     "idadesMoinho": "17 to 21 years",
     "tituloPalavraPais": "Palavra Aos Pais",
+    "subtituloPalavraPais": "Ter uma Filha nas Guias, porque sim?",
+    "textoPalavraPais": "Nas Guias ajudamos as crianças e jovens a desenvolverem plenamente o seu potencialcomo cidadãs universais responsáveis...",
     "tituloOjornal": "Journal &quot;O Trevo&quot;",
     "tituloNoticia1": "O Trevo também fica em casa",
     "textoNoticia1": "Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.",
@@ -118,11 +120,13 @@
     "assunto": "Subject",
     "email": "Email",
     "mensagem": "Message",
-    "recolhaDadosTexto": "A recolha destes dados pessoais tem apenas como finalidade o pedido de contacto por parte da Associação Guias de Portugal. Caso não autorize a recolha dos dados pessoais, poderá contactar-nos através de meios alternativos, nomeadamente utilizando o endereço de email a.g.p@netcabo.pt . Para mais informações, consulte a nossa ",
+    "recolhaDadosTexto": "A recolha destes dados pessoais tem apenas como finalidade o pedido de contacto por parte da Associação Guias de Portugal. Caso não autorize a recolha dos dados pessoais, poderá contactar-nos através de meios alternativos, nomeadamente utilizando o endereço de email a.g.p@netcabo.pt.<br /> Para mais informações, consulte a nossa ",
     "politicaDadosPessoais": "Política de Dados Pessoais.",
     "campoObrigatorio": "Field required",
     "erroEmailInvalido": "Enter a valid e-mail address",
-    "botaoEnviar": "Send"
+    "botaoEnviar": "Send",
+    "envioSucesso": "Message sent!",
+    "envioErro": "Something went wrong, please try again."
   },
   "footer": {
     "sedeNacional": "National Headquarters",

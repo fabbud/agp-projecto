@@ -11,7 +11,7 @@
 
 .home-video {
   width: 960px;
-  height: 540px;
+  height: 70vh;
   margin: 1px auto 40px auto;
 }
 
@@ -124,7 +124,6 @@
 
 .home-section-jornal {
   flex-wrap: wrap-reverse;
-  margin-bottom: 30px;
 }
 
 .home-section-side {
@@ -186,6 +185,7 @@
   padding: 50px 20px 50px 20px;
   background-color: #1AA3DB;
   color: white;
+  margin-top: 30px;
 }
 
 .home-noticia-card {
@@ -234,7 +234,7 @@
   .home-video {
     width: 90%;
     height: 245px;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 0px;
   }
   .home-section {
@@ -242,21 +242,70 @@
     flex-direction: column;
     width: 100%;
   }
-  .home-section-side {
-    width: 100%;
+  .home-ramos-card, .home-ramos-card .home-ramos-img {
+    width: 320px;
+  }
+  .home-ramos-card-info .home-ramos-card-logo,
+  .home-ramos-card-info .home-ramos-card-title,
+  .home-ramos-card-info .home-ramos-card-text {
+    display: flex;
+    line-height: 1.5;  
+    font-size: 18px;
+  }
+  .home-ramos-card-info .home-ramos-card-title {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .avezinha-card {
+    background-color: rgba(252, 230, 20, 0.4); 
+    color: #154A7F;
+  }
+  .aventura-card {
+    background-color: rgba(39, 122, 74, 0.5);
+    color: white;
+  }
+  .caravela-card {
+    background-color: rgba(210, 113, 35, 0.5);
+    color: white;
+  }
+  .moinho-card {
+    background-color: rgba(60, 63, 133, 0.5);
+    color: white;
   }
   .home-section-side {
     padding: 50px 0px;
+    width: 100%;
   }
   .home-section-center {
-    width: 350px;
+    width: 320px;
+  }
+  .home-section-title {
+    font-size: 24px;
+  }
+  .home-section-subtitle {
+    font-size: 18px;
   }
   .home-jornal-foto, .home-palavras-foto {
     width: 100%;
-    height: 250px;
+    height: 230px;
   }
   .home-noticia-card {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
+  }
+  .home-noticia-title {
+    font-size: 18px;
+  }
+}
+
+@media(max-width: 400px) {
+  .Homepage {
+    margin-top: 123px;
+  }
+  .home-ramos-card, .home-ramos-card .home-ramos-img {
+    width: 290px;
+  }
+  .home-section-center {
+    width: 250px;
   }
 }

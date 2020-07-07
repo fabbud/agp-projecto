@@ -23,6 +23,7 @@
   font-size: 25px;
   color: #3b99e0;
   margin: 20px 0px;
+  font-weight: 500;
 }
 
 .guia-text {
@@ -31,11 +32,12 @@
   color: #004982;
   margin-bottom: 40px;
   opacity: 0.8;
+  font-weight: 500;
 }
 
 .guia-form-section form {
   max-width: 500px;
-  padding: 40px;
+  padding: 40px 40px 20px 40px;
   border-top: 2px solid #5ea4f3;
   background-color: white !important;
   box-shadow: 0 2px 10px rgba(0,0,0,.075);
@@ -57,10 +59,12 @@
   margin-top:20px;
 }
 
-.guia-button-section {
+.form-button-section {
   margin: 30px 0px 10px 0px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .guia-form-button {
@@ -74,6 +78,7 @@
   padding: 6px 15px;
   font-size: 14px;
   font-family: 'Montserrat', sans-serif !important;
+  margin-bottom: 20px;
 }
 
 .guia-form-button:hover {
@@ -94,15 +99,65 @@
   margin-top: 0px;
 }
 
+.alert-section {
+  display: flex;
+}
+
+.form-alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  margin: 0 auto;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.message-icon {
+  margin-right: 5px;
+}
+
 @media(max-width: 768px) {
+  .QueresSerGuia {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
   .guia-form-section {
-    width: 400px;
+    width: 340px;
   }
   .guia-form-section input {
-    width: 320px;
+    width: 280px;
+    font-size: 16px;
+  }
+  .guia-form-section form {
+    padding: 40px 30px 20px 30px;
+  }
+  .guia-label {
+    margin-bottom: 0px;
   }
   .guia-megafone {
-    width: 40%;
-    height: 40%;
+    width: 35%;
+    height: 35%;
+    margin-top: -10px;
+  }
+  .form-alert {
+    font-size: 10px;
+  }
+  .recolha-dados-text {
+    margin-top: 15px;
+    line-height: 16px;
+  }
+}
+
+@media(max-width: 768px) {
+  .guia-form-section {
+    width: 300px;
+  }
+  .guia-form-section input {
+    width: 240px;
+    font-size: 16px;
   }
 }

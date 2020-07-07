@@ -1,5 +1,5 @@
 .AssociacaoMundial {
-  margin-top: 160px;
+  margin-top: 170px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -126,7 +126,7 @@
 
 .world-centers {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .thought-section {
@@ -192,9 +192,19 @@
 
 
 @media(max-width: 768px) {
+  .world-girls-banner {
+    height: 180px;
+  }
+  .world-association {
+    margin: 20px 0px 40px 0px;
+  }
   .world-logo {
     width: 50%;
     height: auto;
+  }
+  .voice-sentence {
+    font-size: 20px;
+    padding: 40px 0px;
   }
   .world-text {
     font-size: 16px;
@@ -206,9 +216,19 @@
     align-items: center;
   }
   .objectives-side {
-    width: 350px;
+    width: 300px;
     margin: 0 auto;
   }
+  .objectives-title, .centers-title {
+    font-size: 18px;
+    margin-top: 10px;
+    line-height: 28px;
+  }
+  .objectives-text li {
+    font-size: 14px;
+    margin: 10px 15px;
+  }
+
   .centers {
     flex-direction: column;
   }
@@ -216,12 +236,22 @@
     width: 100%;
   }
   .centers-left {
-    width: 450px;
+    width: 100%;
   }
   .right-section, .left-section {
-    width: 70%;
+    width: 100%;
+    margin: 0px 50px 0px 25px;
   }
   .left-section {
     margin-bottom: 30px;
+  }
+  .clover-section {
+    margin-right: 0px;
+  }
+  .penny-title {
+    font-size: 15px;
+  }
+  .ser-guia-button {
+    font-size: 18px;
   }
 }

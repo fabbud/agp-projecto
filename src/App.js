@@ -5,7 +5,6 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-
 import './i18n';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
@@ -23,13 +22,10 @@ import ConteudoNoticia from './components/ConteudoNoticia/ConteudoNotica';
 import Jornal from './components/Jornal/Jornal'
 
 
-
 function App() {
   return (
     <Router>
       <div className="App">
-
-
         <Suspense fallback={null}>
           <Switch>
             <Route exact path="/" component={Homepage} />
@@ -44,15 +40,13 @@ function App() {
             <Route exact path="/publicações/noticias" component={Noticias} />
             <Route exact path="/publicações/noticias/:id" component={ConteudoNoticia} />
             <Route exact path="/loja/:modo" component={LojaMaster} />
-            
+
           </Switch>
           <Header />
-         
           <Footer />
         </Suspense>
       </div>
     </Router>
-
   );
 }
 
