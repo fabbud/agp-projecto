@@ -19,8 +19,8 @@ import Footer from './components/Footer/Footer';
 import AssociacaoFront from './components/Associacao/AssociacaoFront';
 import LojaMaster from './components/Loja/LojaMaster'
 import ConteudoNoticia from './components/ConteudoNoticia/ConteudoNotica';
+import Search from './components/Search/Search';
 import Jornal from './components/Jornal/Jornal'
-
 
 function App() {
   return (
@@ -40,7 +40,7 @@ function App() {
             <Route exact path="/publicações/noticias" component={Noticias} />
             <Route exact path="/publicações/noticias/:id" component={ConteudoNoticia} />
             <Route exact path="/loja/:modo" component={LojaMaster} />
-
+            <Route exact path="/search/:type" component={Search} />
           </Switch>
           <Header />
           <Footer />

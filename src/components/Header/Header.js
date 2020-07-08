@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import {
   Navbar, Nav, NavDropdown, Form, FormControl,
 } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import './Header.css';
 import EstatutosPDF from '../../assets/pdfs/Estatutos.pdf';
@@ -13,13 +14,28 @@ import RegulamentosPDF from '../../assets/pdfs/Regulamentos_AGP_Março_2020.pdf'
 import LivroEspecialidadesPDF from '../../assets/pdfs/Livro_de_Especialidades.pdf';
 import CartãoAssociadaPDF from '../../assets/pdfs/Cartão_de_Associada_Protocolos_AGP.pdf';
 
-const Header = () => {
+const Header = (props) => {
   const { t } = useTranslation();
 
   const [navExpanded, setNavExpanded] = useState(false);
+  const [searchBy, setSearchBy] = useState('');
 
   const toggleNav = () => {
     setNavExpanded(navExpanded ? false : 'expanded');
+  };
+
+  const handleInputSearch = (event) => {
+    const input = event.target.value;
+    setSearchBy(input);
+  };
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    localStorage.setItem('searchBy', JSON.stringify(searchBy));
+    props.history.push({
+      pathname: `/search/${searchBy}`,
+      state: { searchBy },
+    });
   };
 
   return (
@@ -65,11 +81,11 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <div className="search-languages">
-            <Form inline className="search-fields">
+            <Form inline className="search-fields" onSubmit={handleSearch}>
               <FontAwesomeIcon icon={faSearch} className="search-icon" />
-              <FormControl type="text" placeholder={t('header.pesquisa')} className="mr-sm-2 search-input" />
+              <FormControl type="text" placeholder={t('header.pesquisa')} className="mr-sm-2 search-input" onChange={handleInputSearch} />
             </Form>
-            <LanguageSelector />
+            <LanguageSelector clickNavbar={toggleNav} />
           </div>
         </Navbar.Collapse>
       </Navbar>
@@ -77,4 +93,8 @@ const Header = () => {
   );
 };
 
-export default Header;
+Header.propTypes = {
+  history: PropTypes.string.isRequired,
+};
+
+export default withRouter(Header);
