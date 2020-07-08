@@ -1,6 +1,8 @@
 import React from 'react';
 import './Footer.css';
 import { useTranslation } from 'react-i18next';
+import facebook from '../../assets/images/SocialMedia/facebook_white_round.png';
+import instagram from '../../assets/images/SocialMedia/instagram_white_round.png';
 import dadosPessoaisPDF from '../../assets/pdfs/Política_de_Dados_Pessoais.pdf';
 
 const Footer = () => {
@@ -29,9 +31,17 @@ const Footer = () => {
         <div className="col-sm-3">
           <h5>{t('footer.contactos')}</h5>
           <ul>
-            <li><a href="https://goo.gl/maps/TGZTgHYotNwLF6wr7">217 938 227</a></li>
-            <li><a href="https://goo.gl/maps/TGZTgHYotNwLF6wr7">a.g.p@netcabo.pt</a></li>
+            <li><a href="https://goo.gl/maps/TGZTgHYotNwLF6wr7">{t('contactos.telefone')}</a></li>
+            <li><a href="https://goo.gl/maps/TGZTgHYotNwLF6wr7">{t('contactos.email')}</a></li>
           </ul>
+          <div className="footer-social">
+            <a href="" target="_blank" rel="noopener noreferrer">
+              <img src={facebook} className="footer-social-icon" alt="Facebook Link" />
+            </a>
+            <a href="" target="_blank" rel="noopener noreferrer">
+              <img src={instagram} className="footer-social-icon" alt="Instagram Link" />
+            </a>
+          </div>
         </div>
         <div className="col-sm-3">
           <h5>

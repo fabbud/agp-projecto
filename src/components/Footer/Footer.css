@@ -76,6 +76,17 @@ footer a:hover {
     margin: 10px;
 }
 
+.footer-social a {
+    text-decoration: none;
+    margin: 0px;
+}
+
+.footer-social-icon {
+    width: 28px;
+    height: 28px;
+    margin: 10px 5px 10px 5px;
+    cursor: pointer;
+}
 
 @media (max-width: 767px) {
     .footer-container {
