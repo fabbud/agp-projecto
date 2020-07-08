@@ -10,14 +10,14 @@ const NoticiasCard = (props) => {
   return (
     <div className="CardsNoticias">
       <Card className="CardNoticias" style={{ width: '325px' }}>
-        <Card.Title className="TitleCardNoticias">{noticia.title}</Card.Title>
+        <Card.Title className="TitleCardNoticias">{noticia.pt_title}</Card.Title>
         <Card.Img
           className="ImgCardNoticias"
           variant="top"
-          src={noticia.image}
+          src={noticia.thumbnail}
         />
-        <Card.Text className="DataCardNoticias">{noticia.data}</Card.Text>
-        <Card.Text className="TextCardNoticias">{noticia.text}</Card.Text>
+        <Card.Text className="DataCardNoticias">{noticia.pt_date}</Card.Text>
+        <Card.Text className="TextCardNoticias">{noticia.pt_intro_text}</Card.Text>
         <Button className="ButtonCardNoticias" variant="primary">
           <Link to={link}>Ler mais</Link>
         </Button>
