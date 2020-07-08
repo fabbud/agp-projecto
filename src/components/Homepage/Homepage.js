@@ -166,7 +166,7 @@ const Homepage = (props) => {
         </div>
       </div>
 
-      {/* NOTICIAS article.pt_intro_text */}
+      {/* NOTICIAS */}
       { showNoticias
         ? (
           <div className="home-noticias">
