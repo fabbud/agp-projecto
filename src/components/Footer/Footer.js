@@ -31,8 +31,8 @@ const Footer = () => {
         <div className="col-sm-3">
           <h5>{t('footer.contactos')}</h5>
           <ul>
-            <li><a href="https://goo.gl/maps/TGZTgHYotNwLF6wr7">{t('contactos.telefone')}</a></li>
-            <li><a href="https://goo.gl/maps/TGZTgHYotNwLF6wr7">{t('contactos.email')}</a></li>
+            <li><span className="footer-contactos">{t('contactos.telefone')}</span></li>
+            <li><span className="footer-contactos">{t('contactos.email')}</span></li>
           </ul>
           <div className="footer-social">
             <a href="" target="_blank" rel="noopener noreferrer">
