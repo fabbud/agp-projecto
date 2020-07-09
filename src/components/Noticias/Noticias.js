@@ -1,20 +1,17 @@
-import React from "react";
-import axios from "axios";
-import NoticiasCard from "./NoticiasCard";
-import "./Noticias.css";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useTranslation } from 'react-i18next';
+import NoticiasCard from './NoticiasCard';
+import './Noticias.css';
 
-class Noticias extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      noticiasData: [],
-    };
-  }
+const Noticias = () => {
+  const { t } = useTranslation();
+  const [noticiasData, setNoticiasData] = useState([]);
 
-  getData = () => {
+  const getData = () => {
     // Send the request
     axios
-      .get("/news")
+      .get('/news')
       // Extract the DATA from the received response
       .then((response) => {
         console.log(response);
@@ -23,27 +20,25 @@ class Noticias extends React.Component {
       // Use this data to update the state
       .then((dataresult) => {
         console.log(dataresult);
-        this.setState({ noticiasData: dataresult });
+        setNoticiasData(dataresult);
       });
   };
 
-  componentDidMount = () => {
+  useEffect(() => {
     window.scrollTo(0, 0);
-    this.getData();
-  };
+    getData();
+  }, []);
 
-  render() {
-    const { noticiasData } = this.state;
-    return (
-      <div className="Noticias">
-        <p className="NoticiasTitle">Notícias</p>
-        <div className="MapNoticias">
-          {noticiasData.map((noticia) => (
-            <NoticiasCard key={noticia.id} noticia={noticia} />
-          ))}
-        </div>
+  return (
+    <div className="Noticias">
+      <p className="NoticiasTitle">{t('noticias.noticias')}</p>
+      <div className="MapNoticias">
+        {noticiasData.map((noticia) => (
+          <NoticiasCard key={noticia.id} noticia={noticia} />
+        ))}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
 export default Noticias;
