@@ -183,6 +183,39 @@
     "palavraAosPais": "Palavra aos Pais",
     "lerMais": "Read more"
   },
+    "noticias": {
+      "noticias": "News"
+  },
+  "noticiasCard": {
+    "lermais": "See more"
+  },
+  "palavraAosPais": {
+    "terUmaFilhaGuia": "Why should I have my daughter at Guias?",
+    "terUmaFilhaGuiaText": "At Guias, we help children and young girls to develop their potential as responsible universal citizens.",
+    "ajudamos": "We help, we don't do it for them.",
+    "ajudamosText":"At Guias we learn by doing. This means that the girl does things for herself, and for herself, not just listening to someone or watching passively how to do something. Doing something means learning faster and better, since the experience is personal and not 'second-hand'. <br /> <br /> Learning by doing fosters own initiative and creativity, as it allows Guia to try something different to do things. Learning by doing allows her to make mistakes in a safe environment, and, if the activities are repeated, demonstrate progress in a skill that will encourage her to try to go further.",
+    "ritmo":"Fully, but at your own pace.",
+    "ritmoText":"At Guias we present possible directions and areas to explore, but it is the Guide that chooses your route, that follows according to your step, selecting activities, experiencing self-motivation and freedom of choice. In this way, you progress individually by learning how to interact successfully as part of a group, developing your imagination and creativity.",
+    "potencial":"Your potential, but integrated into a patrol",
+    "potencialText":"At Guias the girl is part of a patrol, where she learns from other girls of the same age, in a familiar and supportive environment, promoting group spirit and cooperation; developing assignment, acceptance and sharing of responsibilities; acquisition of leadership skills; practice of democratic skills, including ways of making decisions and implementing them. <br /> <br /> From day one, taking responsibility for small aspects of the patrol's life and activities, and gradually expanding and increasing that responsibility.",
+    "cidada":"Universal citizens, attentive to global and local realities.",
+    "cidadaText":"At Guias we try to make the world a better place than we found it - so our founder, Baden Powell, asked us. This very simple sentence ends a great and challenging mission in which all the Guides are invited to participate, on the one hand, through their involvement and interest in the realities of the world, but also, to their measure, in the active contribution in service projects.<br /><br /> Working with the community is an important means of education: it stimulates the Guide's sense of responsibility towards the world in which it operates, provides it with the opportunity to know and respect different cultures and ways of living and enhances the influence positive that she, as an individual, can exercise in her environment.",
+    "responsaveis": "Responsible, with a real sense of commitment.",
+    "responsaveisText": "At Guias, values ​​such as a word of honor, honesty, trust, truth, loyalty are expressed in the Principles and Law that each Guide voluntarily promises to comply with and through which he begins to guide his life.",
+    "acampamento":"Camping and outdoor spaces for learning.",
+    "acampamentoText": "At Guias, camping and contact with nature are extremely important as educational spaces. Baden Powell defended that the camp is like “a school of effort and detachment, in it the Guides learn to be sufficient for themselves, eliminating the deficiencies existing in the field with the means that Nature offers and with the technique they have learned”. <br /> A very recent study by the University of Plymouth [full article  <a href='https://www.plymouth.ac.uk/news/study-links-camping-and-happier-children'> here</a>] suggests that children who camp outdoors have better school performance, in addition to being healthier and happier. Four out of five parents surveyed said that camps have a positive effect on their children's school education, 98% indicated that camps make children appreciate nature, 95% responded that children are happier when they camp, and 93% that camp helps in the development of useful skills for adult life. Other parents indicated that their children are less dependent on technologies such as cell phones and video games and 68% said that camps help their children in the classroom learning process. <br /> The teacher who coordinated the study concluded that “the camp helps to understand the school curriculum in matters of Geography, History and Science because the most common activities in a camp are pure contact with nature, in which children are able to better understand ecosystems, thus respecting the environment.”",
+    "euJatenhoUmaFilhaGuia": "I already have a daughter Guia ...",
+    "impactos": "Shared impacts in the first person.",
+    "textFilhaGuiaTestimony1":"She became very responsible. With almost 16 years old she works well in a team, has a sense of what is fair and knows how to defend her choices. The training that we, the parents, give her is aided by the presence of the Guides.",
+    "textCardFilhaGuiaRelatives1":"Mother of a Guia",
+    "textFilhaGuiaTestimony2":"It has been a very intense journey, where values ​​such as faith, friendship, sharing and helping others are always present.",
+    "textCardFilhaGuiaRelatives2":"Mother of a Guia",
+    "textFilhaGuiaTestimony3":"I have noticed that they have grown and evolved with a group spirit, they are friends of nature, they collaborate and that gives me immense satisfaction because they are preparing to face the reality of life.",
+    "textCardFilhaGuiaRelatives3":"Father of two Guias",
+    "textFilhaGuiaTestimony4":"Being Guia helped them acquire leadership, organization skills and develop creativity, mutual assistance and a sense of responsibility.",
+    "textCardFilhaGuiaRelatives4":"Parents of two Guias",
+    "buttonPalavraAosPais":"Want to be a Guia ?"
+  },
   "media": {
     "partilhaLabel": "Share this page:"
   }
