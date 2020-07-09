@@ -49,3 +49,15 @@ CREATE TABLE `journal` (
 -- INSERT INTO `journal` (pt_title, en_title, thumbnail, pdf_link, pt_year_edition, en_year_edition, pt_intro_text, en_intro_text, publish)
 -- VALUES ('Eu e o outro: despertar para uma relação positiva', 'Me and the other: waking up to a positive relationship', 'https://imgur.com/VFLfKHd' , 'pdf', '2019 — 26ª Edição', '2019 — 26th Edition', '- Compreender o empreendedorismo; - À conversa com Patrícia Jardim da Palma; - A Guia portuguesa que se correspondia com Olave; - Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo', '- Understanding entrepreneurship; - Chatting with Patrícia Jardim da Palma; - The Portuguese Guide that corresponded with Olave; - Entrepreneurs over the centuries; - How Guidismo sows the seed of entrepreneurship', TRUE),
 -- ('Educar para o empreendedorismo', 'Educating for entrepreneurship', 'https://imgur.com/VFLfKHd' , 'pdf', '2019 — 27ª Edição', '2019 — 27th Edition', '- Compreender o empreendedorismo; - À conversa com Patrícia Jardim da Palma; - A Guia portuguesa que se correspondia com Olave; - Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo', '- Understanding entrepreneurship; - Chatting with Patrícia Jardim da Palma; - The Portuguese Guide that corresponded with Olave; - Entrepreneurs over the centuriesHow Guidismo sows the seed of entrepreneurship', TRUE);
+
+
+-- DROP TABLE IF EXISTS `login`;
+
+CREATE TABLE `login` (
+  `email` VARCHAR(60) NOT NULL,
+  `password` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`email`)
+);
+
+-- INSERT INTO `login` (email, password)
+-- VALUES ('agp.formulario.contacto@gmail.com', '1234');
