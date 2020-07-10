@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../config');
 
+
 router.get('/', (req, res, next) => {
   connection.query('SELECT * FROM homepage', (err, results) => {
     if (err) {
@@ -47,3 +48,4 @@ router.put('/', (req, res) => {
 });
 
 module.exports = router;
+
