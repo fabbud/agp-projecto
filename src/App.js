@@ -17,12 +17,16 @@ import LigacoesUteis from './components/LigacoesUteis/LigacoesUteis';
 import Contactos from './components/Contactos/Contactos';
 import Footer from './components/Footer/Footer';
 import AssociacaoFront from './components/Associacao/AssociacaoFront';
-import LojaMaster from './components/Loja/LojaMaster'
+import LojaMaster from './components/Loja/LojaMaster';
 import ConteudoNoticia from './components/ConteudoNoticia/ConteudoNotica';
 import Search from './components/Search/Search';
-import Jornal from './components/Jornal/Jornal'
+import Jornal from './components/Jornal/Jornal';
+import Login from './components/Backoffice/Login/Login';
 
 function App() {
+  const currentPath = window.location.pathname;
+  console.log(currentPath);
+
   return (
     <Router>
       <div className="App">
@@ -41,9 +45,15 @@ function App() {
             <Route exact path="/publicações/noticias/:id" component={ConteudoNoticia} />
             <Route exact path="/loja/:modo" component={LojaMaster} />
             <Route exact path="/search/:type" component={Search} />
+            <Route exact path="/backoffice" component={Login} />
           </Switch>
-          <Header />
-          <Footer />
+          { currentPath !== '/backoffice'
+          && (
+          <div>
+            <Header />
+            <Footer />
+          </div>
+          )}
         </Suspense>
       </div>
     </Router>

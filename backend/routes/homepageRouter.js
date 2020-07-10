@@ -1,5 +1,51 @@
 const express = require('express');
+
 const router = express.Router();
 const connection = require('../config');
 
+
+router.get('/', (req, res, next) => {
+  connection.query('SELECT * FROM homepage', (err, results) => {
+    if (err) {
+      res.status(500).json({
+        error: err.message,
+        sql: err.sql,
+      });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+router.get('/:mode', (req, res, next) => {
+  let query = '';
+  if (req.params.mode === 'journal') {
+    query = 'SELECT journal.* FROM homepage JOIN journal ON homepage.journal_id = journal.id';
+  } else {
+    query = 'SELECT news.* FROM homepage JOIN news ON homepage.article_1_id = news.id OR homepage.article_2_id = news.id OR homepage.article_3_id = news.id';
+  }
+  connection.query(query, (err, results) => {
+    if (err) {
+      res.status(500).json({
+        error: err.message,
+        sql: err.sql,
+      });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+router.put('/', (req, res) => {
+  const newData = req.body;
+  connection.query('UPDATE homepage SET ? ', [newData], (err, results) => {
+    if (err) {
+      res.status(500).send('Error updating homepage data');
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
+
 module.exports = router;
+

@@ -3,6 +3,7 @@ const router = express.Router();
 const connection = require('../config');
 
 
+
 router.get('/', (req, res) => {
     connection.query('SELECT * FROM journal WHERE publish=sim ORDER BY edition DESC',
         (err, results) => {
@@ -71,3 +72,4 @@ router.delete('/', (req, res) => {
 )
 
 module.exports = router;
+

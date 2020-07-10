@@ -85,7 +85,7 @@ const Header = (props) => {
               <FontAwesomeIcon icon={faSearch} className="search-icon" />
               <FormControl type="text" placeholder={t('header.pesquisa')} className="mr-sm-2 search-input" onChange={handleInputSearch} />
             </Form>
-            <LanguageSelector />
+            <LanguageSelector clickNavbar={toggleNav} />
           </div>
         </Navbar.Collapse>
       </Navbar>
