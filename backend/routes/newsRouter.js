@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../config');
 
+
 router.get("/", (req, res) => {
   connection.query(
     'SELECT * FROM news ORDER BY news.id DESC LIMIT 6;',
@@ -64,3 +65,4 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router;
+
