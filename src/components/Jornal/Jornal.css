@@ -72,15 +72,15 @@
     }
 .temasBox{
     height:250px;
-    font-size: 0.8em;
-    font-weight: 400;
-    font-family: 'poppins';
-    text-align: left;
     padding-right: 10%;
     padding-top: 10%;
 }
 .temas{
     margin-bottom: 5px;
+    font-size: 0.8em;
+    font-weight: 500;
+    font-family: 'poppins';
+    text-align: left;
 }
 .capaDownload{
     max-width:300 px;

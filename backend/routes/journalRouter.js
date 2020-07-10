@@ -1,19 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('../config');
-const port = 3000;
 
-router.use(express.json())
 
-connection.connect((err) => {
-    if (err) {
-        throw err
-    } else {
-        console.log('database successfully connected')
-    }
-})
-
-router.get('/api/jornal', (req, res) => {
+router.get('/', (req, res) => {
     connection.query('SELECT * FROM journal WHERE publish=sim ORDER BY edition DESC',
         (err, results) => {
             if (err) {
@@ -29,13 +19,14 @@ router.get('/api/jornal', (req, res) => {
     )
 })
 
-router.post('/api/jornal', (req, res) => {
+router.post('/', (req, res) => {
     const formData = req.body
     connection.query('INSERT INTO journal SET ?',
-        formData,
+        [formData],
         (err, results) => {
             if (err) {
-                res.status.send('Error loading journal')
+                res.status(400).send('Error loading journal')
+                console.log(err)
             } else {
                 res.status(200).send('New Journal loaded')
             }
@@ -43,7 +34,7 @@ router.post('/api/jornal', (req, res) => {
     )
 })
 
-router.put('/api/jornal', (req, res) => {
+router.put('/', (req, res) => {
     connection.query('UPDATE journal SET ? WHERE edition=?',
         [req.body, req.body.edition],
         (err, results) => {
@@ -61,7 +52,7 @@ router.put('/api/jornal', (req, res) => {
     )
 })
 
-router.delete('/api/jornal', (req, res) => {
+router.delete('/', (req, res) => {
     connection.query('DELETE FROM journal WHERE edition=?',
         req.body.edition,
         (err, results) => {
@@ -79,12 +70,4 @@ router.delete('/api/jornal', (req, res) => {
 }
 )
 
-
-
-router.listen(port, (err) => {
-    if (err) {
-        console.log(err)
-    } else {
-        console.log(`The router is running on port ${port}`)
-    }
-})
+module.exports = router;
