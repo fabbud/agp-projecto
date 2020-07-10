@@ -47,7 +47,7 @@ const Header = (props) => {
           <Nav className="ml-auto">
             <NavDropdown title={(t('header.sobre'))} id="basic-nav-dropdown" className="nav-header">
               <NavDropdown.Item onClick={toggleNav} className="dropdown-item"><Link to="/sobre/associacao">{t('header.associacao')}</Link></NavDropdown.Item>
-              <NavDropdown.Item onClick={toggleNav} className="dropdown-item">{t('header.historiaGuidismo')}</NavDropdown.Item>
+              <NavDropdown.Item onClick={toggleNav} className="dropdown-item"><Link to="/sobre/historia-guidismo">{t('header.historiaGuidismo')}</Link></NavDropdown.Item>
               <NavDropdown.Item onClick={toggleNav} className="dropdown-item" href={EstatutosPDF} target="_blank">{t('header.estatutos')}</NavDropdown.Item>
               <NavDropdown.Item onClick={toggleNav} className="dropdown-item"><Link to="/sobre/associacao-mundial">{t('header.associacaoMundial')}</Link></NavDropdown.Item>
             </NavDropdown>

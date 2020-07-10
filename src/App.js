@@ -21,7 +21,9 @@ import LojaMaster from './components/Loja/LojaMaster';
 import ConteudoNoticia from './components/ConteudoNoticia/ConteudoNotica';
 import Search from './components/Search/Search';
 import Jornal from './components/Jornal/Jornal';
+import HistoriaGuidismo from './components/HistoriaGuidismo/HistoriaGuidismo';
 import Login from './components/Backoffice/Login/Login';
+
 
 function App() {
   const currentPath = window.location.pathname;
@@ -34,6 +36,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route exact path="/sobre/associacao" component={AssociacaoFront} />
+            <Route exact path="/sobre/historia-guidismo" component={HistoriaGuidismo} />
             <Route exact path="/sobre/associacao-mundial" component={AssociacaoMundial} />
             <Route exact path="/pedagogia/ramos/:tipo" component={RamosDirigente} />
             <Route exact path="/pedagogia/dirigente" component={RamosDirigente} />
