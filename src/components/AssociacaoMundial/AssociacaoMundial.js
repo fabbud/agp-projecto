@@ -89,12 +89,7 @@ const AssociacaoMundial = () => {
               <p>{ReactHtmlParser(t('associacaoMundial.pensamentoTexto2'))}</p>
               <p>{ReactHtmlParser(t('associacaoMundial.pensamentoTexto3'))}</p>
               <p>{ReactHtmlParser(t('associacaoMundial.pensamentoTexto4'))}</p>
-              <p>
-                {ReactHtmlParser(t('associacaoMundial.pensamentoTexto5'))}
-                <a href="https://www.worldthinkingday.org" target="_blank" rel="noopener noreferrer">
-                  {ReactHtmlParser(t('associacaoMundial.pensamentoTexto6'))}
-                </a>
-              </p>
+              <p>{ReactHtmlParser(t('associacaoMundial.pensamentoTexto5'))}</p>
             </div>
           </div>
         </div>
@@ -106,15 +101,9 @@ const AssociacaoMundial = () => {
             <div className="penny-title">{t('associacaoMundial.tostaoMundialTitulo')}</div>
             <div className="penny-text">
               <p>{ReactHtmlParser(t('associacaoMundial.tostaoTexto1'))}</p>
-              <p>
-                {ReactHtmlParser(t('associacaoMundial.tostaoTexto2'))}
-                <a href="https://www.wagggs.org/en/what-we-do/world-thinking-day/world-thinking-day-fund/" target="_blank" rel="noopener noreferrer">
-                  {ReactHtmlParser(t('associacaoMundial.tostaoTexto3'))}
-                </a>
-                {ReactHtmlParser(t('associacaoMundial.tostaoTexto4'))}
-              </p>
-              <p>{ReactHtmlParser(t('associacaoMundial.tostaoTexto5'))}</p>
-              <p>{ReactHtmlParser(t('associacaoMundial.tostaoTexto6'))}</p>
+              <p>{ReactHtmlParser(t('associacaoMundial.tostaoTexto2'))}</p>
+              <p>{ReactHtmlParser(t('associacaoMundial.tostaoTexto3'))}</p>
+              <p>{ReactHtmlParser(t('associacaoMundial.tostaoTexto4'))}</p>
             </div>
           </div>
         </div>

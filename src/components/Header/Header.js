@@ -52,7 +52,7 @@ const Header = (props) => {
               <NavDropdown.Item onClick={toggleNav} className="dropdown-item"><Link to="/sobre/associacao-mundial">{t('header.associacaoMundial')}</Link></NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title={t('header.pedagogia')} id="basic-nav-dropdown" className="nav-header">
-              <NavDropdown.Item onClick={toggleNav} className="dropdown-item">{t('header.metodoGuidista')}</NavDropdown.Item>
+              <NavDropdown.Item onClick={toggleNav} className="dropdown-item"><Link to="/pedagogia/metodo-guidista">{t('header.metodoGuidista')}</Link></NavDropdown.Item>
               <NavDropdown.Item onClick={toggleNav} className="dropdown-item"><Link to="/pedagogia/ramos/avezinha">{t('header.ramoAvezinha')}</Link></NavDropdown.Item>
               <NavDropdown.Item onClick={toggleNav} className="dropdown-item"><Link to="/pedagogia/ramos/aventura">{t('header.ramoAventura')}</Link></NavDropdown.Item>
               <NavDropdown.Item onClick={toggleNav} className="dropdown-item"><Link to="/pedagogia/ramos/caravela">{t('header.ramoCaravela')}</Link></NavDropdown.Item>

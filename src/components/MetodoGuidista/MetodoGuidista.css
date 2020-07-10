@@ -1,0 +1,218 @@
+.Metodo-Guidista {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 170px;
+}
+
+.guidista-banner {
+  background-image: url('../../assets/images/MetodoGuidista/Método_Guidista.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  width: 100%;
+}
+
+.guidista-intro {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.guidista-intro-title {
+  color: #1aa3db;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 30px 0px 20px 0px;
+}
+
+.guidista-intro-text {
+  max-width: 450px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #004982;
+  font-size: 16px;
+}
+
+.guidista-metodos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  background-color: #1AA3DB;
+  color: white;
+  text-transform: uppercase;
+}
+
+.guidista-metodos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.metodos-title {
+  font-size: 24px;
+  margin: 40px 0px;
+  text-align: center;
+}
+
+.metodo-box-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.metodo-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.metodo-box-title {
+  width: 145px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.metodo-box-img {
+  margin-top: 20px;
+  width: 80px;
+  height: 80px;
+}
+
+/*  CONSTANTES  */
+
+.constantes-imagens {
+  display: flex;
+  width: 100%;
+}
+
+.constantes-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  width: 25%;
+}
+.constantes-img-1 {
+  background-image: url('../../assets/images/MetodoGuidista/1.Vida_em_Grupo.jpg');
+}
+.constantes-img-2 {
+  background-image: url('../../assets/images/MetodoGuidista/2.Vida_ao_Ar_Livre.jpg');
+}
+.constantes-img-3 {
+  background-image: url('../../assets/images/MetodoGuidista/3.Compromisso.jpg');
+}
+.constantes-img-4 {
+  background-image: url('../../assets/images/MetodoGuidista/4.Progressão.jpg');
+}
+/* 
+.constantes-img .constante-title,
+.constantes-img .constante-text {
+  display: none;
+}
+
+.constantes-img:hover .constante-title,
+.constantes-img:hover .constante-text {
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(26, 163, 219, 0.7);
+}
+
+.constante-title {
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.constante-text {
+  font-size: 22px;
+} */
+
+/*  CONSTANTES  */
+
+
+.atividades-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #1AA3DB;
+  color: white;
+}
+
+.atividades-title {
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 40px 0px 20px 0px;
+}
+
+.atividades-text {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  width: 550px;
+  margin-bottom: 50px;
+}
+
+@media(max-width: 768px) {
+  .guidista-banner {
+    height: 180px;
+  }
+  .guidista-intro-title {
+    font-size: 20px;
+  }
+  .guidista-intro-text {
+    max-width: 300px;
+    font-size: 14px;
+  }
+  .metodos-title {
+    font-size: 20px;
+  }
+  .metodo-box {
+    margin: 5px 0px 15px 0px;
+  }
+  .metodo-box-title {
+    font-size: 13px;
+  }
+  .metodo-box-img {
+    width: 45px;
+    height: 45px;
+  }
+  .constantes-imagens {
+    display: flex;
+    flex-direction: column;
+  }
+  .constantes-img {
+    height: 180px;
+    width: 100%;
+  }
+  .atividades-title {
+    font-size: 20px;
+    margin: 30px 0px 20px 0px;
+  }
+  
+  .atividades-text {
+    font-size: 16px;
+    width: 290px;
+    margin-bottom: 40px;
+  }
+}
