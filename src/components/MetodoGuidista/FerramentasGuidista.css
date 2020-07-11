@@ -10,6 +10,7 @@
 .ferramenta-section {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -71,3 +72,30 @@
 .serviço-comunitário-image {
   background-image: url('../../assets/images/FerramentasGuidista/8.Serviço_Comunitário.jpg');
 } 
+
+
+@media(max-width: 768px) {
+  .ferramenta-section {
+    flex-direction: column; 
+    width: 100%;
+  }
+  .ferramenta-info-section {
+    width: 75%;
+    margin: -40px auto 30px auto;
+  }
+  .ferramenta-title {
+    font-size: 20px;
+  }
+  .ferramenta-text {
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .ferramenta-image {
+    width: 100%;
+    height: 180px;
+  }
+  .ferramenta-back {
+    font-size: 14px;
+  }
+}
