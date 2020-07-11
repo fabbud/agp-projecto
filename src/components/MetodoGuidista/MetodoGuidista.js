@@ -61,28 +61,48 @@ const MetodoGuidista = () => {
           </div>
         </div>
       </div>
-      <div className="guidista-intro">
-        <div className="guidista-intro-title">{t('metodoGuidista.constantesTitulo')}</div>
-        <div className="guidista-intro-text">{t('metodoGuidista.constantesTexto')}</div>
+      <div className="constantes-intro">
+        <div className="constantes-intro-title">{t('metodoGuidista.constantesTitulo')}</div>
+        <div className="constantes-intro-text">{t('metodoGuidista.constantesTexto')}</div>
       </div>
-      {/* <div className="constantes-imagens">
-        <div className="constantes-img constantes-img-1">
-          <div className="constante-title">Vida em grupo</div>
-          <div className="constante-text">empenho</div>
+      <div className="constantes-group">
+        <div className="constante-section">
+          <div className="constante-info">
+            <div className="constante-title">Vida em grupo</div>
+            <div className="constante-text">Amizade</div>
+            <div className="constante-text">Uma tarefa para cada uma</div>
+            <div className="constante-text">Objectivo comum</div>
+          </div>
+          <div className="constante-img constante-img-1" />
         </div>
-        <div className="constantes-img constantes-img-2">
-          <div className="constante-title">Vida em grupo</div>
-          <div className="constante-text">empenho</div>
+        <div className="constante-section">
+          <div className="constante-info constante-info-2">
+            <div className="constante-title">Vida ao Ar Livre</div>
+            <div className="constante-text">Compreensão</div>
+            <div className="constante-text">Integração</div>
+            <div className="constante-text">Felicidade</div>
+          </div>
+          <div className="constante-img constante-img-2" />
         </div>
-        <div className="constantes-img constantes-img-3">
-          <div className="constante-title">Vida em grupo</div>
-          <div className="constante-text">empenho</div>
+        <div className="constante-section">
+          <div className="constante-info">
+            <div className="constante-title">Compromisso</div>
+            <div className="constante-text">Disponibilidade</div>
+            <div className="constante-text">Responsabilidade</div>
+            <div className="constante-text">Empenhamento</div>
+          </div>
+          <div className="constante-img constante-img-3" />
         </div>
-        <div className="constantes-img constantes-img-4">
-          <div className="constante-title">Vida em grupo</div>
-          <div className="constante-text">empenho</div>
+        <div className="constante-section">
+          <div className="constante-info constante-info-2">
+            <div className="constante-title">Progressão</div>
+            <div className="constante-text">Desafio</div>
+            <div className="constante-text">Superar</div>
+            <div className="constante-text">Mais além</div>
+          </div>
+          <div className="constante-img constante-img-4" />
         </div>
-      </div> */}
+      </div>
       <div className="atividades-sentence">
         <div className="atividades-sentence-title">Atividades</div>
         <div className="atividades-sentence-text">As Ferramentas do Método Guidista e as Quatro Constantes são vividas através das várias atividades proporcionadas pela Associação.</div>
@@ -93,6 +113,7 @@ const MetodoGuidista = () => {
           <div className="atividades-subtitle">Acampamento</div>
           <div className="atividades-text">Baden-Powell dizia que o Acampamento “é a escola dos esforços e do desprendimento, nele as Guias aprendem a bastarem-se a si próprias, suprimindo as carências existentes no campo, com os meios que a Natureza oferece e com a técnica que aprenderam.”</div>
           <div className="atividades-text">A vida no campo é a grande aventura cheia de desafios que proporciona a cada Guia aprender a vencer dificuldades através das competências adquiridas e transformar o campo onde se encontra na “casa” onde vai viver durante cinco a sete dias.</div>
+          <div className="atividades-text">Saber mais sobre o Acampamento <a href='/'>aqui</a>.</div>
           <div className="atividades-subtitle">Acantonamento</div>
           <div className="atividades-text">O Acantonamento é uma atividade dentro de casa com a duração mínima de um fim de semana. É realizado no inverno, no período das férias de Natal, com a duração de quatro ou cinco dias e ao longo do ano em pequenas atividades.</div>
           <div className="atividades-subtitle">Bivaque</div>

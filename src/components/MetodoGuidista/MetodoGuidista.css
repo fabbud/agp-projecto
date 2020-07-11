@@ -15,7 +15,7 @@
   width: 100%;
 }
 
-.guidista-intro {
+.guidista-intro, .constantes-intro {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -25,16 +25,16 @@
   margin-bottom: 30px;
 }
 
-.guidista-intro-title {
+.guidista-intro-title, .constantes-intro-title {
   color: #1aa3db;
   font-size: 25px;
   font-weight: 500;
   text-align: center;
   text-transform: uppercase;
-  margin: 30px 0px 20px 0px;
+  margin: 50px 0px 20px 0px;
 }
 
-.guidista-intro-text {
+.guidista-intro-text, .constantes-intro-text {
   max-width: 450px;
   text-align: center;
   display: flex;
@@ -42,6 +42,7 @@
   justify-content: center;
   color: #004982;
   font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .guidista-metodos {
@@ -89,64 +90,81 @@
 
 .metodo-box-img {
   margin-top: 20px;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
 }
 
 /*  CONSTANTES  */
 
-.constantes-imagens {
+.constantes-intro-text {
+  width: 700px;
+}
+
+.constantes-group {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   width: 100%;
 }
 
-.constantes-img {
+.constante-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 25%;
+  position: relative;
+}
+
+.constante-img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 300px;
-  width: 25%;
+  width: 100%;
 }
-.constantes-img-1 {
+.constante-img-1 {
   background-image: url('../../assets/images/MetodoGuidista/1.Vida_em_Grupo.jpg');
 }
-.constantes-img-2 {
+.constante-img-2 {
   background-image: url('../../assets/images/MetodoGuidista/2.Vida_ao_Ar_Livre.jpg');
 }
-.constantes-img-3 {
+.constante-img-3 {
   background-image: url('../../assets/images/MetodoGuidista/3.Compromisso.jpg');
 }
-.constantes-img-4 {
+.constante-img-4 {
   background-image: url('../../assets/images/MetodoGuidista/4.Progressão.jpg');
 }
-/* 
-.constantes-img .constante-title,
-.constantes-img .constante-text {
+
+.constante-section .constante-info {
   display: none;
 }
 
-.constantes-img:hover .constante-title,
-.constantes-img:hover .constante-text {
-  text-align: center;
-  color: white;
-  font-weight: 500;
+.constante-section:hover .constante-info {
   display: flex;
-  justify-content: center;
+}
+
+.constante-info {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  background-color: rgba(26, 163, 219, 0.7);
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background-color: rgba(26, 163, 219, 0.6);
 }
 
 .constante-title {
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 28px;
   margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
 }
+
 .constante-text {
-  font-size: 22px;
-} */
-
-/*  CONSTANTES  */
-
+  font-size: 18px;
+}
 
 .atividades-sentence {
   display: flex;
@@ -162,7 +180,7 @@
   text-transform: uppercase;
   font-size: 25px;
   font-weight: 500;
-  margin: 40px 0px 20px 0px;
+  margin: 60px 0px 20px 0px;
 }
 
 .atividades-sentence-text {
@@ -170,7 +188,7 @@
   font-size: 20px;
   font-weight: 500;
   width: 550px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
 .atividades-section, .atividades-section-two {
@@ -264,21 +282,25 @@
   }
   .guidista-intro-text,
   .metodos-title,
+  .constantes-intro-title,
+  .constantes-intro-text,
   .projetos-title, 
   .projetos-text {
     width: 80%;
   }
   .guidista-intro-title,
   .metodos-title,
+  .constantes-intro-title,
   .atividades-title,
   .atividades-sentence-title,
   .projetos-title {
     font-size: 20px;
   }
   .guidista-intro-text,
+  .constantes-intro-text,
   .atividades-subtitle,
   .atividades-text,
-  .projetos-text  {
+  .projetos-text {
     font-size: 14px;
   }
   .metodo-box {
@@ -291,12 +313,37 @@
     width: 45px;
     height: 45px;
   }
-  .constantes-imagens {
-    display: flex;
-    flex-direction: column;
+  .constante-info {
+    color: white;
+    background-color: rgba(26, 163, 219, 0.6);
   }
-  .constantes-img,
-  .atividades-section-img {
+  .constante-info-2 {
+    color: #004982;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  .constante-section {
+    width: 100%;
+  }
+  .constante-title {
+    font-size: 18px;
+    /* font-size: 14px; */
+    margin-bottom: 0px;
+    text-align: center;
+    letter-spacing: 0em;
+  }
+  .constante-text  {
+    font-size: 14px;
+    /* font-size: 12px; */
+    font-weight: 500;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .constante-section .constante-info {
+    display: flex;
+  }
+  .constante-img,
+  .atividades-section-img,
+  .constante-info {
     height: 180px;
     width: 100%;
   }
