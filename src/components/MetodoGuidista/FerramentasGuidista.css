@@ -1,0 +1,73 @@
+.FerramentasGuidista {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 170px;
+  padding: 40px 0px;
+}
+
+.ferramenta-section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.ferramenta-info-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 45%;
+  margin: 0px 80px 40px 100px;
+}
+
+.ferramenta-title {
+  color: #1aa3db;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.ferramenta-text {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.ferramenta-image {
+  width: 55%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.compromisso-image {
+  background-image: url('../../assets/images/FerramentasGuidista/1.Compromisso.jpg');
+}
+
+.sistema-de-patrulhas-image {
+  background-image: url('../../assets/images/FerramentasGuidista/2.Sistema_de_Patrulhas.jpg');
+}
+
+.aprender-fazendo-image {
+  background-image: url('../../assets/images/FerramentasGuidista/3.Aprender_Fazendo_(2).jpg');
+}
+
+.autodesenvolvimento-image {
+  background-image: url('../../assets/images/FerramentasGuidista/4.Autodesenvolvimento_Progressivo.jpg');
+}
+
+.simbolismo-image {
+  background-image: url('../../assets/images/FerramentasGuidista/5.Simbolismo_1.jpg');
+}
+
+.cooperação-ativa-image {
+  background-image: url('../../assets/images/FerramentasGuidista/6.Cooperação_ativa_entre_jovens_e_adultos(1).jpg');
+}
+
+.atividades-ao-ar-livre-image {
+  background-image: url('../../assets/images/FerramentasGuidista/7.Atividades_ao_Ar_Livre.jpg');
+} 
+
+.serviço-comunitário-image {
+  background-image: url('../../assets/images/FerramentasGuidista/8.Serviço_Comunitário.jpg');
+} 

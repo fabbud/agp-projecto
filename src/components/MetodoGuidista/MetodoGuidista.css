@@ -75,6 +75,11 @@
   margin-bottom: 40px;
 }
 
+.metodo-box-group a {
+  display: flex;
+  color: white;
+}
+
 .metodo-box {
   display: flex;
   flex-direction: column;
@@ -93,8 +98,6 @@
   width: 90px;
   height: 90px;
 }
-
-/*  CONSTANTES  */
 
 .constantes-intro-text {
   width: 700px;

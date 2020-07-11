@@ -10,6 +10,7 @@ import servicoComunitario from '../../assets/images/MetodoGuidista/Serviço_Comu
 import simbolismo from '../../assets/images/MetodoGuidista/Simbolismo2.png';
 import sistemaPatrulhas from '../../assets/images/MetodoGuidista/Sistema_de_Patrulhas2.png';
 import cooperacaoAtiva from '../../assets/images/MetodoGuidista/Cooperação_Ativa2.png';
+
 const MetodoGuidista = () => {
   const { t } = useTranslation();
 
@@ -27,38 +28,54 @@ const MetodoGuidista = () => {
       <div className="guidista-metodos">
         <div className="metodos-title">{t('metodoGuidista.oitoFerramentasTitulo')}</div>
         <div className="metodo-box-group">
-          <div className="metodo-box">
-            <div className="metodo-box-title">{t('metodoGuidista.compromisso')}</div>
-            <img className="metodo-box-img" src={compromisso} alt="Compromisso" />
-          </div>
-          <div className="metodo-box">
-            <div className="metodo-box-title">{t('metodoGuidista.sistemaPatrulhas')}</div>
-            <img className="metodo-box-img" src={sistemaPatrulhas} alt="Patrulha" />
-          </div>
-          <div className="metodo-box">
-            <div className="metodo-box-title">{t('metodoGuidista.aprenderFazendo')}</div>
-            <img className="metodo-box-img" src={aprenderFazendo} alt="Fazer" />
-          </div>
-          <div className="metodo-box">
-            <div className="metodo-box-title">{t('metodoGuidista.autodesenvolvimento')}</div>
-            <img className="metodo-box-img" src={autoDesenvolvimento} alt="Autodesenvolvimento" />
-          </div>
-          <div className="metodo-box">
-            <div className="metodo-box-title">{t('metodoGuidista.simbolismo')}</div>
-            <img className="metodo-box-img" src={simbolismo} alt="Simbolismo" />
-          </div>
-          <div className="metodo-box">
-            <div className="metodo-box-title">{t('metodoGuidista.cooperacaoAtiva')}</div>
-            <img className="metodo-box-img" src={cooperacaoAtiva} alt="Cooperação" />
-          </div>
-          <div className="metodo-box">
-            <div className="metodo-box-title">{t('metodoGuidista.atividadesArLivre')}</div>
-            <img className="metodo-box-img" src={atividadesArLivre} alt="Atividades" />
-          </div>
-          <div className="metodo-box">
-            <div className="metodo-box-title">{t('metodoGuidista.servicoComunitario')}</div>
-            <img className="metodo-box-img" src={servicoComunitario} alt="Comunitário" />
-          </div>
+          <Link to="/pedagogia/metodo-guidista/compromisso">
+            <div className="metodo-box">
+              <div className="metodo-box-title">{t('metodoGuidista.compromisso')}</div>
+              <img className="metodo-box-img" src={compromisso} alt="Compromisso" />
+            </div>
+          </Link>
+          <Link to="/pedagogia/metodo-guidista/sistema-de-patrulhas">
+            <div className="metodo-box">
+              <div className="metodo-box-title">{t('metodoGuidista.sistemaPatrulhas')}</div>
+              <img className="metodo-box-img" src={sistemaPatrulhas} alt="Patrulha" />
+            </div>
+          </Link>
+          <Link to="/pedagogia/metodo-guidista/aprender-fazendo">
+            <div className="metodo-box">
+              <div className="metodo-box-title">{t('metodoGuidista.aprenderFazendo')}</div>
+              <img className="metodo-box-img" src={aprenderFazendo} alt="Fazer" />
+            </div>
+          </Link>
+          <Link to="/pedagogia/metodo-guidista/autodesenvolvimento">
+            <div className="metodo-box">
+              <div className="metodo-box-title">{t('metodoGuidista.autodesenvolvimento')}</div>
+              <img className="metodo-box-img" src={autoDesenvolvimento} alt="Autodesenvolvimento" />
+            </div>
+          </Link>
+          <Link to="/pedagogia/metodo-guidista/simbolismo">
+            <div className="metodo-box">
+              <div className="metodo-box-title">{t('metodoGuidista.simbolismo')}</div>
+              <img className="metodo-box-img" src={simbolismo} alt="Simbolismo" />
+            </div>
+          </Link>
+          <Link to="/pedagogia/metodo-guidista/cooperação-ativa">
+            <div className="metodo-box">
+              <div className="metodo-box-title">{t('metodoGuidista.cooperacaoAtiva')}</div>
+              <img className="metodo-box-img" src={cooperacaoAtiva} alt="Cooperação" />
+            </div>
+          </Link>
+          <Link to="/pedagogia/metodo-guidista/atividades-ao-ar-livre">
+            <div className="metodo-box">
+              <div className="metodo-box-title">{t('metodoGuidista.atividadesArLivre')}</div>
+              <img className="metodo-box-img" src={atividadesArLivre} alt="Atividades" />
+            </div>
+          </Link>
+          <Link to="/pedagogia/metodo-guidista/serviço-comunitário">
+            <div className="metodo-box">
+              <div className="metodo-box-title">{t('metodoGuidista.servicoComunitario')}</div>
+              <img className="metodo-box-img" src={servicoComunitario} alt="Comunitário" />
+            </div>
+          </Link>
         </div>
       </div>
       <div className="constantes-intro">
