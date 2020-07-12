@@ -225,6 +225,7 @@
     "buttonPalavraAosPais": "Want to be a Guia ?"
   },
   "media": {
-    "partilhaLabel": "Share this page:"
+    "partilhaPaginaLabel": "Share this page:",
+    "partilhaHomepageLabel": "Share this site:"
   }
 }

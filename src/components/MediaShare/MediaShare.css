@@ -1,5 +1,5 @@
 .MediaShare {
-  padding: 30px 10px 0px 10px;
+  padding: 30px 10px 30px 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -10,9 +10,22 @@
 .share-text {
   font-weight: 500;
   color: #08416A;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .share-button {
-  margin-left: 5px;
+  margin-left: 3px;
+}
+
+@media(max-width: 768px) {
+  /* .MediaShare {
+    padding: 30px 0px 0px 0px;
+  } */
+  .MediaShare svg {
+    width: 28px;
+    height: 28px;
+  }
+  .share-text {
+    font-size: 12px;
+  }
 }
