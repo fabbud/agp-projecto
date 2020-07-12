@@ -42,16 +42,18 @@
   font-size: 16px;
 }
 
-
 @media(max-width: 768px) {
+  .ProjetoGuidista {
+    margin-top: 120px;
+  }
   .projeto-post-box {
-    margin: 50px 50px;
+    margin: 40px 40px;
   }
   .projeto-post-image {
     height: 180px;
   }
   .projeto-post-info {
-    margin: 40px 60px 60px 60px;
+    margin: 40px 30px 40px 30px;
   }
   .projeto-post-title {
     font-size: 20px;

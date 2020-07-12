@@ -21,7 +21,9 @@ const MetodoGuidista = () => {
 
   return (
     <div className="Metodo-Guidista">
-      <div className="guidista-banner" />
+      <div className="guidista-banner">
+        <img src="https://drive.google.com/uc?export=view&id=1WmODkBh5B8d8avFj9Nlahsr9qS-ZStsX" alt="Guidista" />
+      </div>
       <div className="guidista-intro">
         <div className="guidista-intro-title">{t('metodoGuidista.introTitulo')}</div>
         <div className="guidista-intro-text">{t('metodoGuidista.introTexto')}</div>

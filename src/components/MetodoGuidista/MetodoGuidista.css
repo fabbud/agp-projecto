@@ -7,12 +7,19 @@
 }
 
 .guidista-banner {
-  background-image: url('../../assets/images/MetodoGuidista/Método_Guidista.jpg');
+  /* background-image: url('../../assets/images/MetodoGuidista/Método_Guidista.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   height: 300px;
   width: 100%;
+}
+
+.guidista-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .guidista-intro, .constantes-intro {
@@ -221,9 +228,6 @@
 }
 
 .atividades-section-img {
-  /* background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; */
   width: 50%;
 }
 
@@ -232,6 +236,9 @@
   height: 100%;
   object-fit: cover;
   object-position: top;
+/* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
 }
 
 /* .atividade-img-1 {
