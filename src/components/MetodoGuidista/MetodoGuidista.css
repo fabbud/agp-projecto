@@ -118,23 +118,15 @@
 }
 
 .constante-img {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   height: 300px;
   width: 100%;
 }
-.constante-img-1 {
-  background-image: url('../../assets/images/MetodoGuidista/1.Vida_em_Grupo.jpg');
-}
-.constante-img-2 {
-  background-image: url('../../assets/images/MetodoGuidista/2.Vida_ao_Ar_Livre.jpg');
-}
-.constante-img-3 {
-  background-image: url('../../assets/images/MetodoGuidista/3.Compromisso.jpg');
-}
-.constante-img-4 {
-  background-image: url('../../assets/images/MetodoGuidista/4.Progressão.jpg');
+
+.constante-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 .constante-section .constante-info {
@@ -229,27 +221,34 @@
 }
 
 .atividades-section-img {
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   width: 50%;
 }
 
-.atividade-img-1 {
-  background-image: url('../../assets/images/MetodoGuidista/1.Atividades_de_Campo.jpg');
+.atividades-section-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* .atividade-img-1 {
+  background-image: url('../../assets/images/MetodoGuidista/Atividades/1.Atividades_de_Campo.jpg');
 }
 .atividade-img-2 {
-  background-image: url('../../assets/images/MetodoGuidista/2.Atividades_de_Sede.jpg');
+  background-image: url('../../assets/images/MetodoGuidista/Atividades/2.Atividades_de_Sede.jpg');
 }
 .atividade-img-3 {
-  background-image: url('../../assets/images/MetodoGuidista/3.Atividade_de_Cidade.jpg');
+  background-image: url('../../assets/images/MetodoGuidista/Atividades/3.Atividade_de_Cidade.jpg');
 }
 .atividade-img-4 {
-  background-image: url('../../assets/images/MetodoGuidista/4.Serviço_Comunitário.jpg');
+  background-image: url('../../assets/images/MetodoGuidista/Atividades/4.Serviço_Comunitário.jpg');
 }
 .atividade-img-5 {
-  background-image: url('../../assets/images/MetodoGuidista/5.Experiências_Internacionais.jpg');
-}
+  background-image: url('../../assets/images/MetodoGuidista/Atividades/5.Experiências_Internacionais.jpg');
+} */
 
 
 .projetos-section {
@@ -261,7 +260,7 @@
   margin: 70px 0px;
 }
 
-.projetos-title {
+.projetos-intro-title {
   color: #1aa3db;
   font-size: 25px;
   font-weight: 500;
@@ -269,7 +268,7 @@
   margin-bottom: 20px;
 }
 
-.projetos-text {
+.projetos-intro-text {
   max-width: 750px;
   text-align: center;
   display: flex;
@@ -279,6 +278,15 @@
   font-size: 16px;
 }
 
+.projetos-mapa {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+
 @media(max-width: 768px) {
   .guidista-banner {
     height: 180px;
@@ -287,8 +295,8 @@
   .metodos-title,
   .constantes-intro-title,
   .constantes-intro-text,
-  .projetos-title, 
-  .projetos-text {
+  .projetos-intro-title, 
+  .projetos-intro-text {
     width: 80%;
   }
   .guidista-intro-title,
@@ -296,14 +304,14 @@
   .constantes-intro-title,
   .atividades-title,
   .atividades-sentence-title,
-  .projetos-title {
+  .projetos-intro-title {
     font-size: 20px;
   }
   .guidista-intro-text,
   .constantes-intro-text,
   .atividades-subtitle,
   .atividades-text,
-  .projetos-text {
+  .projetos-intro-text {
     font-size: 14px;
   }
   .metodo-box {
@@ -366,5 +374,8 @@
   }
   .atividades-section-text {
     padding: 40px 40px 40px 40px;
+  }
+  .projetos-mapa {
+    margin-bottom: -30px;
   }
 }

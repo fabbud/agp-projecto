@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import TimelineGuidista from './TimelineGuidista';
 import './MetodoGuidista.css';
 import aprenderFazendo from '../../assets/images/MetodoGuidista/Aprender_Fazendo2.png';
 import atividadesArLivre from '../../assets/images/MetodoGuidista/Atividades_ao_Ar_Livre2.png';
@@ -28,49 +29,49 @@ const MetodoGuidista = () => {
       <div className="guidista-metodos">
         <div className="metodos-title">{t('metodoGuidista.oitoFerramentasTitulo')}</div>
         <div className="metodo-box-group">
-          <Link to="/pedagogia/metodo-guidista/compromisso">
+          <Link to="/pedagogia/metodo-guidista/ferramentas/compromisso">
             <div className="metodo-box">
               <div className="metodo-box-title">{t('metodoGuidista.compromisso')}</div>
               <img className="metodo-box-img" src={compromisso} alt="Compromisso" />
             </div>
           </Link>
-          <Link to="/pedagogia/metodo-guidista/sistema-de-patrulhas">
+          <Link to="/pedagogia/metodo-guidista/ferramentas/sistema-de-patrulhas">
             <div className="metodo-box">
               <div className="metodo-box-title">{t('metodoGuidista.sistemaPatrulhas')}</div>
               <img className="metodo-box-img" src={sistemaPatrulhas} alt="Patrulha" />
             </div>
           </Link>
-          <Link to="/pedagogia/metodo-guidista/aprender-fazendo">
+          <Link to="/pedagogia/metodo-guidista/ferramentas/aprender-fazendo">
             <div className="metodo-box">
               <div className="metodo-box-title">{t('metodoGuidista.aprenderFazendo')}</div>
               <img className="metodo-box-img" src={aprenderFazendo} alt="Fazer" />
             </div>
           </Link>
-          <Link to="/pedagogia/metodo-guidista/autodesenvolvimento">
+          <Link to="/pedagogia/metodo-guidista/ferramentas/autodesenvolvimento">
             <div className="metodo-box">
               <div className="metodo-box-title">{t('metodoGuidista.autodesenvolvimento')}</div>
               <img className="metodo-box-img" src={autoDesenvolvimento} alt="Autodesenvolvimento" />
             </div>
           </Link>
-          <Link to="/pedagogia/metodo-guidista/simbolismo">
+          <Link to="/pedagogia/metodo-guidista/ferramentas/simbolismo">
             <div className="metodo-box">
               <div className="metodo-box-title">{t('metodoGuidista.simbolismo')}</div>
               <img className="metodo-box-img" src={simbolismo} alt="Simbolismo" />
             </div>
           </Link>
-          <Link to="/pedagogia/metodo-guidista/cooperação-ativa">
+          <Link to="/pedagogia/metodo-guidista/ferramentas/cooperação-ativa">
             <div className="metodo-box">
               <div className="metodo-box-title">{t('metodoGuidista.cooperacaoAtiva')}</div>
               <img className="metodo-box-img" src={cooperacaoAtiva} alt="Cooperação" />
             </div>
           </Link>
-          <Link to="/pedagogia/metodo-guidista/atividades-ao-ar-livre">
+          <Link to="/pedagogia/metodo-guidista/ferramentas/atividades-ao-ar-livre">
             <div className="metodo-box">
               <div className="metodo-box-title">{t('metodoGuidista.atividadesArLivre')}</div>
               <img className="metodo-box-img" src={atividadesArLivre} alt="Atividades" />
             </div>
           </Link>
-          <Link to="/pedagogia/metodo-guidista/serviço-comunitário">
+          <Link to="/pedagogia/metodo-guidista/ferramentas/serviço-comunitário">
             <div className="metodo-box">
               <div className="metodo-box-title">{t('metodoGuidista.servicoComunitario')}</div>
               <img className="metodo-box-img" src={servicoComunitario} alt="Comunitário" />
@@ -90,7 +91,9 @@ const MetodoGuidista = () => {
             <div className="constante-text">Uma tarefa para cada uma</div>
             <div className="constante-text">Objectivo comum</div>
           </div>
-          <div className="constante-img constante-img-1" />
+          <div className="constante-img">
+            <img src="https://drive.google.com/uc?export=view&id=1RYmZ0MPvYzbZyTgrV4nk3EZQLV9-nLbH" alt="Vida em grupo" />
+          </div>
         </div>
         <div className="constante-section">
           <div className="constante-info constante-info-2">
@@ -99,7 +102,9 @@ const MetodoGuidista = () => {
             <div className="constante-text">Integração</div>
             <div className="constante-text">Felicidade</div>
           </div>
-          <div className="constante-img constante-img-2" />
+          <div className="constante-img">
+            <img src="https://drive.google.com/uc?export=view&id=1OxInKzToydXI_FY0iZnH8N17rUjgwkiH" alt="Vida ao ar Livre" />
+          </div>
         </div>
         <div className="constante-section">
           <div className="constante-info">
@@ -108,7 +113,9 @@ const MetodoGuidista = () => {
             <div className="constante-text">Responsabilidade</div>
             <div className="constante-text">Empenhamento</div>
           </div>
-          <div className="constante-img constante-img-3" />
+          <div className="constante-img">
+            <img src="https://drive.google.com/uc?export=view&id=1RpZ4bDu3GbDE2Cr4Wl7yTDFo7zWIEFKz" alt="Compromisso" />
+          </div>
         </div>
         <div className="constante-section">
           <div className="constante-info constante-info-2">
@@ -117,7 +124,9 @@ const MetodoGuidista = () => {
             <div className="constante-text">Superar</div>
             <div className="constante-text">Mais além</div>
           </div>
-          <div className="constante-img constante-img-4" />
+          <div className="constante-img">
+            <img src="https://drive.google.com/uc?export=view&id=1W_pUPYkrm3B89p8fBtHBTFfI-rvFIKeo" alt="Compromisso" />
+          </div>
         </div>
       </div>
       <div className="atividades-sentence">
@@ -138,10 +147,14 @@ const MetodoGuidista = () => {
           <div className="atividades-subtitle">Raid</div>
           <div className="atividades-text">O Raid é uma grande caminhada pelo campo, praia ou serra, em que se visitam pontos de interesse da região, conhecendo as suas características (história, clima, vegetação, etc.). São entregues mensagens às Guias, com propostas de tarefas para realizar ao longo do percurso e com indicações sobre o mesmo, em cifra ou através de orientação por carta topográfica.</div>
         </div>
-        <div className="atividades-section-img atividade-img-1" />
+        <div className="atividades-section-img">
+          <img src="https://drive.google.com/uc?export=view&id=1NZK84F3nrooh_ZGMzDX9BONaut6nmSuw" alt="Serviço Comunitário" />
+        </div>
       </div>
       <div className="atividades-section-two">
-        <div className="atividades-section-img atividade-img-2" />
+        <div className="atividades-section-img">
+          <img src="https://drive.google.com/uc?export=view&id=1cvrx58jm_FEj8Qmwk5GdunbuyJMYUcPq" alt="Serviço Comunitário" />
+        </div>
         <div className="atividades-section-text">
           <div className="atividades-title">Atividades da Sede</div>
           <div className="atividades-text">As Guias organizam-se localmente em Companhias e reúnem-se todas as semanas. <br/> A sede da Companhia é o local onde cada Ninho/Patrulha tem o seu canto e onde trabalham em conjunto.</div>
@@ -153,10 +166,14 @@ const MetodoGuidista = () => {
           <div className="atividades-title">Atividades de Cidade</div>
           <div className="atividades-text">As atividades de cidade permitem conhecer novos locais, novas gentes, novas culturas e novas formas de pensar. O jogo de conhecimento da cidade proporciona às Guias a oportunidade de conhecerem a História e as histórias do local, através da população, de visitarem museus, exposições e outros locais de interesse, vivendo, desta forma, o Princípio “A Guia ama a sua Pátria”.</div>
         </div>
-        <div className="atividades-section-img atividade-img-3" />
+        <div className="atividades-section-img">
+          <img src="https://drive.google.com/uc?export=view&id=1CrCLMrwYzitTQVpNSjFsz0jM0-OJG1dF" alt="Serviço Comunitário" />
+        </div>
       </div>
       <div className="atividades-section-two">
-        <div className="atividades-section-img atividade-img-4" />
+        <div className="atividades-section-img">
+          <img src="https://drive.google.com/uc?export=view&id=19RDK9Y9O4lBWqiQAXcN0LssjHD2ETVKd" alt="Serviço Comunitário" />
+        </div>
         <div className="atividades-section-text">
           <div className="atividades-title">Serviço Comunitário</div>
           <div className="atividades-text">Na essência do Guidismo está a convicção no valor do serviço ao próximo como componente importante para uma cidadania responsável. Assim, o Movimento Guidista tenta aproximar as raparigas da comunidade onde estão inseridas e procura sensibilizar para a responsabilidade do futuro e para o bem comum. Assim, as Guias realizam atividades como projetos de desenvolvimento comunitário junto da população mais carenciada, peditórios e recolha de bens ou alimentos, campanhas de sensibilização sobre uma área (higiene, alfabetização, ambiente, etc) ou atividades de preservação ambiental (recolha de lixo, limpeza de praias e florestas, plantação de árvores, como por exemplo o <a href='https://www.cleanuptheworld.org/about-us' target='_blank'>Clean Up the World</a>).</div>
@@ -164,11 +181,13 @@ const MetodoGuidista = () => {
         </div>
       </div>
       <div className="projetos-section">
-        <div className="projetos-title">Projetos realizados a nível nacional</div>
-        <div className="projetos-text">Paralelamente aos programas pedagógicos que a Associação propõe às Guias e às iniciativas de cada Companhia a nível local, no âmbito do seu Plano Anual de Atividades, a AGP lança com regularidade projetos de implementação nacional, cumprindo o lema SEMPRE ALERTA. Alguns dos projetos são propostos pela Associação Mundial das Guias (WAGGGS), enquanto membro efetivo de vários Comités das Nações Unidas.</div>
+        <div className="projetos-intro-title">Projetos realizados a nível nacional</div>
+        <div className="projetos-intro-text">Paralelamente aos programas pedagógicos que a Associação propõe às Guias e às iniciativas de cada Companhia a nível local, no âmbito do seu Plano Anual de Atividades, a AGP lança com regularidade projetos de implementação nacional, cumprindo o lema SEMPRE ALERTA. Alguns dos projetos são propostos pela Associação Mundial das Guias (WAGGGS), enquanto membro efetivo de vários Comités das Nações Unidas.</div>
       </div>
 
-      {/* MAP SECTION */}
+      <div className="projetos-mapa">
+        <TimelineGuidista />
+      </div>
 
       <div className="atividades-section">
         <div className="atividades-section-text">
@@ -176,7 +195,9 @@ const MetodoGuidista = () => {
           <div className="atividades-text">O Guidismo promove o respeito, a empatia e a tolerância pelos outros e a responsabilidade pelo mundo em que vivemos, também através da educação internacional. Ao aprender como vivem as pessoas de outras culturas e religiões, a Guia adquire um entendimento e aceitação das diferentes formas de pensar e de viver, e ao estabelecer amizade com pessoas de diferentes culturas e histórias de vida, desenvolve um sentido de responsabilidade e um conhecimento da interdependência da sua vida em relação à vida dos outros. A educação internacional é também importante como forma de fortalecer a educação para a paz, valor fortemente promovido pelo Guidismo.</div>
           <div className="atividades-text">As experiências internacionais tanto podem acontecer durante uma reunião de Patrulha, através de um contacto no bairro, ou num campo internacional, no estrangeiro. Ou ainda em atividades internacionais como o <a href='https://www.jotajoti.info/' target='_blank'>JOTA-JOTI</a> (Jamboree On The Air - Jamboree On The Internet), evento realizado anualmente, no terceiro fim de semana do mês de outubro, desde as 00h00 de sábado até às 24h00 de domingo (hora local), num total de 48 horas, que promove a comunicação entre Guias e Escuteiros de vários países do mundo, via radio amador e internet.</div>
         </div>
-        <div className="atividades-section-img atividade-img-5" />
+        <div className="atividades-section-img">
+          <img src="https://drive.google.com/uc?export=view&id=1dQfeEg8drfmfcyYn7MzEEXl9-P9aLb9y" alt="Internacional" />
+        </div>
       </div>
       <div className="associacao-button-section">
         <Link to="/contactos/formulário"><button type="submit" className="ser-guia-button associacao-button">{t('buttons.queresSerGuia')}</button></Link>

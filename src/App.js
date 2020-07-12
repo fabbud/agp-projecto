@@ -24,6 +24,7 @@ import Jornal from './components/Jornal/Jornal';
 import Login from './components/Backoffice/Login/Login';
 import MetodoGuidista from './components/MetodoGuidista/MetodoGuidista';
 import FerramentasGuidista from './components/MetodoGuidista/FerramentasGuidista';
+import ProjetoGuidista from './components/MetodoGuidista/ProjetoGuidista';
 
 function App() {
   const currentPath = window.location.pathname;
@@ -37,7 +38,8 @@ function App() {
             <Route exact path="/sobre/associacao" component={AssociacaoFront} />
             <Route exact path="/sobre/associacao-mundial" component={AssociacaoMundial} />
             <Route exact path="/pedagogia/metodo-guidista" component={MetodoGuidista} />
-            <Route exact path="/pedagogia/metodo-guidista/:ferramenta" component={FerramentasGuidista} />
+            <Route exact path="/pedagogia/metodo-guidista/ferramentas/:ferramenta" component={FerramentasGuidista} />
+            <Route exact path="/pedagogia/metodo-guidista/projetos/:projeto" component={ProjetoGuidista} />
             <Route exact path="/pedagogia/ramos/:tipo" component={RamosDirigente} />
             <Route exact path="/pedagogia/dirigente" component={RamosDirigente} />
             <Route exact path="/pedagogia/palavra-pais" component={PalavraAosPais} />
