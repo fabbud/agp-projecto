@@ -41,8 +41,8 @@ const Login = () => {
           <div className="login-card-section">
               <button className="login-button" type="submit">LOGIN</button>
           </div>
-          <div className="login-signup">
-            <a href="">Sign Up</a>
+          <div className="login-forgot">
+            <a href="">Forgot your password?</a>
           </div>
         </div>
       </div>
