@@ -1,9 +1,7 @@
 -- DROP TABLE IF EXISTS `homepage`;
 
-
 CREATE TABLE `homepage` (
   `journal_id`	INT NOT NULL,
-
   `article_1_id`	INT NOT NULL,
   `article_2_id`	INT NOT NULL,
   `article_3_id`	INT NOT NULL
@@ -14,29 +12,19 @@ CREATE TABLE `homepage` (
 
 -- DROP TABLE IF EXISTS `news`;
 
-CREATE TABLE `news`
-(
+CREATE TABLE `news`(
   `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `pt_title` VARCHAR
-(60) NOT NULL,
-  `en_title` VARCHAR
-(60) NOT NULL,
-  `thumbnail` VARCHAR
-(100) NOT NULL,
-  `image` VARCHAR
-(100) NOT NULL,
-  `pt_intro_text` VARCHAR
-(100) NOT NULL,
-  `en_intro_text` VARCHAR
-(100) NOT NULL,
-  `pt_date` VARCHAR
-(8) NOT NULL,
-  `en_date` VARCHAR
-(8) NOT NULL,
+  `pt_title` VARCHAR(60) NOT NULL,
+  `en_title` VARCHAR(60) NOT NULL,
+  `thumbnail` VARCHAR(100) NOT NULL,  
+  `image` VARCHAR(100) NOT NULL,
+  `pt_intro_text` VARCHAR(100) NOT NULL,
+  `en_intro_text` VARCHAR(100) NOT NULL,
+  `pt_date` VARCHAR(8) NOT NULL,
+  `en_date` VARCHAR(8) NOT NULL,
   `pt_content` LONGTEXT,
   `en_content` LONGTEXT,
-  PRIMARY KEY
-(`id`)
+  PRIMARY KEY(`id`)
 );
 
 -- INSERT INTO `news` (pt_title, en_title, thumbnail, image, pt_intro_text, en_intro_text, pt_date, en_date, pt_content, en_content ) VALUES 
@@ -44,35 +32,22 @@ CREATE TABLE `news`
 
 -- DROP TABLE IF EXISTS `journal`;
 
-
-CREATE TABLE `journal`
-(
+CREATE TABLE `journal` (
   `edition`	INTEGER NOT NULL AUTO_INCREMENT,
-  `pt_title`	VARCHAR
-(60) NOT NULL,
-  `en_title`	VARCHAR
-(60) NOT NULL,
-  `thumbnail`	VARCHAR
-(100) NOT NULL,
-  `pdf_link`	VARCHAR
-(100) NOT NULL,
-  `year`	VARCHAR
-(20) NOT NULL,
-  `pt_intro_text`	VARCHAR
-(250) NOT NULL,
-  `en_intro_text`	VARCHAR
-(250) NOT NULL,
+  `pt_title`	VARCHAR(60) NOT NULL,
+  `en_title`	VARCHAR(60) NOT NULL,
+  `thumbnail`	VARCHAR(100) NOT NULL,
+  `pdf_link`	VARCHAR(100) NOT NULL,
+  `year`	VARCHAR(20) NOT NULL,
+  `pt_intro_text`	VARCHAR(250) NOT NULL,
+  `en_intro_text`	VARCHAR(250) NOT NULL,
   `publish`	BOOL NOT NULL,
-
-  PRIMARY KEY
-(`edition`)
-
+  PRIMARY KEY(`edition`)
 );
 
--- INSERT INTO `journal` (pt_title, en_title, thumbnail, pdf_link, pt_year_edition, en_year_edition, pt_intro_text, en_intro_text, publish)
--- VALUES ('Eu e o outro: despertar para uma relação positiva', 'Me and the other: waking up to a positive relationship', 'https://imgur.com/VFLfKHd' , 'pdf', '2019 — 26ª Edição', '2019 — 26th Edition', '- Compreender o empreendedorismo; - À conversa com Patrícia Jardim da Palma; - A Guia portuguesa que se correspondia com Olave; - Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo', '- Understanding entrepreneurship; - Chatting with Patrícia Jardim da Palma; - The Portuguese Guide that corresponded with Olave; - Entrepreneurs over the centuries; - How Guidismo sows the seed of entrepreneurship', TRUE),
--- ('Educar para o empreendedorismo', 'Educating for entrepreneurship', 'https://imgur.com/VFLfKHd' , 'pdf', '2019 — 27ª Edição', '2019 — 27th Edition', '- Compreender o empreendedorismo; - À conversa com Patrícia Jardim da Palma; - A Guia portuguesa que se correspondia com Olave; - Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo', '- Understanding entrepreneurship; - Chatting with Patrícia Jardim da Palma; - The Portuguese Guide that corresponded with Olave; - Entrepreneurs over the centuriesHow Guidismo sows the seed of entrepreneurship', TRUE);
-
+-- INSERT INTO `journal` (pt_title, en_title, thumbnail, pdf_link, year, pt_intro_text, en_intro_text, publish)
+-- VALUES ('Educar para o empreendedorismo', 'Me and the other: waking up to a positive relationship', 'https://imgur.com/VFLfKHd' , 'pdf', '2019', '- Compreender o empreendedorismo; - À conversa com Patrícia Jardim da Palma; - A Guia portuguesa que se correspondia com Olave; - Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo', '- Understanding entrepreneurship; - Chatting with Patrícia Jardim da Palma; - The Portuguese Guide that corresponded with Olave; - Entrepreneurs over the centuries; - How Guidismo sows the seed of entrepreneurship', TRUE),
+-- ('Educar para o empreendedorismo', 'Educating for entrepreneurship', 'https://imgur.com/VFLfKHd' , 'pdf', '2019', '- Compreender o empreendedorismo; - À conversa com Patrícia Jardim da Palma; - A Guia portuguesa que se correspondia com Olave; - Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo', '- Understanding entrepreneurship; - Chatting with Patrícia Jardim da Palma; - The Portuguese Guide that corresponded with Olave; - Entrepreneurs over the centuriesHow Guidismo sows the seed of entrepreneurship', TRUE);
 
 -- DROP TABLE IF EXISTS `login`;
 

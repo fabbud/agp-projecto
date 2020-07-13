@@ -64,7 +64,6 @@ const Homepage = (props) => {
       });
   }, []);
 
-
   const openNoticia = (event) => {
     const newsId = event.target.id;
     props.history.push({ pathname: `/publicações/noticias/${newsId}` });
