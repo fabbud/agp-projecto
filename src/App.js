@@ -1,10 +1,6 @@
 import React, { Suspense } from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './i18n';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
@@ -23,7 +19,7 @@ import Search from './components/Search/Search';
 import Jornal from './components/Jornal/Jornal';
 import HistoriaGuidismo from './components/HistoriaGuidismo/HistoriaGuidismo';
 import Login from './components/Backoffice/Login/Login';
-
+import NoticiaInput from './components/Backoffice/Login/NoticiaInput';
 
 function App() {
   const currentPath = window.location.pathname;
@@ -36,26 +32,54 @@ function App() {
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route exact path="/sobre/associacao" component={AssociacaoFront} />
-            <Route exact path="/sobre/historia-guidismo" component={HistoriaGuidismo} />
-            <Route exact path="/sobre/associacao-mundial" component={AssociacaoMundial} />
-            <Route exact path="/pedagogia/ramos/:tipo" component={RamosDirigente} />
-            <Route exact path="/pedagogia/dirigente" component={RamosDirigente} />
-            <Route exact path="/pedagogia/palavra-pais" component={PalavraAosPais} />
-            <Route exact path="/publicações/recursos/ligações-úteis" component={LigacoesUteis} />
+            <Route
+              exact
+              path="/sobre/historia-guidismo"
+              component={HistoriaGuidismo}
+            />
+            <Route
+              exact
+              path="/sobre/associacao-mundial"
+              component={AssociacaoMundial}
+            />
+            <Route
+              exact
+              path="/pedagogia/ramos/:tipo"
+              component={RamosDirigente}
+            />
+            <Route
+              exact
+              path="/pedagogia/dirigente"
+              component={RamosDirigente}
+            />
+            <Route
+              exact
+              path="/pedagogia/palavra-pais"
+              component={PalavraAosPais}
+            />
+            <Route
+              exact
+              path="/publicações/recursos/ligações-úteis"
+              component={LigacoesUteis}
+            />
             <Route exact path="/contactos/:modo" component={Contactos} />
             <Route exact path="/publicações/jornal-trevo" component={Jornal} />
             <Route exact path="/publicações/noticias" component={Noticias} />
-            <Route exact path="/publicações/noticias/:id" component={ConteudoNoticia} />
+            <Route
+              exact
+              path="/publicações/noticias/:id"
+              component={ConteudoNoticia}
+            />
             <Route exact path="/loja/:modo" component={LojaMaster} />
             <Route exact path="/search/:type" component={Search} />
             <Route exact path="/backoffice" component={Login} />
+            <Route exact path="/backoffice/news" component={NoticiaInput} />
           </Switch>
-          { currentPath !== '/backoffice'
-          && (
-          <div>
-            <Header />
-            <Footer />
-          </div>
+          {!currentPath.includes('backoffice') && (
+            <div>
+              <Header />
+              <Footer />
+            </div>
           )}
         </Suspense>
       </div>
