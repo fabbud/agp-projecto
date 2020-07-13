@@ -14,17 +14,28 @@ CREATE TABLE `homepage` (
 
 CREATE TABLE `news`(
   `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `pt_title` VARCHAR(60) NOT NULL,
-  `en_title` VARCHAR(60) NOT NULL,
-  `thumbnail` VARCHAR(100) NOT NULL,  
-  `image` VARCHAR(100) NOT NULL,
-  `pt_intro_text` VARCHAR(100) NOT NULL,
-  `en_intro_text` VARCHAR(100) NOT NULL,
-  `pt_date` VARCHAR(8) NOT NULL,
-  `en_date` VARCHAR(8) NOT NULL,
-  `pt_content` LONGTEXT,
-  `en_content` LONGTEXT,
-  PRIMARY KEY(`id`)
+  `pt_title` VARCHAR
+(80) NOT NULL,
+  `en_title` VARCHAR
+(80) NOT NULL,
+  `thumbnail` VARCHAR
+(1000) NOT NULL,
+  `image` VARCHAR
+(1000) NOT NULL,
+  `pt_intro_text` VARCHAR
+(100) NOT NULL,
+  `en_intro_text` VARCHAR
+(100) NOT NULL,
+  `pt_date` VARCHAR
+(8) NOT NULL,
+  `en_date` VARCHAR
+(8) NOT NULL,
+  `pt_content` LONGTEXT NOT NULL,
+  `en_content` LONGTEXT NOT NULL,
+  `publish`	BOOL NOT NULL,
+  `date` DATE NOT NULL, 
+  PRIMARY KEY
+(`id`)
 );
 
 -- INSERT INTO `news` (pt_title, en_title, thumbnail, image, pt_intro_text, en_intro_text, pt_date, en_date, pt_content, en_content ) VALUES 

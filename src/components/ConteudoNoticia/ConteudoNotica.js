@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import ReactHtmlParser from 'react-html-parser';
 import "./ConteudoNoticia.css";
 import { useTranslation } from "react-i18next";
 
@@ -52,7 +53,7 @@ const ConteudoNoticia = (props) => {
             <h3>{contNoticiasData[`${selectedLanguage}_title`]}</h3>
           </div>
           <div className="TextCardNoticias">
-            {contNoticiasData[`${selectedLanguage}_content`]}
+            {ReactHtmlParser(contNoticiasData[`${selectedLanguage}_content`])}
           </div>
         </div>
       </div>
