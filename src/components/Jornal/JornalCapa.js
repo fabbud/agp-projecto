@@ -1,6 +1,7 @@
 import React from 'react';
 import './Jornal.css'
-import trevo from '../../assets/pdfs/Jornal/TREVO_27.pdf';
+import New from '../../assets/images/Outros/new.png';
+import downLoad from '../../assets/images/Outros/download.png';
 
 
 
@@ -19,11 +20,14 @@ function JornalCapa(props) {
                     alt={props.alt}
                     src={require(`../../assets/images/Jornal/${props.src}`)}
                 />
-                <a className='download' href={`../../assets/pdfs/Jornal/${props.pdf}`} download>
+
+                <a className='download' href={`../../assets/pdfs/Jornal/${props.pdf}`} download={props.pdf} title={props.titulo}>
+
                     <img className='downloadImage' alt={'download Jornal O Trevo Guias de Portugal'}
-                        src={require('../../assets/images/Outros/download.png')}
+                        src={props.index === 0 ? New : downLoad}
                     />
                 </a>
+
             </div>
 
             <div className='temasBox'>
