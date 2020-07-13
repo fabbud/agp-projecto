@@ -47,7 +47,7 @@ class AssociacaoFront extends React.Component {
             próprio: atribuição gradual de responsabilidade, fomentando o trabalho de grupo e a sua autonomia, comprometendo-se com a comunidade onde estão inseridas, tendo como espaço privilegiado de formação o ar livre.
             {' '}
           </p>
-  
+
           <p>
             A AGP é membro da Associação Mundial das Guias -
             <strong>WAGGGS</strong>
@@ -69,8 +69,10 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>Em Portugal, o Movimento Guidista surge devido ao entusiasmo de antigas guias inglesas residentes em Portugal que, nos anos 20, juntam grupos de raparigas inglesas e portuguesas, no Porto e depois em Carcavelos e na Madeira, com as quais formam as primeiras Companhias. Estas Companhias estão associadas a colégios ingleses e dependem diretamente da Associação Mundial.</p>
           </div>
-          <img src={Anos20} alt="Guias de Portugal Anos 20" />
-  
+          <div className='imageDiv'>
+            <img src={Anos20} alt="Guias de Portugal Anos 20" />
+          </div>
+
         </span>
         <span className="fotosHistoriaReverse">
           <div>
@@ -87,7 +89,9 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>Os Estatutos da AGP são aprovados pelo Governo e elege-se a primeira Comissária Nacional, Fernanda D' Orey, e a Comissária Internacional, Miss Pope, Guia inglesa que muito ajudou na consolidação da nossa Associação. Este ano foi ainda marcado pela receção do segundo cruzeiro de Guias e Escuteiros Britânicos, cujo último destino era Lisboa.  Nesse dia, cerca de 200 Guias caminharam juntas na cidade, sendo vistas pela primeira vez, pela população. O espírito do Movimento estende-se por Portugal e pelas Províncias Ultramarinas.</p>
           </div>
-          <img src={VisitaBPOlaveMadeira} alt="Guias Portugal visita BP Olave Madeira 1931" />
+          <div className='imageDiv'>
+            <img src={VisitaBPOlaveMadeira} alt="Guias Portugal visita BP Olave Madeira 1931" />
+          </div>
         </span>
         <span className="fotosHistoria">
           <div>
@@ -104,7 +108,9 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>A situação da Associação altera-se com o pedido de cessação das atividades feito pelo Governo, motivado pela criação da Mocidade Portuguesa. Agravada com os anos de agitação da Guerra Civil de Espanha e mais tarde com a II Guerra Mundial, o Movimento acaba por ser suspenso no continente e nos Açores. Apenas a Madeira se mantém em plena atividade, dinamizada pela "Chefe Carolina", que desenvolve diversas ações sociais na Ilha, entre elas, a criação da fundação "O Ninho", um lar de apoio a crianças necessitadas, onde as Guias prestavam serviço e para onde eram dirigidos os fundos conseguidos nas atividades por elas planeadas. Esta Fundação ainda se mantém ativa nos dias de hoje.</p>
           </div>
-          <img src={Anos30} alt="Guias de Portugal Anos 30" />
+          <div className='imageDiv'>
+            <img src={Anos30} alt="Guias de Portugal Anos 30" />
+          </div>
         </span>
         <span className="fotosHistoriaReverse">
           <div>
@@ -121,7 +127,9 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>A AGP recebe a Chefe Mundial das Guias, que passa por Portugal no âmbito de uma viagem que realizou pelos países onde o Guidismo se encontrava em desenvolvimento.</p>
           </div>
-          <img src={VisitaOlave} alt="Guias de Portugal visita Olave Portugal 1960" />
+          <div className='imageDiv'>
+            <img src={VisitaOlave} alt="Guias de Portugal visita Olave Portugal 1960" />
+          </div>
         </span>
         <span className="fotosHistoria">
           <div>
@@ -140,7 +148,9 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>Na década de 70, já existiam Companhias de Guias em Viana do Castelo, Porto, Braga, Guarda, Viseu, Aveiro, Leiria, Lisboa, Almada, Beja, Portalegre, Batalha, Faro, Santarém, Castelo Branco, Açores e Madeira.</p>
           </div>
-          <img src={Anos60} alt="Guias de Portugal anos 60" />
+          <div className='imageDiv'>
+            <img src={Anos60} alt="Guias de Portugal anos 60" />
+          </div>
         </span>
         <span className="fotosHistoriaReverse">
           <div>
@@ -163,7 +173,9 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>A AGP procurou sempre colaborar com outras organizações juvenis, sendo neste ano um dos membros fundadores do Conselho Nacional de Juventude. Também neste ano foi declarada Associação de Utilidade Pública</p>
           </div>
-          <img src={Anos70} alt="Guias de Portugal anos 70" />
+          <div className='imageDiv'>
+            <img src={Anos70} alt="Guias de Portugal anos 70" />
+          </div>
         </span>
         <span className="fotosHistoria">
           <div>
@@ -186,7 +198,9 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>A AGP apadrinha o coala no Jardim Zoológico de Lisboa, participando em iniciativas para a proteção da espécie em vias de extinçã</p>
           </div>
-          <img src={Anos80} alt="Guias de Portugal anos 80" />
+          <div className='imageDiv'>
+            <img src={Anos80} alt="Guias de Portugal anos 80" />
+          </div>
         </span>
         <span className="fotosHistoriaReverse">
           <div>
@@ -209,7 +223,9 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>Realiza-se o IV Acampamento nacional, no Cartaxo, com o tema “Junta-te às Estrelas”.</p>
           </div>
+          <div className='imageDiv'>
           <img src={Anos90} alt="Guias de Portugal anos 90" />
+          </div>
         </span>
         <span className="fotosHistoria">
           <div>
@@ -232,7 +248,9 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>Realiza-se o I Acampamento Nacional de Chefes e Subchefes de Patrulha dos Ramos Aventura e Caravela, em Belmonte. Este acampamento contou também com a presença de Guias de Moçambique e de São Tomé e Príncipe.</p>
           </div>
+          <div className='imageDiv'>
           <img src={Anos90V2} alt="Guias de Portugal anos 90" />
+          </div>
         </span>
         <span className="fotosHistoriaReverse">
           <div>
@@ -255,7 +273,9 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>Realiza-se o VI Acampamento Nacional, em Viana do Castelo, com o tema “Guidismo É... Crescer, Ser Capaz, Arriscar e Aceitar Desafios”.</p>
           </div>
+          <div className='imageDiv'>
           <img src={Anos2000} alt="Guias de Portugal anos 2000" />
+          </div>
         </span>
         <span className="fotosHistoria">
           <div>
@@ -279,7 +299,9 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>A AGP associa-se à Fundação Fé e Cooperação, participando numa iniciativa de apoio a Timor-Leste, Moçambique e Angola. A Associação angariou fundos suficientes para concretizar três projetos de desenvolvimento local, através da venda de bolachas feitas pelas Guias, no âmbito do Projeto Ter Mãos Grandes.</p>
           </div>
+          <div className='imageDiv'>
           <img src={Anos2010} alt="Guias de Portugal anos 2010" />
+          </div>
         </span>
         <span className="fotosHistoriaReverse">
           <div>
@@ -296,7 +318,9 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>Realiza-se o II Acampamento de Chefes e Subchefes de Patrulha dos Ramos Aventura e Caravela, em Santa Margarida (Santarém).</p>
           </div>
+          <div className='imageDiv'>
           <img src={Actualidade} alt="Guias de Portugal actualidade" />
+          </div>
         </span>
         <span className="fotosHistoria">
           <div>
@@ -313,7 +337,9 @@ class AssociacaoFront extends React.Component {
             </h3>
             <p>A AGP apoiou as vítimas do incêndio de Pedrógão Grande, numa pimeira fase com recolha de bens necessários e numa segunda com a mobilização nacional de Guias para os dois municípios mais afetados, Castanheira de Pera e Figueiró do Vinhos</p>
           </div>
+          <div className='imageDiv'>
           <img src={VCV} alt="Guias de Portugal Vozes Contra a Violência" />
+          </div>
         </span>
         <div className="button-section associa-link">
           <Link to="/contactos/formulário">

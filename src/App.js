@@ -1,6 +1,10 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  Switch,
+  Route,
+  useHistory,
+} from 'react-router-dom';
 import './i18n';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
@@ -20,70 +24,58 @@ import Jornal from './components/Jornal/Jornal';
 import HistoriaGuidismo from './components/HistoriaGuidismo/HistoriaGuidismo';
 import Login from './components/Backoffice/Login/Login';
 import NoticiaInput from './components/Backoffice/Login/NoticiaInput';
+import MetodoGuidista from './components/MetodoGuidista/MetodoGuidista';
+import FerramentasGuidista from './components/MetodoGuidista/FerramentasGuidista';
+import ProjetoGuidista from './components/MetodoGuidista/ProjetoGuidista';
+import MediaShare from './components/MediaShare/MediaShare';
+
 
 function App() {
+
   const currentPath = window.location.pathname;
-  console.log(currentPath);
+
+  const history = useHistory();
+  const [locationPath, setLocationPath] = useState('/');
+
+  useEffect(() => {
+    return history.listen((location) => {
+      setLocationPath(location.pathname);
+    });
+  }, [history]);
 
   return (
-    <Router>
-      <div className="App">
-        <Suspense fallback={null}>
-          <Switch>
-            <Route exact path="/" component={Homepage} />
-            <Route exact path="/sobre/associacao" component={AssociacaoFront} />
-            <Route
-              exact
-              path="/sobre/historia-guidismo"
-              component={HistoriaGuidismo}
-            />
-            <Route
-              exact
-              path="/sobre/associacao-mundial"
-              component={AssociacaoMundial}
-            />
-            <Route
-              exact
-              path="/pedagogia/ramos/:tipo"
-              component={RamosDirigente}
-            />
-            <Route
-              exact
-              path="/pedagogia/dirigente"
-              component={RamosDirigente}
-            />
-            <Route
-              exact
-              path="/pedagogia/palavra-pais"
-              component={PalavraAosPais}
-            />
-            <Route
-              exact
-              path="/publicações/recursos/ligações-úteis"
-              component={LigacoesUteis}
-            />
-            <Route exact path="/contactos/:modo" component={Contactos} />
-            <Route exact path="/publicações/jornal-trevo" component={Jornal} />
-            <Route exact path="/publicações/noticias" component={Noticias} />
-            <Route
-              exact
-              path="/publicações/noticias/:id"
-              component={ConteudoNoticia}
-            />
-            <Route exact path="/loja/:modo" component={LojaMaster} />
-            <Route exact path="/search/:type" component={Search} />
-            <Route exact path="/backoffice" component={Login} />
-            <Route exact path="/backoffice/news" component={NoticiaInput} />
-          </Switch>
-          {!currentPath.includes('backoffice') && (
-            <div>
-              <Header />
-              <Footer />
-            </div>
-          )}
-        </Suspense>
-      </div>
-    </Router>
+    <div className="App">
+      <Suspense fallback={null}>
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/sobre/associacao" component={AssociacaoFront} />
+          <Route exact path="/sobre/historia-guidismo" component={HistoriaGuidismo} />
+          <Route exact path="/sobre/associacao-mundial" component={AssociacaoMundial} />
+          <Route exact path="/pedagogia/metodo-guidista" component={MetodoGuidista} />
+          <Route exact path="/pedagogia/metodo-guidista/ferramentas/:ferramenta" component={FerramentasGuidista} />
+          <Route exact path="/pedagogia/metodo-guidista/projetos/:projeto" component={ProjetoGuidista} />
+          <Route exact path="/pedagogia/ramos/:tipo" component={RamosDirigente} />
+          <Route exact path="/pedagogia/dirigente" component={RamosDirigente} />
+          <Route exact path="/pedagogia/palavra-pais" component={PalavraAosPais} />
+          <Route exact path="/publicações/jornal-trevo" component={Jornal} />
+          <Route exact path="/publicações/noticias" component={Noticias} />
+          <Route exact path="/publicações/noticias/:id" component={ConteudoNoticia} />
+          <Route exact path="/publicações/recursos/ligações-úteis" component={LigacoesUteis} />
+          <Route exact path="/loja/:modo" component={LojaMaster} />
+          <Route exact path="/contactos/:modo" component={Contactos} />
+          <Route exact path="/search/:type" component={Search} />
+          <Route exact path="/backoffice" component={Login} />
+        </Switch>
+        { !currentPath.includes('backoffice')
+        && (
+        <div>
+          <Header />
+          { locationPath !== '/' ? <MediaShare /> : <MediaShare currentPath="homepage" />}
+          <Footer />
+        </div>
+        )}
+      </Suspense>
+    </div>
   );
 }
 
