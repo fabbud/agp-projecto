@@ -1,11 +1,11 @@
 const express = require('express');
+
 const router = express.Router();
 const connection = require('../config');
 
-
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   connection.query(
-    'SELECT * FROM news ORDER BY news.id DESC LIMIT 6;',
+    'SELECT * FROM news ORDER BY date DESC;',
     (err, results) => {
       if (err) {
         res.status(500).send('News not found');
@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
   );
 });
 
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   const formData = req.body;
   connection.query('INSERT INTO news SET ?', formData, (err, results) => {
     if (err) {
@@ -45,7 +45,7 @@ router.put('/:id', (req, res) => {
       } else {
         res.status(200).send('News updated successfully');
       }
-    }
+    },
   );
 });
 
@@ -56,7 +56,7 @@ router.delete('/:id', (req, res) => {
     [idNews],
     (err, results) => {
       if (err) {
-        res.status(500).send("Error");
+        res.status(500).send('Error');
       } else {
         res.status(200).send('News deleted!');
       }
@@ -65,4 +65,3 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router;
-

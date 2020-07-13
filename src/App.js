@@ -23,6 +23,7 @@ import Search from './components/Search/Search';
 import Jornal from './components/Jornal/Jornal';
 import HistoriaGuidismo from './components/HistoriaGuidismo/HistoriaGuidismo';
 import Login from './components/Backoffice/Login/Login';
+import NoticiaInput from './components/Backoffice/Login/NoticiaInput';
 import MetodoGuidista from './components/MetodoGuidista/MetodoGuidista';
 import FerramentasGuidista from './components/MetodoGuidista/FerramentasGuidista';
 import ProjetoGuidista from './components/MetodoGuidista/ProjetoGuidista';

@@ -48,10 +48,7 @@
 
 .TextCardNoticias {
   text-align: justify;
-  font-size: 15px;
-  font-style: normal;
   margin: 30px;
-  font-weight: 400;
 }
 
 @media (max-width: 1024px) {

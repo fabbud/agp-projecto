@@ -18,13 +18,13 @@ CREATE TABLE `news`
 (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `pt_title` VARCHAR
-(60) NOT NULL,
+(80) NOT NULL,
   `en_title` VARCHAR
-(60) NOT NULL,
+(80) NOT NULL,
   `thumbnail` VARCHAR
-(100) NOT NULL,
+(1000) NOT NULL,
   `image` VARCHAR
-(100) NOT NULL,
+(1000) NOT NULL,
   `pt_intro_text` VARCHAR
 (100) NOT NULL,
   `en_intro_text` VARCHAR
@@ -33,8 +33,10 @@ CREATE TABLE `news`
 (8) NOT NULL,
   `en_date` VARCHAR
 (8) NOT NULL,
-  `pt_content` LONGTEXT,
-  `en_content` LONGTEXT,
+  `pt_content` LONGTEXT NOT NULL,
+  `en_content` LONGTEXT NOT NULL,
+  `publish`	BOOL NOT NULL,
+  `date` DATE NOT NULL, 
   PRIMARY KEY
 (`id`)
 );
