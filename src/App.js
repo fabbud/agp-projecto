@@ -28,7 +28,7 @@ import MetodoGuidista from './components/MetodoGuidista/MetodoGuidista';
 import FerramentasGuidista from './components/MetodoGuidista/FerramentasGuidista';
 import ProjetoGuidista from './components/MetodoGuidista/ProjetoGuidista';
 import MediaShare from './components/MediaShare/MediaShare';
-
+import HomepageBackoffice from './components/Backoffice/Homepage/HomepageBackoffice';
 
 function App() {
 
@@ -65,6 +65,7 @@ function App() {
           <Route exact path="/contactos/:modo" component={Contactos} />
           <Route exact path="/search/:type" component={Search} />
           <Route exact path="/backoffice" component={Login} />
+          <Route exact path="/backoffice/homepage" component={HomepageBackoffice} />
         </Switch>
         { !currentPath.includes('backoffice')
         && (

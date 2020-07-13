@@ -3,10 +3,9 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../config');
 
-
 const jwtMiddleware = require('../services/jwtMiddleware');
 
-router.get('/', jwtMiddleware, (req, res) => {
+router.get('/', (req, res) => {
   connection.query(
     'SELECT * FROM news ORDER BY date DESC;',
     (err, results) => {

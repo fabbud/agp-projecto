@@ -36,7 +36,7 @@ passport.use(new LocalStrategy(
   },
   (email, password, cb) => {
     connection.query('SELECT * from login WHERE email = ?', [email], (err, results) => {
-      console.log(results);
+      console.log(results[0]);
       if (err) return cb(err);
       if (!results.length) {
         return cb(null, false, { message: 'Invalid Email' });

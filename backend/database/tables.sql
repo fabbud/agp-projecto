@@ -1,45 +1,39 @@
 -- DROP TABLE IF EXISTS `homepage`;
 
 CREATE TABLE `homepage` (
-  `journal_id`	INT NOT NULL,
-  `article_1_id`	INT NOT NULL,
-  `article_2_id`	INT NOT NULL,
-  `article_3_id`	INT NOT NULL
+  `journal_edition`	INT NOT NULL,
+  `article_1`	INT NOT NULL,
+  `article_2`	INT NOT NULL,
+  `article_3`	INT NOT NULL
 );
 
--- INSERT INTO `homepage` (journal_id, article_1_id, article_2_id, article_3_id)
+-- INSERT INTO `homepage` (journal_edition, article_1, article_2, article_3)
 -- VALUES (1, 1, 2, 3);
 
 -- DROP TABLE IF EXISTS `news`;
 
 CREATE TABLE `news`(
   `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `pt_title` VARCHAR
-(80) NOT NULL,
-  `en_title` VARCHAR
-(80) NOT NULL,
-  `thumbnail` VARCHAR
-(1000) NOT NULL,
-  `image` VARCHAR
-(1000) NOT NULL,
-  `pt_intro_text` VARCHAR
-(100) NOT NULL,
-  `en_intro_text` VARCHAR
-(100) NOT NULL,
-  `pt_date` VARCHAR
-(8) NOT NULL,
-  `en_date` VARCHAR
-(8) NOT NULL,
+  `pt_title` VARCHAR(80) NOT NULL,
+  `en_title` VARCHAR(80) NOT NULL,
+  `thumbnail` VARCHAR(1000) NOT NULL,
+  `image` VARCHAR(1000) NOT NULL,
+  `pt_intro_text` VARCHAR(100) NOT NULL,
+  `en_intro_text` VARCHAR(100) NOT NULL,
+  `pt_date` VARCHAR(8) NOT NULL,
+  `en_date` VARCHAR(8) NOT NULL,
   `pt_content` LONGTEXT NOT NULL,
   `en_content` LONGTEXT NOT NULL,
   `publish`	BOOL NOT NULL,
-  `date` DATE NOT NULL, 
-  PRIMARY KEY
-(`id`)
+  `date` VARCHAR(10), 
+  PRIMARY KEY(`id`)
 );
 
--- INSERT INTO `news` (pt_title, en_title, thumbnail, image, pt_intro_text, en_intro_text, pt_date, en_date, pt_content, en_content ) VALUES 
--- ('Dicas para te materes ligada às tuas amigas Guias', 'Tips to stay connected to your Guias friends', 'https://i.imgur.com/6ABe3A6.jpg', 'https://i.imgur.com/jTldhF9.jpg', 'Dicas para te materes ligada às tuas amigas Guias', 'Tips to stay connected to your friends Guides', 'ABR 2020', 'APR 2020', 'Querida Guia, Agora que já sabemos que as atividades presenciais estão suspensas, temos de por a tristeza ao largo e como é típico das Guias encontrar formas de estarmos juntas e contagiar com a nossa alegria todos os que nos rodeiam.Deixamos-te algumas dicas - algumas das quais sabemos que já estás a por em prática - para te manteres ligada à tua Patrulha e às tuas amigas Guias neste tempo de distanciamento social.', 'Dear Guide, Now that we know that face-to-face activities are suspended, we have to put sadness out and as is typical of Guides, find ways to be together and spread our joy to everyone around us. We leave you with some tips - some of which we know you’re already doing - to stay connected to your Patrol and your friendly Guides in this time of social detachment.' );
+INSERT INTO `news` (pt_title, en_title, thumbnail, image, pt_intro_text, en_intro_text, pt_date, en_date, pt_content, en_content, publish, date ) VALUES 
+('Notirwerwerwee fardas', 'Tips to stay connected to your Guias friends', 'https://i.imgur.com/6ABe3A6.jpg', 'https://i.imgur.com/jTldhF9.jpg', 'Dicas para te materes ligada às tuas amigas Guias', 'Tips to stay connected to your friends Guides', 'ABR 2020', 'APR 2020', 'Querida Guia, Agora que já sabemos que as atividades presenciais estão suspensas, temos de por a tristeza ao largo e como é típico das Guias encontrar foàs tuas amigas Gcial.', 'Dear Guids in this time of social detachment.', TRUE, '2019-05-10'),
+('Dicas rwerwerweligada às tuas amigas Guias', 'Tips to stay connected to your Guias friends', 'https://i.imgur.com/6ABe3A6.jpg', 'https://i.imgur.com/jTldhF9.jpg', 'Dicas para te materes ligada às tuas amigas Guias', 'Tips to stay connected to your friends Guides', 'ABR 2020', 'APR 2020', 'Querida Guia, Agora que já sabemos que as atividades presenciais estão suspensas, temos de por a tristeza ao largo e como é típico das neste tempo ento social.', 'Dear Guide, etachment.', TRUE, '2020-03-10'),
+('PandemierwerwerewrwerS', 'Tips to stay connected to your Guias friends', 'https://i.imgur.com/6ABe3A6.jpg', 'https://i.imgur.com/jTldhF9.jpg', 'Dicas para te materes ligada às tuas amigas Guias', 'Tips to stay connected to your friends Guides', 'ABR 2020', 'APR 2020', 'Querida Guia, Agora que já sabemos que as atividades presenciais estão suspensas, temos de por a tristeza ao largo e como é típico das Guias encontrar f distanciamento social.', 'Dear Guide, are suspendedthis time of social detachment.', TRUE, '2020-04-10'),
+('Noticcas seeeeeareee ee das', 'Tips to stay connected to your Guias friends', 'https://i.imgur.com/6ABe3A6.jpg', 'https://i.imgur.com/jTldhF9.jpg', 'Dicas para te materes ligada às tuas amigas Guias', 'Tips to stay connected to your friends Guides', 'ABR 2020', 'APR 2020', 'Querida Guia, Agora que já sabemos que as atividades presenciais estão suspensas, temos de por a tristeza ao largo e como é típico das Guias enconte manteres ligadncial.', 'Dees in this chment.', TRUE, '2019-05-10');
 
 -- DROP TABLE IF EXISTS `journal`;
 

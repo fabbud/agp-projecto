@@ -20,9 +20,9 @@ router.get('/', (req, res, next) => {
 router.get('/:mode', (req, res, next) => {
   let query = '';
   if (req.params.mode === 'journal') {
-    query = 'SELECT journal.* FROM homepage JOIN journal ON homepage.journal_id = journal.id';
+    query = 'SELECT journal.* FROM homepage JOIN journal ON homepage.journal_edition = journal.edition';
   } else {
-    query = 'SELECT news.* FROM homepage JOIN news ON homepage.article_1_id = news.id OR homepage.article_2_id = news.id OR homepage.article_3_id = news.id';
+    query = 'SELECT news.* FROM homepage JOIN news ON homepage.article_1 = news.id OR homepage.article_2 = news.id OR homepage.article_3 = news.id';
   }
   connection.query(query, (err, results) => {
     if (err) {
@@ -38,6 +38,7 @@ router.get('/:mode', (req, res, next) => {
 
 router.put('/', (req, res) => {
   const newData = req.body;
+  console.log(newData);
   connection.query('UPDATE homepage SET ? ', [newData], (err, results) => {
     if (err) {
       res.status(500).send('Error updating homepage data');
