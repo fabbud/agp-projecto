@@ -11,7 +11,6 @@ const ExtractJWT = require('passport-jwt').ExtractJwt;
 const sendNodemailer = require('./nodemailer');
 const connection = require('./config');
 
-
 const homepageRouter = require('./routes/homepageRouter');
 const newsRouter = require('./routes/newsRouter');
 const journalRouter = require('./routes/journalRouter');
@@ -37,6 +36,7 @@ passport.use(new LocalStrategy(
   },
   (email, password, cb) => {
     connection.query('SELECT * from login WHERE email = ?', [email], (err, results) => {
+      console.log(results);
       if (err) return cb(err);
       if (!results.length) {
         return cb(null, false, { message: 'Invalid Email' });
@@ -49,17 +49,13 @@ passport.use(new LocalStrategy(
   },
 ));
 
-passport.use(
-  new JWTStrategy(
-    {
-      jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-      secretOrKey: 'agp_secret',
-    },
-    ((jwtPayload, cb) => cb(null, jwtPayload)),
-  ),
-);
-
-// const passportMiddleware = passport.authenticate('jwt', { session: false });
+passport.use(new JWTStrategy(
+  {
+    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+    secretOrKey: 'agp_secret',
+  },
+  ((jwtPayload, cb) => cb(null, jwtPayload)),
+));
 
 // Nodemailer - Send Contact form API
 app.post('/email', sendNodemailer, (req, res) => {

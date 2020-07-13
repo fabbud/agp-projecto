@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../config');
 
+const jwtMiddleware = require('../services/jwtMiddleware');
 
-
-router.get('/', (req, res) => {
+router.get('/', jwtMiddleware, (req, res) => {
     connection.query('SELECT * FROM journal WHERE publish=sim ORDER BY edition DESC',
         (err, results) => {
             if (err) {
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
     )
 })
 
-router.post('/', (req, res) => {
+router.post('/', jwtMiddleware, (req, res) => {
     const formData = req.body
     connection.query('INSERT INTO journal SET ?',
         [formData],
@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
     )
 })
 
-router.put('/', (req, res) => {
+router.put('/', jwtMiddleware, (req, res) => {
     connection.query('UPDATE journal SET ? WHERE edition=?',
         [req.body, req.body.edition],
         (err, results) => {
@@ -53,7 +53,7 @@ router.put('/', (req, res) => {
     )
 })
 
-router.delete('/', (req, res) => {
+router.delete('/', jwtMiddleware, (req, res) => {
     connection.query('DELETE FROM journal WHERE edition=?',
         req.body.edition,
         (err, results) => {
@@ -72,4 +72,3 @@ router.delete('/', (req, res) => {
 )
 
 module.exports = router;
-
