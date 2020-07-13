@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import ReactHtmlParser from 'react-html-parser';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import MediaShare from '../MediaShare/MediaShare';
 import './Homepage.css';
 import avezinhaFoto from '../../assets/images/Homepage/FotoAvezinha.jpg';
 import aventuraFoto from '../../assets/images/Homepage/FotoAventura.jpg';
@@ -180,7 +179,6 @@ const Homepage = (props) => {
             ))}
           </div>
         ) : ''}
-      <MediaShare page="homepage" />
     </div>
   );
 };

@@ -6,75 +6,71 @@ import './MediaShare.css';
 
 const MediaShare = (props) => {
   const { t } = useTranslation();
-  const { page } = props;
-  const currentPage = window.location.href;
-  const currentPath = window.location.pathname;
-  const dataPage = 'https://associacao-guias-de-portugal.netlify.app';
+  const pageURL = window.location.href;
+  //const pagePath = window.location.pathname;
+  const dataURL = 'https://associacao-guias-de-portugal.netlify.app';
   const mainText = 'Veja esta página da AGP:';
   const emailSubject = 'Associação Guias de Portugal';
-  const twitterAccount = 'AGP';
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    console.log(props.page);
-  }, []);
-
+  const { currentPath } = props;
+  //console.log(currentPath);
 
   return (
     <div className="MediaShare">
       <div className="share-text">
-        { page ? `${t('media.partilhaHomepageLabel')}` : `${t('media.partilhaPaginaLabel')}`}
+        { currentPath ? `${t('media.partilhaHomepageLabel')}` : `${t('media.partilhaPaginaLabel')}`}
       </div>
-      <FacebookShareButton
-        className="share-button"
-        url={dataPage}
-      >
-        <FacebookIcon className="share-icon" round size={30} />
-      </FacebookShareButton>
+      <div>
+        <FacebookShareButton
+          className="share-button"
+          url={dataURL}
+        >
+          <FacebookIcon className="share-icon" round size={30} />
+        </FacebookShareButton>
 
-      <LinkedinShareButton
-        className="share-button"
-        url={dataPage}
-      >
-        <LinkedinIcon className="share-icon" round size={28} />
-      </LinkedinShareButton>
+        <LinkedinShareButton
+          className="share-button"
+          url={dataURL}
+        >
+          <LinkedinIcon className="share-icon" round size={28} />
+        </LinkedinShareButton>
 
-      <PinterestShareButton
-        className="share-button"
-        media={dataPage}
-      >
-        <PinterestIcon className="share-icon" round size={30} />
-      </PinterestShareButton>
+        <PinterestShareButton
+          className="share-button"
+          media={dataURL}
+        >
+          <PinterestIcon className="share-icon" round size={30} />
+        </PinterestShareButton>
 
-      <TwitterShareButton
-        className="share-button"
-        url={dataPage}
-        // via={twitterAccount}
-      >
-        <TwitterIcon className="share-icon" round size={30} />
-      </TwitterShareButton>
+        <TwitterShareButton
+          className="share-button"
+          url={dataURL}
+        >
+          <TwitterIcon className="share-icon" round size={30} />
+        </TwitterShareButton>
 
-      <WhatsappShareButton
-        className="share-button"
-        url={dataPage}
-      >
-        <WhatsappIcon className="share-icon" round size={30} />
-      </WhatsappShareButton>
+        <WhatsappShareButton
+          className="share-button"
+          url={dataURL}
+        >
+          <WhatsappIcon className="share-icon" round size={30} />
+        </WhatsappShareButton>
 
-      <EmailShareButton
-        className="share-button"
-        url={dataPage}
-        subject={emailSubject}
-        body={mainText}
-      >
-        <EmailIcon className="share-icon" round size={30} />
-      </EmailShareButton>
+        <EmailShareButton
+          className="share-button"
+          url={dataURL}
+          subject={emailSubject}
+          body={mainText}
+        >
+          <EmailIcon className="share-icon" round size={30} />
+        </EmailShareButton>
+      </div>
     </div>
   );
 };
 
 MediaShare.propTypes = {
-  page: PropTypes.string.isRequired,
+  currentPath: PropTypes.string.isRequired,
 };
 
 export default MediaShare;
