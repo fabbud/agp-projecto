@@ -1,6 +1,61 @@
 .NoticiaInput {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
   width: 100%;
-  background-color: #f6f6f6 !important;
+  height: auto;
+  background-color: #f6f6f6;
+}
+
+.NoticiaInput-title {
+  text-align: center;
+  color: #013e5a;
+  font-weight: 500;
+  font-size: 30px;
+  margin: 100px 0px 20px 0px;
+}
+
+.NoticiaInput-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 200px;
+}
+
+.input {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+
+.input-section-label {
+  color: #013e5a;
+  font-size: 16px;
+  width: 130px;
+  margin: 10px 0px 10px 0px;
+  font-weight: 500;
+}
+
+.input-section-label-checkbox{
+  color: #013e5a;
+  font-size: 16px;
+  width: 130px;
+  margin: 10px 0px 10px 0px;
+  font-weight: 500;
+}
+
+.NoticiaInput-section-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.NoticiaInput-editor {
+  margin: 5px;
+  background-color:#fff;
+  border: solid 1px rgb(198, 198, 198);
+  border-radius: 5px !important;
+  position:relative;
+  height: auto;
 }
