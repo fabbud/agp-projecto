@@ -62,7 +62,10 @@
 }
 
 @media(max-width: 768px) {
+  .HomepageBackoffice {
+    margin-left: 130px;
+  }
   .homepage-section-input select {
-    width: 240px;
+    width: 200px;
   }
 }

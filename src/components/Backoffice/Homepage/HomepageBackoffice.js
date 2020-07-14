@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import PopUp from '../PopUp/PopUp';
 import './HomepageBackoffice.css';
 
 const HomepageBackoffice = () => {
@@ -10,6 +11,8 @@ const HomepageBackoffice = () => {
   const [selectedNews1, setSelectedNews1] = useState(0);
   const [selectedNews2, setSelectedNews2] = useState(0);
   const [selectedNews3, setSelectedNews3] = useState(0);
+  const [flash, setFlash] = useState('');
+  const [messageStatus, setMessageStatus] = useState('');
 
   useEffect(() => {
     axios.get('/news')
@@ -68,7 +71,14 @@ const HomepageBackoffice = () => {
     event.preventDefault();
     axios.put('/homepage', homepageData)
       .then((res) => {
+        console.log(res);
         console.log("update ok");
+        setMessageStatus('success');
+        setFlash('Guardado com sucesso.');
+      })
+      .catch((err) => {
+        setMessageStatus('error');
+        setFlash('Ocorreu um erro, por favor tente mais tarde.');
       });
   };
 
@@ -130,6 +140,7 @@ const HomepageBackoffice = () => {
           </div>
         </form>
       </div>
+      <PopUp flashInput={flash} typeMessage={messageStatus} />
     </div>
   );
 };
