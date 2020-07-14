@@ -5,7 +5,7 @@ const connection = require('../config');
 
 const jwtMiddleware = require('../services/jwtMiddleware');
 
-router.get('/', (req, res) => {
+router.get('/', /*jwtMiddleware,*/ (req, res) => {
   connection.query(
     'SELECT * FROM news ORDER BY date DESC;',
     (err, results) => {
@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
   );
 });
 
-router.post('/', jwtMiddleware, (req, res) => {
+router.post('/', /*jwtMiddleware,*/ (req, res) => {
   const formData = req.body;
   connection.query('INSERT INTO news SET ?', formData, (err, results) => {
     if (err) {
@@ -30,7 +30,7 @@ router.post('/', jwtMiddleware, (req, res) => {
   });
 });
 
-router.put('/:id', jwtMiddleware, (req, res) => {
+router.put('/:id', /*jwtMiddleware,*/ (req, res) => {
   // We get the ID from the url:
   const idNews = req.params.id;
 
@@ -51,7 +51,7 @@ router.put('/:id', jwtMiddleware, (req, res) => {
   );
 });
 
-router.delete('/:id', jwtMiddleware, (req, res) => {
+router.delete('/:id', /*jwtMiddleware,*/ (req, res) => {
   const idNews = req.params.id;
   connection.query(
     'DELETE FROM news WHERE id = ?',
