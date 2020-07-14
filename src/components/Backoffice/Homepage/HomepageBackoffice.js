@@ -34,32 +34,38 @@ const HomepageBackoffice = () => {
   const handleChange = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
-    console.log(typeof value);
     const newValue = Number(value);
-    console.log(typeof newValue);
+    let jornalValue = selectedJournal;
+    let news1Value = selectedNews1;
+    let news2Value = selectedNews2;
+    let news3Value = selectedNews3;
+
     if (name === 'journal') {
-      setSelectedJournal(newValue);
+      jornalValue = newValue;
+      setSelectedJournal(jornalValue);
     }
     if (name === 'noticia-1') {
-      setSelectedNews1(newValue);
+      news1Value = newValue;
+      setSelectedNews1(news1Value);
     }
     if (name === 'noticia-2') {
-      setSelectedNews2(newValue);
+      news2Value = newValue;
+      setSelectedNews2(news2Value);
     }
     if (name === 'noticia-3') {
-      setSelectedNews3(newValue);
+      news3Value = newValue;
+      setSelectedNews3(news3Value);
     }
     setHomepageData({
-      journal_edition: selectedJournal,
-      article_1: selectedNews1,
-      article_2: selectedNews2,
-      article_3: selectedNews3,
+      journal_edition: jornalValue,
+      article_1: news1Value,
+      article_2: news2Value,
+      article_3: news3Value,
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(homepageData);
     axios.put('/homepage', homepageData)
       .then((res) => {
         console.log("update ok");
