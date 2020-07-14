@@ -35,10 +35,11 @@ passport.use(new LocalStrategy(
     session: false,
   },
   (email, password, cb) => {
-    connection.query('SELECT * from login WHERE email = ?', [email], (err, results) => {
-      console.log(results);
+    connection.query('SELECT * from users WHERE email = ?', [email], (err, results) => {
+      console.log('results', results[0]);
       if (err) return cb(err);
       if (!results.length) {
+        console.log("ssss");
         return cb(null, false, { message: 'Invalid Email' });
       }
       if (!bcrypt.compareSync(password, results[0].password)) {

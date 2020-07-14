@@ -1,10 +1,12 @@
 const express = require('express');
+
 const router = express.Router();
 const connection = require('../config');
 
 const jwtMiddleware = require('../services/jwtMiddleware');
 
 router.get('/', (req, res) => {
+
     connection.query('SELECT * FROM journal WHERE publish="1" ORDER BY edition DESC',
         (err, results) => {
             if (err) {
@@ -70,5 +72,6 @@ router.delete('/delete', jwtMiddleware, (req, res) => {
     )
 }
 )
+
 
 module.exports = router;

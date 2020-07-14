@@ -26,7 +26,18 @@
 
 .login-card-section {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-field {
+  display: flex;
+  align-items: center;
+}
+.login-middle-section {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px 20px 20px; 
 }
 
 .login-logo {
@@ -36,7 +47,7 @@
 .login-icons {
   width: 20px;
   height: 20px;
-  margin-right: 10px;
+  margin: 0px 10px 10px 0px;
 }
 
 .login-middle-section {
@@ -44,17 +55,13 @@
   border-bottom: solid 1px rgb(198, 198, 198);
 }
 
-.login-middle-section form {
-  display: flex;
-  flex-direction: column;
-  padding: 30px 20px 20px 20px;
-}
-
 .login-middle-section input {
   margin: 0px 0px 10px 0px;
   border: solid 1px rgb(198, 198, 198);
   border-radius: 5px;
-  padding: 2px 5px;
+  padding: 4px 5px;
+  font-size: 14px;
+  width: 200px;
 }
 
 .login-button {
@@ -62,9 +69,10 @@
   margin: 30px 0px 20px 0px;
   border-radius: 5px;
   color: white;
-  background-color: #004982;
+  background-color: #013e5a;
   outline: none;
   border-style: none;
+  font-weight: 500;
 }
 
 .login-forgot {

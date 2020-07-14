@@ -48,14 +48,16 @@ const Homepage = (props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
+    console.log("journal");
     axios.get('/homepage/journal')
       .then((res) => {
+        console.log("journal data", res.data[0]);
         setJornalData(res.data[0]);
       });
 
     axios.get('/homepage/news')
       .then((res) => {
+        console.log("news data", res.data);
         setArticlesData(res.data);
         const newsLength = Object.keys(res.data).length;
         if (newsLength !== 0) {
@@ -154,7 +156,7 @@ const Homepage = (props) => {
             <div className="home-section-text">
               {t('homepage.infoJornal')}
               <br />
-              O Trevo - {jornalData[`${selectedLanguage}_year_edition`]}
+              O Trevo - {jornalData.edition}{t('homepage.edicaoJornal')}
             </div>
             <div>
               <Link to="/">
