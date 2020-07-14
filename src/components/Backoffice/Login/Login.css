@@ -62,9 +62,10 @@
   margin: 30px 0px 20px 0px;
   border-radius: 5px;
   color: white;
-  background-color: #004982;
+  background-color: #013e5a;
   outline: none;
   border-style: none;
+  font-weight: 500;
 }
 
 .login-forgot {

@@ -39,7 +39,7 @@ const Login = () => {
             </form>
           </div>
           <div className="login-card-section">
-              <button className="login-button" type="submit">LOGIN</button>
+            <button className="login-button" type="submit">LOGIN</button>
           </div>
           <div className="login-forgot">
             <a href="">Forgot your password?</a>

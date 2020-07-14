@@ -3,8 +3,7 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../config');
 
-
-//const jwtMiddleware = require('../services/jwtMiddleware');
+const jwtMiddleware = require('../services/jwtMiddleware');
 
 router.get('/', /*jwtMiddleware,*/ (req, res) => {
   connection.query(
