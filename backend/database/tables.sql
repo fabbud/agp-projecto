@@ -1,6 +1,7 @@
 -- DROP TABLE IF EXISTS `homepage`;
 
-CREATE TABLE `homepage` (
+CREATE TABLE `homepage`
+(
   `journal_id`	INT NOT NULL,
   `article_1_id`	INT NOT NULL,
   `article_2_id`	INT NOT NULL,
@@ -12,7 +13,8 @@ CREATE TABLE `homepage` (
 
 -- DROP TABLE IF EXISTS `news`;
 
-CREATE TABLE `news`(
+CREATE TABLE `news`
+(
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `pt_title` VARCHAR
 (80) NOT NULL,
@@ -43,17 +45,26 @@ CREATE TABLE `news`(
 
 -- DROP TABLE IF EXISTS `journal`;
 
-CREATE TABLE `journal` (
-  `edition`	INTEGER NOT NULL AUTO_INCREMENT,
+  CREATE TABLE `journal`
+  (
+    `edition`	INTEGER NOT NULL AUTO_INCREMENT,
   `pt_title`	VARCHAR(60) NOT NULL,
-  `en_title`	VARCHAR(60) NOT NULL,
-  `thumbnail`	VARCHAR(100) NOT NULL,
-  `pdf_link`	VARCHAR(100) NOT NULL,
-  `year`	VARCHAR(20) NOT NULL,
-  `pt_intro_text`	VARCHAR(250) NOT NULL,
-  `en_intro_text`	VARCHAR(250) NOT NULL,
+    `en_title`	VARCHAR(60) NOT NULL,
+    `thumbnail`	VARCHAR(100) NOT NULL,
+    `pdf_link`	VARCHAR(100) NOT NULL,
+    `year`	VARCHAR(20) NOT NULL,
+    `pt_intro_text_1`	VARCHAR(250),
+    `pt_intro_text_2`	VARCHAR(250),
+    `pt_intro_text_3`	VARCHAR(250),
+    `pt_intro_text_4`	VARCHAR(250),
+  `pt_intro_text_5`	VARCHAR(250),
+  `en_intro_text_1`	VARCHAR(250),
+  `en_intro_text_2`	VARCHAR(250),
+  `en_intro_text_3`	VARCHAR(250),
+  `en_intro_text_4`	VARCHAR(250),
+  `en_intro_text_5`	VARCHAR(250),
   `publish`	BOOL NOT NULL,
-  PRIMARY KEY(`edition`)
+  PRIMARY KEY (`edition`)
 );
 
 -- INSERT INTO `journal` (pt_title, en_title, thumbnail, pdf_link, year, pt_intro_text, en_intro_text, publish)
@@ -62,10 +73,14 @@ CREATE TABLE `journal` (
 
 -- DROP TABLE IF EXISTS `login`;
 
-CREATE TABLE `login` (
-  `email` VARCHAR(60) NOT NULL,
-  `password` VARCHAR(200) NOT NULL,
-  PRIMARY KEY (`email`)
+CREATE TABLE `login`
+(
+  `email` VARCHAR
+(60) NOT NULL,
+  `password` VARCHAR
+(200) NOT NULL,
+  PRIMARY KEY
+(`email`)
 );
 
 -- INSERT INTO `login` (email, password)

@@ -4,8 +4,8 @@ const connection = require('../config');
 
 const jwtMiddleware = require('../services/jwtMiddleware');
 
-router.get('/', jwtMiddleware, (req, res) => {
-    connection.query('SELECT * FROM journal WHERE publish=sim ORDER BY edition DESC',
+router.get('/', (req, res) => {
+    connection.query('SELECT * FROM journal WHERE publish="1" ORDER BY edition DESC',
         (err, results) => {
             if (err) {
                 res.status(400).send('Query Error')
@@ -20,7 +20,7 @@ router.get('/', jwtMiddleware, (req, res) => {
     )
 })
 
-router.post('/', jwtMiddleware, (req, res) => {
+router.post('/publish', (req, res) => {
     const formData = req.body
     connection.query('INSERT INTO journal SET ?',
         [formData],
@@ -35,7 +35,7 @@ router.post('/', jwtMiddleware, (req, res) => {
     )
 })
 
-router.put('/', jwtMiddleware, (req, res) => {
+router.put('/editPublication', jwtMiddleware, (req, res) => {
     connection.query('UPDATE journal SET ? WHERE edition=?',
         [req.body, req.body.edition],
         (err, results) => {
@@ -53,7 +53,7 @@ router.put('/', jwtMiddleware, (req, res) => {
     )
 })
 
-router.delete('/', jwtMiddleware, (req, res) => {
+router.delete('/delete', jwtMiddleware, (req, res) => {
     connection.query('DELETE FROM journal WHERE edition=?',
         req.body.edition,
         (err, results) => {
