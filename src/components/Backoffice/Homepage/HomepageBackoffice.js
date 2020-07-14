@@ -93,7 +93,7 @@ const HomepageBackoffice = () => {
             <select name="journal" value={selectedJournal} onChange={handleChange}>
               <option value={0}>Escolher edição a publicar....</option>
               {journalData.map((journal) => (
-                <option key={journal.edition} value={journal.edition}>
+                <option className="option" key={journal.edition} value={journal.edition}>
                   {`Edição ${journal.edition} - ${journal.pt_title}`}
                 </option>
               ))}
@@ -104,7 +104,7 @@ const HomepageBackoffice = () => {
             <div className="homepage-section-input">
               <div className="homepage-section-label">Notícia 1:</div>
               <select name="noticia-1" value={selectedNews1} onChange={handleChange}>
-                <option value={0}>Nenhuma....</option>
+                <option value={0}>Nenhuma</option>
                 {newsData.map((news) => (
                   <option key={news.id} value={news.id}>
                     {news.date} - {news.pt_title}
@@ -115,7 +115,7 @@ const HomepageBackoffice = () => {
             <div className="homepage-section-input">
               <div className="homepage-section-label">Notícia 2:</div>
               <select name="noticia-2" value={selectedNews2} onChange={handleChange}>
-                <option value={0}>Nenhuma....</option>
+                <option value={0}>Nenhuma</option>
                 {newsData.map((news) => (
                   <option key={news.id} value={news.id}>
                     {news.date} - {news.pt_title}
@@ -126,7 +126,7 @@ const HomepageBackoffice = () => {
             <div className="homepage-section-input">
               <div className="homepage-section-label">Notícia 3:</div>
               <select name="noticia-3" value={selectedNews3} onChange={handleChange}>
-                <option value={0}>Nenhuma....</option>
+                <option value={0}>Nenhuma</option>
                 {newsData.map((news) => (
                   <option key={news.id} value={news.id}>
                     {news.date} - {news.pt_title}

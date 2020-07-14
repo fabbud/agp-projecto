@@ -1,18 +1,11 @@
 .BackSidebar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  background-color: #F6F6F6;
-}
-
-.side-bar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   background-color: white;
   box-shadow: 5px 5px 9px 3px rgb(177, 177, 177);
   font-weight: 500;
@@ -21,30 +14,30 @@
 .brasao-logo {
   width: 100px;
   height: 120px;
-  margin: 50px 0px;
+  margin: 50px auto;
   cursor: pointer;
 }
 
-.side-bar .nav {
+.BackSidebar .nav {
   display: flex;
   flex-direction: column;
   width: 200px;
 }
-.side-bar .nav-link {
+.BackSidebar .nav-link {
   color: #013e5a !important;
   text-align: start;
   padding-left: 50px;
   margin: 0px;
 }
-.side-bar .nav-link:hover {
+.BackSidebar .nav-link:hover {
   background-color: rgb(220, 220, 220);
 }
 
 @media(max-width: 768px) {
-  .side-bar .nav {
+  .BackSidebar .nav {
     width: 130px;
   }
-  .side-bar .nav-link {
+  .BackSidebar .nav-link {
     padding-left: 20px;
   }
   .brasao-logo {
