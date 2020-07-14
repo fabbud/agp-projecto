@@ -10,8 +10,9 @@ function JornalCapa(props) {
     // download = () => {
     //     console.log('download')
     // }
+    console.log(props.temas)
     return (
-        //<span className='cardArea'>
+
         <div className='cardJornal'>
             <h4 className='titulo'>{props.titulo}</h4>
             <h4 className='anoEdicao'>{`${props.ano} - ${props.edicao}ª edição`}</h4>
@@ -30,13 +31,22 @@ function JornalCapa(props) {
 
             </div>
 
+
             <div className='temasBox'>
-                {props.temas.map((tema) => {
-                    return <p className='temas'>- {tema}</p>
-                })}
+                <p className='temas'>{props.temas1_pt && `-${props.temas1_pt}`}</p>
+                <p className='temas'>{props.temas2_pt && `-${props.temas2_pt}`}</p>
+                <p className='temas'>{props.temas3_pt && `-${props.temas3_pt}`}</p>
+                <p className='temas'>{props.temas4_pt && `-${props.temas4_pt}`}</p>
+                <p className='temas'>{props.temas5_pt && `-${props.temas5_pt}`}</p>
+                {/* <p className='temas'>{props.temas1_en && `-${props.temas1_en}`}</p>
+                <p className='temas'>{props.temas2_en && `-${props.temas2_en}`}</p>
+                <p className='temas'>{props.temas3_en && `-${props.temas3_en}`}</p>
+                <p className='temas'>{props.temas4_en && `-${props.temas4_en}`}</p>
+                <p className='temas'>{props.temas5_en && `-${props.temas5_en}`}</p> */}
+                
             </div>
         </div>
-        //</span>
+
     )
 
 }
