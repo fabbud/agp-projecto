@@ -4,7 +4,6 @@ import { Editor } from 'react-draft-wysiwyg';
 import draftToHtml from 'draftjs-to-html';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import 'rc-datepicker/lib/style.css';
-import { Button } from 'react-bootstrap';
 import './NoticiaInput.css';
 
 class NoticiaInput extends Component {
@@ -103,160 +102,169 @@ class NoticiaInput extends Component {
     } = this.state;
     return (
       <div className="NoticiaInput">
-        <form onSubmit={this.handleSubmit}>
-          <div className="input">
-            <p>Título PT:</p>
-            <input
-              type="text"
-              name="pt_title"
-              value={pt_title}
-              onChange={this.updateField}
-              placeholder="Máximo 80 caracteres"
-            />
-          </div>
-          <div className="input">
-            <p>Título EN:</p>
-            <input
-              type="text"
-              name="en_title"
-              value={en_title}
-              onChange={this.updateField}
-              placeholder="Máximo 80 caracteres"
-            />
-          </div>
+        <div className="NoticiaInput-title">Notícias</div>
+        <div className="NoticiaInput-section">
+          <form onSubmit={this.handleSubmit}>
+            <div className="input">
+              <div className="input-section-label">Título PT:</div>
+              <input
+                type="text"
+                name="pt_title"
+                value={pt_title}
+                onChange={this.updateField}
+                placeholder="Máximo 80 caracteres"
+              />
+            </div>
+            <div className="input">
+              <div className="input-section-label">Título EN:</div>
+              <input
+                type="text"
+                name="en_title"
+                value={en_title}
+                onChange={this.updateField}
+                placeholder="Máximo 80 caracteres"
+              />
+            </div>
 
-          <div className="input">
-            <p>Descrição PT:</p>
-            <input
-              type="text"
-              name="pt_intro_text"
-              value={pt_intro_text}
-              onChange={this.updateField}
-              placeholder="Máximo 100 caracteres"
-            />
-          </div>
-          <div className="input">
-            <p>Descrrição EN:</p>
-            <input
-              type="text"
-              name="en_intro_text"
-              value={en_intro_text}
-              onChange={this.updateField}
-              placeholder="Máximo 100 caracteres"
-            />
-          </div>
-          <div className="input">
-            <p>Data Completa:</p>
-            <input
-              type="date"
-              name="date"
-              value={date}
-              onChange={this.updateField}
-            />
-          </div>
-          <div className="input">
-            <p>Data PT:</p>
-            <input
-              type="text"
-              name="pt_date"
-              value={pt_date}
-              onChange={this.updateField}
-              placeholder="MMM AAAA"
-            />
-          </div>
-          <div className="input">
-            <p>Data EN:</p>
-            <input
-              type="text"
-              name="en_date"
-              value={en_date}
-              onChange={this.updateField}
-              placeholder="MMM YYYY"
-            />
-          </div>
-          <div className="input">
-            <p>Thumbnail:</p>
-            <input
-              type="text"
-              name="thumbnail"
-              value={thumbnail}
-              onChange={this.updateField}
-              placeholder="Link da imagem"
-            />
-          </div>
-          <div className="input">
-            <p>Image:</p>
-            <input
-              type="text"
-              name="image"
-              value={image}
-              onChange={this.updateField}
-              placeholder="Link da imagem"
-            />
-          </div>
-          <p>Conteúdo PT:</p>
-          <Editor
-            editorState={editorStatePT}
-            toolbarClassName="toolbarClassName"
-            wrapperClassName="wrapperClassName"
-            editorClassName="editorClassName"
-            onEditorStateChange={this.onEditorStateChangePT}
-            toolbar={{
-              options: [
-                'inline',
-                'blockType',
-                'fontSize',
-                'fontFamily',
-                'list',
-                'textAlign',
-                'colorPicker',
-                'link',
-                'embedded' /* , 'emoji' */,
-                'image' /* , 'remove' */,
-                'history',
-              ],
-            }}
-          />
-          <p>Conteúdo EN</p>
-          <Editor
-            editorState={editorStateEN}
-            toolbarClassName="toolbarClassName"
-            wrapperClassName="wrapperClassName"
-            editorClassName="editorClassName"
-            onEditorStateChange={this.onEditorStateChangeEN}
-            toolbar={{
-              options: [
-                'inline',
-                'blockType',
-                'fontSize',
-                'fontFamily',
-                'list',
-                'textAlign',
-                'colorPicker',
-                'link',
-                'embedded' /* , 'emoji' */,
-                'image' /* ,  'remove' */,
-                'history',
-              ],
-            }}
-          />
-          <div className="Input">
-            <label>
-              <input type="checkbox" value={publish} onChange={this.handleCheckboxChange} />
-              Publicar
-            </label>
-          </div>
-          <div className="button">
-            <Button
-              className="button"
-              variant="contained"
-              color="primary"
-              type="submit"
-            >
-              ENVIAR
-            </Button>
-          </div>
-        </form>
+            <div className="input">
+              <div className="input-section-label">Descrição PT:</div>
+              <input
+                type="text"
+                name="pt_intro_text"
+                value={pt_intro_text}
+                onChange={this.updateField}
+                placeholder="Máximo 100 caracteres"
+              />
+            </div>
+            <div className="input">
+              <div className="input-section-label">Descrição EN:</div>
+              <input
+                type="text"
+                name="en_intro_text"
+                value={en_intro_text}
+                onChange={this.updateField}
+                placeholder="Máximo 100 caracteres"
+              />
+            </div>
+            <div className="input">
+              <div className="input-section-label">Data completa:</div>
+              <input
+                type="date"
+                name="date"
+                value={date}
+                onChange={this.updateField}
+              />
+            </div>
+            <div className="input">
+              <div className="input-section-label">Legenda data PT:</div>
+              <input
+                type="text"
+                name="pt_date"
+                value={pt_date}
+                onChange={this.updateField}
+                placeholder="Ex: ABR 2020"
+              />
+            </div>
+            <div className="input">
+              <div className="input-section-label">Legenda data EN:</div>
+              <input
+                type="text"
+                name="en_date"
+                value={en_date}
+                onChange={this.updateField}
+                placeholder="Ex: APR 2020"
+              />
+            </div>
+            <div className="input">
+              <div className="input-section-label">Thumbnail:</div>
+              <input
+                type="text"
+                name="thumbnail"
+                value={thumbnail}
+                onChange={this.updateField}
+                placeholder="Link da imagem"
+              />
+            </div>
+            <div className="input">
+              <div className="input-section-label">Image:</div>
+              <input
+                type="text"
+                name="image"
+                value={image}
+                onChange={this.updateField}
+                placeholder="Link da imagem"
+              />
+            </div>
+            <div className="input">
+              <div className="input-section-label">Conteúdo PT:</div>
+              <Editor
+                editorState={editorStatePT}
+                toolbarClassName="toolbarClassName"
+                wrapperClassName="wrapperClassName"
+                editorClassName="NoticiaInput-editor"
+                onEditorStateChange={this.onEditorStateChangePT}
+                toolbar={{
+                  options: [
+                    'inline',
+                    'blockType',
+                    'fontSize',
+                    'fontFamily',
+                    'list',
+                    'textAlign',
+                    'colorPicker',
+                    'link',
+                    'embedded' /* , 'emoji' */,
+                    'image' /* , 'remove' */,
+                    'history',
+                  ],
+                }}
+              />
+            </div>
+            <div className="input">
+              <div className="input-section-label">Conteúdo EN:</div>
+              <Editor
+                editorState={editorStateEN}
+                toolbarClassName="toolbarClassName"
+                wrapperClassName="wrapperClassName"
+                editorClassName="NoticiaInput-editor"
+                onEditorStateChange={this.onEditorStateChangeEN}
+                toolbar={{
+                  options: [
+                    'inline',
+                    'blockType',
+                    'fontSize',
+                    'fontFamily',
+                    'list',
+                    'textAlign',
+                    'colorPicker',
+                    'link',
+                    'embedded' /* , 'emoji' */,
+                    'image' /* ,  'remove' */,
+                    'history',
+                  ],
+                }}
+              />
+            </div>
+            <div className="input">
+              <div className="input-section-label-checkbox">Publicar:</div>
+              <input
+                type="checkbox"
+                value={publish}
+                onChange={this.handleCheckboxChange}
+              />
+            </div>
+            <div className="NoticiaInput-section-button">
+              <button
+                className="login-button"
+                variant="contained"
+                color="primary"
+                type="submit"
+              >
+                ENVIAR
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
