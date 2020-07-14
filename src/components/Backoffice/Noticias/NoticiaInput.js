@@ -5,7 +5,7 @@ import draftToHtml from 'draftjs-to-html';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import 'rc-datepicker/lib/style.css';
 import { Button } from 'react-bootstrap';
-import './Noticias/NoticiaInput.css';
+import './NoticiaInput.css';
 
 class NoticiaInput extends Component {
   constructor(props) {

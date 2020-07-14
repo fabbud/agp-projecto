@@ -3,8 +3,9 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../config');
 
+const jwtMiddleware = require('../services/jwtMiddleware');
 
-router.get('/', (req, res, next) => {
+router.get('/', /*jwtMiddleware,*/ (req, res, next) => {
   connection.query('SELECT * FROM homepage', (err, results) => {
     if (err) {
       res.status(500).json({
@@ -17,7 +18,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.get('/:mode', (req, res, next) => {
+router.get('/:mode', /*jwtMiddleware,*/ (req, res, next) => {
   let query = '';
   if (req.params.mode === 'journal') {
     query = 'SELECT journal.* FROM homepage JOIN journal ON homepage.journal_edition = journal.edition';
@@ -36,7 +37,7 @@ router.get('/:mode', (req, res, next) => {
   });
 });
 
-router.put('/', (req, res) => {
+router.put('/', /*jwtMiddleware,*/ (req, res) => {
   const newData = req.body;
   console.log(newData);
   connection.query('UPDATE homepage SET ? ', [newData], (err, results) => {
@@ -49,4 +50,3 @@ router.put('/', (req, res) => {
 });
 
 module.exports = router;
-

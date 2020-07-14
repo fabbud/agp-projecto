@@ -1,23 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import PopUp from '../PopUp/PopUp';
 import './Login.css';
 import whiteLogo from '../../../assets/logo/logo_RGB.jpg';
 import passwordIcon from '../../../assets/images/Backoffice/password.png';
 import userIcon from '../../../assets/images/Backoffice/user.png';
 
 const Login = () => {
-  //const { register, handleSubmit, errors } = useForm();
-  // const onSubmit = (data) => {
-  //   axios.post('/email', data)
-  //     .then((response) => {
-  //       if (response.data.code !== 200) {
-  //         setEmailTypeAlert('danger');
-  //         setMessageIcon(faTimes);
-  //       }
-  //       setShowEmailAlert(true);
-  //       window.setTimeout(() => setShowEmailAlert(false), 4000);
-  //     });
-  // };
+  const { register, handleSubmit, errors } = useForm();
+
+  const [flash, setFlash] = useState('');
+  const [messageStatus, setMessageStatus] = useState('');
+  const [user, setUser] = useState('');
+  const [token, setToken] = useState('');
+  const [signIn, setSignIn] = useState(false);
+
+  const onSubmit = (data) => {
+    fetch('/login/signin',
+      {
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+        body: JSON.stringify(data),
+      })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw new Error(res.statusText);
+      })
+      .then((res) => {
+        console.log('signin ok');
+        setSignIn(true);
+        setToken(res.token);
+        setUser(res.user);
+        setFlash(res.message);
+        setMessageStatus('success');
+      })
+      .catch((err) => {
+        setMessageStatus('error');
+        //setFlash(err.message);
+        setFlash('Invalid Email or Password, please try again.');
+      });
+  };
+
+  console.log(flash);
 
   return (
     <div className="Login">
@@ -26,26 +54,44 @@ const Login = () => {
           <div className="login-card-section">
             <img src={whiteLogo} className="login-logo" alt="AGP" />
           </div>
-          <div className="login-card-section login-middle-section">
-            <form>
-              <div>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="login-card-section login-middle-section">
+              <div className="login-field">
                 <img src={userIcon} className="login-icons" alt="User input" />
-                <input type="text" />
+                <input
+                  type="email"
+                  name="email"
+                  ref={register({
+                    required: '* Campo obrigatório',
+                    minLeght: 2,
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                      message: 'Email Inválido',
+                    },
+                  })}
+                />
               </div>
-              <div>
+              {errors.email && <div className="form-error">{errors.email.message}</div>}
+              <div className="login-field">
                 <img src={passwordIcon} className="login-icons" alt="Password input" />
-                <input type="password" />
+                <input
+                  type="password"
+                  name="password"
+                  ref={register({ required: '* Campo obrigatório', minLeght: 2 })}
+                />
               </div>
-            </form>
-          </div>
-          <div className="login-card-section">
-            <button className="login-button" type="submit">LOGIN</button>
-          </div>
+              {errors.password && <div className="form-error">{errors.password.message}</div>}
+            </div>
+            <div className="login-card-section">
+              <button className="login-button" type="submit">LOGIN</button>
+            </div>
+          </form>
           <div className="login-forgot">
             <a href="">Forgot your password?</a>
           </div>
         </div>
       </div>
+      <PopUp flashInput={flash} typeMessage={messageStatus} />
     </div>
   );
 };
