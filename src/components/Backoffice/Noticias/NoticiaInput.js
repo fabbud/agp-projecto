@@ -5,6 +5,7 @@ import draftToHtml from 'draftjs-to-html';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import 'rc-datepicker/lib/style.css';
 import './NoticiaInput.css';
+import PopUp from '../PopUp/PopUp';
 
 class NoticiaInput extends Component {
   constructor(props) {
@@ -24,6 +25,8 @@ class NoticiaInput extends Component {
       editorStateEN: EditorState.createEmpty(),
       pt_content: {},
       en_content: {},
+      messageStatus: '',
+      flash: '',
     };
   }
 
@@ -61,7 +64,7 @@ class NoticiaInput extends Component {
   };
 
   postData = () => {
-    const { editorStatePT, editorStateEN, ...article } = this.state;
+    const { editorStatePT, editorStateEN, messageStatus, flash, ...article } = this.state;
     console.log(article);
     fetch('/news', {
       method: 'POST',
@@ -73,6 +76,11 @@ class NoticiaInput extends Component {
     // .then(
     //   (res) => this.setState({ flash: res.flash }),
     //   (err) => this.setState({ flash: err.flash })
+    // );
+    //   this.setState({ flash: 'Ocorreu um erro, por favor tente mais tarde.' })
+    //   this.setState({ messageStatus: 'error' })
+    //   this.setState({ flash: 'Guardado com sucesso.' }),
+    //   this.setState({ messageStatus: 'success' }),
     // );
   };
 
@@ -99,6 +107,8 @@ class NoticiaInput extends Component {
       publish,
       editorStatePT,
       editorStateEN,
+      flash,
+      messageStatus,
     } = this.state;
 
     return (
@@ -167,7 +177,7 @@ class NoticiaInput extends Component {
             </div>
             <div className="input-legendas-datas">
               <div className="input">
-                <div className="input-section-label">Legenda data PT:</div>
+                <div className="input-section-label">Legenda Data PT:</div>
                 <input
                   type="text"
                   name="pt_date"
@@ -179,7 +189,7 @@ class NoticiaInput extends Component {
                 />
               </div>
               <div className="input">
-                <div className="input-section-label">Legenda data EN:</div>
+                <div className="input-section-label">Legenda Data EN:</div>
                 <input
                   type="text"
                   name="en_date"
@@ -191,7 +201,6 @@ class NoticiaInput extends Component {
                 />
               </div>
             </div>
-            
             <div className="input">
               <div className="input-section-label">Thumbnail:</div>
               <input
@@ -280,11 +289,12 @@ class NoticiaInput extends Component {
                 color="primary"
                 type="submit"
               >
-                ENVIAR
+                GUARDAR
               </button>
             </div>
           </form>
         </div>
+        <PopUp flashInput={flash} typeMessage={messageStatus} />
       </div>
     );
   }

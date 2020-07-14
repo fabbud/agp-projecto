@@ -11,21 +11,22 @@
   color: #013e5a;
   font-weight: 500;
   font-size: 30px;
-  margin: 100px 0px 20px 0px;
+  margin: 60px 0px 20px 0px;
+  /* margin: 60px 0px 40px 150px; */
 }
 
 .homepage-section {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .homepage-section-title {
   color: #013e5a;
   font-weight: 600;
   font-size: 20px;
-  margin: 30px 0px;
+  margin: 30px 0px 30px 0px;
 }
 
 .homepage-section-input, .homepage-section-send {
@@ -33,6 +34,11 @@
   flex-wrap: wrap;
   align-items: center;
 }
+
+.margin-space {
+  margin-bottom: 40px;
+}
+
 .homepage-section-news {
   display: flex;
   flex-wrap: wrap;
@@ -46,16 +52,8 @@
   width: 350px;
   border: solid 1px rgb(198, 198, 198); 
   border-radius: 5px !important;
-  color: grey;
 }
 
-.homepage-section-input select {
-  color: green;
-}
-.homepage-section-input select:first-child { color: black; }
-.homepage-section-input select option:first-child{
-  color: black;
-}
 
 .homepage-section-label {
   color: #013e5a;
@@ -68,14 +66,17 @@
 .homepage-section-button {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
 }
 
 @media(max-width: 768px) {
   .HomepageBackoffice {
-    margin-left: 130px;
+    margin-left:70px;
+  }
+  .homepage-section-input {
+    flex-direction: column;
+    align-items: flex-start;
   }
   .homepage-section-input select {
-    width: 200px;
+    width: 120px;
   }
 }
