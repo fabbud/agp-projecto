@@ -1,3 +1,16 @@
+-- DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE users (
+  id INTEGER AUTO_INCREMENT,
+  email VARCHAR(90) UNIQUE,
+  password VARCHAR(90),
+  PRIMARY KEY(`id`)
+);
+
+INSERT INTO `users` (email, password)
+VALUES ('backagp@teste.com', 'teste');
+
+
 -- DROP TABLE IF EXISTS `homepage`;
 
 CREATE TABLE `homepage` (
