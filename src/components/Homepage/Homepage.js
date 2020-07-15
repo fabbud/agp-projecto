@@ -55,7 +55,7 @@ const Homepage = (props) => {
       {/* VIDEO */}
       <div className="home-video-section">
         <div className="home-video">
-          <video controls controlsList="nodownload" autoPlay loop muted width="100%" height="100%">
+          <video controls controlsList="nodownload" autoPlay loop width="100%" height="100%">
             <source src={homepageTeaser} type="video/mp4" />
           </video>
         </div>
@@ -137,7 +137,10 @@ const Homepage = (props) => {
             <div className="home-section-text">
               {t('homepage.infoJornal')}
               <br />
-              O Trevo - {jornalData.edition}{t('homepage.edicaoJornal')}
+              O Trevo -
+              {' '}
+              {jornalData.edition}
+              {t('homepage.edicaoJornal')}
             </div>
             <div>
               <Link to="/">

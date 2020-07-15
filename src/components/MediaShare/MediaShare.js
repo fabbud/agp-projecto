@@ -13,7 +13,7 @@ const MediaShare = (props) => {
   const dataURL = 'http://www.guiasdeportugal.org/';
   const mainText = 'Veja esta página da AGP:';
   const emailSubject = 'Associação Guias de Portugal';
-  const facebookAppId = 'AGP';
+  const facebookAppId = '12345';
 
   const { currentPath } = props;
 

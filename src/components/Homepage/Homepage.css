@@ -14,9 +14,9 @@
 }
 
 .home-video {
-  width: 960px;
-  height: 70vh;
-  margin: 1px auto 40px auto;
+  width: 70%;
+  height: 60%;
+  margin: 0px auto 40px auto;
 }
 
 .home-ramos {
@@ -241,7 +241,7 @@
   }
   .home-video {
     width: 90%;
-    height: 245px;
+    height: 70%;
     margin-top: 0px;
     margin-bottom: 0px;
   }
