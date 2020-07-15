@@ -8,7 +8,7 @@ const MediaShare = (props) => {
   const { t } = useTranslation();
   const pageURL = window.location.href;
   //const pagePath = window.location.pathname;
-  const dataURL = 'https://associacao-guias-de-portugal.netlify.app';
+  const dataURL = 'http://www.guiasdeportugal.org/';
   const mainText = 'Veja esta página da AGP:';
   const emailSubject = 'Associação Guias de Portugal';
 
@@ -40,7 +40,6 @@ const MediaShare = (props) => {
         </LinkedinShareButton>
         <PinterestShareButton
           className="share-button"
-          media={dataURL}
           url={dataURL}
         >
           <PinterestIcon className="share-icon" round size={30} />
