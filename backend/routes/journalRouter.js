@@ -56,10 +56,13 @@ router.post('/publish', (req, res) => {
 })
 
 router.put('/editPublication', (req, res) => {
+    console.log(req.body);
+    console.log(req.body.edition);
     connection.query('UPDATE journal SET ? WHERE edition=?',
         [req.body, req.body.edition],
         (err, results) => {
             if (err) {
+                console.log(err.sql);
                 res.status(400).send('Newspaper not updated')
             } else {
                 if (results.length === 0) {
