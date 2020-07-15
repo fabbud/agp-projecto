@@ -346,8 +346,6 @@ class AssociacaoFront extends React.Component {
             <button type="submit" className="guia-button associacao-button">Queres ser Guia ?</button>
           </Link>
         </div>
-
-
       </div>
     );
   }

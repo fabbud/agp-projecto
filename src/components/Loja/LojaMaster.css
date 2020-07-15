@@ -4,6 +4,7 @@
     font-size: 2rem;
     text-align: center;
     text-transform: capitalize;
+    padding: 30px 0px;
 }
 .textoLoja{
     color: #004982;
@@ -19,7 +20,8 @@
     flex-direction: row; 
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin: 50px 0px;
 }
 
 .artigosLoja{
@@ -27,6 +29,7 @@
     position: relative;
     display:flex;
     height: 200px;
+    margin: 20px 0px;
 }
 
 .artigosLoja .descricaoArtigos{
@@ -49,6 +52,7 @@
     font-weight: 500;
     line-height: 2;
     text-align: center;
+    cursor: pointer;
 }
 
 .fotoArtigos{

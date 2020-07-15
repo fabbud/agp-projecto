@@ -7,10 +7,13 @@ import './MediaShare.css';
 const MediaShare = (props) => {
   const { t } = useTranslation();
   const pageURL = window.location.href;
-  //const pagePath = window.location.pathname;
+  console.log(pageURL);
+  // const pagePath = window.location.pathname;
+  // put the path
   const dataURL = 'http://www.guiasdeportugal.org/';
   const mainText = 'Veja esta página da AGP:';
   const emailSubject = 'Associação Guias de Portugal';
+  const facebookAppId = 'AGP';
 
   const { currentPath } = props;
 
@@ -41,6 +44,7 @@ const MediaShare = (props) => {
         <PinterestShareButton
           className="share-button"
           url={dataURL}
+          media={dataURL}
         >
           <PinterestIcon className="share-icon" round size={30} />
         </PinterestShareButton>
@@ -53,7 +57,7 @@ const MediaShare = (props) => {
         <FacebookMessengerShareButton
           className="share-button"
           url={dataURL}
-          redirectUri={dataURL}
+          // appId={facebookAppId}
         >
           <FacebookMessengerIcon className="share-icon" round size={30} />
         </FacebookMessengerShareButton>

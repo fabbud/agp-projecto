@@ -119,3 +119,21 @@
     width: 230px;
   }
 }
+
+@media(max-width: 321px) {
+  .header-logo {
+    width: 160px;
+    height: 80px;
+  }
+  .search-input {
+    width: 150px;
+  }
+  .search-fields {
+    margin-top:10px;
+    margin-left: 0px;
+    width: 160px;
+  }
+  .search-icon {
+    display: none;
+  }
+}

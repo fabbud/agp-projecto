@@ -149,8 +149,7 @@ strong{
 .button-section a {
     display: flex;
     justify-content: center;
-    margin: 20px 0px 80px 0px;
-    /* margin: 50px auto; */
+    margin: 50px 0px 20px 0px;
 }
 .guia-button {
     border-style: none;
@@ -158,19 +157,16 @@ strong{
     font-size: 20px;
     padding: 6px 12px;
     outline: none !important;
-    align-items: center;
-    margin-left:42%;
-    margin-right:42%;
-    margin-top:50px;
 }
-  .guia-button:hover {
-    font-weight: 700;
-  }
-  .associacao-button {
-    background-color: #154A7F;
-    color: white;
-    align-items: center;
-  }
+
+.guia-button:hover {
+  font-weight: 700;
+}
+
+.associacao-button {
+  background-color: #154A7F;
+  color: white;
+}
 
 .associa-link a {
     text-decoration: none;
@@ -215,13 +211,6 @@ strong{
         text-align: center;
     }
 
-    .guia-button {
-        
-        margin-left:38%;
-        margin-right:30%;
-        font-size:16px;
-    }
-
     .guidismo p {
         margin-left:130px;
         margin-right:130px;
@@ -234,8 +223,6 @@ strong{
         padding-bottom: 20px;
         padding-top: 20px;
     }
-
-    
 
 }
 
@@ -268,13 +255,6 @@ strong{
         padding-left:25px;
         padding-right:25px;
     }
-
-    .guia-button{
-        font-size: 18px;
-        margin-left:30%;
-        margin-right: 25%;
-    }
-
 }
 @media(max-width:375px){
 
@@ -288,7 +268,6 @@ strong{
     .guidinismo{
         font-size:15px;
     }
-
     .historiaGuidismoH2{
         font-size:22px;
         margin-right: 25px;

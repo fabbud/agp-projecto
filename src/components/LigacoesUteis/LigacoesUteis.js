@@ -34,8 +34,8 @@ const LigacoesUteis = () => {
       website: 'http://apambiente.pt/',
     },
     {
-      title: t('ligacoesUteis.icn'),
-      website: 'http://www2.icnf.pt/portal',
+      title: t('ligacoesUteis.icnf'),
+      website: 'http://www.icnf.pt/',
     },
     {
       title: t('ligacoesUteis.lpn'),
