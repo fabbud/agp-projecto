@@ -30,6 +30,9 @@ import ProjetoGuidista from './components/MetodoGuidista/ProjetoGuidista';
 import MediaShare from './components/MediaShare/MediaShare';
 import HomepageBackoffice from './components/Backoffice/Homepage/HomepageBackoffice';
 import JournalInput from './components/Backoffice/Journal/Journal'
+import NoticiasPainel from './components/Backoffice/Noticias/NoticiasPainel';
+import IntroPage from './components/Backoffice/IntroPage/IntroPage';
+import BackSidebar from './components/Backoffice/BackSidebar/BackSidebar';
 
 function App() {
 
@@ -66,19 +69,26 @@ function App() {
           <Route exact path="/contactos/:modo" component={Contactos} />
           <Route exact path="/search/:type" component={Search} />
           <Route exact path="/backoffice" component={Login} />
+          <Route exact path="/backoffice/intro" component={IntroPage} />
           <Route exact path="/backoffice/homepage" component={HomepageBackoffice} />
           <Route exact path="/backoffice/news" component={NoticiaInput} />
           <Route exact path="/backoffice/journal/new" component={JournalInput} />
           <Route exact path="/backoffice/journal/:edition" component={JournalInput} />
+          <Route exact path="/backoffice/news/painel" component={NoticiasPainel} />
         </Switch>
-        {!currentPath.includes('backoffice')
-          && (
-            <div>
-              <Header />
-              {locationPath !== '/' ? <MediaShare /> : <MediaShare currentPath="homepage" />}
-              <Footer />
-            </div>
-          )}
+        { !currentPath.includes('backoffice')
+        && (
+        <div>
+          <Header />
+          { locationPath !== '/' ? <MediaShare /> : <MediaShare currentPath="homepage" />}
+          <Footer />
+        </div>
+        )}
+        { currentPath.includes('backoffice/') && (
+          <div>
+            <BackSidebar />
+          </div>
+        )}
       </Suspense>
     </div>
   );

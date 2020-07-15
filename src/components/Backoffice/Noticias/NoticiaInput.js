@@ -5,6 +5,7 @@ import draftToHtml from 'draftjs-to-html';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import 'rc-datepicker/lib/style.css';
 import './NoticiaInput.css';
+import PopUp from '../PopUp/PopUp';
 
 class NoticiaInput extends Component {
   constructor(props) {
@@ -24,12 +25,15 @@ class NoticiaInput extends Component {
       editorStateEN: EditorState.createEmpty(),
       pt_content: {},
       en_content: {},
+      messageStatus: '',
+      flash: '',
     };
   }
 
   updateField = (e) => {
     const { value } = e.target;
     const { name } = e.target;
+    console.log(value);
     this.setState({ [name]: value });
   };
 
@@ -61,7 +65,7 @@ class NoticiaInput extends Component {
   };
 
   postData = () => {
-    const { editorStatePT, editorStateEN, ...article } = this.state;
+    const { editorStatePT, editorStateEN, messageStatus, flash, ...article } = this.state;
     console.log(article);
     fetch('/news', {
       method: 'POST',
@@ -74,6 +78,11 @@ class NoticiaInput extends Component {
     //   (res) => this.setState({ flash: res.flash }),
     //   (err) => this.setState({ flash: err.flash })
     // );
+    //   this.setState({ flash: 'Ocorreu um erro, por favor tente mais tarde.' })
+    //   this.setState({ messageStatus: 'error' })
+    //   this.setState({ flash: 'Guardado com sucesso.' }),
+    //   this.setState({ messageStatus: 'success' }),
+    // );
   };
 
   handleSubmit = (e) => {
@@ -81,9 +90,6 @@ class NoticiaInput extends Component {
     this.postData();
   };
 
-  setStartDate = (date) => {
-    this.setState({ date });
-  };
 
   render() {
     const {
@@ -99,7 +105,10 @@ class NoticiaInput extends Component {
       publish,
       editorStatePT,
       editorStateEN,
+      flash,
+      messageStatus,
     } = this.state;
+
     return (
       <div className="NoticiaInput">
         <div className="NoticiaInput-title">Notícias</div>
@@ -112,7 +121,9 @@ class NoticiaInput extends Component {
                 name="pt_title"
                 value={pt_title}
                 onChange={this.updateField}
-                placeholder="Máximo 80 caracteres"
+                placeholder="Máximo de 80 caracteres"
+                maxLength="80"
+                required
               />
             </div>
             <div className="input">
@@ -122,10 +133,11 @@ class NoticiaInput extends Component {
                 name="en_title"
                 value={en_title}
                 onChange={this.updateField}
-                placeholder="Máximo 80 caracteres"
+                placeholder="Maximum of 80 characters"
+                maxLength="80"
+                required
               />
             </div>
-
             <div className="input">
               <div className="input-section-label">Descrição PT:</div>
               <input
@@ -133,7 +145,9 @@ class NoticiaInput extends Component {
                 name="pt_intro_text"
                 value={pt_intro_text}
                 onChange={this.updateField}
-                placeholder="Máximo 100 caracteres"
+                placeholder="Máximo de 100 caracteres"
+                maxLength="100"
+                required
               />
             </div>
             <div className="input">
@@ -143,37 +157,47 @@ class NoticiaInput extends Component {
                 name="en_intro_text"
                 value={en_intro_text}
                 onChange={this.updateField}
-                placeholder="Máximo 100 caracteres"
+                placeholder="Maximum of 100 characters"
+                maxLength="100"
+                required
               />
             </div>
             <div className="input">
               <div className="input-section-label">Data completa:</div>
               <input
+                className="label-uppercase"
                 type="date"
                 name="date"
                 value={date}
                 onChange={this.updateField}
+                required
               />
             </div>
-            <div className="input">
-              <div className="input-section-label">Legenda data PT:</div>
-              <input
-                type="text"
-                name="pt_date"
-                value={pt_date}
-                onChange={this.updateField}
-                placeholder="Ex: ABR 2020"
-              />
-            </div>
-            <div className="input">
-              <div className="input-section-label">Legenda data EN:</div>
-              <input
-                type="text"
-                name="en_date"
-                value={en_date}
-                onChange={this.updateField}
-                placeholder="Ex: APR 2020"
-              />
+            <div className="input-legendas-datas">
+              <div className="input">
+                <div className="input-section-label">Legenda Data PT:</div>
+                <input
+                  type="text"
+                  name="pt_date"
+                  value={pt_date}
+                  onChange={this.updateField}
+                  placeholder="Ex: ABR 2020"
+                  maxLength="8"
+                  required
+                />
+              </div>
+              <div className="input">
+                <div className="input-section-label">Legenda Data EN:</div>
+                <input
+                  type="text"
+                  name="en_date"
+                  value={en_date}
+                  onChange={this.updateField}
+                  placeholder="Ex: APR 2020"
+                  maxLength="8"
+                  required
+                />
+              </div>
             </div>
             <div className="input">
               <div className="input-section-label">Thumbnail:</div>
@@ -182,7 +206,8 @@ class NoticiaInput extends Component {
                 name="thumbnail"
                 value={thumbnail}
                 onChange={this.updateField}
-                placeholder="Link da imagem"
+                placeholder="Link da imagem pequena para a página das notícias"
+                required
               />
             </div>
             <div className="input">
@@ -192,16 +217,17 @@ class NoticiaInput extends Component {
                 name="image"
                 value={image}
                 onChange={this.updateField}
-                placeholder="Link da imagem"
+                placeholder="Link da imagem para o conteúdo da notícia"
+                required
               />
             </div>
-            <div className="input">
+            <div className="input input-block">
               <div className="input-section-label">Conteúdo PT:</div>
               <Editor
                 editorState={editorStatePT}
                 toolbarClassName="toolbarClassName"
                 wrapperClassName="wrapperClassName"
-                editorClassName="NoticiaInput-editor"
+                editorClassName="editorClassName"
                 onEditorStateChange={this.onEditorStateChangePT}
                 toolbar={{
                   options: [
@@ -220,7 +246,7 @@ class NoticiaInput extends Component {
                 }}
               />
             </div>
-            <div className="input">
+            <div className="input input-block">
               <div className="input-section-label">Conteúdo EN:</div>
               <Editor
                 editorState={editorStateEN}
@@ -245,9 +271,10 @@ class NoticiaInput extends Component {
                 }}
               />
             </div>
-            <div className="input">
+            <div className="input-section-checkbox">
               <div className="input-section-label-checkbox">Publicar:</div>
               <input
+                className="input-checkbox"
                 type="checkbox"
                 value={publish}
                 onChange={this.handleCheckboxChange}
@@ -260,11 +287,12 @@ class NoticiaInput extends Component {
                 color="primary"
                 type="submit"
               >
-                ENVIAR
+                GUARDAR
               </button>
             </div>
           </form>
         </div>
+        <PopUp flashInput={flash} typeMessage={messageStatus} />
       </div>
     );
   }

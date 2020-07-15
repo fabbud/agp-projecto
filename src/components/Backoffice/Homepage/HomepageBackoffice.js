@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import PopUp from '../PopUp/PopUp';
 import './HomepageBackoffice.css';
 
 const HomepageBackoffice = () => {
@@ -10,6 +11,8 @@ const HomepageBackoffice = () => {
   const [selectedNews1, setSelectedNews1] = useState(0);
   const [selectedNews2, setSelectedNews2] = useState(0);
   const [selectedNews3, setSelectedNews3] = useState(0);
+  const [flash, setFlash] = useState('');
+  const [messageStatus, setMessageStatus] = useState('');
 
   useEffect(() => {
     axios.get('/news')
@@ -68,7 +71,12 @@ const HomepageBackoffice = () => {
     event.preventDefault();
     axios.put('/homepage', homepageData)
       .then((res) => {
-        console.log("update ok");
+        setMessageStatus('success');
+        setFlash('Guardado com sucesso.');
+      })
+      .catch((err) => {
+        setMessageStatus('error');
+        setFlash('Ocorreu um erro, por favor tente mais tarde.');
       });
   };
 
@@ -78,12 +86,12 @@ const HomepageBackoffice = () => {
       <div className="homepage-section">
         <form onSubmit={handleSubmit}>
           <div className="homepage-section-title">Secção Jornal</div>
-          <div className="homepage-section-input">
+          <div className="homepage-section-input margin-space">
             <div className="homepage-section-label">Edição Jornal:</div>
             <select name="journal" value={selectedJournal} onChange={handleChange}>
               <option value={0}>Escolher edição a publicar....</option>
               {journalData.map((journal) => (
-                <option key={journal.edition} value={journal.edition}>
+                <option className="option" key={journal.edition} value={journal.edition}>
                   {`Edição ${journal.edition} - ${journal.pt_title}`}
                 </option>
               ))}
@@ -94,7 +102,7 @@ const HomepageBackoffice = () => {
             <div className="homepage-section-input">
               <div className="homepage-section-label">Notícia 1:</div>
               <select name="noticia-1" value={selectedNews1} onChange={handleChange}>
-                <option value={0}>Nenhuma....</option>
+                <option value={0}>Nenhuma</option>
                 {newsData.map((news) => (
                   <option key={news.id} value={news.id}>
                     {news.date} - {news.pt_title}
@@ -105,18 +113,18 @@ const HomepageBackoffice = () => {
             <div className="homepage-section-input">
               <div className="homepage-section-label">Notícia 2:</div>
               <select name="noticia-2" value={selectedNews2} onChange={handleChange}>
-                <option value={0}>Nenhuma....</option>
+                <option className="option-one" value={0}>Nenhuma</option>
                 {newsData.map((news) => (
-                  <option key={news.id} value={news.id}>
+                  <option className="option-more" key={news.id} value={news.id}>
                     {news.date} - {news.pt_title}
                   </option>
                 ))}
               </select>
             </div>
-            <div className="homepage-section-input">
+            <div className="homepage-section-input margin-space">
               <div className="homepage-section-label">Notícia 3:</div>
               <select name="noticia-3" value={selectedNews3} onChange={handleChange}>
-                <option value={0}>Nenhuma....</option>
+                <option value={0}>Nenhuma</option>
                 {newsData.map((news) => (
                   <option key={news.id} value={news.id}>
                     {news.date} - {news.pt_title}
@@ -126,10 +134,11 @@ const HomepageBackoffice = () => {
             </div>
           </div>
           <div className="homepage-section-button">
-            <button className="login-button" type="submit">Guardar</button>
+            <button className="login-button" type="submit">GUARDAR</button>
           </div>
         </form>
       </div>
+      <PopUp flashInput={flash} typeMessage={messageStatus} />
     </div>
   );
 };
