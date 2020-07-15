@@ -29,6 +29,7 @@ import FerramentasGuidista from './components/MetodoGuidista/FerramentasGuidista
 import ProjetoGuidista from './components/MetodoGuidista/ProjetoGuidista';
 import MediaShare from './components/MediaShare/MediaShare';
 import HomepageBackoffice from './components/Backoffice/Homepage/HomepageBackoffice';
+import JournalInput from './components/Backoffice/Journal/Journal'
 
 function App() {
 
@@ -67,15 +68,17 @@ function App() {
           <Route exact path="/backoffice" component={Login} />
           <Route exact path="/backoffice/homepage" component={HomepageBackoffice} />
           <Route exact path="/backoffice/news" component={NoticiaInput} />
+          <Route exact path="/backoffice/journal/new" component={JournalInput} />
+          <Route exact path="/backoffice/journal/:edition" component={JournalInput} />
         </Switch>
-        { !currentPath.includes('backoffice')
-        && (
-        <div>
-          <Header />
-          { locationPath !== '/' ? <MediaShare /> : <MediaShare currentPath="homepage" />}
-          <Footer />
-        </div>
-        )}
+        {!currentPath.includes('backoffice')
+          && (
+            <div>
+              <Header />
+              {locationPath !== '/' ? <MediaShare /> : <MediaShare currentPath="homepage" />}
+              <Footer />
+            </div>
+          )}
       </Suspense>
     </div>
   );
