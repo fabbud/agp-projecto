@@ -30,6 +30,7 @@ class NoticiaInput extends Component {
   updateField = (e) => {
     const { value } = e.target;
     const { name } = e.target;
+    console.log(value);
     this.setState({ [name]: value });
   };
 
@@ -81,9 +82,6 @@ class NoticiaInput extends Component {
     this.postData();
   };
 
-  setStartDate = (date) => {
-    this.setState({ date });
-  };
 
   render() {
     const {
@@ -201,7 +199,7 @@ class NoticiaInput extends Component {
                 editorState={editorStatePT}
                 toolbarClassName="toolbarClassName"
                 wrapperClassName="wrapperClassName"
-                editorClassName="NoticiaInput-editor"
+                editorClassName="editorClassName"
                 onEditorStateChange={this.onEditorStateChangePT}
                 toolbar={{
                   options: [
