@@ -34,7 +34,10 @@ const Noticias = () => {
       <p className="NoticiasTitle">{t('noticias.noticias')}</p>
       <div className="MapNoticias">
         {noticiasData.map((noticia) => (
-          <NoticiasCard key={noticia.id} noticia={noticia} />
+          <>
+            {noticia.publish === 1 &&
+              <NoticiasCard key={noticia.id} noticia={noticia} />}
+          </>
         ))}
       </div>
     </div>
