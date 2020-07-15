@@ -22,6 +22,24 @@ router.get('/', (req, res) => {
     )
 })
 
+router.get('/:edition', (req, res) => {
+
+
+    connection.query('SELECT * FROM journal WHERE edition=?',
+        [req.params.edition], (err, results) => {
+            if (err) {
+                res.status(400).send('Query Error')
+            } else {
+                if (results.length === 0) {
+                    res.status(404).send('Edition not found')
+                } else {
+                    res.status(200).json(results)
+                }
+            }
+        }
+    )
+})
+
 router.post('/publish', (req, res) => {
     const formData = req.body
     connection.query('INSERT INTO journal SET ?',
@@ -37,7 +55,7 @@ router.post('/publish', (req, res) => {
     )
 })
 
-router.put('/editPublication', jwtMiddleware, (req, res) => {
+router.put('/editPublication', (req, res) => {
     connection.query('UPDATE journal SET ? WHERE edition=?',
         [req.body, req.body.edition],
         (err, results) => {
