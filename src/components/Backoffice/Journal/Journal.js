@@ -64,6 +64,9 @@ class Journal extends React.Component {
         this.setState({ publish: !publish });
     }
 
+
+    
+
     handleSubmit = (event) => {
         event.preventDefault()
         const { flash, ...newEdition } = this.state.journal
