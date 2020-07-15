@@ -71,8 +71,6 @@ const HomepageBackoffice = () => {
     event.preventDefault();
     axios.put('/homepage', homepageData)
       .then((res) => {
-        console.log(res);
-        console.log("update ok");
         setMessageStatus('success');
         setFlash('Guardado com sucesso.');
       })
