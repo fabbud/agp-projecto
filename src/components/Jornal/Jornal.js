@@ -1,42 +1,35 @@
 import React from 'react';
 import JornalCapa from './JornalCapa'
 import './Jornal.css'
+import JSONTransport from 'nodemailer/lib/json-transport';
 
-let titulo = ''
-
-let edicoes = [
-    { publicar: true, edicao: 27, ano: '2020', titulo: 'Eu e o outro: despertar para uma relação positiva', alt: 'Guias de Portugal Jornal O Trevo', src: 'CoverTREVO_27.jpg', pdf: 'TREVO_27.pdf', temas: ['Compreender o empreendedorismo', 'À conversa com Patrícia Jardim da Palma', 'A Guia portuguesa que se correspondia com Olave', 'Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo'] },
-    { publicar: true, edicao: 26, ano: '2019', titulo: 'Educar para o empreendedorismo', alt: 'Guias de Portugal Jornal O Trevo', src: 'CoverTREVO_26.jpg', pdf: 'TREVO_26.pdf', temas: ['Compreender o empreendedorismo', 'À conversa com Patrícia Jardim da Palma', 'A Guia portuguesa que se correspondia com Olave', 'Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo'] },
-    { publicar: true, edicao: 25, ano: '2019', titulo: 'Olave. A criança, a mulher, a chefe mundial das guias', alt: 'Guias de Portugal Jornal O Trevo', src: 'CoverTREVO_25.jpg', pdf: 'TREVO_25.pdf', temas: ['Compreender o empreendedorismo', 'À conversa com Patrícia Jardim da Palma', 'A Guia portuguesa que se correspondia com Olave', 'Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo'] },
-    { publicar: true, edicao: 24, ano: '2018', titulo: 'Objectivos de desenvolvimento sustentável', alt: 'Guias de Portugal Jornal O Trevo', src: 'CoverTREVO_24.jpg', pdf: 'TREVO_24.pdf', temas: ['Compreender o empreendedorismo', 'À conversa com Patrícia Jardim da Palma', 'A Guia portuguesa que se correspondia com Olave', 'Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo'] },
-    { publicar: true, edicao: 23, ano: '2018', titulo: 'Jogar o jogo', alt: 'Guias de Portugal Jornal O Trevo', src: 'CoverTREVO_23.jpg', pdf: 'TREVO_23.pdf', temas: ['Compreender o empreendedorismo', 'À conversa com Patrícia Jardim da Palma', 'A Guia portuguesa que se correspondia com Olave', 'Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo'] },
-    { publicar: true, edicao: 22, ano: '2017', titulo: 'Otimismo. Caminho a seguir', alt: 'Guias de Portugal Jornal O Trevo', src: 'CoverTREVO_22.jpg', pdf: 'TREVO_22.pdf', temas: ['Compreender o empreendedorismo', 'À conversa com Patrícia Jardim da Palma', 'A Guia portuguesa que se correspondia com Olave', 'Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo'] },
-    { publicar: true, edicao: 21, ano: '2017', titulo: 'Ar Livre. Um laboratório, um livro, um templo', alt: 'Guias de Portugal Jornal O Trevo', src: 'CoverTREVO_21.jpg', pdf: 'TREVO_21.pdf', temas: ['Compreender o empreendedorismo', 'À conversa com Patrícia Jardim da Palma', 'A Guia portuguesa que se correspondia com Olave', 'Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo'] },
-    { publicar: true, edicao: 20, ano: '2016', titulo: 'Associação Guias de Portugal. 85 anos a educar', alt: 'Guias de Portugal Jornal O Trevo', src: 'CoverTREVO_20.jpg', pdf: 'TREVO_20.pdf', temas: ['Compreender o empreendedorismo', 'À conversa com Patrícia Jardim da Palma', 'A Guia portuguesa que se correspondia com Olave', 'Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo'] },
-    { publicar: true, edicao: 19, ano: '2016', titulo: 'Jogos Olímpicos. Mais rápido, mais alto e mais forte', alt: 'Guias de Portugal Jornal O Trevo', src: 'CoverTREVO_19.jpg', pdf: 'TREVO_19.pdf', temas: ['Compreender o empreendedorismo', 'À conversa com Patrícia Jardim da Palma', 'A Guia portuguesa que se correspondia com Olave', 'Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo'] },
-    { publicar: true, edicao: 18, ano: '2015', titulo: 'Política para todos', alt: 'Guias de Portugal Jornal O Trevo', src: 'CoverTREVO_18.jpg', pdf: 'TREVO_18'.pdf, temas: ['Compreender o empreendedorismo', 'À conversa com Patrícia Jardim da Palma', 'A Guia portuguesa que se correspondia com Olave', 'Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo'] },
-    { publicar: true, edicao: 17, ano: '2015', titulo: 'Internet: navegar é preciso, mas em segurança', alt: 'Guias de Portugal Jornal O Trevo', src: 'CoverTREVO_17.jpg', pdf: 'TREVO_17.pdf', temas: ['Compreender o empreendedorismo', 'À conversa com Patrícia Jardim da Palma', 'A Guia portuguesa que se correspondia com Olave', 'Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo'] },
-    { publicar: true, edicao: 16, ano: '2014', titulo: 'Desperdício alimentar da terra até à mesa', alt: 'Guias de Portugal Jornal O Trevo', src: 'CoverTREVO_16.jpg', pdf: 'TREVO_16.pdf', temas: ['Compreender o empreendedorismo', 'À conversa com Patrícia Jardim da Palma', 'A Guia portuguesa que se correspondia com Olave', 'Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo'] },
-]
 
 class Jornal extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { edicoes: edicoes }
+        this.state = { edicoes: [] }
+    }
+
+    fetchJournal = () => {
+        fetch('/journal', {
+            method: 'GET',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+            }),
+        }).then((res) => res.json()).then((json) => {
+            this.setState({ edicoes: json })
+            console.log(json)
+
+        })
     }
 
     componentDidMount = () => {
         window.scrollTo(0, 0);
+        this.fetchJournal();
     }
-
-    downloadButton = (a, b) => {
-
-    }
-
-
 
     render() {
-        
+
         return (
             <div className="Jornal">
                 <h2 className="oTrevo">Jornal "O Trevo"</h2>
@@ -46,15 +39,24 @@ class Jornal extends React.Component {
 
                     {
                         this.state.edicoes.map((edicao, index) => (
-                            <> {edicao.publicar === true &&
+                            <> {edicao.publish === 1 &&
                                 < JornalCapa
-                                    titulo={edicao.titulo}
-                                    ano={edicao.ano}
-                                    edicao={edicao.edicao}
-                                    src={edicao.src}
-                                    alt={edicao.alt}
-                                    pdf={edicao.pdf}
-                                    temas={edicao.temas}
+                                    titulo={edicao.pt_title}
+                                    ano={edicao.year}
+                                    edicao={edicao.edition}
+                                    src={edicao.thumbnail}
+                                    // alt={edicao.alt}
+                                    pdf={edicao.pdf_link}
+                                    temas1_pt={edicao.pt_intro_text_1}
+                                    temas2_pt={edicao.pt_intro_text_2}
+                                    temas3_pt={edicao.pt_intro_text_3}
+                                    temas4_pt={edicao.pt_intro_text_4}
+                                    temas5_pt={edicao.pt_intro_text_5}
+                                    temas1_en={edicao.en_intro_text_1}
+                                    temas2_en={edicao.en_intro_text_2}
+                                    temas3_en={edicao.en_intro_text_3}
+                                    temas4_en={edicao.en_intro_text_4}
+                                    temas5_en={edicao.en_intro_text_5}
                                     index={index}
                                 />
                             }</>
@@ -66,7 +68,20 @@ class Jornal extends React.Component {
     }
 }
 
-
+// [
+//     { "publish": 1, "edition": 27, "year": "2020", "pt_title": "Eu e o outro: despertar para uma relação positiva", "en_title": "", "thumbnail": "CoverTREVO_27.jpg", "pdf_link": "TREVO_27.pdf", "pt_intro_text_1": "Compreender o empreendedorismo", "pt_intro_text_2": "À conversa com Patrícia Jardim da Palma", "pt_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "pt_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "pt_intro_text_5": "", "en_intro_text_1": "Compreender o empreendedorismo", "en_intro_text_2": "À conversa com Patrícia Jardim da Palma", "en_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "en_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "en_intro_text_5": "" },
+//     { "publish": 1, "edition": 26, "year": "2019", "pt_title": "Educar para o empreendedorismo", "en_title": "", "thumbnail": "CoverTREVO_26.jpg", "pdf_link": "TREVO_26.pdf", "pt_intro_text_1": "Compreender o empreendedorismo", "pt_intro_text_2": "À conversa com Patrícia Jardim da Palma", "pt_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "pt_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "pt_intro_text_5": "", "en_intro_text_1": "Compreender o empreendedorismo", "en_intro_text_2": "À conversa com Patrícia Jardim da Palma", "en_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "en_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "en_intro_text_5": "" },
+//     { "publish": 1, "edition": 25, "year": "2019", "pt_title": "Olave. A criança, a mulher, a chefe mundial das guias", "en_title": "", "thumbnail": "CoverTREVO_25.jpg", "pdf_link": "TREVO_25.pdf", "pt_intro_text_1": "Compreender o empreendedorismo", "pt_intro_text_2": "À conversa com Patrícia Jardim da Palma", "pt_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "pt_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "pt_intro_text_5": "", "en_intro_text_1": "Compreender o empreendedorismo", "en_intro_text_2": "À conversa com Patrícia Jardim da Palma", "en_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "en_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "en_intro_text_5": "" },
+//     { "publish": 1, "edition": 24, "year": "2018", "pt_title": "Objectivos de desenvolvimento sustentável", "en_title": "", "thumbnail": "CoverTREVO_24.jpg", "pdf_link": "TREVO_24.pdf", "pt_intro_text_1": "Compreender o empreendedorismo", "pt_intro_text_2": "À conversa com Patrícia Jardim da Palma", "pt_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "pt_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "pt_intro_text_5": "", "en_intro_text_1": "Compreender o empreendedorismo", "en_intro_text_2": "À conversa com Patrícia Jardim da Palma", "en_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "en_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "en_intro_text_5": "" },
+//     { "publish": 1, "edition": 23, "year": "2018", "pt_title": "Jogar o jogo", "en_title": "", "thumbnail": "CoverTREVO_23.jpg", "pdf_link": "TREVO_23.pdf", "pt_intro_text_1": "Compreender o empreendedorismo", "pt_intro_text_2": "À conversa com Patrícia Jardim da Palma", "pt_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "pt_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "pt_intro_text_5": "", "en_intro_text_1": "Compreender o empreendedorismo", "en_intro_text_2": "À conversa com Patrícia Jardim da Palma", "en_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "en_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "en_intro_text_5": "" },
+//     { "publish": 1, "edition": 22, "year": "2017", "pt_title": "Otimismo. Caminho a seguir", "en_title": "", "thumbnail": "CoverTREVO_22.jpg", "pdf_link": "TREVO_22.pdf", "pt_intro_text_1": "Compreender o empreendedorismo", "pt_intro_text_2": "À conversa com Patrícia Jardim da Palma", "pt_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "pt_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "pt_intro_text_5": "", "en_intro_text_1": "Compreender o empreendedorismo", "en_intro_text_2": "À conversa com Patrícia Jardim da Palma", "en_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "en_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "en_intro_text_5": "" },
+//     { "publish": 1, "edition": 21, "year": "2017", "pt_title": "Ar Livre. Um laboratório, um livro, um templo", "en_title": "", "thumbnail": "CoverTREVO_21.jpg", "pdf_link": "TREVO_21.pdf", "pt_intro_text_1": "Compreender o empreendedorismo", "pt_intro_text_2": "À conversa com Patrícia Jardim da Palma", "pt_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "pt_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "pt_intro_text_5": "", "en_intro_text_1": "Compreender o empreendedorismo", "en_intro_text_2": "À conversa com Patrícia Jardim da Palma", "en_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "en_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "en_intro_text_5": "" },
+//     { "publish": 1, "edition": 20, "year": "2016", "pt_title": "Associação Guias de Portugal. 85 anos a educar", "en_title": "", "thumbnail": "CoverTREVO_20.jpg", "pdf_link": "TREVO_20.pdf", "pt_intro_text_1": "Compreender o empreendedorismo", "pt_intro_text_2": "À conversa com Patrícia Jardim da Palma", "pt_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "pt_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "pt_intro_text_5": "", "en_intro_text_1": "Compreender o empreendedorismo", "en_intro_text_2": "À conversa com Patrícia Jardim da Palma", "en_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "en_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "en_intro_text_5": "" },
+//     { "publish": 1, "edition": 19, "year": "2016", "pt_title": "Jogos Olímpicos. Mais rápido, mais alto e mais forte", "en_title": "", "thumbnail": "CoverTREVO_19.jpg", "pdf_link": "TREVO_19.pdf", "pt_intro_text_1": "Compreender o empreendedorismo", "pt_intro_text_2": "À conversa com Patrícia Jardim da Palma", "pt_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "pt_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "pt_intro_text_5": "", "en_intro_text_1": "Compreender o empreendedorismo", "en_intro_text_2": "À conversa com Patrícia Jardim da Palma", "en_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "en_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "en_intro_text_5": "" },
+//     { "publish": 1, "edition": 18, "year": "2015", "pt_title": "Política para todos", "en_title": "", "thumbnail": "CoverTREVO_18.jpg", "pdf_link": "TREVO_18.jpg", "pt_intro_text_1": "Compreender o empreendedorismo", "pt_intro_text_2": "À conversa com Patrícia Jardim da Palma", "pt_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "pt_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "pt_intro_text_5": "", "en_intro_text_1": "Compreender o empreendedorismo", "en_intro_text_2": "À conversa com Patrícia Jardim da Palma", "en_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "en_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "en_intro_text_5": "" },
+//     { "publish": 1, "edition": 17, "year": "2015", "pt_title": "Internet: navegar é preciso, mas em segurança", "en_title": "", "thumbnail": "CoverTREVO_17.jpg", "pdf_link": "TREVO_17.pdf", "pt_intro_text_1": "Compreender o empreendedorismo", "pt_intro_text_2": "À conversa com Patrícia Jardim da Palma", "pt_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "pt_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "pt_intro_text_5": "", "en_intro_text_1": "Compreender o empreendedorismo", "en_intro_text_2": "À conversa com Patrícia Jardim da Palma", "en_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "en_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "en_intro_text_5": "" },
+//     { "publish": 1, "edition": 16, "year": "2014", "pt_title": "Desperdício alimentar da terra até à mesa", "en_title": "", "thumbnail": "CoverTREVO_16.jpg", "pdf_link": "TREVO_16.pdf", "pt_intro_text_1": "Compreender o empreendedorismo", "pt_intro_text_2": "À conversa com Patrícia Jardim da Palma", "pt_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "pt_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "pt_intro_text_5": "", "en_intro_text_1": "Compreender o empreendedorismo", "en_intro_text_2": "À conversa com Patrícia Jardim da Palma", "en_intro_text_3": "A Guia portuguesa que se correspondia com Olave", "en_intro_text_4": "Empreendedores ao longo dos séculosComo o Guidismo lança a semente do empreendedorismo", "en_intro_text_5": "" }
+// ]
 
 
 
