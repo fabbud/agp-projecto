@@ -1,16 +1,14 @@
 import React from 'react';
 import './LanguageSelector.css';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import flagPT from '../../assets/images/LanguageTranslator/pt_flag.png';
 import flagEN from '../../assets/images/LanguageTranslator/en_flag.png';
 
-const LanguageSelector = (props) => {
+const LanguageSelector = () => {
   const { i18n } = useTranslation();
 
   const changeLanguage = (event) => {
     i18n.changeLanguage(event.target.value);
-    props.clickNavbar();
   };
 
   return (
@@ -21,10 +19,6 @@ const LanguageSelector = (props) => {
       <img src={flagEN} className="lang-icon" alt="Bandeira Portuguesa" />
     </div>
   );
-};
-
-LanguageSelector.propTypes = {
-  clickNavbar: PropTypes.string.isRequired,
 };
 
 export default LanguageSelector;
