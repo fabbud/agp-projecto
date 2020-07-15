@@ -1,82 +1,41 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import ReactHtmlParser from 'react-html-parser';
 import "./ConteudoNoticia.css";
-
-const noticiasAgp = [
-  {
-    id: 1,
-    title: "O Trevo também fica em casa",
-    image: "https://i.imgur.com/IM55yrI.png",
-    data: "JUN 2020",
-    text:
-      "Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível. Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível. Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível. Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível. Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível. Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível. Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível. Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível. Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.",
-  },
-  {
-    id: 2,
-    title: "O Trevo também fica em casa",
-    image: "https://i.imgur.com/IM55yrI.png",
-    data: "JUN 2020",
-    text:
-      "Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.",
-  },
-  {
-    id: 3,
-    title: "O Trevo também fica em casa",
-    image: "https://i.imgur.com/IM55yrI.png",
-    data: "JUN 2020",
-    text:
-      "Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.",
-  },
-  {
-    id: 4,
-    title: "O Trevo também fica em casa",
-    image: "https://i.imgur.com/IM55yrI.png",
-    data: "JUN 2020",
-    text:
-      "Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.",
-  },
-  {
-    id: 5,
-    title: "O Trevo também fica em casa",
-    image: "https://i.imgur.com/IM55yrI.png",
-    data: "JUN 2020",
-    text:
-      "Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.",
-  },
-  {
-    id: 6,
-    title: "O Trevo também fica em casa",
-    image: "https://i.imgur.com/IM55yrI.png",
-    data: "JUN 2020",
-    text:
-      "Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const ConteudoNoticia = (props) => {
-  const [imageNoticia, setimageNoticia] = useState("");
-  const [titleNoticia, setTitleNoticia] = useState("");
-  const [textNoticia, setTextNoticia] = useState("");
+  const { i18n } = useTranslation();
+  const [contNoticiasData, setContNoticiasData] = useState([]);
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
 
-  const getNoticia = (id) => {
-    // console.log(id);
-    const noticiasConteudo = noticiasAgp.filter(
-      (element) => element.id === Number(id)
-    );
-    // console.log(noticiasConteudo);
-    const noticiasConteudoMap = noticiasConteudo.map(
-      (noticia) => (
-        setimageNoticia(`${noticia.image}`),
-        setTitleNoticia(`${noticia.title}`),
-        setTextNoticia(`${noticia.text}`)
-      )
-    );
+  const getData = async () => {
+    const { match } = props;
+    const { id } = match.params;
+    await axios
+      .get("/news")
+      .then((response) => {
+        //console.log(response);
+        return response.data;
+      })
+      .then((dataresult) => {
+        //console.log(dataresult);
+        const noticiasConteudo = dataresult.filter(
+          (element) => element.id === Number(id)
+        );
+        setContNoticiasData(noticiasConteudo[0]);
+      });
   };
 
   useEffect(() => {
-    const { match } = props;
-    const { id } = match.params;
     window.scrollTo(0, 0);
-    getNoticia(id);
+    getData();
+  }, []);
+
+  useEffect(() => {
+    if (i18n.language !== selectedLanguage) {
+      setSelectedLanguage(i18n.language);
+    }
   });
 
   return (
@@ -84,13 +43,17 @@ const ConteudoNoticia = (props) => {
       <div className="CardConteudoNoticia">
         <div className="CardConteudoNoticia2">
           <div className="ImgCardConteudoNoticia">
-            <img className="ImagemConteudo" src={imageNoticia} alt="notícia" />
+            <img
+              className="ImagemConteudo"
+              src={contNoticiasData.image}
+              alt="notícia"
+            />
           </div>
           <div className="TitleCardConteudoNoticia">
-            <h3>{titleNoticia}</h3>
+            <h3>{contNoticiasData[`${selectedLanguage}_title`]}</h3>
           </div>
           <div className="TextCardNoticias">
-            <p>{textNoticia}</p>
+            {ReactHtmlParser(contNoticiasData[`${selectedLanguage}_content`])}
           </div>
         </div>
       </div>

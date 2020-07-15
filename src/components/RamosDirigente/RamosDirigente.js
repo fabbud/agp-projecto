@@ -60,10 +60,7 @@ function RamosDirigente(props) {
         <img src={branchBanner} className="banner-sentence" alt="Frase do Ramo" />
       </div>
       <div className={`ramos-section ${branchName}`}>
-        <div className="ramos-text">
-          {ReactHtmlParser(t(`pedagogia.${branchName}.text`))}
-          {/* <Link to="/pedagogia/ramos/aventura">{t(`pedagogia.${branchName}.nextPage`)}</Link> */}
-        </div>
+        <div className="ramos-text">{ReactHtmlParser(t(`ramos.${branchName}.text`))}</div>
         <div className="ramos-buttons-section">
           { branchName !== 'dirigente'
             ? (

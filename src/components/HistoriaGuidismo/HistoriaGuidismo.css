@@ -1,0 +1,15 @@
+.HistoriaGuidismo {
+  background-color: transparent;
+  font-family: "Poppins", sans-serif !important;
+  padding-top: 500px;
+}
+
+.HistoriaGuidismo-banner {
+  background-image: url("../../assets/images/HistoriaDoGuidismo/HistoriaDoGuidismoBanner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 170px;
+  background-position: 10% 70%;
+  height: 300px;
+  width: 100%;
+}

@@ -5,7 +5,7 @@ import './LojaMaster.css';
 
 
 let artigos = [
-    { id: 1, categoria: 'Fardas', descricao: 'Camisola de lã', alt: 'Guias de Portugal Camisola de lã', src: 'CamisolaDeLa', preço: '23,5€' },
+    { id: 1, categoria: 'fardas', descricao: 'Camisola de lã', alt: 'Guias de Portugal Camisola de lã', src: 'CamisolaDeLa.jpg', preço: '23,5€' },
     { id: 2, categoria: 'livros', descricao: 'Tornar-se Avezinha', alt: 'Guias de Portugal Livro Tornar-se Avezinha', src: 'TornarSeAvezinha.jpg', preço: '2,5€' },
     { id: 3, categoria: 'livros', descricao: 'Asas Verdes', alt: 'Guias de Portugal Asas Verdes', src: 'AsasVerdes.jpg', preço: '2,5€' },
     { id: 4, categoria: 'livros', descricao: 'Asas Azuis', alt: 'Guias de Portugal Asas Azuis', src: 'AsasAzuis.jpg', preço: '1,5€' },
@@ -43,6 +43,8 @@ class LojaMaster extends React.Component {
         window.scrollTo(0, 0);
         // let url = ''
         // fetch(url).then((response) => response.json()).then((json) => this.setState({ artigos: json }));
+
+        window.scrollTo(0, 0);
         const { match } = this.props;
         console.log(this.props);
         let getModo = match.params.modo;
