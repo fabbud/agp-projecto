@@ -18,6 +18,19 @@ router.get('/', /* jwtMiddleware, */ (req, res) => {
   );
 });
 
+router.get('/published', /* jwtMiddleware, */ (req, res) => {
+  connection.query(
+    'SELECT * FROM news WHERE publish = 1 ORDER BY date DESC;',
+    (err, results) => {
+      if (err) {
+        res.status(500).send('News not found');
+      } else {
+        res.json(results);
+      }
+    },
+  );
+});
+
 router.get('/:id', (req, res) => {
   connection.query('SELECT * FROM news WHERE id=?',
     [req.params.id], (err, results) => {
