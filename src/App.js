@@ -71,8 +71,9 @@ function App() {
           <Route exact path="/backoffice" component={Login} />
           <Route exact path="/backoffice/intro" component={IntroPage} />
           <Route exact path="/backoffice/homepage" component={HomepageBackoffice} />
-          <Route exact path="/backoffice/news" component={NoticiaInput} />
           <Route exact path="/backoffice/news/painel" component={NoticiasPainel} />
+          <Route exact path="/backoffice/news/painel/new" component={NoticiaInput} />
+          <Route exact path="/backoffice/news/painel/:id" component={NoticiaInput} />
         </Switch>
         { !currentPath.includes('backoffice')
         && (
