@@ -11,10 +11,12 @@ import Cidadas from '../../assets/images/PalavraAosPais/Cidadas4.jpg';
 import Responsaveis from '../../assets/images/PalavraAosPais/Responsaveis5.jpg';
 
 const PalavraAosPais = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const { t } = useTranslation();
+
   return (
     <div className="PalavraAosPais>">
       <div className="Palavra-aos-pais-banner" />

@@ -32,7 +32,13 @@ const Footer = () => {
           <h5>{t('footer.contactos')}</h5>
           <ul>
             <li><span className="footer-contactos">{t('contactos.telefone')}</span></li>
-            <li><span className="footer-contactos">{t('contactos.email')}</span></li>
+            <li>
+              <span className="footer-contactos">
+                <a href="mailto:a.g.p@netcabo.pt">
+                  {t('contactos.email')}
+                </a>
+              </span>
+            </li>
           </ul>
           <div className="footer-social">
             <a href="" target="_blank" rel="noopener noreferrer">

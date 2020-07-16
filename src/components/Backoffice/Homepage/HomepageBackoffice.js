@@ -76,7 +76,7 @@ const HomepageBackoffice = () => {
       })
       .catch((err) => {
         setMessageStatus('error');
-        setFlash('Ocorreu um erro, por favor tente mais tarde.');
+        setFlash('Ocorreu um erro, por favor tente outra vez.');
       });
   };
 
@@ -105,7 +105,7 @@ const HomepageBackoffice = () => {
                 <option value={0}>Nenhuma</option>
                 {newsData.map((news) => (
                   <option key={news.id} value={news.id}>
-                    {news.date} - {news.pt_title}
+                    {(news.date.substr(0,10))} - {news.pt_title}
                   </option>
                 ))}
               </select>
@@ -116,7 +116,7 @@ const HomepageBackoffice = () => {
                 <option className="option-one" value={0}>Nenhuma</option>
                 {newsData.map((news) => (
                   <option className="option-more" key={news.id} value={news.id}>
-                    {news.date} - {news.pt_title}
+                    {news.date.substr(0,10)} - {news.pt_title}
                   </option>
                 ))}
               </select>
@@ -127,7 +127,7 @@ const HomepageBackoffice = () => {
                 <option value={0}>Nenhuma</option>
                 {newsData.map((news) => (
                   <option key={news.id} value={news.id}>
-                    {news.date} - {news.pt_title}
+                    {news.date.substr(0,10)} - {news.pt_title}
                   </option>
                 ))}
               </select>

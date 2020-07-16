@@ -15,6 +15,7 @@ class NoticiaPainel extends Component {
     this.state = {
       noticiasInput: [],
       showModal: false,
+      noticiaId: 0,
     };
   }
 
@@ -24,35 +25,42 @@ class NoticiaPainel extends Component {
       .get('/news')
       // Extract the DATA from the received response
       .then((response) => {
-        console.log(response);
         return response.data;
       })
       // Use this data to update the state
       .then((dataresult) => {
-        console.log(dataresult);
-        this.setState({ noticiasInput: dataresult });
+        this.setState({ 
+          noticiasInput: dataresult });
       });
   };
-
-
-  // handleModalDelete = (id) => {
-  //   const { showModal } = this.state;
-
-  //   axios
-  //     .delete(`/news/${id}`)
-  //     .then((response) => {
-  //       console.log(response);
-  //       return response.data;
-  //     })
-  //     .then((dataresult) => {
-  //       console.log(dataresult);
-  //       this.setState({ noticiasInput: dataresult });
-  //     });
-  // };
 
   componentDidMount = () => {
     this.getData();
   };
+
+  handleModalDelete = () => {
+    console.log("delete")
+    const { noticiaId, noticiasInput, showModal } = this.state;
+    console.log("noticia", noticiaId)
+    axios
+      .delete(`/news/${noticiaId}`)
+      .then((response) => {
+        return response.data;
+      })
+      .then((dataresult) => {
+        this.setState({ 
+          noticiasInput: dataresult, 
+          showModal: false 
+        });
+      });
+    this.getData();
+  }
+
+  handleModal = () =>{
+    console.log("handleModal")
+    const { showModal } = this.state;
+    this.setState({ showModal: !showModal });
+  }
 
   render() {
     const { noticiasInput, showModal } = this.state;
@@ -61,23 +69,25 @@ class NoticiaPainel extends Component {
     const columns = [
       {
         dataField: 'publish',
-        text: 'Publicado',
+        text: 'Status',
         filter: textFilter(),
         sort: true,
-        headerStyle: () => ({ width: '25%' }),
+        headerStyle: () => ({ width: '15%' }),
         formatter: function dateFormatter(publish) {
           if (publish === 1) {
             return 'Publicado';
           }
           return 'Não Publicado';
         },
+        align: 'center',
       },
       {
         dataField: 'pt_date',
-        text: 'Data Publicação',
+        text: 'Publicação',
         filter: textFilter(),
         sort: true,
-        headerStyle: () => ({ width: '25%' }),
+        headerStyle: () => ({ width: '15%' }),
+        align: 'center',
       },
       {
         dataField: 'pt_title',
@@ -106,8 +116,8 @@ class NoticiaPainel extends Component {
         text: 'Eliminar',
         formatter: (id) => (
           <a
-            style={{ textDecoration: 'none', justifyContent: 'center' }}
-            onClick={() => this.setState({ showModal: true })}
+            style={{ cursor: 'pointer', textDecoration: 'none', justifyContent: 'center' }}
+            onClick={() => this.handleModal()}
           >
             <span role="img" aria-label="trash">
               🗑
@@ -118,11 +128,16 @@ class NoticiaPainel extends Component {
         align: 'center',
       },
     ];
-    console.log(showModal);
+
+    const rowEvents = {
+      onClick: (e, row) => {
+        console.log(row);
+        this.setState({noticiaId: row.id})
+      }
+    }
+
     return (
       <div className="NoticiasPainel">
-        {showModal && <ModalPopup />}
-        <ModalPopup />
         <div className="NoticiasPainel-title">Notícias Painel</div>
         <div className="NoticiasPainel-section-button">
           <Link to={link}>
@@ -141,8 +156,10 @@ class NoticiaPainel extends Component {
             pagination={paginationFactory()}
             filter={filterFactory()}
             filterPosition="top"
+            rowEvents={rowEvents}
           />
         </div>
+        <ModalPopup show={showModal} handleDelete={this.handleModalDelete} handleClose={this.handleModal} />
       </div>
     );
   }

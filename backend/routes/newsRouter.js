@@ -66,9 +66,9 @@ router.put('/:id', /* jwtMiddleware, */ (req, res) => {
 
 router.delete('/:id', /* jwtMiddleware, */ (req, res) => {
   const idNews = req.params.id;
+  console.log(idNews);
   connection.query(
-    'DELETE FROM news WHERE id = ?',
-    [idNews],
+    'DELETE FROM news WHERE id = ?', idNews,
     (err, results) => {
       if (err) {
         res.status(500).send('Error');

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 .Body {
     font-family: 'Poppins' !important;
@@ -14,12 +13,16 @@
     background-position: center;
 }   
 
-strong{
+.assoc-text-bold {
+    font-weight: 600;
+}
+
+/* strong {
     line-height: 1.5;
     font-size:16px;
     color: #1AA3DB;
     font-weight:400;
-}
+} */
 
 .associacao{
     width:100%;
@@ -33,16 +36,17 @@ strong{
 }
 
 
-.associacao h1{
+.associacao-title {
     color: #1AA3DB;
-    font-size: 2 rem;
+    font-size: 28px;
     font-weight:500;
     line-height:1.1;
-
+    margin-bottom: 20px;
 }
 
 .associacao p{
     color: #004982; 
+    opacity: 0.8;
     padding-right:160px;
     padding-left:160px;
     line-height: 1.5;
@@ -118,7 +122,7 @@ strong{
      margin-left: 100px;
      line-height: 1.1;
      margin-bottom: 0px;
-    }
+}
 
 .fotosHistoriaReverse h3{
     margin-left: 50px;
@@ -131,12 +135,10 @@ strong{
     justify-content: center;
     /* margin-top:35px;
     margin-bottom: 35px; */
-
 }
 
 .imageDiv {
     width:50%;
-    
 }
 
 .imageDiv img {
@@ -149,8 +151,7 @@ strong{
 .button-section a {
     display: flex;
     justify-content: center;
-    margin: 20px 0px 80px 0px;
-    /* margin: 50px auto; */
+    margin: 50px 0px 20px 0px;
 }
 .guia-button {
     border-style: none;
@@ -158,19 +159,16 @@ strong{
     font-size: 20px;
     padding: 6px 12px;
     outline: none !important;
-    align-items: center;
-    margin-left:42%;
-    margin-right:42%;
-    margin-top:50px;
 }
-  .guia-button:hover {
-    font-weight: 700;
-  }
-  .associacao-button {
-    background-color: #154A7F;
-    color: white;
-    align-items: center;
-  }
+
+.guia-button:hover {
+  font-weight: 700;
+}
+
+.associacao-button {
+  background-color: #154A7F;
+  color: white;
+}
 
 .associa-link a {
     text-decoration: none;
@@ -215,13 +213,6 @@ strong{
         text-align: center;
     }
 
-    .guia-button {
-        
-        margin-left:38%;
-        margin-right:30%;
-        font-size:16px;
-    }
-
     .guidismo p {
         margin-left:130px;
         margin-right:130px;
@@ -234,8 +225,6 @@ strong{
         padding-bottom: 20px;
         padding-top: 20px;
     }
-
-    
 
 }
 
@@ -268,13 +257,6 @@ strong{
         padding-left:25px;
         padding-right:25px;
     }
-
-    .guia-button{
-        font-size: 18px;
-        margin-left:30%;
-        margin-right: 25%;
-    }
-
 }
 @media(max-width:375px){
 
@@ -288,7 +270,6 @@ strong{
     .guidinismo{
         font-size:15px;
     }
-
     .historiaGuidismoH2{
         font-size:22px;
         margin-right: 25px;

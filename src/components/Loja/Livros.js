@@ -17,6 +17,11 @@ function Livros(props) {
                     <p>{props.descricao}<br />
                     <b>{props.preço}</b></p>
                 </div>
+                
+                <div className="descricaoArtigos-mobile">
+                    <p>{props.descricao}<br />
+                    <b>{props.preço}</b></p>
+                </div>
             </div>
         </div>
 

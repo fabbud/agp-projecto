@@ -47,8 +47,13 @@
 }
 
 .TextCardNoticias {
-  text-align: justify;
+  /* text-align: justify; */
   margin: 30px;
+}
+.TextCardNoticias img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 1024px) {
