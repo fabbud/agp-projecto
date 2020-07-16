@@ -53,13 +53,13 @@ const Homepage = (props) => {
   return (
     <div className="Homepage">
       {/* VIDEO */}
-      <div className="home-video-section">
+      <span className="home-video-section">
         <div className="home-video">
           <video controls controlsList="nodownload" autoPlay loop width="100%" height="100%">
             <source src={homepageTeaser} type="video/mp4" />
           </video>
         </div>
-      </div>
+      </span>
 
       {/* MODELO */}
       <div className="home-ramos">

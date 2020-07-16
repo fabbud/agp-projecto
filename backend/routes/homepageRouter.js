@@ -39,7 +39,6 @@ router.get('/:mode', /*jwtMiddleware,*/ (req, res, next) => {
 
 router.put('/', /*jwtMiddleware,*/ (req, res) => {
   const newData = req.body;
-  console.log(newData);
   connection.query('UPDATE homepage SET ? ', [newData], (err, results) => {
     if (err) {
       res.status(500).send('Error updating homepage data');

@@ -7,7 +7,6 @@ import './MediaShare.css';
 const MediaShare = (props) => {
   const { t } = useTranslation();
   const pageURL = window.location.href;
-  console.log(pageURL);
   // const pagePath = window.location.pathname;
   // put the path
   const dataURL = 'http://www.guiasdeportugal.org/';
