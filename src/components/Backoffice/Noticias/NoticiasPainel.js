@@ -33,26 +33,37 @@ class NoticiaPainel extends Component {
         this.setState({ noticiasInput: dataresult });
       });
   };
-
-
-  // handleModalDelete = (id) => {
-  //   const { showModal } = this.state;
-
-  //   axios
-  //     .delete(`/news/${id}`)
-  //     .then((response) => {
-  //       console.log(response);
-  //       return response.data;
-  //     })
-  //     .then((dataresult) => {
-  //       console.log(dataresult);
-  //       this.setState({ noticiasInput: dataresult });
-  //     });
-  // };
-
+  
   componentDidMount = () => {
     this.getData();
   };
+
+  handleModalDelete = () => {
+    console.log("delete")
+    const { showModal, noticiasInput } = this.state;
+    console.log(noticiasInput[0].id)
+    axios
+      .delete(`/news/${noticiasInput[0].id}`)
+      .then((response) => {
+        console.log(response);
+        return response.data;
+      })
+      .then((dataresult) => {
+        console.log(dataresult);
+        this.setState({ 
+          noticiasInput: dataresult, 
+          showModal: false 
+        });
+    })
+    this.getData();
+  }
+  
+  handleModal = () =>{
+    console.log("handleModal")
+    console.log("handleModal")
+    const { showModal } = this.state;
+    this.setState({ showModal: !showModal })
+  }
 
   render() {
     const { noticiasInput, showModal } = this.state;
@@ -107,7 +118,7 @@ class NoticiaPainel extends Component {
         formatter: (id) => (
           <a
             style={{ textDecoration: 'none', justifyContent: 'center' }}
-            onClick={() => this.setState({ showModal: true })}
+            onClick={this.handleModal}
           >
             <span role="img" aria-label="trash">
               🗑
@@ -118,11 +129,10 @@ class NoticiaPainel extends Component {
         align: 'center',
       },
     ];
-    console.log(showModal);
+
     return (
       <div className="NoticiasPainel">
-        {showModal && <ModalPopup />}
-        <ModalPopup />
+        <ModalPopup show={showModal} handleDelete={this.handleModalDelete} handleClose={this.handleModal}/>
         <div className="NoticiasPainel-title">Notícias Painel</div>
         <div className="NoticiasPainel-section-button">
           <Link to={link}>
