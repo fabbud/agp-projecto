@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import {
   EditorState,
   ContentState,
@@ -46,7 +47,7 @@ class NoticiaInput extends Component {
     window.scrollTo(0, 0);
     const { match } = this.props;
     const getId = match.params.id;
-    console.log(getId);
+
     if (getId) {
       fetch(`/news/${getId}`, {
         method: 'GET',
@@ -56,7 +57,6 @@ class NoticiaInput extends Component {
       })
         .then((res) => res.json())
         .then((res) => {
-          console.log(res);
           const formatDate = res[0].date.substr(0,10);
 
           let getPublish = res[0].publish;
@@ -123,7 +123,6 @@ class NoticiaInput extends Component {
 
   handleCheckboxChange = () => {
     const { publish } = this.state;
-    console.log(!publish);
     this.setState({ publish: !publish });
   };
 
@@ -177,6 +176,7 @@ class NoticiaInput extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.postData();
+    this.props.history.push({pathname: '/backoffice/news/painel'})
   };
 
   render() {
@@ -394,4 +394,4 @@ class NoticiaInput extends Component {
   }
 }
 
-export default NoticiaInput;
+export default withRouter(NoticiaInput);

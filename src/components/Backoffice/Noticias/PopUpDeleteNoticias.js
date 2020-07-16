@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 
 function ModalPopup(props) {
-  const { handleModal, showModal } = props;
+  const { handleClose, handleDelete, show } = props;
   return (
     <div style={{ height: '100px', width: '100px' }}>
       <Modal
-        showModal="true"
+        show={show}
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
@@ -18,7 +18,10 @@ function ModalPopup(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Footer>
-          <Button className="modal-button" onClick={handleModal}>
+          <Button className="modal-button" onClick={handleClose}>
+            Não
+          </Button>
+          <Button className="modal-button" onClick={handleDelete}>
             Sim
           </Button>
         </Modal.Footer>
