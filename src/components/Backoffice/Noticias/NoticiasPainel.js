@@ -33,7 +33,7 @@ class NoticiaPainel extends Component {
           noticiasInput: dataresult });
       });
   };
-  
+
   componentDidMount = () => {
     this.getData();
   };
@@ -52,14 +52,14 @@ class NoticiaPainel extends Component {
           noticiasInput: dataresult, 
           showModal: false 
         });
-    })
+      });
     this.getData();
   }
-  
+
   handleModal = () =>{
     console.log("handleModal")
     const { showModal } = this.state;
-    this.setState({ showModal: !showModal })
+    this.setState({ showModal: !showModal });
   }
 
   render() {
@@ -69,23 +69,25 @@ class NoticiaPainel extends Component {
     const columns = [
       {
         dataField: 'publish',
-        text: 'Publicado',
+        text: 'Status',
         filter: textFilter(),
         sort: true,
-        headerStyle: () => ({ width: '25%' }),
+        headerStyle: () => ({ width: '15%' }),
         formatter: function dateFormatter(publish) {
           if (publish === 1) {
             return 'Publicado';
           }
           return 'Não Publicado';
         },
+        align: 'center',
       },
       {
         dataField: 'pt_date',
-        text: 'Data Publicação',
+        text: 'Publicação',
         filter: textFilter(),
         sort: true,
-        headerStyle: () => ({ width: '25%' }),
+        headerStyle: () => ({ width: '15%' }),
+        align: 'center',
       },
       {
         dataField: 'pt_title',
@@ -136,7 +138,6 @@ class NoticiaPainel extends Component {
 
     return (
       <div className="NoticiasPainel">
-        <ModalPopup show={showModal} handleDelete={this.handleModalDelete} handleClose={this.handleModal}/>
         <div className="NoticiasPainel-title">Notícias Painel</div>
         <div className="NoticiasPainel-section-button">
           <Link to={link}>
@@ -158,6 +159,7 @@ class NoticiaPainel extends Component {
             rowEvents={rowEvents}
           />
         </div>
+        <ModalPopup show={showModal} handleDelete={this.handleModalDelete} handleClose={this.handleModal} />
       </div>
     );
   }
