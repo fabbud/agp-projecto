@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 .Body {
     font-family: 'Poppins' !important;
@@ -14,12 +13,16 @@
     background-position: center;
 }   
 
-strong{
+.assoc-text-bold {
+    font-weight: 600;
+}
+
+/* strong {
     line-height: 1.5;
     font-size:16px;
     color: #1AA3DB;
     font-weight:400;
-}
+} */
 
 .associacao{
     width:100%;
@@ -33,16 +36,17 @@ strong{
 }
 
 
-.associacao h1{
+.associacao-title {
     color: #1AA3DB;
-    font-size: 2 rem;
+    font-size: 28px;
     font-weight:500;
     line-height:1.1;
-
+    margin-bottom: 20px;
 }
 
 .associacao p{
     color: #004982; 
+    opacity: 0.8;
     padding-right:160px;
     padding-left:160px;
     line-height: 1.5;
@@ -118,7 +122,7 @@ strong{
      margin-left: 100px;
      line-height: 1.1;
      margin-bottom: 0px;
-    }
+}
 
 .fotosHistoriaReverse h3{
     margin-left: 50px;
@@ -131,12 +135,10 @@ strong{
     justify-content: center;
     /* margin-top:35px;
     margin-bottom: 35px; */
-
 }
 
 .imageDiv {
     width:50%;
-    
 }
 
 .imageDiv img {

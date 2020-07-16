@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './AssociacaoFront.css';
-// import Associacao from '../../assets/images/Associacao/Guias_Portugal_Associacao.jpg'
 import Anos20 from '../../assets/images/Associacao/Guias_Portugal_Anos_20.jpg';
 import Anos30 from '../../assets/images/Associacao/Guias_Portugal_Anos_30.jpg';
 import VisitaBPOlaveMadeira from '../../assets/images/Associacao/Guias_Portugal_Visita_BP_Olave_Madeira.jpg';
@@ -27,33 +26,14 @@ class AssociacaoFront extends React.Component {
       <div className="Body">
         <div className="fotoAssociacao" />
         <div className="associacao">
-          <h1>A ASSOCIAÇÃO</h1>
+          <div className="associacao-title">A ASSOCIAÇÃO</div>
           <p>
-            A Associação Guias de Portugal
-            <strong> (AGP)</strong>
-            {' '}
+            A Associação Guias de Portugal <span className="assoc-text-bold">(AGP) </span>
             é uma associação de utilidade pública,  assente no voluntariado e que promove o Guidismo – movimento de educação não formal, baseado no
-            <strong> método</strong>
-            {' '}
-            criado por Robert Baden-Powell.
+            <Link to="/pedagogia/metodo-guidista"> método</Link> criado por Robert Baden-Powell.
           </p>
-          <p>
-            {' '}
-            Tem como
-            <strong> missão</strong>
-            {' '}
-            proporcionar às raparigas e jovens mulheres a oportunidade de desenvolverem plenamente o seu potencial como cidadãs universais responsáveis,  através de um
-            <strong className="strong"> método </strong>
-            próprio: atribuição gradual de responsabilidade, fomentando o trabalho de grupo e a sua autonomia, comprometendo-se com a comunidade onde estão inseridas, tendo como espaço privilegiado de formação o ar livre.
-            {' '}
-          </p>
-
-          <p>
-            A AGP é membro da Associação Mundial das Guias -
-            <strong>WAGGGS</strong>
-            {' '}
-            (World Association of Girl Guides and Girl Scouts) , a que pertencem 10 milhões de Guias espalhadas por 150 países.
-          </p>
+          <p>Tem como <span className="assoc-text-bold">missão</span> proporcionar às raparigas e jovens mulheres a oportunidade de desenvolverem plenamente o seu potencial como cidadãs universais responsáveis,  através de um método próprio: atribuição gradual de responsabilidade, fomentando o trabalho de grupo e a sua autonomia, comprometendo-se com a comunidade onde estão inseridas, tendo como espaço privilegiado de formação o ar livre.</p>
+          <p>A AGP é membro da Associação Mundial das Guias - <Link to="/sobre/associacao-mundial">WAGGGS</Link> (World Association of Girl Guides and Girl Scouts) , a que pertencem 10 milhões de Guias espalhadas por 150 países.</p>
         </div>
         <br />
         <div className="guidismo">
@@ -61,7 +41,7 @@ class AssociacaoFront extends React.Component {
         </div>
         <h2 className="historiaGuidismoH2">História do Guidismo em Portugal</h2>
         <span className="fotosHistoria">
-          <div>
+          <div className="fotosHistoria">
             <h3>
               Anos 20
               <br />
