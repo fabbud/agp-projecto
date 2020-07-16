@@ -76,7 +76,7 @@ const HomepageBackoffice = () => {
       })
       .catch((err) => {
         setMessageStatus('error');
-        setFlash('Ocorreu um erro, por favor tente mais tarde.');
+        setFlash('Ocorreu um erro, por favor tente outra vez.');
       });
   };
 
