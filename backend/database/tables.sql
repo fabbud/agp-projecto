@@ -41,7 +41,7 @@ CREATE TABLE `news`
   `pt_content` LONGTEXT NOT NULL,
   `en_content` LONGTEXT NOT NULL,
   `publish`	BOOL NOT NULL,
-  `date` VARCHAR(10), 
+  `date` DATE, 
   PRIMARY KEY(`id`)
 );
 

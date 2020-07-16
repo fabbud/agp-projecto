@@ -4,11 +4,16 @@ import {
   ContentState,
   convertFromHTML,
   CompositeDecorator,
+  compositeDecorator,
   convertToRaw,
+  convertFromRaw,
   getDefaultKeyBinding,
+  createFromBlockArray,
 } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftToHtml from 'draftjs-to-html';
+import htmlToDraft from 'html-to-draftjs';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import 'rc-datepicker/lib/style.css';
 import './NoticiaInput.css';
@@ -52,6 +57,22 @@ class NoticiaInput extends Component {
         .then((res) => res.json())
         .then((res) => {
           console.log(res);
+          const formatDate = res[0].date.substr(0,10);
+
+          let getPublish = res[0].publish;
+          if (getPublish === 1) {
+            getPublish = true;
+          } else {
+            getPublish = false;
+          }
+
+          const contentBlockPT = htmlToDraft(res[0].pt_content);
+          const contentBlockEN = htmlToDraft(res[0].en_content);
+          const contentStatePT = ContentState.createFromBlockArray(contentBlockPT.contentBlocks);
+          const contentStateEN = ContentState.createFromBlockArray(contentBlockEN.contentBlocks);
+          const formatContentPT = EditorState.createWithContent(contentStatePT);
+          const formatContentEN = EditorState.createWithContent(contentStateEN);
+
           this.setState({
             pt_title: res[0].pt_title,
             en_title: res[0].en_title,
@@ -61,8 +82,12 @@ class NoticiaInput extends Component {
             en_intro_text: res[0].en_intro_text,
             pt_date: res[0].pt_date,
             en_date: res[0].en_date,
-            date: res[0].date,
-            publish: res[0].publish,
+            date: formatDate,
+            publish: getPublish,
+            pt_content: res[0].pt_content,
+            en_content: res[0].en_content,
+            editorStatePT: formatContentPT,
+            editorStateEN: formatContentEN,
           });
         });
     }
@@ -72,6 +97,7 @@ class NoticiaInput extends Component {
     const { value } = e.target;
     const { name } = e.target;
     this.setState({ [name]: value });
+    
   };
 
   onEditorStateChangePT = (editorStatePT) => {
@@ -82,6 +108,7 @@ class NoticiaInput extends Component {
     );
     const HtmlContentPT = draftToHtml(rawContentState);
     this.setState({ pt_content: HtmlContentPT });
+    console.log("update", pt_content);
   };
 
   onEditorStateChangeEN = (editorStateEN) => {
@@ -92,11 +119,11 @@ class NoticiaInput extends Component {
     );
     const HtmlContentEN = draftToHtml(rawContentState);
     this.setState({ en_content: HtmlContentEN });
-    // console.log(en_content);
   };
 
   handleCheckboxChange = () => {
     const { publish } = this.state;
+    console.log(!publish);
     this.setState({ publish: !publish });
   };
 
@@ -119,10 +146,14 @@ class NoticiaInput extends Component {
         body: JSON.stringify(article),
       })
         .then((res) => res.json())
-        .then(
-          (res) => this.setState({ flash: res.flash }),
-          (err) => this.setState({ flash: err.flash }),
-        );
+        .then((res) => {
+          this.setState({ messageStatus: 'success'});
+          this.setState({ flash: 'Guardado com sucesso.' });
+        })
+        .catch((err) => {
+          this.setState({ messageStatus: 'error'});
+          this.setState({ flash: 'Ocorreu um erro, por favor tente outra vez.' })
+        });
     } else {
       fetch('/news', {
         method: 'POST',
@@ -132,10 +163,14 @@ class NoticiaInput extends Component {
         body: JSON.stringify(article),
       })
         .then((res) => res.json())
-        .then(
-          (res) => this.setState({ flash: res.flash }),
-          (err) => this.setState({ flash: err.flash }),
-        );
+        .then((res) => {
+          this.setState({ messageStatus: 'success'});
+          this.setState({ flash: 'Guardado com sucesso.' });
+        })
+        .catch((err) => {
+          this.setState({ messageStatus: 'error'});
+          this.setState({ flash: 'Ocorreu um erro, por favor tente outra vez.' })
+        });
     }
   };
 
@@ -280,6 +315,7 @@ class NoticiaInput extends Component {
                 className="input-checkbox"
                 type="checkbox"
                 value={publish}
+                checked={publish}
                 onChange={this.handleCheckboxChange}
               />
             </div>
@@ -306,6 +342,12 @@ class NoticiaInput extends Component {
                     'image' /* , 'remove' */,
                     'history',
                   ],
+                  textAlign: {
+                    none: 'center'
+                  },
+                  image: {
+                    defaultAligh: 'center',
+                  }
                 }}
               />
             </div>
