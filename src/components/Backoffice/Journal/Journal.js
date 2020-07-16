@@ -22,27 +22,6 @@ class Journal extends React.Component {
             en_intro_text_4: '',
             en_intro_text_5: '',
             flash: ''
-
-            // journal: {
-            //     publish: false,
-            //     edition: '',
-            //     year: '',
-            //     pt_title: '',
-            //     en_title: '',
-            //     thumbnail: '',
-            //     pdf_link: '',
-            //     pt_intro_text_1: '',
-            //     pt_intro_text_2: '',
-            //     pt_intro_text_3: '',
-            //     pt_intro_text_4: '',
-            //     pt_intro_text_5: '',
-            //     en_intro_text_1: '',
-            //     en_intro_text_2: '',
-            //     en_intro_text_3: '',
-            //     en_intro_text_4: '',
-            //     en_intro_text_5: '',
-            //     flash: ''
-            // }
         }
     }
 

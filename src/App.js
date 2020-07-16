@@ -73,18 +73,18 @@ function App() {
           <Route exact path="/backoffice/homepage" component={HomepageBackoffice} />
           <Route exact path="/backoffice/news" component={NoticiaInput} />
           <Route exact path="/backoffice/journal/new" component={JournalInput} />
-          <Route exact path="/backoffice/journal/:edition" component={JournalInput} />
+          <Route exact path="/backoffice/journaledit/:edition" component={JournalInput} />
           <Route exact path="/backoffice/news/painel" component={NoticiasPainel} />
         </Switch>
-        { !currentPath.includes('backoffice')
-        && (
-        <div>
-          <Header />
-          { locationPath !== '/' ? <MediaShare /> : <MediaShare currentPath="homepage" />}
-          <Footer />
-        </div>
-        )}
-        { currentPath.includes('backoffice/') && (
+        {!currentPath.includes('backoffice')
+          && (
+            <div>
+              <Header />
+              {locationPath !== '/' ? <MediaShare /> : <MediaShare currentPath="homepage" />}
+              <Footer />
+            </div>
+          )}
+        {currentPath.includes('backoffice/') && (
           <div>
             <BackSidebar />
           </div>
