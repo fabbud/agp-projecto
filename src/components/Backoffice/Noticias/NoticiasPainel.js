@@ -116,7 +116,7 @@ class NoticiaPainel extends Component {
         text: 'Eliminar',
         formatter: (id) => (
           <a
-            style={{ cursor: 'pointer', textDecoration: 'none', justifyContent: 'center' }}
+            style={{ cursor: 'pointer', textDecoration: 'none'}}
             onClick={() => this.handleModal()}
           >
             <span role="img" aria-label="trash">
@@ -138,11 +138,11 @@ class NoticiaPainel extends Component {
 
     return (
       <div className="NoticiasPainel">
-        <div className="NoticiasPainel-title">Notícias Painel</div>
+        <div className="NoticiasPainel-title">Quadro Notícias</div>
         <div className="NoticiasPainel-section-button">
           <Link to={link}>
             <button className="NoticiasPainel-button" type="submit">
-              Criar uma nova Notícia
+              Nova Notícia
             </button>
           </Link>
         </div>
