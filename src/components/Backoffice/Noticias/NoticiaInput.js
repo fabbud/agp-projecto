@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { EditorState, convertToRaw } from 'draft-js';
+import {
+  EditorState,
+  ContentState,
+  convertFromHTML,
+  CompositeDecorator,
+  convertToRaw,
+  getDefaultKeyBinding,
+} from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import draftToHtml from 'draftjs-to-html';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
@@ -30,10 +37,40 @@ class NoticiaInput extends Component {
     };
   }
 
+  componentDidMount = () => {
+    window.scrollTo(0, 0);
+    const { match } = this.props;
+    const getId = match.params.id;
+    console.log(getId);
+    if (getId) {
+      fetch(`/news/${getId}`, {
+        method: 'GET',
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          this.setState({
+            pt_title: res[0].pt_title,
+            en_title: res[0].en_title,
+            thumbnail: res[0].thumbnail,
+            image: res[0].image,
+            pt_intro_text: res[0].pt_intro_text,
+            en_intro_text: res[0].en_intro_text,
+            pt_date: res[0].pt_date,
+            en_date: res[0].en_date,
+            date: res[0].date,
+            publish: res[0].publish,
+          });
+        });
+    }
+  };
+
   updateField = (e) => {
     const { value } = e.target;
     const { name } = e.target;
-    console.log(value);
     this.setState({ [name]: value });
   };
 
@@ -45,7 +82,6 @@ class NoticiaInput extends Component {
     );
     const HtmlContentPT = draftToHtml(rawContentState);
     this.setState({ pt_content: HtmlContentPT });
-    // console.log(pt_content);
   };
 
   onEditorStateChangeEN = (editorStateEN) => {
@@ -65,31 +101,48 @@ class NoticiaInput extends Component {
   };
 
   postData = () => {
-    const { editorStatePT, editorStateEN, messageStatus, flash, ...article } = this.state;
-    console.log(article);
-    fetch('/news', {
-      method: 'POST',
-      headers: new Headers({
-        'Content-Type': 'application/json',
-      }),
-      body: JSON.stringify(article),
-    }).then((res) => res.json());
-    // .then(
-    //   (res) => this.setState({ flash: res.flash }),
-    //   (err) => this.setState({ flash: err.flash })
-    // );
-    //   this.setState({ flash: 'Ocorreu um erro, por favor tente mais tarde.' })
-    //   this.setState({ messageStatus: 'error' })
-    //   this.setState({ flash: 'Guardado com sucesso.' }),
-    //   this.setState({ messageStatus: 'success' }),
-    // );
+    const {
+      editorStatePT,
+      editorStateEN,
+      messageStatus,
+      flash,
+      ...article
+    } = this.state;
+    const { match } = this.props;
+    const getId = match.params.id;
+    if (getId) {
+      fetch(`/news/${getId}`, {
+        method: 'PUT',
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+        body: JSON.stringify(article),
+      })
+        .then((res) => res.json())
+        .then(
+          (res) => this.setState({ flash: res.flash }),
+          (err) => this.setState({ flash: err.flash }),
+        );
+    } else {
+      fetch('/news', {
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+        body: JSON.stringify(article),
+      })
+        .then((res) => res.json())
+        .then(
+          (res) => this.setState({ flash: res.flash }),
+          (err) => this.setState({ flash: err.flash }),
+        );
+    }
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.postData();
   };
-
 
   render() {
     const {
@@ -221,14 +274,24 @@ class NoticiaInput extends Component {
                 required
               />
             </div>
+            <div className="input-section-checkbox">
+              <div className="input-section-label-checkbox">Publicar:</div>
+              <input
+                className="input-checkbox"
+                type="checkbox"
+                value={publish}
+                onChange={this.handleCheckboxChange}
+              />
+            </div>
             <div className="input input-block">
               <div className="input-section-label">Conteúdo PT:</div>
               <Editor
                 editorState={editorStatePT}
                 toolbarClassName="toolbarClassName"
                 wrapperClassName="wrapperClassName"
-                editorClassName="editorClassName"
+                editorClassName="NoticiaInput-editor"
                 onEditorStateChange={this.onEditorStateChangePT}
+                required
                 toolbar={{
                   options: [
                     'inline',
@@ -269,15 +332,6 @@ class NoticiaInput extends Component {
                     'history',
                   ],
                 }}
-              />
-            </div>
-            <div className="input-section-checkbox">
-              <div className="input-section-label-checkbox">Publicar:</div>
-              <input
-                className="input-checkbox"
-                type="checkbox"
-                value={publish}
-                onChange={this.handleCheckboxChange}
               />
             </div>
             <div className="NoticiaInput-section-button">

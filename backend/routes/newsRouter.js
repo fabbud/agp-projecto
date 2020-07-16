@@ -5,7 +5,7 @@ const connection = require('../config');
 
 const jwtMiddleware = require('../services/jwtMiddleware');
 
-router.get('/', /*jwtMiddleware,*/ (req, res) => {
+router.get('/', /* jwtMiddleware, */ (req, res) => {
   connection.query(
     'SELECT * FROM news ORDER BY date DESC;',
     (err, results) => {
@@ -18,19 +18,32 @@ router.get('/', /*jwtMiddleware,*/ (req, res) => {
   );
 });
 
-router.post('/', /*jwtMiddleware,*/ (req, res) => {
+router.get('/:id', (req, res) => {
+  connection.query('SELECT * FROM news WHERE id=?',
+    [req.params.id], (err, results) => {
+      if (err) {
+        res.status(400).send('Query Error');
+      } else if (results.length === 0) {
+        res.status(404).send('Edition not found');
+      } else {
+        res.status(200).json(results);
+      }
+    });
+});
+
+router.post('/', /* jwtMiddleware, */ (req, res) => {
   const formData = req.body;
   connection.query('INSERT INTO news SET ?', formData, (err, results) => {
     if (err) {
-      res.status(500).send('Error');
+      res.status(500).json({ flash: err.message });
       console.log(err);
     } else {
-      res.status(200).send('Successfully saved');
+      res.status(200).json({ flash: 'Gravado com Sucesso' });
     }
   });
 });
 
-router.put('/:id', /*jwtMiddleware,*/ (req, res) => {
+router.put('/:id', /* jwtMiddleware, */ (req, res) => {
   // We get the ID from the url:
   const idNews = req.params.id;
 
@@ -43,15 +56,15 @@ router.put('/:id', /*jwtMiddleware,*/ (req, res) => {
     [newNews, idNews],
     (err, results) => {
       if (err) {
-        res.status(500).send('Error updating the news');
+        res.status(500).json({ flash: err.message });
       } else {
-        res.status(200).send('News updated successfully');
+        res.status(200).json({ flash: 'Gravado com Sucesso' });
       }
     },
   );
 });
 
-router.delete('/:id', /*jwtMiddleware,*/ (req, res) => {
+router.delete('/:id', /* jwtMiddleware, */ (req, res) => {
   const idNews = req.params.id;
   connection.query(
     'DELETE FROM news WHERE id = ?',
