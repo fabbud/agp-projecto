@@ -6,7 +6,7 @@ import whiteLogo from '../../../assets/logo/logo_RGB.jpg';
 import passwordIcon from '../../../assets/images/Backoffice/password.png';
 import userIcon from '../../../assets/images/Backoffice/user.png';
 
-const Login = () => {
+const Login = (props) => {
   const { register, handleSubmit, errors } = useForm();
 
   const [flash, setFlash] = useState('');
@@ -37,10 +37,10 @@ const Login = () => {
         setUser(res.user);
         setFlash(res.message);
         setMessageStatus('success');
+        window.setTimeout(() => (props.history.push({pathname: '/backoffice/intro'})), 1500);
       })
       .catch((err) => {
         setMessageStatus('error');
-        //setFlash(err.message);
         setFlash('Invalid Email or Password, please try again.');
       });
   };

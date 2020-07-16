@@ -15,6 +15,7 @@ class NoticiaPainel extends Component {
     this.state = {
       noticiasInput: [],
       showModal: false,
+      noticiaId: 0,
     };
   }
 
@@ -24,13 +25,12 @@ class NoticiaPainel extends Component {
       .get('/news')
       // Extract the DATA from the received response
       .then((response) => {
-        console.log(response);
         return response.data;
       })
       // Use this data to update the state
       .then((dataresult) => {
-        console.log(dataresult);
-        this.setState({ noticiasInput: dataresult });
+        this.setState({ 
+          noticiasInput: dataresult });
       });
   };
 
@@ -39,28 +39,25 @@ class NoticiaPainel extends Component {
   };
 
   handleModalDelete = () => {
-    console.log('delete');
-    const { showModal, noticiasInput } = this.state;
-    console.log(noticiasInput[0].id);
+    console.log("delete")
+    const { noticiaId, noticiasInput, showModal } = this.state;
+    console.log("noticia", noticiaId)
     axios
-      .delete(`/news/${noticiasInput[0].id}`)
+      .delete(`/news/${noticiaId}`)
       .then((response) => {
-        console.log(response);
         return response.data;
       })
       .then((dataresult) => {
-        console.log(dataresult);
-        this.setState({
-          noticiasInput: dataresult,
-          showModal: false,
+        this.setState({ 
+          noticiasInput: dataresult, 
+          showModal: false 
         });
       });
     this.getData();
   }
 
-  handleModal = () => {
-    console.log('handleModal');
-    console.log('handleModal');
+  handleModal = () =>{
+    console.log("handleModal")
     const { showModal } = this.state;
     this.setState({ showModal: !showModal });
   }
@@ -119,8 +116,8 @@ class NoticiaPainel extends Component {
         text: 'Eliminar',
         formatter: (id) => (
           <a
-            style={{ textDecoration: 'none', justifyContent: 'center' }}
-            onClick={() => this.hendleModal(id)}
+            style={{ cursor: 'pointer', textDecoration: 'none', justifyContent: 'center' }}
+            onClick={() => this.handleModal()}
           >
             <span role="img" aria-label="trash">
               🗑
@@ -131,6 +128,13 @@ class NoticiaPainel extends Component {
         align: 'center',
       },
     ];
+
+    const rowEvents = {
+      onClick: (e, row) => {
+        console.log(row);
+        this.setState({noticiaId: row.id})
+      }
+    }
 
     return (
       <div className="NoticiasPainel">
@@ -152,6 +156,7 @@ class NoticiaPainel extends Component {
             pagination={paginationFactory()}
             filter={filterFactory()}
             filterPosition="top"
+            rowEvents={rowEvents}
           />
         </div>
         <ModalPopup show={showModal} handleDelete={this.handleModalDelete} handleClose={this.handleModal} />

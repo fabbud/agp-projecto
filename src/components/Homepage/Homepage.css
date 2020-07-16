@@ -11,11 +11,11 @@
 .home-video-section {
   background-color: white;
   padding-bottom: 40px;
+  min-height: 400px;
 }
 
 .home-video {
   width: 70%;
-  height: 60%;
   margin: 0px auto 40px auto;
 }
 
@@ -238,6 +238,7 @@
   .home-video-section {
     padding-top: 30px;
     padding-bottom: 30px;
+    min-height: 300px;
   }
   .home-video {
     width: 90%;
