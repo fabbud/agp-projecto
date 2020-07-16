@@ -1,3 +1,7 @@
+.body{
+  margin-left:250px;
+}
+
 .NoticiaInput {
   display: flex;
   flex-wrap: wrap;
@@ -48,7 +52,7 @@
 
 .input input {
   font-size: 14px;
-  width: 80%;
+  width: 100%;
   color: grey;
   padding: 3px 8px;
   border: solid 1px rgb(198, 198, 198);
@@ -76,6 +80,27 @@
   margin: 10px 0px 10px 0px;
   font-weight: 500;
 }
+
+.input-section-label-publish {
+  color: #013e5a;
+  font-size: 16px;
+  width: 150px;
+  margin: 10px 0px 10px 0px;
+  font-weight: 500;
+  text-align: center;
+  width:100%;
+  padding-top:15px;
+}
+
+.input-section-label-edicao {
+  color: #013e5a;
+  font-size: 16px;
+  width: 150px;
+  margin: 10px 0px 10px 0px;
+  font-weight: 500;
+  text-align:center;
+}
+
 
 .input-section-checkbox {
   align-items: baseline;

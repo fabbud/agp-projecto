@@ -30,6 +30,7 @@ import ProjetoGuidista from './components/MetodoGuidista/ProjetoGuidista';
 import MediaShare from './components/MediaShare/MediaShare';
 import HomepageBackoffice from './components/Backoffice/Homepage/HomepageBackoffice';
 import JournalInput from './components/Backoffice/Journal/Journal'
+import JournalPainel from './components/Backoffice/Journal/TableJournal'
 import NoticiasPainel from './components/Backoffice/Noticias/NoticiasPainel';
 import IntroPage from './components/Backoffice/IntroPage/IntroPage';
 import BackSidebar from './components/Backoffice/BackSidebar/BackSidebar';
@@ -71,21 +72,25 @@ function App() {
           <Route exact path="/backoffice" component={Login} />
           <Route exact path="/backoffice/intro" component={IntroPage} />
           <Route exact path="/backoffice/homepage" component={HomepageBackoffice} />
-          <Route exact path="/backoffice/journal/new" component={JournalInput} />
-          <Route exact path="/backoffice/journal/:edition" component={JournalInput} />
+          
+          
+          <Route exact path="/backoffice/journal/painel" component={JournalPainel} />
+          <Route exact path="/backoffice/journal/painel/new" component={JournalInput} />
+          <Route exact path="/backoffice/journal/painel/:edition" component={JournalInput} />
+
           <Route exact path="/backoffice/news/painel" component={NoticiasPainel} />
           <Route exact path="/backoffice/news/painel/new" component={NoticiaInput} />
           <Route exact path="/backoffice/news/painel/:id" component={NoticiaInput} />
         </Switch>
-        { !currentPath.includes('backoffice')
-        && (
-        <div>
-          <Header />
-          { locationPath !== '/' ? <MediaShare /> : <MediaShare currentPath="homepage" />}
-          <Footer />
-        </div>
-        )}
-        { currentPath.includes('backoffice/') && (
+        {!currentPath.includes('backoffice')
+          && (
+            <div>
+              <Header />
+              {locationPath !== '/' ? <MediaShare /> : <MediaShare currentPath="homepage" />}
+              <Footer />
+            </div>
+          )}
+        {currentPath.includes('backoffice/') && (
           <div>
             <BackSidebar />
           </div>

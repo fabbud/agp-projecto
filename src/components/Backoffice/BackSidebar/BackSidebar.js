@@ -13,8 +13,9 @@ const BackSidebar = () => {
       <Nav fixed="left">
         <Nav.Link href="/backoffice/homepage">Homepage</Nav.Link>
         <Nav.Link href="/backoffice/news/painel">Notícias</Nav.Link>
-        <Nav.Link href="/backoffice/journal">Jornal</Nav.Link>
-        <Nav.Link href="/backoffice/loja" disabled>Loja</Nav.Link>
+        <Nav.Link href="/backoffice/journal/painel">Jornal</Nav.Link>
+    
+
       </Nav>
     </div>
   );

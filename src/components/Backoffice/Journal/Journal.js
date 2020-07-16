@@ -1,4 +1,5 @@
 import React from 'react';
+import './Journal.css';
 
 class Journal extends React.Component {
     constructor(props) {
@@ -22,27 +23,6 @@ class Journal extends React.Component {
             en_intro_text_4: '',
             en_intro_text_5: '',
             flash: ''
-
-            // journal: {
-            //     publish: false,
-            //     edition: '',
-            //     year: '',
-            //     pt_title: '',
-            //     en_title: '',
-            //     thumbnail: '',
-            //     pdf_link: '',
-            //     pt_intro_text_1: '',
-            //     pt_intro_text_2: '',
-            //     pt_intro_text_3: '',
-            //     pt_intro_text_4: '',
-            //     pt_intro_text_5: '',
-            //     en_intro_text_1: '',
-            //     en_intro_text_2: '',
-            //     en_intro_text_3: '',
-            //     en_intro_text_4: '',
-            //     en_intro_text_5: '',
-            //     flash: ''
-            // }
         }
     }
 
@@ -53,11 +33,11 @@ class Journal extends React.Component {
         const { match } = this.props;
         let getEdition = match.params.edition;
         if (getEdition) {
-            fetch('/journal/24',
+            fetch(`/journal/${getEdition}`,
                 {
                     method: 'GET',
                     headers: new Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Typge': 'application/json'
                     }),
                 })
                 .then(res => res.json())
@@ -162,46 +142,87 @@ class Journal extends React.Component {
 
         console.log("pdf final", pdf_link)
 
-        return (
-            <div>
-                <h2>Jornal</h2>
+        const { match } = this.props;
+        let getEdition = match.params.edition;
 
-                <form onSubmit={this.handleSubmit}>
-                    <div>Número Edição:</div>
-                    <input type='text' name='edition' value={edition} onChange={(event) => this.updateField(event)} disabled />
-                    <div>Título Pt:</div>
-                    <input type='text' name='pt_title' value={pt_title} onChange={(event) => this.updateField(event)} />
-                    <div>Título En:</div>
-                    <input type='text' name='en_title' value={en_title} onChange={(event) => this.updateField(event)} />
-                    <div>Ano:</div>
-                    <input type='text' name='year' value={year} onChange={(event) => this.updateField(event)} />
-                    <div>Imagem:</div>
-                    <input type='text' name='thumbnail' value={thumbnail} onChange={(event) => this.updateField(event)} />
-                    <div>Pdf:</div>
-                    <input type='text' name='pdf_link' value={pdf_link} onChange={(event) => this.updateField(event)} />
-                    <div>Título 1 Pt:</div>
-                    <input type='text' name='pt_intro_text_1' value={pt_intro_text_1} onChange={(event) => this.updateField(event)} />
-                    <div>Título 2 Pt:</div>
-                    <input type='text' name='pt_intro_text_2' value={pt_intro_text_2} onChange={(event) => this.updateField(event)} />
-                    <div>Título 3 Pt:</div>
-                    <input type='text' name='pt_intro_text_3' value={pt_intro_text_3} onChange={(event) => this.updateField(event)} />
-                    <div>Título 4 Pt:</div>
-                    <input type='text' name='pt_intro_text_4' value={pt_intro_text_4} onChange={(event) => this.updateField(event)} />
-                    <div>Título 5 Pt:</div>
-                    <input type='text' name='pt_intro_text_5' value={pt_intro_text_5} onChange={(event) => this.updateField(event)} />
-                    <div>Título 1 En:</div>
-                    <input type='text' name='en_intro_text_1' value={en_intro_text_1} onChange={(event) => this.updateField(event)} />
-                    <div>Título 2 En:</div>
-                    <input type='text' name='en_intro_text_2' value={en_intro_text_2} onChange={(event) => this.updateField(event)} />
-                    <div>Título 3 En:</div>
-                    <input type='text' name='en_intro_text_3' value={en_intro_text_3} onChange={(event) => this.updateField(event)} />
-                    <div>Título 4 En:</div>
-                    <input type='text' name='en_intro_text_4' value={en_intro_text_4} onChange={(event) => this.updateField(event)} />
-                    <div>Título 5 En:</div>
-                    <input type='text' name='en_intro_text_5' value={en_intro_text_5} onChange={(event) => this.updateField(event)} />
-                    <div>Publicar</div>
-                    <input type='checkbox' name='publish' value={publish} onChange={this.updatePublish} />
-                    <button type='submit'>ENVIAR</button>
+
+        return (
+            <div class='body'>
+
+
+                <form className="NoticiaInput-section" onSubmit={this.handleSubmit}>
+                    <div className="NoticiaInput-title">Jornal</div>
+                    {!getEdition ? <div className='input'>
+                        <div className="input-section-label">Número Edição:</div>
+                        <input type='text' name='edition' value={edition} onChange={(event) => this.updateField(event)} />
+                    </div> : <div className="input-section-label-edicao">{edition}ª edição</div>}
+                    <div className='input'>
+                        <div className="input-section-label">Título Pt:</div>
+                        <input type='text' name='pt_title' value={pt_title} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Título En:</div>
+                        <input type='text' name='en_title' value={en_title} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Ano:</div>
+                        <input type='text' name='year' value={year} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Imagem:</div>
+                        <input type='text' name='thumbnail' value={thumbnail} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Pdf:</div>
+                        <input type='text' name='pdf_link' value={pdf_link} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Título 1 Pt:</div>
+                        <input type='text' name='pt_intro_text_1' value={pt_intro_text_1} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Título 2 Pt:</div>
+                        <input type='text' name='pt_intro_text_2' value={pt_intro_text_2} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Título 3 Pt:</div>
+                        <input type='text' name='pt_intro_text_3' value={pt_intro_text_3} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Título 4 Pt:</div>
+                        <input type='text' name='pt_intro_text_4' value={pt_intro_text_4} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Título 5 Pt:</div>
+                        <input type='text' name='pt_intro_text_5' value={pt_intro_text_5} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Título 1 En:</div>
+                        <input type='text' name='en_intro_text_1' value={en_intro_text_1} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Título 2 En:</div>
+                        <input type='text' name='en_intro_text_2' value={en_intro_text_2} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Título 3 En:</div>
+                        <input type='text' name='en_intro_text_3' value={en_intro_text_3} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Título 4 En:</div>
+                        <input type='text' name='en_intro_text_4' value={en_intro_text_4} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label">Título 5 En:</div>
+                        <input type='text' name='en_intro_text_5' value={en_intro_text_5} onChange={(event) => this.updateField(event)} />
+                    </div>
+                    <div className='input'>
+                        <div className="input-section-label-publish">Publicar</div>
+                        <input type='checkbox' name='publish' value={publish} onChange={this.updatePublish} />
+                    </div>
+                    <div className="NoticiaInput-section-button">
+                        <button className="login-button" variant="contained" color="primary" type='submit'>ENVIAR</button>
+                    </div>
                 </form>
             </div>
         )
