@@ -112,7 +112,7 @@ router.put('/editPublication/:edition', (req, res) => {
   )
 })
 
-router.delete('/delete', jwtMiddleware, (req, res) => {
+router.delete('/', jwtMiddleware, (req, res) => {
   connection.query('DELETE FROM journal WHERE edition=?',
     req.body.edition,
     (err, results) => {
@@ -126,7 +126,7 @@ router.delete('/delete', jwtMiddleware, (req, res) => {
     });
 });
 
-router.delete('/delete/:edition', jwtMiddleware, (req, res) => {
+router.delete('/:edition', jwtMiddleware, (req, res) => {
   connection.query('DELETE FROM journal WHERE edition=?',
     req.params.edition,
     (err, results) => {

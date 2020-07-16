@@ -8,6 +8,7 @@ import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
 import '../Noticias/NoticiasPainel.css';
 //import ModalPopup from './PopUpDeleteNoticias';
+import ModalPopup from '../Noticias/PopUpDeleteNoticias';
 
 
 class TableJournal extends Component {
@@ -16,6 +17,7 @@ class TableJournal extends Component {
         this.state = {
             journalInput: [],
             showModal: false,
+            editionId: 0,
         };
     }
 
@@ -35,25 +37,33 @@ class TableJournal extends Component {
             });
     };
 
-
-    // handleModalDelete = (id) => {
-    //   const { showModal } = this.state;
-
-    //   axios
-    //     .delete(`/news/${id}`)
-    //     .then((response) => {
-    //       console.log(response);
-    //       return response.data;
-    //     })
-    //     .then((dataresult) => {
-    //       console.log(dataresult);
-    //       this.setState({ noticiasInput: dataresult });
-    //     });
-    // };
-
     componentDidMount = () => {
         this.getData();
     };
+
+    handleModalDelete = () => {
+        console.log("delete")
+        const { editionId, journalInput, showModal } = this.state;
+        console.log("publicação", editionId)
+        axios
+            .delete(`/journal/${editionId}`)
+            .then((response) => {
+                return response.data;
+            })
+            .then((dataresult) => {
+                this.setState({
+                    journalInput: dataresult,
+                    showModal: false
+                });
+            });
+        this.getData();
+    }
+
+    handleModal = () => {
+        console.log("handleModal")
+        const { showModal } = this.state;
+        this.setState({ showModal: !showModal });
+    }
 
     render() {
         const { journalInput, showModal } = this.state;
@@ -62,7 +72,7 @@ class TableJournal extends Component {
         const columns = [
             {
                 dataField: 'publish',
-                text: 'Publicado',
+                text: 'Status',
                 filter: textFilter(),
                 sort: true,
                 headerStyle: () => ({ width: '20%' }),
@@ -108,30 +118,35 @@ class TableJournal extends Component {
                 text: 'Eliminar',
                 formatter: (edition) => (
                     <a
-                        style={{ textDecoration: 'none', justifyContent: 'center' }}
-                        onClick={() => this.setState({ showModal: true })}
+                        style={{ cursor: 'pointer', textDecoration: 'none', justifyContent: 'center' }}
+                        onClick={() => this.handleModal()}
                     >
                         <span role="img" aria-label="trash">
                             🗑
-            </span>
+                        </span>
                     </a>
                 ),
                 headerStyle: () => ({ width: '5%' }),
                 align: 'center',
             },
         ];
-        console.log(showModal);
+        const rowEvents = {
+            onClick: (e, row) => {
+                console.log(row.edition);
+                this.setState({ editionId: row.edition })
+                console.log(this.state.editionId);
+            }
+        }
         return (
-            <div>
-                <div className="NoticiasPainel">
-                    {/* {showModal && <ModalPopup />}
-                <ModalPopup />
+
+            <div className="NoticiasPainel">
+
                 <div className="NoticiasPainel-title">Jornal Painel</div>
-                <div className="NoticiasPainel-section-button"> */}
+                <div className="NoticiasPainel-section-button">
                     <Link to={link}>
                         <button className="NoticiasPainel-button" type="submit">
-                            Criar uma nova edição do Jornal
-            </button>
+                            Criar nova edição
+                            </button>
                     </Link>
                 </div>
                 <div className="NoticiasPainel-Table">
@@ -144,8 +159,10 @@ class TableJournal extends Component {
                         pagination={paginationFactory()}
                         filter={filterFactory()}
                         filterPosition="top"
+                        rowEvents={rowEvents}
                     />
                 </div>
+                <ModalPopup show={showModal} handleDelete={this.handleModalDelete} handleClose={this.handleModal} />
             </div>
         );
     }
