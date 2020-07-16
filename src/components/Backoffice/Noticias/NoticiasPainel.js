@@ -33,15 +33,15 @@ class NoticiaPainel extends Component {
         this.setState({ noticiasInput: dataresult });
       });
   };
-  
+
   componentDidMount = () => {
     this.getData();
   };
 
   handleModalDelete = () => {
-    console.log("delete")
+    console.log('delete');
     const { showModal, noticiasInput } = this.state;
-    console.log(noticiasInput[0].id)
+    console.log(noticiasInput[0].id);
     axios
       .delete(`/news/${noticiasInput[0].id}`)
       .then((response) => {
@@ -50,19 +50,19 @@ class NoticiaPainel extends Component {
       })
       .then((dataresult) => {
         console.log(dataresult);
-        this.setState({ 
-          noticiasInput: dataresult, 
-          showModal: false 
+        this.setState({
+          noticiasInput: dataresult,
+          showModal: false,
         });
-    })
+      });
     this.getData();
   }
-  
-  handleModal = () =>{
-    console.log("handleModal")
-    console.log("handleModal")
+
+  handleModal = () => {
+    console.log('handleModal');
+    console.log('handleModal');
     const { showModal } = this.state;
-    this.setState({ showModal: !showModal })
+    this.setState({ showModal: !showModal });
   }
 
   render() {
@@ -72,23 +72,25 @@ class NoticiaPainel extends Component {
     const columns = [
       {
         dataField: 'publish',
-        text: 'Publicado',
+        text: 'Status',
         filter: textFilter(),
         sort: true,
-        headerStyle: () => ({ width: '25%' }),
+        headerStyle: () => ({ width: '15%' }),
         formatter: function dateFormatter(publish) {
           if (publish === 1) {
             return 'Publicado';
           }
           return 'Não Publicado';
         },
+        align: 'center',
       },
       {
         dataField: 'pt_date',
-        text: 'Data Publicação',
+        text: 'Publicação',
         filter: textFilter(),
         sort: true,
-        headerStyle: () => ({ width: '25%' }),
+        headerStyle: () => ({ width: '15%' }),
+        align: 'center',
       },
       {
         dataField: 'pt_title',
@@ -118,7 +120,7 @@ class NoticiaPainel extends Component {
         formatter: (id) => (
           <a
             style={{ textDecoration: 'none', justifyContent: 'center' }}
-            onClick={this.handleModal}
+            onClick={() => this.hendleModal(id)}
           >
             <span role="img" aria-label="trash">
               🗑
@@ -132,7 +134,6 @@ class NoticiaPainel extends Component {
 
     return (
       <div className="NoticiasPainel">
-        <ModalPopup show={showModal} handleDelete={this.handleModalDelete} handleClose={this.handleModal}/>
         <div className="NoticiasPainel-title">Notícias Painel</div>
         <div className="NoticiasPainel-section-button">
           <Link to={link}>
@@ -153,6 +154,7 @@ class NoticiaPainel extends Component {
             filterPosition="top"
           />
         </div>
+        <ModalPopup show={showModal} handleDelete={this.handleModalDelete} handleClose={this.handleModal} />
       </div>
     );
   }
