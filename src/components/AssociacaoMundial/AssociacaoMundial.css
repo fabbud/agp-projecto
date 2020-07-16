@@ -103,6 +103,7 @@
   width: 600px;
 }
 
+
 .centers-title {
   color: #1AA3DB !important;
   font-size: 25px;
@@ -236,6 +237,7 @@
     width: 100%;
   }
   .centers-left {
+    padding: 30px 55px;
     width: 100%;
   }
   .right-section, .left-section {
@@ -253,5 +255,12 @@
   }
   .ser-guia-button {
     font-size: 18px;
+  }
+}
+
+@media(max-width: 321px) {
+  .centers-left {
+    padding: 30px 40px;
+    width: 100%;
   }
 }

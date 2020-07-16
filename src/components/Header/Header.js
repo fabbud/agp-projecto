@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import './Header.css';
-import EstatutosPDF from '../../assets/pdfs/Estatutos.pdf';
+import EstatutosPDF from '../../assets/pdfs/Estatutos_AGP.pdf';
 import RegulamentosPDF from '../../assets/pdfs/Regulamentos_AGP_Março_2020.pdf';
 import LivroEspecialidadesPDF from '../../assets/pdfs/Livro_de_Especialidades.pdf';
 import CartãoAssociadaPDF from '../../assets/pdfs/Cartão_de_Associada_Protocolos_AGP.pdf';

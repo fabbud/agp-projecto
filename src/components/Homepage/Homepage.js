@@ -22,24 +22,6 @@ const Homepage = (props) => {
   const [jornalData, setJornalData] = useState([]);
   const [articlesData, setArticlesData] = useState([]);
 
-  // const noticiasSection = [
-  //   {
-  //     id: 1,
-  //     title: 'O Trevo também fica em casa',
-  //     text: 'Enquanto não sai para as ruas, o jornal O Trevo sai em casa. Versão digital já disponível.',
-  //   },
-  //   {
-  //     id: 2,
-  //     title: 'Dicas para te manteres ligada às tuas amigas guias',
-  //     text: 'Descobre algumas ideias para pores em prática com a tua Patrulha em... casa!',
-  //   },
-  //   {
-  //     id: 3,
-  //     title: 'Pandemia por surto de Coronavírus',
-  //     text: 'Atividades Guidistas presenciais suspensas pela necessidade do isolamento social.',
-  //   },
-  // ];
-
   useEffect(() => {
     if (i18n.language !== selectedLanguage) {
       setSelectedLanguage(i18n.language);
@@ -48,16 +30,13 @@ const Homepage = (props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log("journal");
     axios.get('/homepage/journal')
       .then((res) => {
-        console.log("journal data", res.data[0]);
         setJornalData(res.data[0]);
       });
 
     axios.get('/homepage/news')
       .then((res) => {
-        console.log("news data", res.data);
         setArticlesData(res.data);
         const newsLength = Object.keys(res.data).length;
         if (newsLength !== 0) {
@@ -74,10 +53,12 @@ const Homepage = (props) => {
   return (
     <div className="Homepage">
       {/* VIDEO */}
-      <div className="home-video">
-        <video controls controlsList="nodownload" autoPlay loop muted width="100%" height="100%">
-          <source src={homepageTeaser} type="video/mp4" />
-        </video>
+      <div className="home-video-section">
+        <div className="home-video">
+          <video controls controlsList="nodownload" autoPlay loop width="100%" height="100%">
+            <source src={homepageTeaser} type="video/mp4" />
+          </video>
+        </div>
       </div>
 
       {/* MODELO */}
@@ -156,7 +137,10 @@ const Homepage = (props) => {
             <div className="home-section-text">
               {t('homepage.infoJornal')}
               <br />
-              O Trevo - {jornalData.edition}{t('homepage.edicaoJornal')}
+              O Trevo -
+              {' '}
+              {jornalData.edition}
+              {t('homepage.edicaoJornal')}
             </div>
             <div>
               <Link to="/">
