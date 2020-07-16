@@ -67,7 +67,7 @@ class LojaMaster extends React.Component {
         return (
 
             <div className="Body" >
-                <div>
+                <div className="Body-Loja">
                     <h2 class="tituloLoja">{this.state.modo}</h2>
                     <p class="textoLoja">Catálogo dos produtos à venda <br />no Depósito de Material e Fardamento. <br />Consultar horários da Loja
                     <Link to="/contactos/sede"> aqui</Link>
