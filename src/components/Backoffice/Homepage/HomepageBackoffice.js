@@ -15,7 +15,7 @@ const HomepageBackoffice = () => {
   const [messageStatus, setMessageStatus] = useState('');
 
   useEffect(() => {
-    axios.get('/news')
+    axios.get('/news/published')
       .then((res) => {
         setNewsData(res.data);
       });
