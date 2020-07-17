@@ -20,7 +20,13 @@
     font-size: 30px;
     margin: 60px 0px 40px 0px;
   }
-  
+
+  .JornalPainel-section-button {
+    display: flex;
+    margin: 0px 0px 20px 0px;
+    width: 1060px;
+    justify-content: flex-end;
+  }
   .NoticiaInput-section {
     display: flex;
     flex-wrap: wrap;

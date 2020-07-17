@@ -10,7 +10,8 @@ function JornalCapa(props) {
     // download = () => {
     //     console.log('download')
     // }
-    console.log(props.temas)
+    //console.log(props.temas);
+    
     return (
 
         <div className='cardJornal'>
@@ -19,10 +20,10 @@ function JornalCapa(props) {
             <div className='capaDownload'>
                 <img className='capa'
                     alt={props.alt}
-                    src={require(`../../assets/images/Jornal/${props.src}`)}
+                    src={props.src}
                 />
 
-                <a className='download' href={`../../assets/pdfs/Jornal/${props.pdf}`} download={props.pdf} title={props.titulo}>
+                <a className='download' href={props.pdf} target="_blank" download title={props.titulo}>
 
                     <img className='downloadImage' alt={'download Jornal O Trevo Guias de Portugal'}
                         src={props.index === 0 ? New : downLoad}
@@ -51,4 +52,4 @@ function JornalCapa(props) {
 
 }
 
-export default JornalCapa
+export default JornalCapa;

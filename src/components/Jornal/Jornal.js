@@ -16,9 +16,10 @@ class Jornal extends React.Component {
             headers: new Headers({
                 'Content-Type': 'application/json',
             }),
-        }).then((res) => res.json()).then((json) => {
-            this.setState({ edicoes: json })
-            console.log(json)
+        }).then((res) => res.json())
+        .then((json) => {
+            this.setState({ edicoes: json });
+            console.log(json);
 
         })
     }
@@ -39,7 +40,7 @@ class Jornal extends React.Component {
 
                     {
                         this.state.edicoes.map((edicao, index) => (
-                            <> {edicao.publish === true &&
+                            <> {edicao.publish === 1 &&
                                 < JornalCapa
                                     titulo={edicao.pt_title}
                                     ano={edicao.year}
@@ -84,6 +85,4 @@ class Jornal extends React.Component {
 // ]
 
 
-
-
-export default Jornal
+export default Jornal;

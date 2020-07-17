@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import {
   EditorState,
@@ -15,7 +16,6 @@ import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import 'rc-datepicker/lib/style.css';
 import './NoticiaInput.css';
 import PopUp from '../PopUp/PopUp';
@@ -97,7 +97,6 @@ class NoticiaInput extends Component {
     const { value } = e.target;
     const { name } = e.target;
     this.setState({ [name]: value });
-    
   };
 
   onEditorStateChangePT = (editorStatePT) => {
@@ -146,12 +145,12 @@ class NoticiaInput extends Component {
       })
         .then((res) => res.json())
         .then((res) => {
-          this.setState({ messageStatus: 'success'});
+          this.setState({ messageStatus: 'success' });
           this.setState({ flash: 'Guardado com sucesso.' });
         })
         .catch((err) => {
-          this.setState({ messageStatus: 'error'});
-          this.setState({ flash: 'Ocorreu um erro, por favor tente outra vez.' })
+          this.setState({ messageStatus: 'error' });
+          this.setState({ flash: 'Ocorreu um erro, por favor tente outra vez.' });
         });
     } else {
       fetch('/news', {
@@ -163,20 +162,21 @@ class NoticiaInput extends Component {
       })
         .then((res) => res.json())
         .then((res) => {
-          this.setState({ messageStatus: 'success'});
+          this.setState({ messageStatus: 'success' });
           this.setState({ flash: 'Guardado com sucesso.' });
         })
         .catch((err) => {
-          this.setState({ messageStatus: 'error'});
-          this.setState({ flash: 'Ocorreu um erro, por favor tente outra vez.' })
+          this.setState({ messageStatus: 'error' });
+          this.setState({ flash: 'Ocorreu um erro, por favor tente outra vez.' });
         });
     }
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
+    const { history } = this.props;
     this.postData();
-    this.props.history.push({pathname: '/backoffice/news/painel'})
+    history.push({pathname: '/backoffice/news/painel'});
   };
 
   render() {
@@ -393,5 +393,9 @@ class NoticiaInput extends Component {
     );
   }
 }
+
+NoticiaInput.propTypes = {
+  match: PropTypes.string.isRequired,
+};
 
 export default withRouter(NoticiaInput);
