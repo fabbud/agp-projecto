@@ -75,20 +75,14 @@ class TableJournal extends Component {
                 text: 'Status',
                 filter: textFilter(),
                 sort: true,
-                headerStyle: () => ({ width: '20%' }),
+                headerStyle: () => ({ width: '20%'}),
                 formatter: function dateFormatter(publish) {
                     if (publish === 1) {
                         return 'Publicado';
                     }
                     return 'Não Publicado';
                 },
-            },
-            {
-                dataField: 'pt_title',
-                text: 'Título',
-                filter: textFilter(),
-                sort: true,
-                headerStyle: () => ({ width: '55%' }),
+                align: 'center',
             },
             {
                 dataField: 'edition',
@@ -97,6 +91,13 @@ class TableJournal extends Component {
                 sort: true,
                 headerStyle: () => ({ width: '15%' }),
                 align: 'center',
+            },
+            {
+                dataField: 'pt_title',
+                text: 'Título',
+                filter: textFilter(),
+                sort: true,
+                headerStyle: () => ({ width: '55%' }),
             },
 
             {
@@ -141,11 +142,11 @@ class TableJournal extends Component {
 
             <div className="NoticiasPainel">
 
-                <div className="NoticiasPainel-title">Jornal Painel</div>
-                <div className="NoticiasPainel-section-button">
+                <div className="NoticiasPainel-title">Quadro Jornal</div>
+                <div className="JornalPainel-section-button">
                     <Link to={link}>
                         <button className="NoticiasPainel-button" type="submit">
-                            Criar nova edição
+                            Criar Edição
                             </button>
                     </Link>
                 </div>

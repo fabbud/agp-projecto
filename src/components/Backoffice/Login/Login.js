@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import PropTypes from 'prop-types';
 import PopUp from '../PopUp/PopUp';
 import './Login.css';
 import whiteLogo from '../../../assets/logo/logo_RGB.jpg';
@@ -87,13 +88,17 @@ const Login = (props) => {
             </div>
           </form>
           <div className="login-forgot">
-            <a href="">Forgot your password?</a>
+            <a href="/backoffice/intro">Forgot your password?</a>
           </div>
         </div>
       </div>
       <PopUp flashInput={flash} typeMessage={messageStatus} />
     </div>
   );
+};
+
+Login.propTypes = {
+  history: PropTypes.string.isRequired,
 };
 
 export default Login;

@@ -62,32 +62,29 @@ router.get('/:edition', (req, res) => {
 
 router.post('/publish', (req, res) => {
   const formData = req.body;
-  connection.query('INSERT INTO journal SET ?',
-    [formData],
-    (err, results) => {
+  connection.query('INSERT INTO journal SET ?', [formData], (err, results) => {
       if (err) {
-        res.status(400).send('Error loading journal');
         console.log(err);
+        res.status(400).json({ flash: 'Something went wrong' });
       } else {
-        res.status(200).send('New Journal loaded');
+        res.status(200).json({ flash: 'Gravado com Sucesso' });
       }
     });
 });
 
 router.put('/editPublication', (req, res) => {
-  console.log(req.body);
   console.log(req.body.edition);
-  connection.query('UPDATE journal SET ? WHERE edition=?',
-    [req.body, req.body.edition],
-    (err, results) => {
+  connection.query('UPDATE journal SET ? WHERE edition=?', [req.body, req.body.edition], (err, results) => {
       if (err) {
-        console.log(err.sql);
-        res.status(400).send('Newspaper not updated')
+        console.log("erro", err.sql);
+        res.status(400).send('Newspaper not updated');
       } else {
+        console.log(results);
+        console.log(results.length);
         if (results.length === 0) {
-          res.status(400).sen('Not existing newspaper edition')
+          res.status(400).json({ flash: 'Edição não existe' });
         } else {
-          res.status(200).send('Newspaper edition updated')
+          res.status(200).json({ flash: 'Gravado com Sucesso' });
         }
       }
     }

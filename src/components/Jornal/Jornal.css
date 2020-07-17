@@ -1,8 +1,8 @@
 .Jornal{
-
-    margin-top:170px;
-    margin-left: 100px;
-    margin-right: 100px;
+    background-color: #f6f6f6;
+    margin-top:143px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .edicoesJornal{
@@ -11,6 +11,8 @@
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
+    padding-bottom: 0px;
+    padding-top: 40px;
 }
 
 .textoIntroducao{
@@ -25,13 +27,15 @@
 
 .oTrevo{
     font-family: 'poppins';
-    font-size: 1rem;
+    font-size: 25px;
     color:#3b99e0;
     text-align: center;
     font-weight: 400;
     line-height: 1.5;
     font-weight: 410;
     font-size: 2rem;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 /* .cardArea{
@@ -136,8 +140,8 @@
 @media(max-width:1100px){
 
     .Jornal{
-        margin-left: 20px;
-        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .titulo {
@@ -157,10 +161,13 @@
 }
 
 @media(max-width:770px){
-
+    .oTrevo {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
     .Jornal{
-        margin-left: 20px;
-        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .titulo {
@@ -182,9 +189,9 @@
 @media(max-width:580px){
 
     .Jornal{
-        margin-top: 200px;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-top: 130px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .titulo {

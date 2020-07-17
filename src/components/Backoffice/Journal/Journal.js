@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Journal.css';
+import PopUp from '../PopUp/PopUp';
 
 class Journal extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             publish: false,
             edition: '',
@@ -22,8 +24,9 @@ class Journal extends React.Component {
             en_intro_text_3: '',
             en_intro_text_4: '',
             en_intro_text_5: '',
-            flash: ''
-        }
+            flash: '',
+            messageStatus: '',
+        };
     }
 
 
@@ -31,17 +34,24 @@ class Journal extends React.Component {
     componentDidMount = () => {
         window.scrollTo(0, 0);
         const { match } = this.props;
-        let getEdition = match.params.edition;
+        const getEdition = match.params.edition;
         if (getEdition) {
             fetch(`/journal/${getEdition}`,
                 {
                     method: 'GET',
                     headers: new Headers({
-                        'Content-Typge': 'application/json'
+                        'Content-Typge': 'application/json',
                     }),
                 })
                 .then(res => res.json())
                 .then(res => {
+
+                    let getPublish = res[0].publish;
+                    if (getPublish === 1) {
+                        getPublish = true;
+                    } else {
+                        getPublish = false;
+                    }
                     this.setState({
                         edition: res[0].edition,
                         year: res[0].year,
@@ -59,68 +69,76 @@ class Journal extends React.Component {
                         en_intro_text_3: res[0].en_intro_text_3,
                         en_intro_text_4: res[0].en_intro_text_4,
                         en_intro_text_5: res[0].en_intro_text_5,
-                        publish: res[0].publish,
-                    })
-                })
+                        publish: getPublish,
+                    });
+                });
         }
     }
 
     updateField = (event) => {
         event.preventDefault();
-        let name = event.target.name
-        let value = event.target.value
-        this.setState({ [name]: value })
+        let name = event.target.name;
+        let value = event.target.value;
+        this.setState({ [name]: value });
     }
 
     updatePublish = () => {
-        const publish = this.state.publish;
+        const { publish } = this.state;
         this.setState({ publish: !publish });
     }
 
     handleSubmit = (event) => {
-        event.preventDefault()
-        const { flash, ...newEdition } = this.state
-        const { match } = this.props;
-        let getEdition = match.params.edition;
-        console.log(getEdition)
+        event.preventDefault();
+        const { flash, messageStatus, ...newEdition } = this.state;
+        const { match, history } = this.props;
+        const getEdition = match.params.edition;
+        console.log(getEdition);
         if (getEdition) {
-            console.log(newEdition)
             fetch("/journal/editPublication",
                 {
                     method: 'PUT',
                     headers: new Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     }),
                     body: JSON.stringify(newEdition),
-
                 })
                 .then(res => res.json())
-                .then(
-                    res => this.setState({ "flash": res.flash }),
-                    err => this.setState({ "flash": err.flash })
-                )
-            //console.log(JSON.stringify(this.state.journal.flash))
+                .then((res) => {
+                  this.setState({ messageStatus: 'success' });
+                  this.setState({ flash: 'Guardado com sucesso.' });
+                })
+                .catch((err) => {
+                  this.setState({ messageStatus: 'error' });
+                  this.setState({ flash: 'Ocorreu um erro, por favor tente outra vez.' });
+                });
         } else {
-            console.log(newEdition)
             fetch("/journal/publish",
                 {
                     method: 'POST',
                     headers: new Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     }),
                     body: JSON.stringify(newEdition),
                 })
                 .then(res => res.json())
-                .then(
-                    res => this.setState({ "flash": res.flash }),
-                    err => this.setState({ "flash": err.flash })
-                )
-            //console.log(JSON.stringify(this.state.journal.flash))
+                .then((res) => {
+                    console.log("1 ok");
+                    this.setState({ messageStatus: 'success' });
+                    this.setState({ flash: 'Guardado com sucesso.' });
+                })
+                .catch((err) => {
+                    console.log("2 erro");
+                    this.setState({ messageStatus: 'error' });
+                    this.setState({ flash: 'Ocorreu um erro, por favor tente outra vez.' });
+                });
         }
+        history.push({pathname: '/backoffice/journal/painel' });
     }
 
     render() {
         const {
+            flash,
+            messageStatus,
             publish,
             edition,
             year,
@@ -140,15 +158,12 @@ class Journal extends React.Component {
             en_intro_text_5
         } = this.state;
 
-        console.log("pdf final", pdf_link)
-
         const { match } = this.props;
-        let getEdition = match.params.edition;
+        const getEdition = match.params.edition;
 
 
         return (
             <div class='body'>
-
 
                 <form className="NoticiaInput-section" onSubmit={this.handleSubmit}>
                     <div className="NoticiaInput-title">Jornal</div>
@@ -218,16 +233,22 @@ class Journal extends React.Component {
                     </div>
                     <div className='input'>
                         <div className="input-section-label-publish">Publicar</div>
-                        <input type='checkbox' name='publish' value={publish} onChange={this.updatePublish} />
+                        <input type='checkbox' name='publish' value={publish} checked={publish} onChange={this.updatePublish} />
                     </div>
                     <div className="NoticiaInput-section-button">
-                        <button className="login-button" variant="contained" color="primary" type='submit'>ENVIAR</button>
+                        <button className="login-button" variant="contained" color="primary" type='submit'>GUARDAR</button>
                     </div>
                 </form>
+                <PopUp flashInput={flash} typeMessage={messageStatus} />
             </div>
-        )
+        );
     }
 
 }
+
+Journal.propTypes = {
+    match: PropTypes.string.isRequired,
+    history: PropTypes.string.isRequired,
+  };
 
 export default Journal;

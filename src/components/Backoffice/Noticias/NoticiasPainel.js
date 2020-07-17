@@ -142,7 +142,7 @@ class NoticiaPainel extends Component {
         <div className="NoticiasPainel-section-button">
           <Link to={link}>
             <button className="NoticiasPainel-button" type="submit">
-              Nova Notícia
+              Criar Notícia
             </button>
           </Link>
         </div>

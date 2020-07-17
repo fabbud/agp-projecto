@@ -52,16 +52,15 @@ const Homepage = (props) => {
 
   return (
     <div className="Homepage">
-      {/* VIDEO */}
+
       <span className="home-video-section">
         <div className="home-video">
-          <video controls controlsList="nodownload" autoPlay loop width="100%" height="100%">
+          <video controls controlsList="nodownload" autoPlay muted loop width="100%" height="100%">
             <source src={homepageTeaser} type="video/mp4" />
           </video>
         </div>
       </span>
 
-      {/* MODELO */}
       <div className="home-ramos">
         <div className="home-modelo-title">{t('homepage.tituloModeloPedagogico')}</div>
         <div className="home-ramos-section">
@@ -108,7 +107,6 @@ const Homepage = (props) => {
         </div>
       </div>
 
-      {/* SECÇÃO PAIS E JORNAL */}
       <div className="home-section-palavras">
         <div className="home-section-side">
           <div className="home-section-center">
@@ -151,7 +149,6 @@ const Homepage = (props) => {
         </div>
       </div>
 
-      {/* NOTICIAS */}
       { showNoticias
         ? (
           <div className="home-noticias">
